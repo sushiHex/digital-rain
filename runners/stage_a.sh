@@ -32,13 +32,13 @@ gate() { # gate <need_mb> <label>
 
   gate 18000 train
   echo "=== [2/3] Stage A train (400 steps, lr 5e-5, weights-only resume) @ $(date '+%H:%M:%S') ==="
-  python train_lora_kg.py --dataset-dir dpo_pilot --cache-dir dpo_pilot/sft_cache \
+  python train_lora_kg.py --model black-forest-labs/FLUX.2-klein-base-9B --dataset-dir dpo_pilot --cache-dir dpo_pilot/sft_cache \
     --output-dir training_stageA_pilot --resume training_glyph_r32_5000/adapter_only \
     --rank 32 --steps 400 --lr 5e-5 --warmup-steps 50 --checkpoint-every 100 --use-template || fail train $?
 
   gate 20000 eval
   echo "=== [3/3] eval on 50-font holdout (dual scorecard) @ $(date '+%H:%M:%S') ==="
-  python eval_checkpoint.py --checkpoint training_stageA_pilot/final --identity --use-template --in-process \
+  python eval_checkpoint.py --model black-forest-labs/FLUX.2-klein-base-9B --checkpoint training_stageA_pilot/final --identity --use-template --in-process \
     --template-pt dataset_v2/cache/template_disambig_mild.pt \
     --holdout eval_holdout --out eval_runs/stageA_pilot --skip-existing || fail eval $?
 

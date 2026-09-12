@@ -28,8 +28,11 @@ WHAT IT CHECKS BEFORE IT WRITES.
   * the private tree is clean (uncommitted work is not exported, and a dirty
     tree usually means the export was run mid-task)
   * the destination is empty, or a git repository with a clean tree whose
-    EVERY commit was made by this script -- once a pull request has merged in
-    public, a re-export would revert it, so the script refuses
+    EVERY commit was made by this script -- the public history is export-only
+    by design (the private repository is the working one, and the public one
+    receives an export when there is progress to show); a commit this script
+    did not write means someone merged in public, and the script refuses
+    rather than revert it
   * after staging, every staged blob and mode is IDENTICAL to HEAD's (the
     byte-for-byte claim is checked, not assumed; autocrlf cannot slip in)
   * `sanitize_for_publish.py --check` passes ON THE DESTINATION -- the gate
@@ -298,9 +301,10 @@ def prepare_dest(dest):
         if foreign:
             raise SystemExit(
                 f"refusing: {dest} has {len(foreign)} commit(s) this script did "
-                f"not make (first: {foreign[0]!r}). Work has landed there; a "
-                "re-export would revert it. The public repository is the "
-                "working one now.")
+                f"not make (first: {foreign[0]!r}). The public history must stay "
+                "export-only: an outside change is re-applied on a private branch "
+                "and reaches the public tree in the next export "
+                "(docs/public-release.md).")
     elif os.path.isdir(dest) and os.listdir(dest):
         raise SystemExit(f"refusing: {dest} exists, is not empty and is not a "
                          "git repository")

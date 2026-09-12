@@ -224,33 +224,46 @@ its content can be forked, cached and indexed within minutes; a private
 first push lets the owner read the exported tree *on GitHub* — file listing,
 rendered README, Actions run — before anything is irreversible.
 
-## After the cutover — which repository is the working one
+## Which repository is the working one — REVISED 2026-09-11
 
-**The public repository is the working repository.** Every change lands there
-by pull request; issues are filed there; CI runs there. `digital-rain-private`
-is an archive: full history, the withheld research, and nothing new.
+> **Superseded the same day it was written.** The first version of this
+> section made the public repository the working one and the private one an
+> archive. The owner reversed that before the flip: **`digital-rain-private`
+> is the working repository** — issues, pull requests, CI and every day-to-day
+> change happen there — and **the public repository is a showcase that
+> receives a curated export when there is real progress to show, not on every
+> change.** The paragraphs below are the revised rules; the exporter already
+> enforced them.
 
-Two rules follow, and both are easy to break by habit:
-
-- **Do not develop in the private clone and re-export.** The exporter is
-  one-directional and overwrites; a re-export after pull requests have merged
-  in public would revert them. So the exporter **enforces the cutover**: it
-  re-exports only into a tree whose every commit it wrote itself, and refuses
-  the moment the public history holds a commit it did not make. Before that
-  moment, re-exporting to fix the initial release is allowed and was done
-  (three export commits); after it, the private archive is read-only for
-  public purposes. `misc/export_public.py` stays in the public tree because it
-  documents what was withheld and refuses to run there.
-- **Anything that must stay private goes in the private repository by hand**,
-  as a normal commit there. Session captures, business research, credentials.
-  The public clone's hooks write session captures into `research/sessions/`
-  of whatever tree they run in; that directory is gitignored in the public
-  tree for this reason.
+- **Work happens in private, by pull request against an issue.** The same
+  issue forms, PR template, labels and branch protection apply to
+  `digital-rain-private` (applied 2026-09-11 with the configure script); the
+  public copies of those files exist so outside readers can file issues and
+  propose changes, not because the public tree is where work lands.
+- **The public tree is a sequence of exports.** `misc/export_public.py` runs
+  from the private clone when a milestone is worth showing — a finding
+  written up, an instrument validated, a figure made — and never for a
+  routine commit. Each export is one commit on public `main` named after the
+  private commit it came from. The exporter refuses a destination holding any
+  commit it did not write, which is exactly the invariant this workflow needs:
+  the public history must stay export-only.
+- **Outside pull requests on the public repository are not merged there.**
+  They are reviewed in public, the change is re-applied on a private branch
+  (with attribution in the commit and the contributor's CLA line on file),
+  and it reaches the public tree in the next export. Merging a public PR
+  directly would break the export-only invariant and the exporter would
+  refuse thereafter.
+- **Anything that must stay private goes in the private repository as a
+  normal commit**, and anything new that is part of the product recipe goes
+  on the `RECIPE` list before the next export. `research/sessions/` is
+  gitignored in both trees.
 
 ## The contributor workflow
 
-Issues and pull requests on the public repository, mirroring the newest of the
-other public `sushiHex` repositories (`hermes-realtime`, `constructicon`):
+Issues and pull requests — on the **private** repository for the maintainer
+and invited collaborators, and on the public one for outside readers, whose
+changes are re-applied privately as described above — mirroring the newest of
+the other public `sushiHex` repositories (`hermes-realtime`, `constructicon`):
 structured issue forms, an evidence-first pull request template, a small
 triage vocabulary of labels, and classic branch protection with a pull request
 required and zero mandatory approvals — the single-maintainer setting. The

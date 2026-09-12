@@ -11,7 +11,7 @@ mkdir -p "$OUT/generated"
 # reuse the 10 already-generated mild atlases
 cp -n eval_runs/glyph_r32_disambig10_mild/generated/*.png "$OUT/generated/" 2>/dev/null
 log "seeded $(ls "$OUT/generated"/*.png 2>/dev/null | wc -l) atlases from the 10-font probe"
-python eval_checkpoint.py --checkpoint training_glyph_r32_5000/checkpoint-5000 \
+python eval_checkpoint.py --model black-forest-labs/FLUX.2-klein-base-9B --checkpoint training_glyph_r32_5000/checkpoint-5000 \
     --use-template --template-pt dataset_v2/cache/template_disambig_mild.pt --in-process \
     --holdout eval_holdout --out "$OUT" --skip-existing >> run_disambig50_mild.log 2>&1
 code=$?

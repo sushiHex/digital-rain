@@ -6,14 +6,17 @@ open here.
 
 ## Public development, private archive
 
-**This public repository is the development home.** Code, issues, reviews and
-pull requests live here; branch from `main` and merge reviewed pull requests
-into it. `sushiHex/digital-rain-private` is the full-history archive and holds
-what is withheld from publication — session captures, the March 2026 business
-research, superseded planning. It is not the upstream for public code, and
-nothing is re-exported over public `main`. What was withheld, and why, is
-stated in [`docs/public-release.md`](../docs/public-release.md) and printed by
-`python misc/export_public.py --list`.
+**This public repository is a curated export, not the day-to-day tree.**
+Development happens in `sushiHex/digital-rain-private` (full history, plus
+what is withheld from publication: session captures, the March 2026 business
+research, superseded planning, and the product's own code). When there is
+real progress to show, the private tree is exported here as one commit; the
+public history is export-only by design. So a pull request opened here is
+**reviewed here, then re-applied on a private branch with your attribution
+and lands in the next export** — it is not merged on this `main` directly.
+Issues are welcome here and are triaged the same way. What was withheld, and
+why, is stated in [`docs/public-release.md`](../docs/public-release.md) and
+printed by `python misc/export_public.py --list`.
 
 ## Dev setup
 

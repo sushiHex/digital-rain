@@ -113,9 +113,13 @@ class Runner:
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--repo", required=True, help="OWNER/NAME")
+    ap.add_argument("--description", default=DESCRIPTION,
+                    help="repository description; the private working "
+                         "repository keeps its own")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args(argv)
     repo, r = args.repo, Runner(args.dry_run)
+    description = args.description
 
     print("labels")
     for name, colour, desc in LABELS:
@@ -123,7 +127,7 @@ def main(argv=None):
               "--description", desc, "--force"])
 
     print("settings")
-    r.gh(["repo", "edit", repo, "-d", DESCRIPTION, *SETTINGS])
+    r.gh(["repo", "edit", repo, "-d", description, *SETTINGS])
     r.gh(["repo", "edit", repo, *sum((["--add-topic", t] for t in TOPICS), [])])
 
     print("secret scanning")

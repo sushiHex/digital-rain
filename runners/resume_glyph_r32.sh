@@ -26,7 +26,7 @@ for attempt in $(seq 1 "$MAX_ATTEMPTS"); do
   fi
   echo "WRAPPER: attempt $attempt/$MAX_ATTEMPTS — resuming from $ckpt"
   start=$(date +%s)
-  python train_lora_kg.py --dataset-dir dataset_v2 --output-dir "$OUT" \
+  python train_lora_kg.py --model black-forest-labs/FLUX.2-klein-base-9B --dataset-dir dataset_v2 --output-dir "$OUT" \
       --steps 5000 --rank 32 --lr 1e-4 --checkpoint-every "$CKPT_EVERY" \
       --resume "$ckpt"
   code=$?

@@ -27,7 +27,7 @@ gate() {
 
   gate 18000 train
   echo "=== [2/2] Stage A v2 train (150 steps, lr 2e-5, weights-only resume) @ $(date '+%H:%M:%S') ==="
-  python train_lora_kg.py --dataset-dir dpo_pilot --cache-dir dpo_pilot/sft_cache_v2 \
+  python train_lora_kg.py --model black-forest-labs/FLUX.2-klein-base-9B --dataset-dir dpo_pilot --cache-dir dpo_pilot/sft_cache_v2 \
     --output-dir training_stageA_v2 --resume training_glyph_r32_5000/adapter_only \
     --rank 32 --steps 150 --lr 2e-5 --warmup-steps 20 --checkpoint-every 50 --use-template || fail train $?
 

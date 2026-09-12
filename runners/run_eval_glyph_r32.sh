@@ -42,7 +42,7 @@ while true; do
   # out to render_checkpoint.py which has NO --use-template support (x_embedder stays
   # 128ch -> shape-mismatch crash, hidden by stderr=DEVNULL). In-process expands
   # x_embedder 128->256, loads the adapter, and installs the glyph channel-concat hook.
-  python eval_checkpoint.py --checkpoint "$CKPT" \
+  python eval_checkpoint.py --model black-forest-labs/FLUX.2-klein-base-9B --checkpoint "$CKPT" \
       --use-template --template-pt dataset_v2/cache/template.pt --in-process \
       --holdout eval_holdout --out "$OUT" --skip-existing >> eval_glyph_r32_stdio.log 2>&1
   dur=$(( $(date +%s) - start ))

@@ -20,7 +20,7 @@ fail() { echo "=== RG TEST FAIL (exit $1) @ $(date '+%H:%M:%S') ==="; echo "exit
   echo "=== gate passed: ${free}MB free @ $(date '+%H:%M:%S') ==="
 
   echo "=== generating 10 fonts with Rg references @ $(date '+%H:%M:%S') ==="
-  python eval_checkpoint.py \
+  python eval_checkpoint.py --model black-forest-labs/FLUX.2-klein-base-9B \
     --checkpoint training_glyph_r32_5000/checkpoint-5000 \
     --identity --use-template --in-process \
     --template-pt dataset_v2/cache/template_disambig_mild.pt \

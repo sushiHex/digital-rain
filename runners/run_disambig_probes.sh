@@ -10,7 +10,7 @@ for variant in mild strong; do
   out="eval_runs/glyph_r32_disambig10_${variant}"
   if [ -f "$out/scores.json" ]; then log "$variant already scored — skip"; continue; fi
   log "starting $variant probe (10 fonts, in-process)"
-  python eval_checkpoint.py --checkpoint training_glyph_r32_5000/checkpoint-5000 \
+  python eval_checkpoint.py --model black-forest-labs/FLUX.2-klein-base-9B --checkpoint training_glyph_r32_5000/checkpoint-5000 \
       --use-template --template-pt "dataset_v2/cache/template_disambig_${variant}.pt" \
       --in-process --holdout eval_holdout --out "$out" --count 10 --skip-existing \
       >> "run_disambig_probes_${variant}.log" 2>&1

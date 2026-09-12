@@ -16,7 +16,7 @@ OUT=eval_runs/stageA_v2
       sleep 30
     done
 
-    python eval_checkpoint.py --checkpoint training_stageA_v2/final --identity --use-template --in-process \
+    python eval_checkpoint.py --model black-forest-labs/FLUX.2-klein-base-9B --checkpoint training_stageA_v2/final --identity --use-template --in-process \
       --template-pt dataset_v2/cache/template_disambig_mild.pt \
       --holdout eval_holdout --out $OUT --skip-existing
     rc=$?

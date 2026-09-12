@@ -13,7 +13,7 @@ rm -f BASE_ID_DONE BASE_ID_FAIL
     sleep 30
   done
   echo "=== rescoring baseline with --identity @ $(date '+%H:%M:%S') (${free}MB free) ==="
-  python eval_checkpoint.py --skip-generate --identity \
+  python eval_checkpoint.py --model black-forest-labs/FLUX.2-klein-base-9B --skip-generate --identity \
     --holdout eval_holdout --out eval_runs/structured_prompt_5000 || { echo "exit=$?" > BASE_ID_FAIL; exit 1; }
   echo "=== BASELINE IDENTITY DONE @ $(date '+%H:%M:%S') ==="
   echo ok > BASE_ID_DONE

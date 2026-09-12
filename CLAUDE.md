@@ -767,16 +767,25 @@ EXTRA_TRAIN_ARGS NEED_MB`. Two traps, both hit for real:
   exit 0 with no log. Always verify the log exists before reporting a run
   as started.
 
-## Two repositories — the PUBLIC one is the working one
+## Two repositories — the PRIVATE one is the working one
 
 Since 2026-09-11 (`docs/public-release.md`): `sushiHex/digital-rain-private`
-is the full-history archive; `sushiHex/digital-rain` is a **fresh** history
-built from it by `misc/export_public.py` and is where issues, pull requests
-and CI live. Contributors work there. Rules that are easy to break by habit:
+(this clone, `repos/fonts`) is the **working repository** — issues, pull
+requests, CI and every day-to-day change. `sushiHex/digital-rain` is a
+**fresh** history built from it by `misc/export_public.py` and is a
+**showcase**: it receives an export when there is real progress to show, not
+on every change. Rules that are easy to break by habit:
 
-- **Do not develop in the private clone and re-export.** The exporter is
-  one-directional and overwrites; a re-export after pull requests have merged
-  in public reverts them.
+- **Work by pull request against an issue, in private.** Open work is
+  tracked as GitHub Issues on `digital-rain-private`; a branch closes an
+  issue through a PR. Do not accumulate work in local branches with no
+  issue.
+- **Export deliberately, not routinely.** A finding written up, an
+  instrument validated, a figure made — that earns an export. The public
+  history must stay export-only; the exporter refuses a destination holding
+  a commit it did not write. An outside PR on the public repository is
+  re-applied on a private branch (attribution in the commit, CLA line on
+  file), never merged in public.
 - **What is withheld is stated, not hidden**: `misc/export_public.py --list`.
   Session captures, the March 2026 business research, `docs/archive/`,
   `docs/superpowers/`, `docs/PUSH-PREP.md` — and, since 2026-09-11, **the

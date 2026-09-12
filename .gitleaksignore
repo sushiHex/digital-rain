@@ -1,0 +1,12 @@
+# gitleaks fingerprints (commit:file:rule:line) reviewed and accepted.
+#
+# All three are inside the March 2026 Oracle research reports -- LLM-written
+# survey documents that reproduce example snippets from vendor documentation
+# (a curl -u example; a Supabase settings example with a placeholder key).
+# They are not credentials of this project, they were never live, and the
+# files themselves are WITHHELD from the public export (misc/export_public.py).
+# CI on the private repository scans the whole history, which is where these
+# sit; the public repository's history never contained them. Reviewed 2026-09-11.
+b0faaa97d026c40d01a1a1a3ecdfbc898fe1177a:research/2026-03-26-oracle-round2-report.md:curl-auth-user:1314
+b0faaa97d026c40d01a1a1a3ecdfbc898fe1177a:research/2026-03-28-oracle-round16-report.md:generic-api-key:3679
+b0faaa97d026c40d01a1a1a3ecdfbc898fe1177a:research/2026-03-28-oracle-round16-report.md:generic-api-key:3680
