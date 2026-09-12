@@ -13,8 +13,9 @@ if any required step failed and says which, and the final verification reads
 the protection back rather than trusting the PUT. Two settings exist only on
 PUBLIC repositories for a personal account -- secret scanning and private
 vulnerability reporting -- so on the private-first repository they return
-HTTP 422 and are reported as "expected while private", not as failures. Re-run
-after the visibility flip and they take; the run then reports them applied.
+HTTP 422 and 404 respectively and are reported as "deferred", not as
+failures. Re-run after the visibility flip and they take; the run then
+reports them applied.
 
 It never changes visibility. That is one command, and it is the owner's:
 
@@ -97,7 +98,10 @@ class Runner:
         proc = subprocess.run(cmd, input=stdin, capture_output=True, text=True)
         if proc.returncode != 0:
             err = proc.stderr.strip()
-            if public_only and "422" in err:
+            # Secret scanning answers 422 while private; the private
+            # vulnerability reporting endpoint answers 404. Both mean "not
+            # on this repository yet", not "the request was wrong".
+            if public_only and ("422" in err or "404" in err):
                 print(f"  deferred (public repositories only): {' '.join(args[:3])}")
                 self.deferred.append(" ".join(args[:3]))
             else:
