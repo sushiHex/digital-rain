@@ -515,8 +515,9 @@ Neither correction is interesting as a model fact. What is interesting is that a
 verdict had expired, and the entries carried no date to check against. A survey
 verdict is a measurement with a timestamp, and this record had been treating
 those verdicts as conclusions.
-([restyle](../research/2026-08-23-restyle-not-generate-the-reference.md) ·
-[the field](../research/2026-08-23-the-permissive-local-field-opened-up.md))
+(The two survey notes, `2026-08-23-restyle-not-generate-the-reference.md` and
+`2026-08-23-the-permissive-local-field-opened-up.md`, are held in the private
+archive as part of the product recipe.)
 
 ### The obvious candidate was the one already loaded
 
@@ -543,7 +544,8 @@ guaranteed to hold one letter per half, and the gate would happily return a
 confident number about nothing. Nothing was rejected on this run — but a method
 producing 80% garbage would otherwise have measured as merely mediocre, and the
 bake-off would have been measuring the wrong thing.
-([note](../research/2026-08-23-candidate-evaluation-round-1.md))
+(The round-1 note, `2026-08-23-candidate-evaluation-round-1.md`, is held in
+the private archive as part of the product recipe.)
 
 ### The loop closes
 

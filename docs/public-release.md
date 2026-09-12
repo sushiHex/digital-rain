@@ -338,4 +338,4 @@ floors is not going to carry a lockfile yet.
 | 2026-07-29 | private push audit (`PUSH-PREP.md`) |
 | 2026-08-18 | MIT withdrawn; all rights reserved pending a decision |
 | 2026-08-24 | sanitizer caught a home path that entered via a session capture |
-| 2026-09-11 | sanitizer found to miss JSON-escaped paths; fixed and pinned. Runners moved to `runners/`. Exporter written. Decision to go public via a fresh repository. |
+| 2026-09-11 | sanitizer found to miss JSON-escaped paths; fixed and pinned. Runners moved to `runners/`. Exporter written. Decision to go public via a fresh repository. Steps 1–3 run: renamed, exported, private-first `digital-rain` created, configured, CI green. Cross-review (22 findings) folded in. The SaaS-lane carve-out decided and applied: 550 files public, 86 withheld. Step 4 not run. |
