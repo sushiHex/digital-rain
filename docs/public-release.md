@@ -137,7 +137,14 @@ gh run list -R sushiHex/digital-rain            # CI green on the initial commit
 
 # 4. the irreversible step -- owner only, after reading steps 0-3's output
 gh repo edit sushiHex/digital-rain --visibility public --accept-visibility-change-consequences
+python misc/configure_public_repo.py --repo sushiHex/digital-rain   # again: secret scanning only exists on public repos
 ```
+
+Steps 1–3 were run on 2026-09-11. `digital-rain-private` is renamed and
+carries `main` plus the parked `wip/monospace-constructor` branch; the new
+`digital-rain` holds the export as one initial commit, private, with labels,
+settings and branch protection applied and CI running. Step 4 has **not** been
+run.
 
 Step 3 creates the repository private on purpose. Once a repository is public
 its content can be forked, cached and indexed within minutes; a private

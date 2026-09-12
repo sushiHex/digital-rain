@@ -58,8 +58,16 @@ SETTINGS = [
     "--enable-discussions=false", "--delete-branch-on-merge",
     "--enable-squash-merge", "--enable-merge-commit=false",
     "--enable-rebase-merge=false", "--allow-update-branch",
-    "--enable-secret-scanning", "--enable-secret-scanning-push-protection",
 ]
+
+# Secret scanning is only offered on PUBLIC repositories for a personal
+# account: on the private-first repository the flag returns HTTP 422 ("not
+# available for this repository") and, sent in the same call, made the whole
+# settings request read as failed even though GitHub had applied the rest.
+# Sent separately and tolerated; re-run this script once the repository is
+# public and it takes.
+SECRET_SCANNING = ["--enable-secret-scanning",
+                   "--enable-secret-scanning-push-protection"]
 
 DESCRIPTION = ("Glyph-conditioned font generation research: FLUX.2-klein + LoRA "
                "with a glyph-latent conditioning channel. Primarily a record of "
@@ -94,6 +102,8 @@ def main(argv=None):
     print("settings")
     gh(["repo", "edit", repo, "-d", DESCRIPTION, *SETTINGS], dry)
     gh(["repo", "edit", repo, *sum((["--add-topic", t] for t in TOPICS), [])], dry)
+    print("secret scanning (public repositories only; a 422 here is expected while private)")
+    gh(["repo", "edit", repo, *SECRET_SCANNING], dry)
 
     print("branch protection on main")
     gh(["api", "-X", "PUT", f"repos/{repo}/branches/main/protection",
