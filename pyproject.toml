@@ -3,6 +3,14 @@ name = "fontgen"
 version = "0.1.0"
 description = "Glyph-latent channel conditioning for FLUX.2 font generation, with a font-invariant identity metric"
 requires-python = ">=3.12"
+# Code only. Notes and figures are CC BY 4.0, measurement records CC0 1.0,
+# route_b/ is Apache-2.0 -- see NOTICE and docs/licensing.md.
+license = {text = "AGPL-3.0-only"}
+classifiers = [
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 dependencies = [
     # Diffusion / model stack. Install torch from the CUDA index FIRST --
     # see the note at the top of requirements.txt.

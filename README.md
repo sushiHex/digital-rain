@@ -590,7 +590,7 @@ Note that the retrieval floor is a gate on the *model* framing only. The product
 1. **Right to train.** The corpus contained 49 fonts under vendor terms permitting rendering but not conversion, and 36 more under a licence that claims derivative works as the foundry's property. They have been removed from the training set, but the existing checkpoints were trained on them.
 2. **Output licence.** Per [SIL OFL FAQ 1.25](https://openfontlicense.org/ofl-faq/), fonts produced by a model trained on OFL sources are derivative works that must themselves be OFL. Enforceability is unsettled; there is no case law.
 
-The code carries **no licence** — all rights reserved — pending a decision. See [`LICENSE`](LICENSE), which also records the two licences designed for this situation (AGPL-3.0, BSL 1.1) so the next reader does not default to MIT.
+**The repository's own licence is in three parts** ([`docs/licensing.md`](docs/licensing.md), [`NOTICE`](NOTICE)): code, configuration and calibration data under **[AGPL-3.0-only](LICENSE)**; research notes, documentation and figures under **CC BY 4.0**; raw measurement records under **CC0 1.0**. The Nunchaku-derived files under `route_b/` stay Apache-2.0. AGPL was chosen over MIT because it stops a *closed* fork of the instruments being run as a service — it does not stop competition, and it does not bind the copyright holder — and over BSL because this is a research repository, not a gated product. Outside contributions are accepted under the [Contributor License Agreement](.github/CLA.md), signed by a line in [`.github/CLA-signatures.md`](.github/CLA-signatures.md) before the first merge, which is what keeps dual licensing possible.
 
 *None of this is legal advice.*
 

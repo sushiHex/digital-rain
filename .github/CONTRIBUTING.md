@@ -76,17 +76,21 @@ hand. Results from them are reported with their noise, not as CI output.
 
 ## Rights
 
-The repository is published **without a licence** (`LICENSE` explains why, and
-what AGPL-3.0 and BSL 1.1 would each mean). Until one is chosen, submitting a
-pull request means you hold the rights to what you submit and agree the
-copyright holder may distribute it under whatever licence this repository
-adopts. The pull request template asks you to confirm that.
+The code is **AGPL-3.0-only**, the notes and figures **CC BY 4.0**, the raw
+measurement records **CC0 1.0**; `docs/licensing.md` and `NOTICE` draw the
+lines. The project may also be licensed commercially by its copyright holder,
+and that is only possible for code whose rights the holder controls. So
+**every outside contribution is accepted under the
+[Contributor License Agreement](CLA.md)**: you keep your copyright and grant
+the holder a perpetual, sublicensable licence to use your contribution under
+any terms, plus a patent grant and a warranty that you are entitled to do so.
 
-**Until a licence or a contributor agreement is in place, pull requests from
-outside the maintainer are reviewed but held, not merged.** A checkbox is not
-a rights assignment, and merging outside code into an unlicensed tree would
-cloud any later relicensing. Issues, findings and review comments are welcome
-now; code lands once the licence question is settled.
+**Sign it by adding one line to [`CLA-signatures.md`](CLA-signatures.md)** in
+the pull request that carries your first contribution. A pull request from
+anyone other than the maintainer is reviewed on arrival but **not merged
+until that line is in**. The pull request template's checkbox is a reminder;
+the line is the signature. If your employer owns what you write, the employer
+signs as an entity or waives its claim first — the agreement says how.
 
 ## Reporting
 

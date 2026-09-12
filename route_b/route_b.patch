@@ -1,3 +1,9 @@
+Route B patch against nunchaku 1.2.1 nunchaku/models/transformers/transformer_flux2.py.
+Derived from Nunchaku (Apache License 2.0, Copyright (c) MIT HAN Lab and the
+Nunchaku contributors). This file is a modified derivative; the statement of
+changes and the licence text are in route_b/NOTICE and route_b/LICENSE.nunchaku.
+Lines above the first "---" header are a preamble that `patch` and `git apply` skip.
+
 --- a/nunchaku/models/transformers/transformer_flux2.py
 +++ b/nunchaku/models/transformers/transformer_flux2.py
 @@ -47,6 +47,12 @@

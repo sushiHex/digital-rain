@@ -1,0 +1,43 @@
+digital-rain -- glyph-conditioned font generation, and the record of measuring it
+Copyright (c) 2026 sushiHex
+
+This repository is licensed in three parts. The full statement, with the
+history of the decision and the two constraints no code licence touches, is
+docs/licensing.md.
+
+  CODE, CONFIGURATION AND CALIBRATION DATA
+      GNU Affero General Public License v3.0 only (AGPL-3.0-only).
+      The text is the file LICENSE. This covers every source file, the
+      workflow and configuration files, the test fixtures, and the data
+      files that code LOADS as an input (for example the per-character
+      feature statistics the coherence instrument calibrates against).
+
+  RESEARCH NOTES, DOCUMENTATION AND FIGURES
+      Creative Commons Attribution 4.0 International (CC-BY-4.0).
+      The text is LICENSES/CC-BY-4.0.txt. This covers the Markdown under
+      research/ and docs/, README.md, CLAUDE.md, AGENTS.md, the package
+      READMEs, and the images under viz/. Material quoted from third
+      parties inside those documents (licence texts, foundry and model
+      documentation, other authors' figures) is NOT covered and keeps its
+      own terms.
+
+  MEASUREMENT RECORDS
+      CC0 1.0 Universal (public domain dedication, CC0-1.0).
+      The text is LICENSES/CC0-1.0.txt. This covers the raw results code
+      WROTE and nothing loads back: the tracked per_cell.json and
+      scores.json evaluation records, training metrics and run configs,
+      and the JSON result records under research/ that no script reads.
+
+  THIRD-PARTY COMPONENTS keep their own licences:
+      route_b/  -- modified Nunchaku sources, Apache License 2.0
+                   (route_b/NOTICE, route_b/LICENSE.nunchaku)
+      The FLUX.2-klein base models this code loads are downloaded
+      separately and carry their own terms: the 4B line is Apache-2.0,
+      the 9B line is non-commercial.
+
+No model weights, fonts or training corpus are distributed here. Generated
+fonts are OFL derivatives per SIL OFL FAQ 1.25 and the training corpus
+carries an unresolved right-to-train question; see docs/licensing.md.
+
+Contributions are accepted under the Contributor License Agreement in
+.github/CLA.md.

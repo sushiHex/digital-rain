@@ -92,7 +92,9 @@ def test_nothing_kept_imports_a_withheld_module():
 def test_the_public_face_is_kept():
     """Runs in both trees: in the export these files simply exist."""
     kept, _ = ex.partition(ex.tracked_at_head(ex.REPO))
-    for p in ("README.md", "CLAUDE.md", "AGENTS.md", "LICENSE",
+    for p in ("README.md", "CLAUDE.md", "AGENTS.md", "LICENSE", "NOTICE",
+              "LICENSES/CC-BY-4.0.txt", "LICENSES/CC0-1.0.txt",
+              "docs/licensing.md", ".github/CLA.md", ".github/CLA-signatures.md",
               "docs/public-release.md", "docs/what-happened.md",
               "research/README.md", "misc/export_public.py",
               ".github/PULL_REQUEST_TEMPLATE.md", ".github/workflows/ci.yml",

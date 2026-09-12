@@ -1,7 +1,12 @@
 * @sushiHex
 
 /.github/ @sushiHex
+/.github/CLA.md @sushiHex
+/.github/CLA-signatures.md @sushiHex
 /LICENSE @sushiHex
+/LICENSES/ @sushiHex
+/NOTICE @sushiHex
+/docs/licensing.md @sushiHex
 /CLAUDE.md @sushiHex
 /misc/export_public.py @sushiHex
 /analysis/sanitize_for_publish.py @sushiHex

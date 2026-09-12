@@ -488,9 +488,21 @@ package.
 
 ## Licensing — hard constraints, not preferences
 
+- **The repository's own licence, since 2026-09-11** (`docs/licensing.md`,
+  `NOTICE`): code, configuration and calibration data **AGPL-3.0-only**
+  (`LICENSE` is the verbatim text — never append project prose to it, a test
+  pins this); notes, docs and figures **CC BY 4.0**; raw measurement records
+  **CC0 1.0**; `route_b/` stays Apache-2.0. The line between the parts is
+  function, not extension: a JSON that code LOADS is AGPL configuration, a
+  JSON that code only WRITES is CC0 data. **No outside pull request is merged
+  until its author's line is in `.github/CLA-signatures.md`** — an
+  AGPL-only contribution would cloud any later commercial licence.
 - The base model (**FLUX.2-klein-base-9B**) is **non-commercial**. The
   Apache-2.0 **klein-4B** port is the licensing fix and also the 4-step speed
   win; `in_channels=128` on both, so the template cache ports unchanged.
+  `train_lora_kg.py` and `eval_checkpoint.py` default to the **4B** since
+  2026-09-11 so a deployment that forgets `--model` cannot pick up the
+  non-commercial base by accident; the shipped 9B runs pass it explicitly.
 - The training corpus is **87.0% OFL**, NOT 97.5% — that number counted a raw
   Google Fonts checkout, not the 925 fonts trained on. **49 fonts (5.3%) carry
   vendor-supplied terms** permitting rendering but not redistribution or

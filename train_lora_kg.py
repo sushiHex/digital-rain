@@ -340,7 +340,10 @@ def main():
                              "for reproducing pre-2026-08-08 checkpoints.")
     parser.add_argument("--cache-dir", default=None)
     parser.add_argument("--output-dir", default="training_output")
-    parser.add_argument("--model", default="black-forest-labs/FLUX.2-klein-base-9B")
+    # Defaults to the Apache-2.0 4B (2026-09-11) so a run that forgets --model
+    # cannot pick up the non-commercial 9B by accident. The shipped 9B runs
+    # pass --model explicitly; see docs/licensing.md.
+    parser.add_argument("--model", default="black-forest-labs/FLUX.2-klein-base-4B")
     parser.add_argument("--steps", type=int, default=3500)
     parser.add_argument("--rank", type=int, default=16)
     parser.add_argument("--lr", type=float, default=1e-4)

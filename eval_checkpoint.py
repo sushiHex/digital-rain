@@ -1043,7 +1043,9 @@ def main():
                         help="cached glyph-template latent for channel-concat conditioning")
     parser.add_argument("--template-zero", action="store_true",
                         help="ablation: feed ZEROS for the template channels (isolates template content vs capacity)")
-    parser.add_argument("--model", default="black-forest-labs/FLUX.2-klein-base-9B")
+    # Apache-2.0 4B by default (2026-09-11); the base is normally derived from
+    # the checkpoint's conditioning record anyway. See docs/licensing.md.
+    parser.add_argument("--model", default="black-forest-labs/FLUX.2-klein-base-4B")
     parser.add_argument("--steps", type=int, default=20, help="Inference steps per atlas")
     parser.add_argument("--seed", type=int, default=42, help="Inference seed (fixed for reproducibility)")
     parser.add_argument("--count", type=int, default=None, help="Eval only first N holdout fonts")

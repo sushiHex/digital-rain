@@ -155,25 +155,28 @@ not touch either constraint: the right-to-train question is about the corpus
 inputs and the OFL-derivative question is about generated outputs, and neither
 is a property of the source tree.
 
-## The licence question is now live
+## The licence question — resolved 2026-09-11
 
-The repository carries **no licence**: all rights reserved, pending a decision
-(`LICENSE` records why MIT was withdrawn and what AGPL-3.0 and BSL 1.1 would
-each mean). That was a free choice while the repository was private. Public,
-it has two consequences the owner should decide on rather than inherit:
+The repository went to publication with no licence (all rights reserved,
+pending a decision). The decision is made and recorded in full in
+[`licensing.md`](licensing.md): **AGPL-3.0-only** for code, configuration and
+calibration data, **CC BY 4.0** for notes and figures, **CC0 1.0** for raw
+measurement records, third-party components under their own terms, and a
+**Contributor License Agreement** (`.github/CLA.md`) signed by a line in
+`.github/CLA-signatures.md` before any outside merge. The root `LICENSE` is
+the unmodified AGPL text so GitHub's detection recognises it; scope lives in
+`NOTICE` and `licensing.md`.
 
-- **Readers may look and fork, and nothing more.** GitHub's terms permit
-  viewing and forking of any public repository; no licence means no right to
-  run, modify or redistribute. That is a legitimate source-available posture,
-  and it is the posture until a licence is chosen.
-- **A pull request to an unlicensed project is legally murky.** The PR
-  template asks contributors to confirm they hold the rights to what they
-  submit and that it may be relicensed under whatever this repository adopts.
-  A checkbox is not a rights assignment. So **outside pull requests are held,
-  not merged, until a licence or a contributor agreement exists** —
-  `CONTRIBUTING.md` says so up front. AGPL-3.0 plus a commercial licence for
-  paying customers is the usual open-core arrangement and is the one `LICENSE`
-  points at; choosing it is the decision that unblocks contributions.
+An adversarial review of the recommendation (21 findings) changed it in five
+places before adoption: the claim that AGPL "stops a competitor running a
+service" was corrected to what section 13 actually does (it stops a *closed*
+fork; unmodified use and open modified services are permitted); the merge
+gate became "CLA signed", not "licence *or* CLA"; measurement records went
+to CC0 rather than CC BY; the buckets are drawn by function rather than file
+extension; and the two scripts that defaulted to the non-commercial 9B base
+now default to the Apache-2.0 4B. The review's remaining points — trademark
+clearance, naming a legal entity, per-file SPDX headers — are listed in
+`licensing.md` as deliberately not done.
 
 ## Runbook
 
@@ -339,3 +342,4 @@ floors is not going to carry a lockfile yet.
 | 2026-08-18 | MIT withdrawn; all rights reserved pending a decision |
 | 2026-08-24 | sanitizer caught a home path that entered via a session capture |
 | 2026-09-11 | sanitizer found to miss JSON-escaped paths; fixed and pinned. Runners moved to `runners/`. Exporter written. Decision to go public via a fresh repository. Steps 1–3 run: renamed, exported, private-first `digital-rain` created, configured, CI green. Cross-review (22 findings) folded in. The SaaS-lane carve-out decided and applied: 550 files public, 86 withheld. Step 4 not run. |
+| 2026-09-11 | Licence chosen after a second adversarial review: AGPL-3.0-only / CC BY 4.0 / CC0 1.0 with a CLA (`licensing.md`). The "held until a licence exists" rule becomes "held until the CLA is signed". |

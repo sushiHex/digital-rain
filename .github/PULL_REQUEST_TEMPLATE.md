@@ -31,6 +31,7 @@
 
 ## Rights
 
-This repository is published without a licence (see `LICENSE`).
+Code is AGPL-3.0-only, notes and figures CC BY 4.0, records CC0 (`docs/licensing.md`). Outside contributions are accepted under `.github/CLA.md` and are **not merged until the author's line is in `.github/CLA-signatures.md`**.
 
-- [ ] I hold the rights to what I am submitting, and I agree the copyright holder may distribute it under whatever licence this repository adopts
+- [ ] My signature line is in `.github/CLA-signatures.md` (in this PR or an earlier one), or I am the maintainer
+- [ ] Anything here that is not my own work is identified with its licence
