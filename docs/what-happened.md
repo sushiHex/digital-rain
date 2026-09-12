@@ -53,7 +53,7 @@ dot-grid topology.
 
 ![Holdout typefaces, ground truth against generated](../viz/stylized_showcase.png)
 
-*Ten holdout typefaces, ground truth above generated. The font files were held
+*Ten holdout typefaces, ground truth beside generated. The font files were held
 out of training — though 32 of the 50 share a superfamily with a training font,
 so this is a file holdout and not out-of-distribution generalization. Spacing is
 naive and unkerned; that turns out to matter, and Act 5 returns to it.*

@@ -1,23 +1,28 @@
 # digital-rain — Glyph-Conditioned Font Generation
 
-Generate a complete 94-glyph character set in a target typeface's style from **one reference image**, using FLUX.2-klein with a LoRA adapter and a custom glyph-latent conditioning channel.
+[![ci](https://github.com/sushiHex/digital-rain/actions/workflows/ci.yml/badge.svg)](https://github.com/sushiHex/digital-rain/actions/workflows/ci.yml)
 
-The model sees two glyphs of a font it has never encountered and produces the remaining 92 in the same style — serifs, stroke weight, cursive connections, distress texture, even discontinuous dot-grid topology.
+**You describe a typeface in words. Ninety seconds later you have all 94 characters of it.**
 
-**It works. Whether it works *better* than anything turned out to be the harder question, and answering it honestly consumed the second half of the project.** That answer — not the generator — is what this repository is for.
+A LoRA adapter on FLUX.2-klein with a custom glyph-latent conditioning channel, trained on one RTX 3090. Shown two glyphs of a typeface it has never seen, it draws the other 92 in the same style — serifs, stroke weight, cursive joins, distress texture, even dot-grid topology. Then the reference stopped having to come from a font at all: the two glyphs can be drawn from a sentence.
 
-**And the reference no longer has to come from a font.** A style *described in words* now produces a coherent 94-glyph typeface end to end — the description generates the two reference glyphs, [a gate](#the-product-loop-and-the-axis-with-no-instrument) rejects the pair if they disagree on style, and the generator does the rest. About 90 seconds per font, on two Apache-2.0 models already on disk. That reframing also removes the ground truth, and with it the retrieval baseline that beats every model whenever a target font exists. ([note](research/2026-08-23-the-loop-closes.md))
+![You type words. You get a typeface.](viz/out/description_to_font.png)
 
-> **Read this first:** [`docs/what-happened.md`](docs/what-happened.md) — the full six-month account, in six acts. Build it, try to improve it, watch the instruments fail, measure the floor, see what survives — and then find that the product is a different problem with a different gate.
->
-> The primary sources are the 67 dated notes in [`research/`](research/README.md), indexed by theme. They are never rewritten when a later note overturns them, so the record of being wrong is intact. (A further 36 are held in the private archive: 21 survey rounds from March 2026 that are market research for a possible commercial direction, and 15 late-August notes that are the product's recipe — which reference generators were tried and how the picker behaves. Their results are here; the how-to is not. [`docs/public-release.md`](docs/public-release.md).)
+*Each row is one description, the `K` and `g` it produced in a single generation, and "Hamburg" set in the finished font. Neither letter appears in the word, so every glyph on the right is one the model invented. The stencil row is kept as the miss it was.*
 
-**Status:** the research record is complete and the model track stopped on the arithmetic below. Live work is the **product loop** and the three axes it needs — two validated, and the third now **partially instrumented**: as of 2026-08-25 a measure exists that reads a style-adherence failure *as a failure*, on four treatments, uncalibrated. Open threads in [To be continued](#to-be-continued). No weights are published — see [Licensing](#licensing-hard-constraints).
+**In five lines**
 
-![Stylized holdout fonts, ground truth vs generated](viz/stylized_showcase.png)
+- **It works, and the mechanism was proved rather than assumed.** Zero the conditioning channel at fixed weights, reference, prompt and seed, and letter identity collapses from 0.56 to 0.04 while style similarity keeps 81% of its score: the reference carries style, the channel carries identity. ([ablation](#how-it-works))
+- **Words in, typeface out, in about 90 seconds on two Apache-2.0 models.** Twelve descriptions, twelve references, twelve fonts, nothing hand-picked; 12 of 12 references cleared the coherence gate. ([note](research/2026-08-23-the-loop-closes.md))
+- **The instruments were audited harder than the model.** A retrieval baseline beats every checkpoint on both style metrics; three training runs identical but for the seed land 0.12 apart on the headline metric; scored against each metric's own noise, the six effects that survive are all regressions. Every retraction stays in the record. ([the audit](#the-most-interesting-result-isnt-the-model))
+- **Three instruments for a product with no ground truth:** coherence, validated twice at n=50; identity, 0.99 on gated cells; adherence, 10 of 11 held-out typefaces — it ranks, it does not yet calibrate. ([instruments](#the-product-loop-and-the-axis-with-no-instrument))
+- **Reproducible from a clean clone, no weights, no GPU.** The results table regenerates with one command, and CI runs the suite on every commit. ([setup](#setup))
 
-*Ten holdout typefaces whose exact font FILES were held out of training — though 32 of the 50 share a superfamily with training fonts, so this is a file holdout, not out-of-distribution generalization.*
-* "Hamburg" composed from individual generated glyph cells. Spacing is naive, not kerned — see [Limitations](#limitations).*
+**Where to read next.** The six-month account, in six acts: [`docs/what-happened.md`](docs/what-happened.md). The dated notes, never rewritten when a later one overturns them: [`research/`](research/README.md). The illustrated architecture write-up: [faiman.com/writing/generative-eval](https://faiman.com/writing/generative-eval.html). What is held back for a possible service, and why: [`docs/public-release.md`](docs/public-release.md). The model track is closed on the arithmetic below; the live work is the product loop and its third instrument ([open threads](#to-be-continued)). No weights are published ([licensing](#licensing-hard-constraints)).
+
+![Ten holdout typefaces, ground truth beside generated](viz/stylized_showcase.png)
+
+*Ten typefaces whose files were held out of training — 32 of the 50 share a superfamily with a training font, so this is a file holdout, not out-of-distribution generalisation. "Hamburg" is composed from generated cells with naive spacing, not kerned ([limitations](#limitations)).*
 
 ---
 
@@ -50,7 +55,7 @@ Returning *a different real typeface* scores higher than generating the right on
 
 *Top: three runs whose configs differ only in `--seed`. Bottom: every claim ÷ that metric's own run-to-run SD, columns ordered by that SD. Ringed cells clear 2 SE — all six are regressions, and all six sit in the two left-hand columns. The two on the right, char_acc and DINOv2, are the metrics every headline in this project was quoted against. Regenerate with `python viz/variance_vs_effects.py`.*
 
-**8 of the 50 holdout ground-truth atlases are byte-identical to training atlases** — exact answer leakage, found only when something finally hashed the two sets against each other.
+**8 of the 50 holdout ground-truth atlases are byte-identical to training atlases** — exact answer leakage, found only when something finally hashed the two sets against each other. ([note](research/2026-08-13-a-retrieval-baseline-beats-every-model.md))
 
 None of this was found by a failing test. It was found by measuring things the project had assumed.
 
@@ -205,7 +210,7 @@ The split is the result. **Style survives the ablation; letterform identity does
 
 ## Repository
 
-The repository root holds the **32 core modules** — everything the tests and the product entry points depend on. One-off scripts live in topical packages.
+The repository root holds the core modules — everything the tests and the product entry points depend on. One-off scripts live in topical packages, each with a generated index of its contents.
 
 | path | what |
 |---|---|
@@ -218,20 +223,20 @@ The repository root holds the **32 core modules** — everything the tests and t
 | `atlas_to_font.py` | atlas → OTF via Potrace |
 | `build_dataset.py` · `cache_latents.py` | corpus construction and latent caching |
 | | |
-| `analysis/` | post-hoc analysis of eval runs and checkpoints (62) |
-| `probes/` | small targeted spikes (21) |
-| `studies/` | research probes and experiment drivers (16) |
-| `pipeline/` | dataset construction, rendering, orchestration (16) |
-| `cleanup/` | atlas cell repair and selection (8) |
-| `misc/` | uncategorized utilities (8) |
-| `viz/` | figure generators for the images above (16) |
-| `benchmarks/` | latency and throughput measurement (2) |
-| `route_b/` | Nunchaku INT4 runtime-LoRA track — closed, kept as the record (2) |
-| `runners/` | the detached-run shell runners and their watchdogs, grouped by track in [`runners/README.md`](runners/README.md) (43) |
-| `research/` | 67 dated findings, negative results included — **[indexed by theme](research/README.md)** |
-| `docs/` | the narrative ([`what-happened.md`](docs/what-happened.md)), protocols, roadmaps, and [how this repository is published](docs/public-release.md) |
+| [`analysis/`](analysis/README.md) | post-hoc analysis of eval runs and checkpoints; the instruments live here |
+| [`probes/`](probes/README.md) | small targeted spikes |
+| [`studies/`](studies/README.md) | research probes and experiment drivers |
+| [`pipeline/`](pipeline/README.md) | dataset construction, rendering, orchestration |
+| [`cleanup/`](cleanup/README.md) | atlas cell repair and selection |
+| [`misc/`](misc/README.md) | repository tooling, including the public exporter |
+| [`viz/`](viz/README.md) | figure generators for the images above |
+| [`benchmarks/`](benchmarks/README.md) | latency and throughput measurement |
+| [`route_b/`](route_b/README.md) | Nunchaku INT4 runtime-LoRA track — closed, kept as the record |
+| [`runners/`](runners/README.md) | the detached-run shell runners and their watchdogs, grouped by track |
+| [`research/`](research/README.md) | the dated findings, negative results included, **indexed by theme** |
+| `docs/` | the narrative ([`what-happened.md`](docs/what-happened.md)), protocols, roadmaps, [licensing](docs/licensing.md), and [how this repository is published](docs/public-release.md) |
 
-Scripts in the packages run from the repo root either way — `python analysis/foo.py` or `python -m analysis.foo`. Each package has its own README listing contents; those lists are **generated** from module docstrings by `misc/sync_package_readmes.py` and pinned by [`tests/test_package_readmes_current.py`](tests/test_package_readmes_current.py), because when they were hand-maintained `analysis/README.md` advertised 16 modules against a directory of 40.
+Scripts in the packages run from the repo root either way — `python analysis/foo.py` or `python -m analysis.foo`. Counts are deliberately absent from this table: each package README's `Contents (N)` heading is **generated** from module docstrings by `misc/sync_package_readmes.py` and pinned by [`tests/test_package_readmes_current.py`](tests/test_package_readmes_current.py), because when the lists were hand-maintained `analysis/README.md` advertised 16 modules against a directory of 40, and a hand-typed count in this file drifted the same way.
 
 ---
 
@@ -248,9 +253,10 @@ pip install -e ".[dev]"        # pytest + ruff; or, as CI does: pip install pyte
 Optional extras, by track: `demo` (the Gradio app), `sft`, `vecglypher`. Route B additionally needs [`nunchaku`](https://github.com/nunchaku-tech/nunchaku), which is not on PyPI.
 
 ```bash
-python -m pytest                                    # 110 tests, no GPU needed
+python -m pytest                                    # no GPU needed; tests that want the corpus, weights or potrace skip
 
 # reproduce the results table above from the eval artifacts in this repo
+# (it also writes a dated record of the comparison into research/)
 python analysis/compare_runs.py \
     eval_runs/structured_prompt_5000/per_cell.json \
     eval_runs/prompt_trained_short/per_cell.json \

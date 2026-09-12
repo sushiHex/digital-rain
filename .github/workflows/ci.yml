@@ -1,21 +1,29 @@
-# GPU-free gate on every push to main and every pull request.
+# GPU-free gate. The same file runs in both repositories and behaves
+# differently in each, on purpose:
 #
-# The suite is designed to pass without a GPU, the font corpus, model weights,
-# potrace or a network: tests that need any of those skip, and `-rs` lists
-# every skip so the public run's coverage is visible rather than assumed. The
-# two tests that would download TrOCR and DINOv2 are held off with
-# FONTGEN_NO_MODEL_DOWNLOADS so a pull request does not pull a gigabyte of
-# weights per run. Anything that needs the 3090 -- training, the eval harness,
-# the product loop -- is run and reported by hand, with the number's own noise
-# stated (CLAUDE.md).
+#   PUBLIC  sushiHex/digital-rain          every push to main and every PR;
+#           Python 3.12 and 3.14; the full suite; the audit.
+#   PRIVATE sushiHex/digital-rain-private  the working repository, where
+#           Actions minutes are the owner's. Tests run on PULL REQUESTS ONLY
+#           (a squash merge re-tests nothing new), on Python 3.12 only, and a
+#           docs-only change runs a thirty-second subset without installing
+#           torch. The audit (sanitizer + gitleaks) still runs on every event
+#           because it is the cheap one and it is the one that catches leaks.
+#           Run `python -m pytest` locally before pushing to main there.
 #
-# Dependencies are installed from `>=` floors against the live index, so a
-# dependency release can change the result with no change here. Known and
-# accepted for a research repository; pin if it ever bites.
+# The suite passes without a GPU, the font corpus, model weights, potrace or a
+# network: tests that need any of those skip, and `-rs` lists every skip so the
+# public run's coverage is visible rather than assumed. The two tests that
+# would download TrOCR and DINOv2 are held off with FONTGEN_NO_MODEL_DOWNLOADS.
+# Anything that needs the 3090 is run and reported by hand, with the number's
+# own noise stated (CLAUDE.md).
 #
-# Two jobs, three required checks: `tests (3.12)`, `tests (3.14)`,
-# `public-audit`. Third-party actions are pinned to full commit SHAs, and the
-# gitleaks binary to a checksum.
+# Dependencies are installed from `>=` floors against the live index (issue
+# #16 on the private repository). Third-party actions are pinned to full
+# commit SHAs, and the gitleaks binary to a checksum.
+#
+# Required checks: public `tests (3.12)`, `tests (3.14)`, `public-audit`;
+# private `tests (3.12)`, `public-audit` (misc/configure_public_repo.py).
 name: ci
 
 on:
@@ -23,17 +31,24 @@ on:
     branches: [main]
   pull_request:
 
+# A new push to the same branch cancels the run it supersedes.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
 jobs:
   tests:
+    # Private repository: pull requests only.
+    if: github.repository == 'sushiHex/digital-rain' || github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 30
     strategy:
       fail-fast: false
       matrix:
-        python: ["3.12", "3.14"]
+        python: ${{ fromJSON(github.repository == 'sushiHex/digital-rain' && '["3.12", "3.14"]' || '["3.12"]') }}
     env:
       FONTGEN_NO_MODEL_DOWNLOADS: "1"
       PYTHONUTF8: "1"
@@ -42,17 +57,84 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
+          fetch-depth: 0
+      - name: Decide whether code changed (private repository only)
+        id: scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.repository }}" != "sushiHex/digital-rain-private" ]; then
+            echo "code=true" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            base="${{ github.event.pull_request.base.sha }}"
+          else
+            base="${{ github.event.before }}"
+          fi
+          if ! git cat-file -e "$base" 2>/dev/null; then
+            echo "code=true" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          changed=$(git diff --name-only "$base" HEAD)
+          printf 'changed:\n%s\n' "$changed"
+          # Docs-only means: Markdown, figures, licence texts and the
+          # community files. Any JSON, YAML, script or workflow is code --
+          # several JSON records are loaded by tests. `backup/.*` is here for
+          # the opposite reason: it is the data backup (misc/backup_private.py),
+          # no test reads it, and refreshing 400 MB of binaries must not install
+          # torch and run the matrix.
+          docs='^([^/]+\.md|research/[^/]+\.md|docs/.*\.md|[a-z_]+/README\.md|viz/out/.*|backup/.*|LICENSES/.*|LICENSE|NOTICE|\.gitleaksignore|\.github/(CLA|CLA-signatures|CONTRIBUTING|SECURITY|CODE_OF_CONDUCT|PULL_REQUEST_TEMPLATE)\.md|\.github/ISSUE_TEMPLATE/.*|\.github/CODEOWNERS)$'
+          # COUNT the matches; never `grep -q` here. Under `pipefail`, `grep -q`
+          # exits on its first hit, `echo` dies of SIGPIPE once the list is
+          # longer than a pipe buffer, and the pipeline reports failure -- so
+          # the 3,300-file backup PR (#23) was classed docs-only and its torch
+          # suite and backup check were both skipped while CI showed green.
+          # `grep -c` reads all of its input and cannot be cut short.
+          n_code=$(printf '%s\n' "$changed" | grep -cvE "$docs" || true)
+          if [ -z "$changed" ] || [ "$n_code" -gt 0 ]; then
+            echo "code=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "code=false" >> "$GITHUB_OUTPUT"
+          fi
+          # Docs-only must not mean unchecked. A backup refresh skips torch and
+          # the matrix, but its own integrity is still proved on every push.
+          n_backup=$(printf '%s\n' "$changed" | grep -cE '^backup/' || true)
+          if [ "$n_backup" -gt 0 ]; then
+            echo "backup=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "backup=false" >> "$GITHUB_OUTPUT"
+          fi
+          echo "code files: $n_code   backup files: $n_backup"
       # v7.0.0
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         with:
           python-version: ${{ matrix.python }}
           cache: pip
       - name: Install CPU torch first (the CUDA wheels are 2 GB and useless here)
+        if: steps.scope.outputs.code == 'true'
         run: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
       - name: Install the pipeline, the demo's UI library, and pytest
+        if: steps.scope.outputs.code == 'true'
         run: pip install -r requirements.txt gradio pytest
       - name: Run the suite (skips listed)
+        if: steps.scope.outputs.code == 'true'
         run: python -m pytest -q -rs -p no:cacheprovider
+      - name: Docs-only change -- run the tests that read the docs
+        if: steps.scope.outputs.code == 'false'
+        run: |
+          pip install pytest
+          python -m pytest -q -p no:cacheprovider \
+            tests/test_licence_files.py tests/test_package_readmes_current.py \
+            tests/test_runners_self_locate.py tests/test_export_public.py \
+            tests/test_sanitize_for_publish.py
+      # A backup refresh is docs-only for the purposes of torch, not for the
+      # purposes of being checked: re-hash every file against the manifest.
+      # The tool is stdlib-only, so this needs nothing the runner lacks.
+      - name: Verify the data backup
+        if: steps.scope.outputs.backup == 'true'
+        run: |
+          pip install pytest
+          python misc/backup_private.py verify
+          python -m pytest tests/test_backup_private.py -q -p no:cacheprovider
 
   # The same gate the release runbook runs before any visibility change
   # (docs/public-release.md): no home paths, pasted tool noise, machine names,

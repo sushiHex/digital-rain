@@ -14,7 +14,7 @@ python -m analysis.<script> --help
 Scripts import repo-root modules (`atlas_constants`, `eval_checkpoint`, ...); a two-line
 `sys.path` bootstrap at the top of each makes direct-path invocation work too.
 
-## Contents (56)
+## Contents (58)
 
 - `advance_survives_atlas.py` — Does MONOSPACE survive the atlas, when the atlas throws advance width away?
 - `analyze_caption_probe.py` — Score caption A/B probe outputs and decide whether captions move the model's output in a style-aware way.
@@ -30,6 +30,8 @@ Scripts import repo-root modules (`atlas_constants`, `eval_checkpoint`, ...); a 
 - `build_comparison_page.py` — Assemble the comparison artifact, injecting real numbers and the specimen.
 - `build_degraded_holdout.py` — Build holdout variants whose REFERENCES look like something a user uploaded.
 - `build_synthetic_references.py` — Build reference images that did NOT come from one real font.
+- `calibrate_instruments.py` — Score the reference gate and the two-glyph adherence measure against HUMAN labels.
+- `calibration_sheet.py` — Build the sheet and CSV a human uses to label 48 candidate references usable or not.
 - `check_env.py` — Probe the env for Nunchaku feasibility: Python / torch / CUDA / GPU arch / whether nunchaku is already importa...
 - `check_holdout_integrity.py` — Is the 50-font holdout actually 50 independent observations? No.
 - `check_identity_vs_fidelity_gap.py` — Is the +0.1483 same-model best-of-4 char_acc gap mostly about IDENTITY (reads as the right letter -- a no-GT-n...

@@ -12,6 +12,7 @@ figure is the claim it carries, not its filename.
 
 | script | what it shows |
 |---|---|
+| `stylized_showcase.py` | **The hero.** Ten stylized holdout typefaces, ground truth beside generated, "Hamburg" composed from the atlas cells themselves. Carries no metric on purpose: `char_acc` is the one number the README then spends a section discrediting, so it has no business under the first image anyone sees. Writes `viz/stylized_showcase.png`, not `viz/out/`. |
 | `variance_vs_effects.py` | Three training runs identical but for `--seed`, over one char_acc axis; below them, every claim ÷ that metric's own run-to-run SD, columns ordered by that SD. The ringed cells clear 2×SE — all six are regressions. |
 | `retrieval_vs_model.py` | Three word-strips per holdout font: ground truth, model, and the nearest *training* font handed back unchanged. Retrieval outscores the model, and the figure shows why — the retrieved face is genuinely similar, not nonsense. |
 | `lr_horizon_bug.py` | The cosine LR schedule that never annealed, parsed out of two real training logs. The loss panel below is the point: the buggy and fixed runs are indistinguishable there. |
@@ -24,7 +25,7 @@ figure is the claim it carries, not its filename.
 | `description_to_font.py` | **Words in, typeface out** — one row per description: the text, the `Kg` it produced, and a word set in the finished font. `K` and `g` are the only glyphs the model was given and neither appears in "Hamburg", so every letterform shown is invented. Recorded misses are marked, not dropped. Replaces the two generator-less halves below. |
 | `generation_progression.py` | **The denoising trajectory**, one frame per step of a single run, as a GIF. Decodes the intermediate latents by copying the pipeline's own final block, and VALIDATES that copy against the image the pipeline returned before writing anything. Also caches the latents, because the decode is the fiddly half and a bug there should not cost another generation. |
 | `synthesised_reference.py` | **Hand it a stencil and it propagates one.** Three arms -- plain, inline (positive control), stencil -- each a constructed reference beside the letters the model was NOT given. The word is "Amber" precisely because it contains no `K` and no `g`, the two glyphs the model copies. Needs `analysis/synthesised_reference_probe.py` run first. |
-| `showcase_words.py` | "Hamburg" composed from generated glyph cells, GT vs generated, across the stylized holdout fonts. Spacing is naive, not kerned. |
+| `relational_transfer.py` | **A local treatment propagates; a relational one did not.** The same three-arm shape as `synthesised_reference.py` with monospace in place of inline: the stencil control reproduces its signature (parts 0.74 → 2.15) while the monospace arm returns the plain atlas (CV 0.402 → 0.403). The word is "minimal10" -- no `K`, no `g`, and ink widths running 14 px to 70 px, which is exactly what a monospace treatment would have to close. The boxed note is the pre-registered weakness rather than a hedge: the reference pair is fixed at `Kg`, whose widths already nearly agree. Needs `analysis/relational_transfer_probe.py` run first. |
 
 ## Comparison specimens
 
@@ -52,4 +53,13 @@ investigation and is kept as its evidence:
   both halves together from the committed artifacts, so the claim now rebuilds
   from a clean clone. The originals are kept as the dated record.
 
-`stylized_showcase.png` opens both the README and Act 1 of the narrative.
+`stylized_showcase.png` opens both the README and Act 1 of the narrative. It is
+the one committed figure that lives at `viz/` rather than `viz/out/`, because
+that is where both documents link it; `stylized_showcase.py` writes it there.
+The version committed before 2026-09-11 carried a `char_acc` label under each
+font name and came from a since-removed generator (`showcase_words.py`, in the
+history); its provenance was verified by regenerating it and diffing
+pixel-for-pixel, 0 of 3,136,616 pixels different, against
+`eval_runs/glyph_r32_disambig50_mild/`. `stylized_showcase.py` reads the same
+run and drops the labels: they argued against the image with the metric the
+README goes on to discredit.

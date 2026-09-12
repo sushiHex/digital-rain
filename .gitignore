@@ -105,3 +105,7 @@ eval_holdout_rg/
 # (misc/export_public.py) and never to be tracked in the public repository.
 # The three already tracked in the private archive stay there.
 research/sessions/
+
+# The private repository's backup of the non-available data (misc/backup_private.py).
+# Never exported: misc/export_public.py withholds it and the sanitizer skips it.
+!backup/**

@@ -44,8 +44,14 @@ LABELS = (
     ("licensing", "b60205", "Touches the corpus, weights, outputs or a hosted demo -- both blockers are unresolved"),
 )
 
-# Must match the job names in .github/workflows/ci.yml exactly.
+# Must match the job names in .github/workflows/ci.yml exactly. The private
+# working repository runs a deliberately light CI (pull requests only, one
+# Python), so it requires fewer checks and does not force branches to be up
+# to date -- every "update branch" would be another billed run.
+PUBLIC_REPO = "sushiHex/digital-rain"
+PRIVATE_REPO = "sushiHex/digital-rain-private"
 REQUIRED_CHECKS = ("tests (3.12)", "tests (3.14)", "public-audit")
+PRIVATE_REQUIRED_CHECKS = ("tests (3.12)", "public-audit")
 
 # `enforce_admins` is False on purpose: a single maintainer with no second
 # reviewer needs a way to land a hotfix without opening a pull request against
@@ -120,6 +126,10 @@ def main(argv=None):
     args = ap.parse_args(argv)
     repo, r = args.repo, Runner(args.dry_run)
     description = args.description
+    checks = PRIVATE_REQUIRED_CHECKS if repo == PRIVATE_REPO else REQUIRED_CHECKS
+    protection = dict(PROTECTION)
+    protection["required_status_checks"] = {
+        "strict": repo != PRIVATE_REPO, "contexts": list(checks)}
 
     print("labels")
     for name, colour, desc in LABELS:
@@ -140,7 +150,7 @@ def main(argv=None):
     print("branch protection on main")
     r.gh(["api", "-X", "PUT", f"repos/{repo}/branches/main/protection",
           "-H", "Accept: application/vnd.github+json", "--input", "-"],
-         stdin=json.dumps(PROTECTION))
+         stdin=json.dumps(protection))
 
     if args.dry_run:
         return 0
@@ -155,10 +165,10 @@ def main(argv=None):
               file=sys.stderr)
     else:
         got = set(json.loads(proc.stdout or "[]"))
-        if got != set(REQUIRED_CHECKS):
+        if got != set(checks):
             r.failed.append("required checks mismatch")
             print(f"  required checks are {sorted(got)}, expected "
-                  f"{sorted(REQUIRED_CHECKS)}", file=sys.stderr)
+                  f"{sorted(checks)}", file=sys.stderr)
         else:
             print(f"  required checks: {sorted(got)}")
 

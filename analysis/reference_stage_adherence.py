@@ -121,24 +121,24 @@ def two_cell_vector(arr, indices):
     return vector_from_cells([c for c in cells if c is not None], min_cells=2)
 
 
-def main():
-    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--pool", default=os.path.join(REPO, "font_pool"))
-    ap.add_argument("--sources", type=int, default=SOURCES)
-    ap.add_argument("--refs", default=DEFAULT_REFS)
-    ap.add_argument("--json", default=os.path.join(REPO, "research",
-                                                   "reference_stage_adherence.json"))
-    args = ap.parse_args()
+def fit_reference_stage_model(pool, n_sources=SOURCES, seed=SEED, verbose=True):
+    """Fit the two-glyph treatment model exactly as the registered run did.
 
-    from scipy import stats
+    Extracted from `main` on 2026-09-11, unchanged in behaviour, so that
+    `analysis/calibrate_instruments.py` can score the same model against
+    human labels. Returns (model, real, records): the fitted pipeline, the
+    {(superfamily, label): stem} map of real held-out faces, and the scanned
+    pool records.
+    """
     from sklearn.linear_model import LogisticRegression
     from sklearn.pipeline import make_pipeline
     from sklearn.preprocessing import StandardScaler
 
     idx = char_indices()
     exclude = set(json.load(open(EXCLUSIONS, encoding="utf-8"))["exclude_stems"])
-    print("reading the pool ...")
-    records, _ = scan(args.pool, exclude)
+    if verbose:
+        print("reading the pool ...")
+    records, _ = scan(pool, exclude)
 
     real = {}
     for rec in records:
@@ -157,14 +157,15 @@ def main():
             continue
         seen.add(rec["family"])
         sources.append(rec["stem"])
-        if len(sources) >= args.sources:
+        if len(sources) >= n_sources:
             break
-    print(f"  {len(sources)} synthesis sources, {len(real)} real held-out faces\n")
+    if verbose:
+        print(f"  {len(sources)} synthesis sources, {len(real)} real held-out faces\n")
 
-    rng = np.random.default_rng(SEED)
+    rng = np.random.default_rng(seed)
     X, y = [], []
     for stem in sources:
-        path = atlas_path(args.pool, stem)
+        path = atlas_path(pool, stem)
         if path is None:
             continue
         arr = load(path)
@@ -176,11 +177,27 @@ def main():
             X.append(v)
             y.append(CLASSES.index(label))
     X, y = np.asarray(X), np.asarray(y)
-    print(f"  training set: {len(y)} two-glyph samples, "
-          f"{len(collections.Counter(y))} classes")
+    if verbose:
+        print(f"  training set: {len(y)} two-glyph samples, "
+              f"{len(collections.Counter(y))} classes")
 
     model = make_pipeline(StandardScaler(), LogisticRegression(max_iter=5000))
     model.fit(X, y)
+    return model, real, records
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--pool", default=os.path.join(REPO, "font_pool"))
+    ap.add_argument("--sources", type=int, default=SOURCES)
+    ap.add_argument("--refs", default=DEFAULT_REFS)
+    ap.add_argument("--json", default=os.path.join(REPO, "research",
+                                                   "reference_stage_adherence.json"))
+    args = ap.parse_args()
+
+    from scipy import stats
+
+    model, real, _records = fit_reference_stage_model(args.pool, args.sources)
 
     i_s, i_i = CLASSES.index("stencil"), CLASSES.index("inline")
     rows, correct = [], 0

@@ -71,6 +71,11 @@ INITIAL_SUBJECT = "Initial public release"
 SYNC_SUBJECT = "sync: "
 NOREPLY = "@users.noreply.github.com"
 
+# The data backup (misc/backup_private.py). Excluded twice over, on purpose:
+# by the EXCLUDE rule below, which is what makes it WITHHELD, and by a pathspec
+# on `git archive`, which is only about not tarring 400 MB into memory.
+BACKUP_DIR = "backup"
+
 # (pattern, reason). A pattern ending in "/" is a directory prefix; anything
 # else is an fnmatch glob against the repo-relative path.
 EXCLUDE = (
@@ -102,6 +107,13 @@ EXCLUDE = (
      "the private-push runbook; docs/public-release.md supersedes it"),
     (".claude/",
      "editor configuration, never tracked -- listed so that it stays that way"),
+    (".gitleaksignore",
+     "its fingerprints name a private-history commit and three withheld "
+     "research files, so in the public repo it would point at nothing while "
+     "advertising that something was suppressed"),
+    ("backup/",
+     "the private repository's data backup -- binaries and a font-pool "
+     "manifest that carry origin paths; never public"),
 )
 
 # THE PRODUCT RECIPE -- held for a possible service (decision 2026-09-11,
@@ -120,6 +132,7 @@ RECIPE = (
     "analysis/constructed_reference.py",
     "analysis/synthesise_transforms.py",
     "analysis/synthesised_reference_probe.py",
+    "analysis/relational_transfer_probe.py",
     "analysis/edit_path_probe.py",
     "analysis/within_prompt_diversity.py",
     "analysis/narrow_descriptions.py",
@@ -135,6 +148,7 @@ RECIPE = (
     "research/within_prompt_diversity.json",
     "research/reference_to_atlas_transfer.json",
     "research/synthesised_reference_probe.json",
+    "research/relational_transfer_probe.json",
     "research/edit_path_probe.json",
     "research/2026-08-22-how-to-generate-the-reference.md",
     "research/2026-08-22-two-letter-reference-generation-options.md",
@@ -155,8 +169,11 @@ RECIPE = (
 EXCLUDE = EXCLUDE + tuple((p, RECIPE_REASON) for p in RECIPE)
 
 # Rules allowed to match nothing: they guard against a FUTURE mistake rather
-# than excluding something that exists today.
-MAY_BE_EMPTY = {".claude/"}
+# than excluding something that exists today. `backup/` is here because the
+# data backup (misc/backup_private.py) is committed by the owner, item by item,
+# and a clone that does not carry it yet -- or one where it has been pruned --
+# must still be exportable. The rule is a standing guard, not a description.
+MAY_BE_EMPTY = {".claude/", "backup/"}
 
 # Package indexes are GENERATED from the directory (misc/sync_package_readmes.py)
 # and pinned by a test. With modules withheld, the exported index must list
@@ -258,6 +275,41 @@ def is_clean(repo):
     return run(["git", "status", "--porcelain"], repo).stdout.strip() == ""
 
 
+# A staging run leaves the destination dirty on purpose -- that is the review
+# step -- so the `--commit` re-run has to tell its OWN staging from a tree
+# someone worked in. It records the source HEAD it staged under .git; a dirty
+# destination is accepted only when that record names the HEAD being exported
+# again, and the run then rebuilds the tree in full. A hand edit made in the
+# export between the two runs does not survive: the export is reviewed, never
+# edited (docs/public-release.md).
+STAGED_MARKER = "EXPORT_STAGED"
+
+
+def _marker_path(dest):
+    return os.path.join(dest, ".git", STAGED_MARKER)
+
+
+def staged_from(dest):
+    """The source HEAD a previous staging run recorded in dest, or None."""
+    try:
+        with open(_marker_path(dest), encoding="utf-8") as fh:
+            return fh.read().strip() or None
+    except OSError:
+        return None
+
+
+def mark_staged(dest, source_head):
+    with open(_marker_path(dest), "w", encoding="utf-8") as fh:
+        fh.write(source_head + "\n")
+
+
+def clear_staged(dest):
+    try:
+        os.remove(_marker_path(dest))
+    except OSError:
+        pass
+
+
 def check_dest_is_safe(dest, repo=REPO):
     """The destination must be a separate, ordinary directory.
 
@@ -291,12 +343,21 @@ def foreign_commits(dest):
             if not (s.startswith(INITIAL_SUBJECT) or s.startswith(SYNC_SUBJECT))]
 
 
-def prepare_dest(dest):
-    """Empty the destination of everything but .git; refuse a dirty or worked-in tree."""
+def prepare_dest(dest, source_head=None):
+    """Empty the destination of everything but .git; refuse a dirty or worked-in tree.
+
+    The one dirty tree accepted is this script's own staging of `source_head`
+    (see STAGED_MARKER): the `--commit` re-run rebuilds it in full.
+    """
     check_dest_is_safe(dest)
     if os.path.isdir(os.path.join(dest, ".git")):
-        if not is_clean(dest):
-            raise SystemExit(f"refusing: {dest} has uncommitted changes")
+        if not is_clean(dest) and (source_head is None
+                                   or staged_from(dest) != source_head):
+            raise SystemExit(
+                f"refusing: {dest} has uncommitted changes that are not this "
+                "script's own staging of the HEAD being exported. Commit or "
+                "discard them in the public tree first; the export is never "
+                "edited by hand.")
         foreign = foreign_commits(dest)
         if foreign:
             raise SystemExit(
@@ -320,8 +381,17 @@ def prepare_dest(dest):
 
 
 def extract_head(repo, dest, keep):
-    """Write the HEAD blobs of `keep` into dest, byte for byte."""
-    tar_bytes = subprocess.run(["git", "archive", "--format=tar", "HEAD"],
+    """Write the HEAD blobs of `keep` into dest, byte for byte.
+
+    The archive is built in memory, so the data backup is excluded at the
+    SOURCE rather than filtered out afterwards: `backup/` is ~400 MB of
+    binaries that no export has ever wanted, and tarring it into RAM on every
+    run costs that much for nothing. The written-count check below still
+    proves the extracted set is exactly `keep`, so an accidental exclusion
+    fails loudly instead of silently shrinking the export.
+    """
+    tar_bytes = subprocess.run(["git", "archive", "--format=tar", "HEAD",
+                                "--", ".", f":(exclude){BACKUP_DIR}"],
                                cwd=repo, check=True, capture_output=True).stdout
     wanted = set(keep)
     written = 0
@@ -459,7 +529,8 @@ def main(argv=None):
                          "(commit them, or --allow-dirty to export HEAD anyway)")
 
     dest = os.path.abspath(args.dest)
-    prepare_dest(dest)
+    head = run(["git", "rev-parse", "HEAD"], REPO).stdout.strip()
+    prepare_dest(dest, head)
     n = extract_head(REPO, dest, keep)
     regenerated = regenerate_indexes(dest)
     stage(dest, keep, regenerated=regenerated)
@@ -472,9 +543,12 @@ def main(argv=None):
     gate(dest)
     if args.commit:
         commit(dest, REPO)
+        clear_staged(dest)
     else:
+        mark_staged(dest, head)
         print("\nstaged, not committed. Review with `git -C <dest> status`, "
-              "then re-run with --commit.")
+              "then re-run with --commit (which rebuilds the staging from the "
+              "same HEAD; do not edit the export by hand).")
     return 0
 
 

@@ -10,8 +10,10 @@ probes/ listed 20 of 21.
 WHAT IT TOUCHES. Only the run of `- \\`name.py\\` -- description` lines directly
 below a `## Contents (N)` heading, and the count in that heading. Prose before
 the heading and any section after the list are preserved. Packages with no such
-heading (`viz/`, `cleanup/`, `route_b/`) are skipped -- their READMEs use a
-different, hand-written format that says more than a name list would.
+heading (`viz/`, `route_b/`) are skipped -- their READMEs use a different,
+hand-written format that says more than a name list would. `cleanup/` joined the
+generated set on 2026-09-11; its eight modules carry no docstrings, so its list
+is names only until they do.
 
 DESCRIPTIONS come from the first sentence of each module docstring, with wrapped
 lines joined first. The previous hand-maintained entries were cut at the
@@ -33,7 +35,8 @@ import os
 import re
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PACKAGES = ("analysis", "studies", "pipeline", "probes", "benchmarks", "misc")
+PACKAGES = ("analysis", "studies", "pipeline", "probes", "benchmarks", "misc",
+            "cleanup")
 
 HEADING = re.compile(r"^## Contents \(\d+\)\s*$", re.M)
 # re.M matters for the findall() diagnostic below; .match() on single lines is

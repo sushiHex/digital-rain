@@ -1,8 +1,9 @@
 # Font LoRA Quality Improvement Roadmap v2
 
-> **Superseded** by [`quality-roadmap-v3.md`](quality-roadmap-v3.md) (read its
-> SUPERSEDED section too) and [`../README.md`](../README.md). Kept as the
-> record of the three-run era and the adversarial reviews that ended it.
+> **Superseded on 2026-04-30**, the date of v3's first commit, by
+> [`quality-roadmap-v3.md`](quality-roadmap-v3.md) (read its SUPERSEDED section
+> too) and [`../README.md`](../README.md). Kept as a dated record of the
+> three-run era and the adversarial reviews that ended it.
 
 Updated 2026-04-12 after 3 training runs, 5 adversarial code reviews, and 10 adversarial research analyses (2 rounds).
 

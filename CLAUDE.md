@@ -1,5 +1,14 @@
 # CLAUDE.md — fonts
 
+*What this file is: the working brief for the coding agents that do the work in
+this repository. It is written in the imperative, and most of it is a list of
+mistakes already made once — which is why it reads as a series of warnings
+rather than as documentation. It ships in the public export because every fact
+in it is public-safe, not because it is an introduction. **If you are a human
+arriving here, start with [`README.md`](README.md) and
+[`docs/what-happened.md`](docs/what-happened.md) instead**; this file will make
+more sense afterwards.*
+
 Glyph-conditioned font generation: FLUX.2-klein-9B (qint8 train / qfloat8 infer) + rank-32 LoRA with a
 glyph-latent conditioning channel. Research repo, single RTX 3090.
 
@@ -486,6 +495,30 @@ A few files inside those trees **are** tracked, force-added on purpose: the
 `experiments/` is a gitignored *output* directory — unrelated to the `studies/`
 package.
 
+## Worktrees and the data directories
+
+On 2026-09-11 the gitignored data directories were junctioned into a
+`git worktree` so a parked branch could run a GPU probe in parallel, and
+`git worktree remove --force` then recursed **through** the junctions and
+emptied `dataset_v2`, `font_pool`, `eval_holdout`, `google-fonts`, a
+checkpoint and a probe's references. Everything came back from surviving
+copies (`research/2026-09-11-the-junction-incident-and-what-came-back.md`),
+which was luck, not design.
+
+- **Never junction or symlink data into a worktree or any disposable
+  directory.** A parallel tree gets the real directories by path argument, or
+  the work runs sequentially in the main tree.
+- **Before any recursive delete, enumerate reparse points**
+  (`Get-ChildItem -Attributes ReparsePoint -Recurse`) and remove links with
+  `rmdir`, which drops the link and not the target. `git worktree remove
+  --force`, `rm -rf` and `Remove-Item -Recurse` all follow NTFS junctions.
+- **Glob-style tools honour `.gitignore`.** Verify a gitignored directory with
+  a literal `ls` / `Get-ChildItem`; an empty glob result there means nothing.
+- After an incident: stop writing to the volume, report immediately and
+  completely, and let the owner decide on undelete before regenerating
+  anything. The private repository's `backup/` holds the data that cannot be
+  re-downloaded or re-derived exactly (`misc/backup_private.py restore`).
+
 ## Licensing — hard constraints, not preferences
 
 - **The repository's own licence, since 2026-09-11** (`docs/licensing.md`,
@@ -786,6 +819,11 @@ on every change. Rules that are easy to break by habit:
   a commit it did not write. An outside PR on the public repository is
   re-applied on a private branch (attribution in the commit, CLA line on
   file), never merged in public.
+- **Private CI is deliberately light** (Actions minutes are the owner's):
+  tests run on pull requests only, on Python 3.12 only, and a docs-only PR
+  runs a thirty-second subset without installing torch; the audit runs on
+  every event. A push to private `main` is NOT tested — run `python -m
+  pytest` locally first. The public repository runs the full matrix.
 - **What is withheld is stated, not hidden**: `misc/export_public.py --list`.
   Session captures, the March 2026 business research, `docs/archive/`,
   `docs/superpowers/`, `docs/PUSH-PREP.md` — and, since 2026-09-11, **the

@@ -1,12 +1,14 @@
 # research/ — the dated record
 
-67 notes here, written as the work happened. A further 36 are held in the
-private archive: the 21 survey rounds from March 2026 (see *Literature
-scouting*) and the 15 late-August notes marked **held privately — product
-recipe** below, which spell out how a description becomes a font (which
-reference generators were tried, at what speed and licence, and how the
-picker behaves); their results are in the notes that remain, and in the
-README. They are **not** rewritten when a later
+The dated notes, written as the work happened. Some are held in the private
+archive rather than published: the twenty-one survey rounds from March 2026
+(see *Literature scouting*) and fifteen late-August notes that spell out how a
+description becomes a font — which reference generators were tried, at what
+speed and licence, and how the picker behaves. Twelve of those fifteen had
+index rows and are marked **held privately — product recipe** below; the
+other three were raw Oracle transcripts that were never indexed. Their
+results are in the notes that remain, and in the README. The notes are
+**not** rewritten when a later
 note contradicts an earlier one; a superseded finding keeps its original text and
 gains a marked correction, so the sequence of being wrong stays readable. Several
 of the most useful notes here are the ones that retract an earlier one.
@@ -14,9 +16,10 @@ of the most useful notes here are the ones that retract an earlier one.
 **A note title can outlive its finding.** Because notes are never rewritten, a
 headline asserting something later disproved stays at the top of the file. Where
 that happens the note now opens with a marked correction, and this index flags it
-with ⚠. Four such titles are known: the three levers below, and the OFL note,
+with ⚠. Five such titles are known: the three levers below; the OFL note,
 whose title carries the original "51 Microsoft fonts" figure that its own body
-corrects.
+corrects; and the first style-adherence write-up, partly retracted after an
+adversarial review.
 
 The narrative that ties these together is [`docs/what-happened.md`](../docs/what-happened.md).
 The current state of every claim is [`../README.md`](../README.md) and
@@ -88,7 +91,7 @@ Eleven notes carry the project's actual conclusion. Read them in this order.
 
 | note | |
 |---|---|
-| [The corpus is not 97.5% OFL](2026-08-08-the-corpus-is-not-97-percent-ofl.md) | **The title is the original claim; the body corrects it.** 87.0% OFL, and the "51 Microsoft fonts" headline became 49 fonts under vendor terms from several foundries — Inter and Lato were false positives found by reading name ID 13 instead of the folder path. |
+| [The corpus is not 97.5% OFL](2026-08-08-the-corpus-is-not-97-percent-ofl.md) | ⚠ **The title is the original claim; the body corrects it.** 87.0% OFL, and the "51 Microsoft fonts" headline became 49 fonts under vendor terms from several foundries — Inter and Lato were false positives found by reading name ID 13 instead of the folder path. |
 | [Identifying the undocumented 13%](2026-08-08-identifying-the-undocumented-13-percent.md) | How 121 fonts entered the corpus without provenance, and how they were traced back. |
 | [OFL derivative-work constraint](2026-07-27-ofl-derivative-work-constraint.md) | SIL's position: fonts from a model trained on OFL sources are derivatives and must themselves be OFL. |
 | [Klein licensing and the 4B port](2026-07-27-klein-licensing-and-4b-port.md) | The production base is non-commercial; the Apache-2.0 alternative is also the speed win. |
@@ -120,6 +123,7 @@ Eleven notes carry the project's actual conclusion. Read them in this order.
 | Eight of twelve offer no real choice (`2026-08-25-eight-of-twelve-offer-no-real-choice.md`) | **held privately — product recipe** · **8 of 12 descriptions produce four candidates the gate would call one typeface.** Cut taken from the gate's own 1.875, not invented. The picker is sound and rarely load-bearing. |
 | The second arm fails the same way (`2026-08-25-the-second-arm-fails-the-same-way.md`) | **held privately — product recipe** · **Eight seeds, two independent models, not one break.** The stencil failure is not a property of our generator -- it is the task. Z-Image-Turbo works but separates the twelve descriptions less than HALF as well (between 1.172 vs 2.514); 11/12 narrow. Both GLM paths dead. |
 | The edit path does not break a stroke either (`2026-08-25-the-edit-path-does-not-break-a-stroke-either.md`) | **held privately — product recipe** · Restyling a neutral Kg fails the same way, and the sweep shows why: up to strength 0.70 the model returns the source UNTOUCHED, at 0.90 it makes a heavier solid face. No middle. Closes img2img-on-a-t2i-model, NOT edit-native models. |
+| [A relational treatment does not transfer — under a weak signal](2026-09-11-a-relational-treatment-does-not-transfer-under-a-weak-signal.md) | **Pre-registered, amended before the run to declare the weak signal.** Equalise the `Kg` widths and the LoRA returns the plain atlas to within 0.7/255 (ink-width CV 0.402 → 0.403) while the stencil control reproduces its signature. Bounds the stencil finding to LOCAL treatments, conditionally: the pair is fixed at `Kg`, whose widths already nearly agree. Monospace does not join the constructed vocabulary. |
 | [Hand it a stencil and it propagates one](2026-08-28-hand-it-a-stencil-and-it-propagates-one.md) | **The stencil problem has an answer, and it was never a model problem.** No generator will INVENT a stencil, but hand the LoRA one and it propagates the treatment to the 92 letters it was not given: parts 0.74 -> 2.15, holes 0.20 -> 0.02. The inline positive control moved the OTHER way. |
 | [The distilled 4-step path](2026-07-30-distilled-4step-path.md) | 9× faster, but the LoRA does not transfer to it. |
 | [Training the LoRA on the distilled model](2026-07-31-distilled-trained-lora.md) | Recovers most of the transfer loss. |

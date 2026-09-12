@@ -48,10 +48,11 @@ mismatch that dropped a description from the transfer test without erroring.
 | `research/RESEARCH.md`, `research/BRAINSTORM.md` | the synthesis those rounds fed, and the original positioning memo |
 | `research/2026-08-01-bfl-commercial-licensing.md` | ranks the commercial routes with price estimates and names the critical path — business direction |
 | `research/2026-04-09-legal-font-sources.md` | an April Oracle report asserting named vendors' licence terms with "high confidence" and carrying foundry contact addresses — a legal and reputational exposure, not a finding |
-| **the product recipe** (36 files, listed in `misc/export_public.py` as `RECIPE`) | `app.py`, the description-to-reference generator, the constructed-reference builder and its probes, the picker analyses and their tests, five result records, and the 15 late-August notes on which reference generators were tried and how the picker behaves. See *The SaaS lane* below |
+| **the product recipe** (38 files, listed in `misc/export_public.py` as `RECIPE`) | `app.py`, the description-to-reference generator, the constructed-reference builder and its probes (the stencil, edit-path and relational-transfer probes), the picker analyses and their tests, six result records, and the 15 late-August notes on which reference generators were tried and how the picker behaves. Their notes and figures stay public. See *The SaaS lane* below |
 | `docs/archive/` (5) | stale 2026-03 planning whose links point at the files above |
 | `docs/superpowers/` (15) | agent-workflow plans and specs that cite the withheld research by section; the same directory is withheld from the owner's other public repositories for the same reason |
 | `docs/PUSH-PREP.md` | the private-push runbook; this document supersedes it |
+| `backup/` | the data backup — corpus and holdout renders, adapter weights, eval records, logs, and a font-pool manifest that records where every file came from. See *The private repository as a backup* below |
 
 **Everything else is exported byte-for-byte** — the exporter compares every
 staged blob and mode with HEAD's and refuses on any difference — including
@@ -116,6 +117,94 @@ itself.
 Any public-facing wording change is made in the **private** tree first and
 exported; the exporter never edits content. That keeps the two trees identical
 where they overlap and makes a re-export a pure filter.
+
+## The private repository as a backup
+
+Decided 2026-09-11, after `git worktree remove --force` followed NTFS junctions
+and emptied five gitignored data directories. Everything came back from
+surviving copies, which was luck rather than design
+([`../research/2026-09-11-the-junction-incident-and-what-came-back.md`](../research/2026-09-11-the-junction-incident-and-what-came-back.md)).
+The private repository already holds the whole record, so it also holds the
+data that cannot be re-downloaded or re-derived exactly.
+
+`backup/` holds twenty-one items: the rendered holdout and `dataset_v2` corpus
+with its template cache, the two shipped adapters, the glyph classifier, the
+generated atlases and the eval records behind the published tables and figures,
+the product track's reference candidates and probe outputs, the 91 root
+training and eval logs, the per-run training metadata, the vectoriser binary,
+and the font pool's provenance manifest. Several of those were added after a
+design review found consumers the first list had missed: `claim_ledger.py`
+reads the `scores.json` of arms that are not tracked, `lr_horizon_bug.py`
+parses two logs as *data*, and three figure scripts read render caches.
+
+What is *not* there is what regenerates or may not be uploaded: the 1.8 GB
+latent cache is one `cache_latents.py` run away, `dataset_v3` rebuilds from the
+tracked expansion set, `glyph_clf_data.npz` is 279 MiB of cached training data
+whose trained checkpoint is kept instead, and the font binaries are a licence
+constraint rather than a size one — their sha256s go into
+`backup/pool/HASHES.sha256` so a re-fetch can be checked file by file.
+
+**The corpus renders of the 87 licence-excluded stems are absent too, and that
+is the review's most important finding.** Every stem in
+`../research/corpus_exclusions.json` — 49 vendor-supplied Windows faces plus 38
+with no permissive licence — is dropped from `corpus_v2`, in the atlases, the
+references and the captions alike. This repository's own audit reads a 95-glyph
+atlas of such a face as exactly the *conversion* those terms withhold, and
+GitHub's terms require the right to upload even to a private repository. They
+regenerate locally from fonts that never left the machine. The adapters are a
+separate question and are kept: they were trained on the full corpus, before
+that filter existed, which is precisely why they live in a private backup and
+are not published.
+
+`misc/backup_private.py` has three subcommands — `make` refreshes the backup
+from the live data and refuses if any include pattern matches nothing, `verify`
+re-hashes every file against `backup/MANIFEST.sha256`, and `restore` writes
+back only what is absent. `restore` never deletes and never overwrites, and
+after the review it is also junction-safe: it refuses a destination outside the
+repository root, refuses if any existing directory on the way to one is a
+symlink or an NTFS junction — the failure that caused the incident — and writes
+each file to a `.restoring` sibling, hashes it there, and moves it into place
+only once it matches, so a crash never leaves a half-written file. GitHub
+refuses a blob of 100 MiB or more, so a file at or above 95 MiB is stored as
+consecutive `.partNN` files of 90 MiB, with the whole file's sha256 and size in
+`backup/CHUNKS.json` — today only the 9B adapter's 176 MB weights.
+`backup/README.md` is generated by `make` and carries the inventory.
+
+**It is withheld from the export, and scanned selectively by the sanitizer.**
+It may not be published: the renders and the adapters carry the licence and
+right-to-train questions above. The exporter's rule is in `MAY_BE_EMPTY`,
+because the owner commits the backup item by item and a clone without it must
+still export; a test pins both halves against a synthetic listing so the rule
+is proved even in a checkout that has no backup. `git archive` also takes an
+`:(exclude)backup` pathspec, so 400 MB is not tarred into memory on every
+export — an optimisation, with the `EXCLUDE` rule as the guarantee.
+
+The sanitizer's policy is deliberately three exemptions and no more, because an
+earlier draft skipped the whole prefix and thereby switched off every secret
+rule for the backup's text — the exact shape of failure
+`tests/test_sanitize_for_publish.py` exists to prevent. `blocked()` exempts the
+prefix, since weights and fonts are the *point* of the backup. `tracked()`
+skips only its binaries — the blocked suffixes plus `.exe`, `.npz` and the
+numbered `.partNN` chunks — and scans everything else, README, manifests and
+logs included. And `HOME_PATH_ALLOWED` suppresses the home-path finding, and
+nothing else, for three kinds of file whose content *is* a record of where
+something came from: the pool manifest's `origin_path`, a training log's
+command line, and a PEFT adapter card's `base_model:` front matter — the only
+surviving record of which base snapshot each adapter was trained from, since
+`adapter_config.json` writes `base_model_name_or_path: null`. That is the
+4B-versus-9B licensing question in one line. Secrets and machine names in those
+files are still reported and still fail, and `--fix` never rewrites them,
+because redacting any of them corrupts the record the backup is for.
+
+The allowance was set by measurement, not by guess: the shipped policy was run
+over all 264 text files the backup actually adds. It found 6,193 home paths,
+and zero secrets, machine names or pasted noise lines. The adapter cards were
+found that way, after the review had signed the list off.
+
+CI treats a backup refresh as a docs-only change so it does not install torch
+and run the matrix, but not as an unchecked one: the same step sets a second
+output, and a changed `backup/` runs `backup_private.py verify` and the tool's
+own tests.
 
 ## Gates before any change of visibility
 
@@ -197,8 +286,11 @@ git remote set-url origin https://github.com/sushiHex/digital-rain-private.git
 
 # 2. build the public tree next to this clone, review it, commit it
 python misc/export_public.py --dest ../digital-rain            # stages; sanitizer runs
-git -C ../digital-rain status                                  # read it
-python misc/export_public.py --dest ../digital-rain --commit
+git -C ../digital-rain status                                  # read it -- read only
+python misc/export_public.py --dest ../digital-rain --commit   # rebuilds the staging, commits
+# The staging run records the source HEAD under ../digital-rain/.git, which is
+# what lets the --commit run accept a dirty tree: its own. Anything edited by
+# hand in the export between the two runs is overwritten.
 (cd ../digital-rain && FONTGEN_NO_MODEL_DOWNLOADS=1 python -m pytest -rs)   # green IN the export
 git -C ../digital-rain log --format=%ae | sort -u                           # one noreply address
 
@@ -284,9 +376,14 @@ pieces, all in the tree:
   `CLAUDE.md` and `AGENTS.md` (a pointer to `CLAUDE.md` for non-Claude agents).
 - `.github/workflows/ci.yml` — `python -m pytest` on Python 3.12 and 3.14 on a
   CPU runner with `FONTGEN_NO_MODEL_DOWNLOADS=1`, plus a `public-audit` job
-  that runs the sanitizer. Tests that need the GPU, the corpus, weights or
-  potrace skip; gate 3 above checks that the suite passes without them.
-  Third-party actions are pinned to full commit SHAs.
+  that runs the sanitizer and a checksum-pinned gitleaks over the whole
+  history. Tests that need the GPU, the corpus, weights or potrace skip; gate
+  3 above checks that the suite passes without them. Third-party actions are
+  pinned to full commit SHAs. **The same file runs light on the private
+  repository**, where the minutes are the owner's: tests on pull requests
+  only, Python 3.12 only, a docs-only change runs a thirty-second subset
+  without torch, superseded runs are cancelled, and branch protection there
+  does not force branches up to date. The audit runs on every event in both.
 - `.github/CODEOWNERS` — `@sushiHex` on everything, named again on the files
   that define the boundary.
 - `.github/dependabot.yml` — weekly for GitHub Actions only; the Python floors
@@ -356,3 +453,4 @@ floors is not going to carry a lockfile yet.
 | 2026-08-24 | sanitizer caught a home path that entered via a session capture |
 | 2026-09-11 | sanitizer found to miss JSON-escaped paths; fixed and pinned. Runners moved to `runners/`. Exporter written. Decision to go public via a fresh repository. Steps 1–3 run: renamed, exported, private-first `digital-rain` created, configured, CI green. Cross-review (22 findings) folded in. The SaaS-lane carve-out decided and applied: 550 files public, 86 withheld. Step 4 not run. |
 | 2026-09-11 | Licence chosen after a second adversarial review: AGPL-3.0-only / CC BY 4.0 / CC0 1.0 with a CLA (`licensing.md`). The "held until a licence exists" rule becomes "held until the CLA is signed". |
+| 2026-09-11 | Workflow reversed at the owner's direction: the private repository is the working one, the public one a curated export. Sixteen issues migrated; private CI made light (PRs only, one Python, docs-only subset). This row was added by the first pull request through that workflow, to prove the docs-only path. |

@@ -88,18 +88,71 @@ BLOCKED_SUFFIX = (".ttf", ".otf", ".woff", ".woff2", ".pt", ".pth", ".ckpt",
                   ".tgz", ".7z", ".tar", ".rar")
 
 
+# THE DATA BACKUP (misc/backup_private.py) IS SCANNED SELECTIVELY, NOT SKIPPED.
+# It is tracked in the PRIVATE repository only and never exported, but skipping
+# it wholesale would switch off every secret rule for its text -- and this file
+# exists because a gate that passes on the thing it is for is worse than no
+# gate. So the policy is exactly three exemptions and no more:
+#
+#   blocked()  exempts it. Weights, fonts and the vectoriser binary are the
+#              POINT of the backup; the block exists to stop them reaching the
+#              public tree, which this directory never does.
+#   tracked()  skips only its BINARIES -- the blocked suffixes plus .exe, .npz
+#              and the numbered .partNN chunks -- because reading a safetensors
+#              shard as text produces noise, not findings. Every other file in
+#              it, including README.md, the manifests and the logs, is scanned.
+#   HOME_PATH_ALLOWED  suppresses the HOME-PATH finding, and nothing else, for
+#              three kinds of file whose whole purpose is to record where
+#              something came from. source_manifest.json's `origin_path` is the
+#              provenance the manifest exists to keep. A training log records
+#              the command line that produced a result, and
+#              viz/lr_horizon_bug.py parses two of them as data. And a PEFT
+#              adapter card's `base_model:` front matter is the ONLY surviving
+#              record of which base-model snapshot the weights were trained
+#              from -- adapter_config.json writes `base_model_name_or_path:
+#              null` -- which is the 4B-versus-9B licensing question in one
+#              line. Redacting any of them corrupts the record the backup
+#              exists to preserve byte for byte, so --fix skips them too.
+#              Secrets and machine names in them are still reported and still
+#              fail; this suppresses one finding, not the scan.
+BACKUP_PREFIX = "backup/"
+BACKUP_BINARY_SUFFIX = (".exe", ".npz")
+BACKUP_PART = re.compile(r"\.part\d+$")
+HOME_PATH_ALLOWED = ("backup/pool/source_manifest.json", "backup/logs/",
+                     "backup/adapters/")
+
+
 def all_tracked():
     out = subprocess.run(["git", "ls-files"], capture_output=True, text=True)
     return [f for f in out.stdout.splitlines() if f]
 
 
+def is_backup_binary(path):
+    low = path.lower()
+    return (low.startswith(BACKUP_PREFIX)
+            and (low.endswith(BLOCKED_SUFFIX)
+                 or low.endswith(BACKUP_BINARY_SUFFIX)
+                 or BACKUP_PART.search(low) is not None))
+
+
+def home_paths_allowed(path):
+    """True for the backup files whose content IS a record of where things are."""
+    return any(path.startswith(prefix) for prefix in HOME_PATH_ALLOWED)
+
+
 def tracked():
-    return [f for f in all_tracked() if not f.lower().endswith(SKIP_SUFFIX)]
+    return [f for f in all_tracked()
+            if not f.lower().endswith(SKIP_SUFFIX) and not is_backup_binary(f)]
 
 
 def blocked():
-    """Tracked fonts, weights and archives -- none may be published."""
-    return [f for f in all_tracked() if f.lower().endswith(BLOCKED_SUFFIX)]
+    """Tracked fonts, weights and archives -- none may be published.
+
+    The backup is exempt: it holds them on purpose and is never exported.
+    """
+    return [f for f in all_tracked()
+            if f.lower().endswith(BLOCKED_SUFFIX)
+            and not f.startswith(BACKUP_PREFIX)]
 
 
 def scan_text(text):
@@ -137,6 +190,11 @@ def main(argv=None):
         except OSError:
             continue
         h, n, sec, m = scan_text(text)
+        if h and home_paths_allowed(f):
+            # The home path IS the content here (see HOME_PATH_ALLOWED). Only
+            # this finding is suppressed; secrets and machine names below are
+            # collected and reported exactly as for any other file.
+            h = 0
         if sec:
             secret_hits.append((f, sec))
         if not (h or n or m):
@@ -145,8 +203,12 @@ def main(argv=None):
         tot["noise"] += n
         tot["machine"] += m
         touched.append((f, h, n, m))
-        if args.fix:
+        if args.fix and not home_paths_allowed(f):
             open(f, "w", encoding="utf-8", newline="").write(clean_text(text))
+        # A file in HOME_PATH_ALLOWED is never rewritten: clean_text would
+        # substitute the very paths it is kept for, and the backup's whole
+        # contract is that a restored file is byte-identical to the original.
+        # Any noise line or machine name in one is reported, to be fixed by hand.
 
     CODE = (".py", ".sh", ".ps1", ".js", ".ts", ".yaml", ".yml", ".toml", ".cfg")
     code_touched = []

@@ -66,11 +66,53 @@ def test_the_known_private_material_is_withheld():
         assert p not in kept, p
     for prefix in ("research/sessions/", "docs/archive/", "docs/superpowers/"):
         assert not any(p.startswith(prefix) for p in kept), prefix
+    # Every fingerprint in .gitleaksignore names a commit absent from the public
+    # history and a file this export withholds, so exporting it would advertise
+    # a suppression while pointing at nothing.
+    assert ".gitleaksignore" not in kept
     # the product recipe -- results public, code and how-to private
     for p in ("app.py", "analysis/generate_candidate_references.py",
               "analysis/constructed_reference.py", "tests/test_picker_path.py",
               "research/2026-08-25-the-picker-works-except-where-it-is-needed.md"):
         assert p not in kept, p
+
+
+def test_the_data_backup_is_withheld_and_may_be_absent():
+    """`backup/` (misc/backup_private.py) must never reach the public tree.
+
+    It is also the one rule allowed to match nothing: the owner commits the
+    backup item by item, so a clone without it must still export. Both halves
+    are pinned here because dropping either would be silent -- a missing rule
+    publishes 400 MB of vendor-licensed renders and adapter weights, and a
+    missing MAY_BE_EMPTY entry makes the exporter refuse on a fresh clone.
+    """
+    assert any(pat == "backup/" for pat, _ in ex.EXCLUDE)
+    assert "backup/" in ex.MAY_BE_EMPTY
+    kept, _ = ex.partition(ex.tracked_at_head(ex.REPO))
+    assert not any(p.startswith("backup/") for p in kept)
+
+    # Synthetic, so the rule is proved on a tree that HAS a backup even when
+    # this checkout does not: the MAY_BE_EMPTY entry above would otherwise let
+    # a broken rule pass unnoticed until the day the backup is committed.
+    kept, excluded = ex.partition(
+        ["README.md", "backup/x.part00", "backup/holdout/manifest.json"])
+    assert kept == ["README.md"]
+    assert excluded["backup/"] == ["backup/x.part00",
+                                   "backup/holdout/manifest.json"]
+
+
+def test_the_archive_excludes_the_backup_at_the_source():
+    """400 MB of binaries must not be tarred into memory on every export.
+
+    The pathspec is an optimisation; the EXCLUDE rule is the guarantee. Both
+    are pinned, because a pathspec typo that stopped excluding would be
+    invisible (the export would still be correct, just slow) and one that
+    excluded too much would be caught by extract_head's written-count check.
+    """
+    source = open(os.path.join(ex.REPO, "misc", "export_public.py"),
+                  encoding="utf-8").read()
+    assert 'f":(exclude){BACKUP_DIR}"' in source
+    assert ex.BACKUP_DIR == "backup"
 
 
 def test_nothing_kept_imports_a_withheld_module():
@@ -80,9 +122,12 @@ def test_nothing_kept_imports_a_withheld_module():
     withheld_mods |= {m.rsplit(".", 1)[-1] for m in withheld_mods}   # bare names
     offenders = []
     for p in kept:
-        if not p.endswith(".py"):
+        full = os.path.join(ex.REPO, p)
+        # HEAD's listing; a file removed in the working tree but not yet
+        # committed is a transient, not an offender.
+        if not p.endswith(".py") or not os.path.isfile(full):
             continue
-        text = open(os.path.join(ex.REPO, p), encoding="utf-8", errors="replace").read()
+        text = open(full, encoding="utf-8", errors="replace").read()
         for m in withheld_mods:
             if f"from {m} import" in text or f"import {m}\n" in text or f"import {m} " in text:
                 offenders.append((p, m))
@@ -230,3 +275,37 @@ def test_prepare_dest_refuses_a_dirty_public_tree(tmp_path):
     with pytest.raises(SystemExit, match="uncommitted"):
         ex.prepare_dest(str(dest))
     assert (dest / "edited.txt").exists(), "refusal must not delete anything"
+    # a staging record for a DIFFERENT source HEAD does not open the door
+    ex.mark_staged(str(dest), "a" * 40)
+    with pytest.raises(SystemExit, match="uncommitted"):
+        ex.prepare_dest(str(dest), "b" * 40)
+    assert (dest / "edited.txt").exists()
+
+
+def test_a_staged_export_is_rebuilt_by_the_commit_run(tmp_path, monkeypatch):
+    """The two-step flow: stage (dest left dirty on purpose), review, re-run.
+
+    The re-run must accept the dirty tree it made itself -- and only that:
+    the record names the source HEAD, and the tree is rebuilt in full, so a
+    hand edit made during the review does not survive.
+    """
+    src = _fixture_repo(tmp_path)
+    rules = _with_fixture_rules(monkeypatch)
+    dest = tmp_path / "public"
+    head = _git(["rev-parse", "HEAD"], src).strip()
+    _export(src, dest, rules)
+    ex.mark_staged(str(dest), head)
+    assert ex.staged_from(str(dest)) == head
+    assert not ex.is_clean(str(dest)), "staging leaves the tree dirty by design"
+    (dest / "keep.py").write_text("print('edited during review')\n", encoding="utf-8")
+    # the commit run: same HEAD -> accepted and rebuilt; the edit is gone
+    ex.prepare_dest(str(dest), head)
+    ex.extract_head(str(src), str(dest), ex.partition(ex.tracked_at_head(str(src)), rules)[0])
+    assert (dest / "keep.py").read_bytes() == (src / "keep.py").read_bytes()
+    _git(["config", "user.email", "t@users.noreply.github.com"], dest)
+    _git(["config", "user.name", "t"], dest)
+    ex.stage(str(dest), ex.partition(ex.tracked_at_head(str(src)), rules)[0], repo=str(src))
+    ex.commit(str(dest), str(src))
+    ex.clear_staged(str(dest))
+    assert ex.staged_from(str(dest)) is None
+    assert ex.is_clean(str(dest))

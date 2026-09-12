@@ -26,6 +26,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from analysis import sanitize_for_publish as sanitize  # noqa: E402
 from analysis.sanitize_for_publish import clean_text, scan_text  # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent
@@ -126,6 +127,99 @@ def test_check_fails_on_a_tracked_font_or_weight(tmp_path):
     subprocess.run([sys.executable, str(TOOL), "--fix"], cwd=tmp_path,
                    capture_output=True, text=True)
     assert (tmp_path / "Some.ttf").exists()
+
+
+def test_the_data_backup_is_scanned_selectively(monkeypatch):
+    """Its binaries are exempt; its TEXT is still scanned for secrets.
+
+    The data backup (`misc/backup_private.py`) is tracked privately and never
+    exported, so the weights and fonts in it must not fail `blocked()` and the
+    binaries must not be read as text. Skipping the whole prefix would switch
+    off every secret rule for its logs, manifests and README -- which is the
+    failure this file exists to prevent.
+    """
+    listing = "\n".join([
+        "README.md",
+        "backup/README.md",
+        "backup/MANIFEST.sha256",
+        "backup/pool/source_manifest.json",
+        "backup/logs/glyph_4b.log",
+        "backup/holdout/atlases/x.png",
+        "backup/adapters/glyph_r32_5000/final/adapter_model.safetensors.part00",
+        "backup/classifier/glyph_classifier.pt",
+        "backup/corpus_v2/cache/template.pt",
+        "backup/tools/potrace.exe",
+        "analysis/sanitize_for_publish.py",
+    ]) + "\n"
+
+    class _Proc:
+        stdout = listing
+
+    monkeypatch.setattr(sanitize.subprocess, "run", lambda *a, **k: _Proc())
+
+    assert len(sanitize.all_tracked()) == 11, "the prefix is no longer dropped"
+    assert sanitize.blocked() == [], "a backed-up weight must not fail the gate"
+    scanned = sanitize.tracked()
+    for text_file in ("backup/README.md", "backup/MANIFEST.sha256",
+                      "backup/pool/source_manifest.json",
+                      "backup/logs/glyph_4b.log"):
+        assert text_file in scanned, text_file
+    for binary in ("backup/adapters/glyph_r32_5000/final/"
+                   "adapter_model.safetensors.part00",
+                   "backup/classifier/glyph_classifier.pt",
+                   "backup/corpus_v2/cache/template.pt",
+                   "backup/tools/potrace.exe",
+                   "backup/holdout/atlases/x.png"):
+        assert binary not in scanned, binary
+
+
+def test_a_tracked_weight_outside_the_backup_still_fails(monkeypatch):
+    """The exemption is the backup prefix, not the suffix."""
+    class _Proc:
+        stdout = "models/loose.safetensors\nbackup/classifier/glyph_classifier.pt\n"
+
+    monkeypatch.setattr(sanitize.subprocess, "run", lambda *a, **k: _Proc())
+    assert sanitize.blocked() == ["models/loose.safetensors"]
+
+
+def test_only_the_recording_files_may_carry_a_home_path(tmp_path):
+    """`--check` passes on the provenance manifest and fails on the README.
+
+    The pool manifest's `origin_path` and a training log's command line ARE
+    the record; redacting them corrupts the thing the backup exists to keep.
+    Everything else in the backup is held to the same bar as the rest of the
+    tree, which is what makes the exemption a policy rather than a hole.
+    """
+    _repo(tmp_path)
+    leak = json.dumps({"origin_path": home("\\")})
+    for rel in ("backup/pool/source_manifest.json", "backup/logs/glyph_4b.log",
+                "backup/adapters/glyph_4b_r32_5000/final/README.md"):
+        path = tmp_path / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(leak, encoding="utf-8")
+    subprocess.run(["git", "add", "-A", "-f"], cwd=tmp_path, check=True)
+    proc = _check(tmp_path)
+    assert proc.returncode == 0, proc.stdout + proc.stderr
+
+    readme = tmp_path / "backup" / "README.md"
+    readme.write_text(leak, encoding="utf-8")
+    subprocess.run(["git", "add", "-A", "-f"], cwd=tmp_path, check=True)
+    proc = _check(tmp_path)
+    assert proc.returncode == 1, proc.stdout + proc.stderr
+    assert "backup/README.md" in proc.stdout
+
+
+def test_fix_never_rewrites_a_recording_file(tmp_path):
+    """--fix would substitute the very paths the manifest is kept for."""
+    _repo(tmp_path)
+    path = tmp_path / "backup" / "pool" / "source_manifest.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    original = json.dumps({"origin_path": home("\\")})
+    path.write_text(original, encoding="utf-8")
+    subprocess.run(["git", "add", "-A", "-f"], cwd=tmp_path, check=True)
+    subprocess.run([sys.executable, str(TOOL), "--fix"], cwd=tmp_path,
+                   capture_output=True, text=True)
+    assert path.read_text(encoding="utf-8") == original
 
 
 def test_the_tracked_tree_is_clean():

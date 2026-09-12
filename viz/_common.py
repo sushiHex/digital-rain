@@ -50,7 +50,12 @@ def label_font(size, bold=False):
             return ImageFont.truetype(name, size)
         except Exception:
             pass
-    return ImageFont.load_default()
+    # Keep the requested size on the fallback too; the sizeless default is
+    # 10 px and would shrink every label on a machine without Arial.
+    try:
+        return ImageFont.load_default(size=size)
+    except TypeError:                       # Pillow < 10.1
+        return ImageFont.load_default()
 
 
 def ensure_out():

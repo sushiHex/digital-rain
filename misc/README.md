@@ -14,8 +14,9 @@ python -m misc.<script> --help
 Scripts import repo-root modules (`atlas_constants`, `eval_checkpoint`, ...); a two-line
 `sys.path` bootstrap at the top of each makes direct-path invocation work too.
 
-## Contents (10)
+## Contents (11)
 
+- `backup_private.py` — Back up the non-available data into `backup/` in the private repository, verify it, and restore it -- never de...
 - `configure_public_repo.py` — Apply the public repository's labels, settings and branch protection with `gh`.
 - `export_public.py` — Export the public tree: every file tracked at HEAD, minus a stated exclusion list.
 - `route_b_cache.py` — First-block (FB) step-caching ported to the patched FLUX.2 forward (Route B).

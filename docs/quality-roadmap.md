@@ -1,9 +1,10 @@
 # Font LoRA Quality Improvement Roadmap
 
-> **Superseded.** This is v1, written before any quantitative eval existed.
+> **Superseded on 2026-04-30**, the date of v3's first commit. This is v1,
+> written before any quantitative eval existed.
 > Current: [`quality-roadmap-v3.md`](quality-roadmap-v3.md) (read its
 > SUPERSEDED section too) and [`../README.md`](../README.md).
-> Kept as the record of what was believed at the time — several of its
+> Kept as a dated record of what was believed at the time — several of its
 > premises, char_acc chief among them, were later shown to be measuring
 > something other than what the plan assumed.
 

@@ -1,0 +1,5 @@
+# The data backup (misc/backup_private.py) is stored byte for byte: no
+# line-ending conversion anywhere under it, or MANIFEST.sha256 would stop
+# matching after a clone, and the numbered parts of a chunked file are binary.
+backup/** -text
+backup/**/*.part* binary
