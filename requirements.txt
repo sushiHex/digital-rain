@@ -1,0 +1,43 @@
+# Runtime dependencies for the training/eval pipeline.
+#
+# torch/torchvision: install these FIRST from the CUDA index matching your
+# driver -- the plain PyPI wheels are CPU-only and every model path here needs
+# a GPU. Developed against cu128 on an RTX 3090 (24 GB):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+#
+# Then: pip install -r requirements.txt
+
+# --- diffusion / model stack ---
+torch>=2.6.0
+torchvision>=0.21.0
+diffusers>=0.36.0          # FLUX.2-klein support; a dev build was needed at time of writing
+transformers>=4.45.0
+peft>=0.14.0               # rank-32 LoRA + modules_to_save for the widened x_embedder
+safetensors>=0.4.5
+huggingface-hub>=0.26.0
+optimum-quanto>=0.2.6      # qint8 weights; the 9B transformer will not fit in 24 GB otherwise
+accelerate>=1.0.0
+
+# --- metrics / analysis ---
+numpy>=1.26.0
+scipy>=1.11.0              # paired Wilcoxon in analysis/compare_runs.py
+lpips>=0.1.4
+psutil>=5.9.0
+tqdm>=4.66.0
+
+# --- font & image handling ---
+Pillow>=10.0.0
+fonttools[woff]>=4.51.0
+freetype-py>=2.4.0
+svgpathtools>=1.6.0
+
+# --- corpus sourcing (pipeline/fetch_fonts.py) ---
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+
+# --- optional, per-track: see pyproject.toml extras ---
+# datasets/trl  -- pipeline/train_font_model.py only
+# gradio        -- app.py demo only
+# fal-client    -- src/vecglypher.py, the superseded external-API path
+# nunchaku      -- Route B (INT4/SVDQuant); not on PyPI, build from source:
+#                  https://github.com/nunchaku-tech/nunchaku

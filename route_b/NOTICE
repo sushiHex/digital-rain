@@ -1,0 +1,52 @@
+This directory contains a MODIFIED copy of third-party source code.
+
+--------------------------------------------------------------------------
+Nunchaku
+    https://github.com/mit-han-lab/nunchaku
+    Copyright (c) MIT HAN Lab and the Nunchaku contributors.
+    Licensed under the Apache License, Version 2.0.
+    Full licence text: route_b/LICENSE.nunchaku
+--------------------------------------------------------------------------
+
+FILES DERIVED FROM NUNCHAKU
+---------------------------
+
+  route_b/transformer_flux2.patched.py
+      A modified copy of
+          nunchaku/models/transformers/transformer_flux2.py
+      from nunchaku 1.2.1, with the changes from upstream pull request #926
+      ("feat/flux2-klein_nunchaku", by tonera) applied on top.
+
+  route_b/route_b.patch
+      A unified diff against that same upstream file.
+
+STATEMENT OF CHANGES (Apache-2.0 section 4(b))
+----------------------------------------------
+
+Relative to nunchaku 1.2.1, the vendored file has been changed to:
+
+  * incorporate upstream PR #926, adding FLUX.2-klein support that was not
+    present in the 1.2.1 release;
+  * route attention through an unfused QKV path so that a runtime hook can
+    observe the projections (upstream fuses QKV inside a single call, so a
+    hook never fires) -- see route_b/README.md;
+  * accommodate a widened `x_embedder` (128 -> 256 input channels) for this
+    project's glyph-latent conditioning channel.
+
+These modifications were made by this repository's author and are not
+endorsed by, or the responsibility of, the Nunchaku project.
+
+WHY THIS FILE EXISTS
+--------------------
+
+Apache-2.0 section 4 requires that anyone redistributing a derivative work
+(a) hand recipients a copy of the licence, (b) carry prominent notices
+stating that files were changed, and (c) retain the original attribution
+notices. Until 2026-08-08 this repository shipped the derived file with none
+of the three -- provenance was described in route_b/README.md as prose, which
+documents the code but does not satisfy the licence.
+
+Note that the Route B track itself is CLOSED (see route_b/README.md and
+CLAUDE.md): Nunchaku exposes no runtime-LoRA API for the quantized FLUX.2
+transformer. The code is retained as a record of the investigation, which
+does not change the redistribution obligation.

@@ -1,0 +1,107 @@
+__pycache__/
+*.pyc
+.venv/
+.venv-nunchaku/
+.env
+*.ttf
+*.woff2
+*.otf
+dist/
+build/
+*.egg-info/
+.ruff_cache/
+
+# Datasets / fonts (large, local, regenerable)
+dataset/
+dataset_*/
+font_pool/
+font_pool_selected/
+google-fonts/
+
+# Experiment outputs / eval runs / model dirs (large artifacts)
+#
+# NOTE: a handful of files under eval_runs/, dataset_*/ and training_*/ ARE
+# tracked, force-added past these rules on purpose -- they are the evidence
+# behind the numbers in README.md, not regenerable-on-demand scratch. Chiefly
+# the per_cell.json/scores.json for the two runs in the results table, so
+# `python analysis/compare_runs.py` reproduces it from a clean clone.
+# `git ls-files -i -c --exclude-standard` lists the full set. Adding another
+# one is deliberate: `git add -f <path>`.
+experiments/
+eval_runs/
+eval_holdout/
+model_c*/
+
+# Image / model-weight artifacts
+*.png
+*.bmp
+*.svg
+*.jpg
+*.jpeg
+*.pt
+*.pth
+*.safetensors
+*.log
+*.err
+*_log.txt
+
+# Rendered HTML proofs / botched-command junk
+test_render.html
+=*
+VQ-Font*
+2026-*-this-session-*.txt
+
+glyph_clf_data*.npz
+glyph_classifier*.pt
+
+# Training output dirs (weights covered by *.pt/*.safetensors, but the dirs
+# also carry metrics.csv/train_config.json/README.md that we don't version)
+training_*/
+!training_*.py
+
+# Vendored binaries / downloaded model weights
+tools/
+models/
+
+# Detached-run status markers + watchdog liveness flags (see the *.sh runners)
+*_DONE
+*_FAIL
+*_RUNNING
+*_STOP
+
+# GT-guided-preference (DPO) pipeline scratch data — regenerable candidate
+# renders + scores; the track is closed (see research/2026-06-03-generator-
+# track-decision.md), these are kept locally only as reproduction artifacts
+dpo_pilot/
+dpo_smoke/
+dpo_holdout_bestofn/
+bestofn_4b/
+.playwright-mcp/
+dpo_data/
+
+# Ad-hoc analysis scratch
+scratch_*.py
+scratch_*.json
+measure_ocr_symbols_results.json
+
+# One-off Smith-prompt input for oracle_run.sh; the reports it produced are
+# versioned in research/, the throwaway input is not
+oracle_prompts*.json
+
+# Generated HTML galleries/proofs
+model_comparison.html
+pipeline_comparison.html
+ref2font_preview.html
+style_gallery.html
+
+# Derived holdout (regenerate with build_rg_holdout.py)
+eval_holdout_rg/
+
+# Figures in viz/ are documentation assets referenced by README.md -- keep them
+!viz/*.png
+
+# Session captures written by an editor hook into whatever tree it runs in.
+# Private working memory, not research; withheld from the public export
+# (misc/export_public.py) and never to be tracked in the public repository.
+# The three already tracked in the private archive stay there.
+research/sessions/

@@ -1,0 +1,212 @@
+{
+ "preregistered": true,
+ "bar": "9/11 and p<0.05",
+ "classes": [
+  "solid",
+  "stencil",
+  "inline",
+  "outline"
+ ],
+ "features": [
+  "stroke",
+  "slant",
+  "fill",
+  "parts",
+  "width_cv",
+  "aspect",
+  "holes",
+  "hole_area"
+ ],
+ "sources": 60,
+ "train_n": 232,
+ "correct": 10,
+ "n": 11,
+ "p": 0.005859375,
+ "passed": true,
+ "real": [
+  {
+   "face": "allerta",
+   "stem": "AllertaStencil-Regular",
+   "true": "stencil",
+   "pred": "stencil",
+   "ok": true,
+   "p_stencil": 0.687584284272465,
+   "p_inline": 0.0010529265260617279,
+   "argmax4": "stencil"
+  },
+  {
+   "face": "alumnisans",
+   "stem": "AlumniSansInlineOne-Italic",
+   "true": "inline",
+   "pred": "inline",
+   "ok": true,
+   "p_stencil": 0.04513385885441683,
+   "p_inline": 0.17736245432952488,
+   "argmax4": "solid"
+  },
+  {
+   "face": "bigshoulders",
+   "stem": "BigShouldersInlineDisplaySC[wght]",
+   "true": "inline",
+   "pred": "inline",
+   "ok": true,
+   "p_stencil": 0.050153010251164684,
+   "p_inline": 0.8089896228225908,
+   "argmax4": "inline"
+  },
+  {
+   "face": "bigshoulders",
+   "stem": "BigShouldersStencilDisplaySC[wght]",
+   "true": "stencil",
+   "pred": "stencil",
+   "ok": true,
+   "p_stencil": 0.2879009989785964,
+   "p_inline": 0.023504028090354477,
+   "argmax4": "solid"
+  },
+  {
+   "face": "bungee",
+   "stem": "BungeeInline-Regular",
+   "true": "inline",
+   "pred": "inline",
+   "ok": true,
+   "p_stencil": 0.008162957298275686,
+   "p_inline": 0.151064903822989,
+   "argmax4": "solid"
+  },
+  {
+   "face": "fascinate",
+   "stem": "FascinateInline-Regular",
+   "true": "inline",
+   "pred": "stencil",
+   "ok": false,
+   "p_stencil": 0.061251250592655855,
+   "p_inline": 0.0001269400508929578,
+   "argmax4": "solid"
+  },
+  {
+   "face": "runicsans",
+   "stem": "Runic_Sans_Inline",
+   "true": "inline",
+   "pred": "inline",
+   "ok": true,
+   "p_stencil": 0.05092054325274552,
+   "p_inline": 0.3329733178390096,
+   "argmax4": "solid"
+  },
+  {
+   "face": "saira",
+   "stem": "SairaStencil-Italic[wdth,wght]",
+   "true": "stencil",
+   "pred": "stencil",
+   "ok": true,
+   "p_stencil": 0.8285303911739043,
+   "p_inline": 0.016004529876279774,
+   "argmax4": "stencil"
+  },
+  {
+   "face": "sirin",
+   "stem": "SirinStencil-Regular",
+   "true": "stencil",
+   "pred": "stencil",
+   "ok": true,
+   "p_stencil": 0.7412585650306985,
+   "p_inline": 0.0038550357312973284,
+   "argmax4": "stencil"
+  },
+  {
+   "face": "stardos",
+   "stem": "StardosStencil-Bold",
+   "true": "stencil",
+   "pred": "stencil",
+   "ok": true,
+   "p_stencil": 0.4376423580087599,
+   "p_inline": 0.0004270778376124796,
+   "argmax4": "solid"
+  },
+  {
+   "face": "theleagueofostrichsansostrichsans",
+   "stem": "theleagueof_ostrich-sans_OstrichSansInline-Italic",
+   "true": "inline",
+   "pred": "inline",
+   "ok": true,
+   "p_stencil": 0.0057337135831699165,
+   "p_inline": 0.2978555301359026,
+   "argmax4": "outline"
+  }
+ ],
+ "generated": [
+  {
+   "atlas": "00",
+   "argmax": "solid",
+   "p_stencil": 0.15335432898155874,
+   "p_inline": 0.0004829458275010202
+  },
+  {
+   "atlas": "01",
+   "argmax": "solid",
+   "p_stencil": 0.12571623574479412,
+   "p_inline": 0.016768020180501726
+  },
+  {
+   "atlas": "02",
+   "argmax": "solid",
+   "p_stencil": 0.13098294677760236,
+   "p_inline": 8.049991674969741e-05
+  },
+  {
+   "atlas": "03",
+   "argmax": "solid",
+   "p_stencil": 0.1455191940504097,
+   "p_inline": 0.014145184735669558
+  },
+  {
+   "atlas": "04",
+   "argmax": "solid",
+   "p_stencil": 0.18146411763483422,
+   "p_inline": 0.00017678017053673182
+  },
+  {
+   "atlas": "05",
+   "argmax": "solid",
+   "p_stencil": 0.1736032022927118,
+   "p_inline": 0.0002625101438589195
+  },
+  {
+   "atlas": "06",
+   "argmax": "solid",
+   "p_stencil": 0.20091420982115638,
+   "p_inline": 0.00014082891503254825
+  },
+  {
+   "atlas": "07",
+   "argmax": "outline",
+   "p_stencil": 7.019899945765682e-06,
+   "p_inline": 0.12825485574445245
+  },
+  {
+   "atlas": "08",
+   "argmax": "solid",
+   "p_stencil": 0.15332200176743024,
+   "p_inline": 0.0016190075474094145
+  },
+  {
+   "atlas": "09",
+   "argmax": "solid",
+   "p_stencil": 0.192361631920499,
+   "p_inline": 0.00013802823178373256
+  },
+  {
+   "atlas": "10",
+   "argmax": "inline",
+   "p_stencil": 0.0048618777316363744,
+   "p_inline": 0.642231385904163
+  },
+  {
+   "atlas": "11",
+   "argmax": "solid",
+   "p_stencil": 0.204790782081957,
+   "p_inline": 0.0002743127568347788
+  }
+ ]
+}

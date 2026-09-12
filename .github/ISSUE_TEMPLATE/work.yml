@@ -1,0 +1,50 @@
+name: Work item
+description: Scope one implementation or investigation outcome
+title: "work: "
+labels: ["needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One work item owns one outcome. Tracking work does not approve a design.
+        Do not include credentials, home-directory paths, private corpora, or material from the private archive.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Preflight
+      options:
+        - label: I searched existing issues and pull requests, including closed ones.
+          required: true
+        - label: I removed secrets, personal paths and private data from all text and attachments.
+          required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Work kind
+      options:
+        - Implementation
+        - Investigation
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome and scope
+      description: What changes or becomes known? Include non-goals and the smallest useful scope.
+    validations:
+      required: true
+  - type: textarea
+    id: prerequisites
+    attributes:
+      label: Prerequisites and authority
+      description: Link the decision, note or issue this rests on. Say "none" if none. GPU time needed, if any.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Observable completion criteria
+      description: Tests that will pass, a number that will be reported with its noise, a note that will be written. Investigations need a stopping condition and may end negatively.
+    validations:
+      required: true

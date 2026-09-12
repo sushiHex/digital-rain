@@ -1,0 +1,87 @@
+{
+  "run_a": "eval_runs/structured_prompt_5000/per_cell.json",
+  "run_b": "eval_runs/glyph_4b_r32_5000/per_cell.json",
+  "label_a": "9Bbaseline",
+  "label_b": "4Bglyph",
+  "n_shared_fonts": 50,
+  "results": [
+    {
+      "metric": "composite",
+      "larger_better": true,
+      "median_a": 0.8390895885019067,
+      "median_b": 0.8405057388744217,
+      "median_delta": -0.0059931928717947835,
+      "W": 619.0,
+      "p": 0.8582565242050537,
+      "effect_r": 0.02525700242647622,
+      "n_nonzero": 50,
+      "direction": 1,
+      "mean_delta_nonzero": 0.004866389775192968
+    },
+    {
+      "metric": "char_acc",
+      "larger_better": true,
+      "median_a": 0.7287234042553192,
+      "median_b": 0.7287234042553192,
+      "median_delta": -0.010638297872340413,
+      "W": 387.5,
+      "p": 0.20944972636348047,
+      "effect_r": 0.18921042653862388,
+      "n_nonzero": 44,
+      "direction": -1,
+      "mean_delta_nonzero": -0.024661508704061898
+    },
+    {
+      "metric": "racc",
+      "larger_better": true,
+      "median_a": 0.803191489361702,
+      "median_b": 0.7872340425531915,
+      "median_delta": 0.0,
+      "W": 477.5,
+      "p": 0.651194286533529,
+      "effect_r": 0.06739563870448934,
+      "n_nonzero": 45,
+      "direction": -1,
+      "mean_delta_nonzero": -0.005673758865248214
+    },
+    {
+      "metric": "dinov2",
+      "larger_better": true,
+      "median_a": 0.8671907427463126,
+      "median_b": 0.8632613896055424,
+      "median_delta": -0.0031947363564308606,
+      "W": 637.0,
+      "p": 0.9961487345006347,
+      "effect_r": 0.00068262168720206,
+      "n_nonzero": 50,
+      "direction": -1,
+      "mean_delta_nonzero": -0.00017935708482213374
+    },
+    {
+      "metric": "lpips",
+      "larger_better": false,
+      "median_a": 0.132262714979972,
+      "median_b": 0.1256182197124717,
+      "median_delta": 0.0018917505451022248,
+      "W": 600.0,
+      "p": 0.7173409572507738,
+      "effect_r": 0.0511966265401545,
+      "n_nonzero": 50,
+      "direction": -1,
+      "mean_delta_nonzero": -0.013361054760938951
+    },
+    {
+      "metric": "identity",
+      "larger_better": true,
+      "median_a": 1.0,
+      "median_b": 1.0,
+      "median_delta": 0.0,
+      "W": 11.0,
+      "p": 0.013427734375,
+      "effect_r": 0.6687063753240174,
+      "n_nonzero": 13,
+      "direction": -1,
+      "mean_delta_nonzero": -0.03402787206945543
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "per_font": {
+    "BitcountGridDoubleInk": {
+      "n_seeds": 4,
+      "per_seed_char_acc": [
+        0.48936170212765956,
+        0.5319148936170213,
+        0.5212765957446809,
+        0.5851063829787234
+      ],
+      "mean_single_seed": 0.5319148936170213,
+      "best_of_n_char_acc": 0.6382978723404256,
+      "best_of_n_lift": 0.1063829787234043,
+      "n_ever_fail": 60,
+      "n_always_fail": 34,
+      "systematic_fraction": 0.5666666666666667
+    },
+    "PlaywriteMXGuides": {
+      "n_seeds": 4,
+      "per_seed_char_acc": [
+        0.2872340425531915,
+        0.32978723404255317,
+        0.2765957446808511,
+        0.26595744680851063
+      ],
+      "mean_single_seed": 0.2898936170212766,
+      "best_of_n_char_acc": 0.4148936170212766,
+      "best_of_n_lift": 0.125,
+      "n_ever_fail": 81,
+      "n_always_fail": 55,
+      "systematic_fraction": 0.6790123456790124
+    },
+    "RubikDistressed": {
+      "n_seeds": 4,
+      "per_seed_char_acc": [
+        0.425531914893617,
+        0.4574468085106383,
+        0.4148936170212766,
+        0.39361702127659576
+      ],
+      "mean_single_seed": 0.4228723404255319,
+      "best_of_n_char_acc": 0.574468085106383,
+      "best_of_n_lift": 0.15159574468085113,
+      "n_ever_fail": 71,
+      "n_always_fail": 40,
+      "systematic_fraction": 0.5633802816901409
+    }
+  },
+  "mean_systematic_fraction": 0.6030197646786067,
+  "mean_best_of_n_lift": 0.12765957446808515
+}

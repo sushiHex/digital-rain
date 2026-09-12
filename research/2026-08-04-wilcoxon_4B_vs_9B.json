@@ -1,0 +1,149 @@
+{
+  "run_a": "eval_runs/glyph_4b_r32_5000/per_cell.json",
+  "run_b": "eval_runs/prompt_trained_short/per_cell.json",
+  "label_a": "4B",
+  "label_b": "9B",
+  "n_shared_fonts": 50,
+  "results": [
+    {
+      "metric": "composite",
+      "larger_better": true,
+      "median_a": 0.8405057388744217,
+      "median_b": 0.8431143247804782,
+      "median_delta": 0.003367913718474058,
+      "W": 579.0,
+      "p": 0.5722485031029277,
+      "effect_r": 0.07986673740264102,
+      "n_nonzero": 50,
+      "direction": -1,
+      "mean_delta_nonzero": -0.002091393897943996
+    },
+    {
+      "metric": "char_acc",
+      "larger_better": true,
+      "median_a": 0.7287234042553192,
+      "median_b": 0.7765957446808511,
+      "median_delta": 0.03191489361702127,
+      "W": 199.5,
+      "p": 0.00011220811729354061,
+      "effect_r": 0.5634112903172095,
+      "n_nonzero": 47,
+      "direction": 1,
+      "mean_delta_nonzero": 0.048664554096876415
+    },
+    {
+      "metric": "racc",
+      "larger_better": true,
+      "median_a": 0.7872340425531915,
+      "median_b": 0.7659574468085106,
+      "median_delta": -0.005319148936170193,
+      "W": 329.0,
+      "p": 0.12480920084874071,
+      "effect_r": 0.23683970480182806,
+      "n_nonzero": 42,
+      "direction": -1,
+      "mean_delta_nonzero": -0.009625126646403252
+    },
+    {
+      "metric": "dinov2",
+      "larger_better": true,
+      "median_a": 0.8632613896055424,
+      "median_b": 0.8913377732672589,
+      "median_delta": 0.019965670844341865,
+      "W": 230.0,
+      "p": 8.358053043590716e-05,
+      "effect_r": 0.5563366750696789,
+      "n_nonzero": 50,
+      "direction": 1,
+      "mean_delta_nonzero": 0.030324798239038334
+    },
+    {
+      "metric": "lpips",
+      "larger_better": false,
+      "median_a": 0.1256182197124717,
+      "median_b": 0.13638039630778293,
+      "median_delta": 0.0014268795741682397,
+      "W": 507.0,
+      "p": 0.20773734619587392,
+      "effect_r": 0.17816426035973768,
+      "n_nonzero": 50,
+      "direction": 1,
+      "mean_delta_nonzero": 0.0076206527995143795
+    },
+    {
+      "metric": "identity",
+      "larger_better": true,
+      "median_a": 1.0,
+      "median_b": 1.0,
+      "median_delta": 0.0,
+      "W": 23.0,
+      "p": 0.127197265625,
+      "effect_r": 0.4361128534721853,
+      "n_nonzero": 13,
+      "direction": 1,
+      "mean_delta_nonzero": 0.021072116529457327
+    }
+  ],
+  "redistribution": {
+    "composite": {
+      "rho": -0.5559398568477687,
+      "p": 2.7719318332242666e-05,
+      "mean_delta": -0.002091393897943996,
+      "harder_half": 0.011388098307389854,
+      "easier_half": -0.015570886103277845,
+      "n_harder": 25,
+      "n_easier": 25,
+      "sign_convention": "quality (higher = better) for every metric"
+    },
+    "char_acc": {
+      "rho": -0.4149068474255223,
+      "p": 0.0027359263370293433,
+      "mean_delta": 0.045744680851063826,
+      "harder_half": 0.0702127659574468,
+      "easier_half": 0.021276595744680837,
+      "n_harder": 25,
+      "n_easier": 25,
+      "sign_convention": "quality (higher = better) for every metric"
+    },
+    "racc": {
+      "rho": -0.4101326569424138,
+      "p": 0.003095759690478128,
+      "mean_delta": -0.008085106382978734,
+      "harder_half": 0.010229132569558097,
+      "easier_half": -0.027925531914893633,
+      "n_harder": 26,
+      "n_easier": 24,
+      "sign_convention": "quality (higher = better) for every metric"
+    },
+    "dinov2": {
+      "rho": -0.7064898880722487,
+      "p": 9.886936873870513e-09,
+      "mean_delta": 0.030324798239038334,
+      "harder_half": 0.059937319248280614,
+      "easier_half": 0.0007122772297960589,
+      "n_harder": 25,
+      "n_easier": 25,
+      "sign_convention": "quality (higher = better) for every metric"
+    },
+    "lpips": {
+      "rho": -0.4564058221645771,
+      "p": 0.0008642237556674789,
+      "mean_delta": -0.0076206527995143795,
+      "harder_half": 0.0018454102105758291,
+      "easier_half": -0.01708671580960459,
+      "n_harder": 25,
+      "n_easier": 25,
+      "sign_convention": "quality (higher = better) for every metric"
+    },
+    "identity": {
+      "rho": -0.5347485672774235,
+      "p": 6.320493944794667e-05,
+      "mean_delta": 0.0054787502976589054,
+      "harder_half": 0.0054787502976589054,
+      "easier_half": NaN,
+      "n_harder": 50,
+      "n_easier": 0,
+      "sign_convention": "quality (higher = better) for every metric"
+    }
+  }
+}

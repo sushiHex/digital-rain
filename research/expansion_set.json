@@ -1,0 +1,1344 @@
+{
+ "threshold": 0.13146328926086426,
+ "percentile": 90.0,
+ "cap": 6,
+ "min_sep": 0.08,
+ "licence": "ofl",
+ "n_static": 168,
+ "n_instances": 9,
+ "corpus_ink_median": 0.056400146484375,
+ "ink_range": [
+  0.0282000732421875,
+  0.169200439453125
+ ],
+ "entries": [
+  {
+   "stem": "AlbertSans-Italic[wght]",
+   "path": "google-fonts/ofl/albertsans/AlbertSans-Italic[wght].ttf",
+   "score": 0.028940856456756592,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Aleo-Italic[wght]",
+   "path": "google-fonts/ofl/aleo/Aleo-Italic[wght].ttf",
+   "score": 0.02391815185546875,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "AlumniSansInlineOne-Regular",
+   "path": "google-fonts/ofl/alumnisansinlineone/AlumniSansInlineOne-Regular.ttf",
+   "score": 0.0799141526222229,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Amarna-Italic[wght]",
+   "path": "google-fonts/ofl/amarna/Amarna-Italic[wght].ttf",
+   "score": 0.02254587411880493,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "AndadaPro-Italic[wght]",
+   "path": "google-fonts/ofl/andadapro/AndadaPro-Italic[wght].ttf",
+   "score": 0.038108766078948975,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "AnekDevanagari[wdth,wght]",
+   "path": "google-fonts/ofl/anekdevanagari/AnekDevanagari[wdth,wght].ttf",
+   "score": 0.01606827974319458,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "AnekGujarati[wdth,wght]",
+   "path": "google-fonts/ofl/anekgujarati/AnekGujarati[wdth,wght].ttf",
+   "score": 0.01606827974319458,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "AnekGurmukhi[wdth,wght]",
+   "path": "google-fonts/ofl/anekgurmukhi/AnekGurmukhi[wdth,wght].ttf",
+   "score": 0.01606827974319458,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "AnekKannada[wdth,wght]",
+   "path": "google-fonts/ofl/anekkannada/AnekKannada[wdth,wght].ttf",
+   "score": 0.01606827974319458,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "AnekLatin[wdth,wght]",
+   "path": "google-fonts/ofl/aneklatin/AnekLatin[wdth,wght].ttf",
+   "score": 0.01606827974319458,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "AnekMalayalam[wdth,wght]",
+   "path": "google-fonts/ofl/anekmalayalam/AnekMalayalam[wdth,wght].ttf",
+   "score": 0.01606827974319458,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "AnekOdia[wdth,wght]",
+   "path": "google-fonts/ofl/anekodia/AnekOdia[wdth,wght].ttf",
+   "score": 0.01606827974319458,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "AnekTamil[wdth,wght]",
+   "path": "google-fonts/ofl/anektamil/AnekTamil[wdth,wght].ttf",
+   "score": 0.01606827974319458,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "AnekTelugu[wdth,wght]",
+   "path": "google-fonts/ofl/anektelugu/AnekTelugu[wdth,wght].ttf",
+   "score": 0.01606827974319458,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Archivo-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/archivo/Archivo-Italic[wdth,wght].ttf",
+   "score": 0.04651594161987305,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "ArchivoNarrow-Italic[wght]",
+   "path": "google-fonts/ofl/archivonarrow/ArchivoNarrow-Italic[wght].ttf",
+   "score": 0.029008984565734863,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Asap-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/asap/Asap-Italic[wdth,wght].ttf",
+   "score": 0.024483323097229004,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "AtkinsonHyperlegibleNext-Italic[wght]",
+   "path": "google-fonts/ofl/atkinsonhyperlegiblenext/AtkinsonHyperlegibleNext-Italic[wght].ttf",
+   "score": 0.02006608247756958,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Besley-Italic[wght]",
+   "path": "google-fonts/ofl/besley/Besley-Italic[wght].ttf",
+   "score": 0.049702465534210205,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "BlakaHollow-Regular",
+   "path": "google-fonts/ofl/blakahollow/BlakaHollow-Regular.ttf",
+   "score": 0.17909127473831177,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "BlakaInk-Regular",
+   "path": "google-fonts/ofl/blakaink/BlakaInk-Regular.ttf",
+   "score": 0.15807396173477173,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Cabin-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/cabin/Cabin-Italic[wdth,wght].ttf",
+   "score": 0.024260103702545166,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "CairoPlay[slnt,wght]",
+   "path": "google-fonts/ofl/cairoplay/CairoPlay[slnt,wght].ttf",
+   "score": 0.02238023281097412,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "CascadiaCode-Italic[wght]",
+   "path": "google-fonts/ofl/cascadiacode/CascadiaCode-Italic[wght].ttf",
+   "score": 0.06170952320098877,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "CascadiaMono-Italic[wght]",
+   "path": "google-fonts/ofl/cascadiamono/CascadiaMono-Italic[wght].ttf",
+   "score": 0.06170952320098877,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Chivo-Italic[wght]",
+   "path": "google-fonts/ofl/chivo/Chivo-Italic[wght].ttf",
+   "score": 0.03899514675140381,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "ChivoMono-Italic[wght]",
+   "path": "google-fonts/ofl/chivomono/ChivoMono-Italic[wght].ttf",
+   "score": 0.05638796091079712,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "ChocolateClassicalSans-Regular",
+   "path": "google-fonts/ofl/chocolateclassicalsans/ChocolateClassicalSans-Regular.ttf",
+   "score": 0.01257336139678955,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "DMSans-Italic[opsz,wght]",
+   "path": "google-fonts/ofl/dmsans/DMSans-Italic[opsz,wght].ttf",
+   "score": 0.02343994379043579,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "DMSerifText-Regular",
+   "path": "google-fonts/ofl/dmseriftext/DMSerifText-Regular.ttf",
+   "score": 0.05643707513809204,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "DeliusUnicase-Regular",
+   "path": "google-fonts/ofl/deliusunicase/DeliusUnicase-Regular.ttf",
+   "score": 0.052361249923706055,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Epilogue-Italic[wght]",
+   "path": "google-fonts/ofl/epilogue/Epilogue-Italic[wght].ttf",
+   "score": 0.02392411231994629,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Exo2-Italic[wght]",
+   "path": "google-fonts/ofl/exo2/Exo2-Italic[wght].ttf",
+   "score": 0.03580421209335327,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "ExpletusSans-Italic[wght]",
+   "path": "google-fonts/ofl/expletussans/ExpletusSans-Italic[wght].ttf",
+   "score": 0.02499568462371826,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "FamiljenGrotesk-Italic[wght]",
+   "path": "google-fonts/ofl/familjengrotesk/FamiljenGrotesk-Italic[wght].ttf",
+   "score": 0.027415096759796143,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "FiraSans-Regular",
+   "path": "google-fonts/ofl/firasans/FiraSans-Regular.ttf",
+   "score": 0.011830568313598633,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "FiraSansCondensed-Regular",
+   "path": "google-fonts/ofl/firasanscondensed/FiraSansCondensed-Regular.ttf",
+   "score": 0.013775646686553955,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Fraunces-Italic[SOFT,WONK,opsz,wght]",
+   "path": "google-fonts/ofl/fraunces/Fraunces-Italic[SOFT,WONK,opsz,wght].ttf",
+   "score": 0.04797852039337158,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Freehand-Regular",
+   "path": "google-fonts/ofl/freehand/Freehand-Regular.ttf",
+   "score": 0.15974867343902588,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "FunnelSans-Italic[wght]",
+   "path": "google-fonts/ofl/funnelsans/FunnelSans-Italic[wght].ttf",
+   "score": 0.03146493434906006,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Gantari-Italic[wght]",
+   "path": "google-fonts/ofl/gantari/Gantari-Italic[wght].ttf",
+   "score": 0.024247407913208008,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Gelasio-Italic[wght]",
+   "path": "google-fonts/ofl/gelasio/Gelasio-Italic[wght].ttf",
+   "score": 0.042661190032958984,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Geom-Italic[wght]",
+   "path": "google-fonts/ofl/geom/Geom-Italic[wght].ttf",
+   "score": 0.02844858169555664,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "GoogleSansCode-Italic[wght]",
+   "path": "google-fonts/ofl/googlesanscode/GoogleSansCode-Italic[wght].ttf",
+   "score": 0.04734444618225098,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "HankenGrotesk-Italic[wght]",
+   "path": "google-fonts/ofl/hankengrotesk/HankenGrotesk-Italic[wght].ttf",
+   "score": 0.02786862850189209,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Hanuman[wght]",
+   "path": "google-fonts/ofl/hanuman/Hanuman[wght].ttf",
+   "score": 0.01479494571685791,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "HedvigLettersSans-Regular",
+   "path": "google-fonts/ofl/hedvigletterssans/HedvigLettersSans-Regular.ttf",
+   "score": 0.019409537315368652,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "HostGrotesk-Italic[wght]",
+   "path": "google-fonts/ofl/hostgrotesk/HostGrotesk-Italic[wght].ttf",
+   "score": 0.03646969795227051,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Huninn-Regular",
+   "path": "google-fonts/ofl/huninn/Huninn-Regular.ttf",
+   "score": 0.036542534828186035,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "InclusiveSans-Italic[wght]",
+   "path": "google-fonts/ofl/inclusivesans/InclusiveSans-Italic[wght].ttf",
+   "score": 0.027954697608947754,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "InstrumentSans-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/instrumentsans/InstrumentSans-Italic[wdth,wght].ttf",
+   "score": 0.03041177988052368,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "IosevkaCharonMono-Regular",
+   "path": "google-fonts/ofl/iosevkacharonmono/IosevkaCharonMono-Regular.ttf",
+   "score": 0.02610546350479126,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Jacquard24Charted-Regular",
+   "path": "google-fonts/ofl/jacquard24charted/Jacquard24Charted-Regular.ttf",
+   "score": 0.2621476650238037,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Jersey20-Regular",
+   "path": "google-fonts/ofl/jersey20/Jersey20-Regular.ttf",
+   "score": 0.14180052280426025,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Jersey20Charted-Regular",
+   "path": "google-fonts/ofl/jersey20charted/Jersey20Charted-Regular.ttf",
+   "score": 0.30008721351623535,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Jersey25-Regular",
+   "path": "google-fonts/ofl/jersey25/Jersey25-Regular.ttf",
+   "score": 0.09322774410247803,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "JetBrainsMono-Italic[wght]",
+   "path": "google-fonts/ofl/jetbrainsmono/JetBrainsMono-Italic[wght].ttf",
+   "score": 0.05213850736618042,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Jost-Italic[wght]",
+   "path": "google-fonts/ofl/jost/Jost-Italic[wght].ttf",
+   "score": 0.031014561653137207,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Kanchenjunga-Regular",
+   "path": "google-fonts/ofl/kanchenjunga/Kanchenjunga-Regular.ttf",
+   "score": 0.01414787769317627,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Kufam-Italic[wght]",
+   "path": "google-fonts/ofl/kufam/Kufam-Italic[wght].ttf",
+   "score": 0.029550671577453613,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Kurale-Regular",
+   "path": "google-fonts/ofl/kurale/Kurale-Regular.ttf",
+   "score": 0.055300772190093994,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "LakkiReddy-Regular",
+   "path": "google-fonts/ofl/lakkireddy/LakkiReddy-Regular.ttf",
+   "score": 0.06589704751968384,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Lato-Regular",
+   "path": "google-fonts/ofl/lato/Lato-Regular.ttf",
+   "score": 0.018877923488616943,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "LemonadaVFBeta",
+   "path": "google-fonts/ofl/lemonadavfbeta/LemonadaVFBeta.ttf",
+   "score": 0.04189145565032959,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "LexendDeca[wght]",
+   "path": "google-fonts/ofl/lexenddeca/LexendDeca[wght].ttf",
+   "score": 0.033693671226501465,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "LexendGiga[wght]",
+   "path": "google-fonts/ofl/lexendgiga/LexendGiga[wght].ttf",
+   "score": 0.0363919734954834,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "LexendMega[wght]",
+   "path": "google-fonts/ofl/lexendmega/LexendMega[wght].ttf",
+   "score": 0.03488624095916748,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "LexendPeta[wght]",
+   "path": "google-fonts/ofl/lexendpeta/LexendPeta[wght].ttf",
+   "score": 0.034725964069366455,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "LexendTera[wght]",
+   "path": "google-fonts/ofl/lexendtera/LexendTera[wght].ttf",
+   "score": 0.03484046459197998,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "LibreBaskerville-Italic[wght]",
+   "path": "google-fonts/ofl/librebaskerville/LibreBaskerville-Italic[wght].ttf",
+   "score": 0.05941057205200195,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "LibreBodoni-Italic[wght]",
+   "path": "google-fonts/ofl/librebodoni/LibreBodoni-Italic[wght].ttf",
+   "score": 0.07448863983154297,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "LibreCaslonText-Italic[wght]",
+   "path": "google-fonts/ofl/librecaslontext/LibreCaslonText-Italic[wght].ttf",
+   "score": 0.07784461975097656,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Lilex-Italic[wght]",
+   "path": "google-fonts/ofl/lilex/Lilex-Italic[wght].ttf",
+   "score": 0.038213491439819336,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Liter-Regular",
+   "path": "google-fonts/ofl/liter/Liter-Regular.ttf",
+   "score": 0.022855639457702637,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Literata-Italic[opsz,wght]",
+   "path": "google-fonts/ofl/literata/Literata-Italic[opsz,wght].ttf",
+   "score": 0.0319056510925293,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Lobster-Regular",
+   "path": "google-fonts/ofl/lobster/Lobster-Regular.ttf",
+   "score": 0.06009000539779663,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Mada[wght]",
+   "path": "google-fonts/ofl/mada/Mada[wght].ttf",
+   "score": 0.01303321123123169,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Merriweather-Italic[opsz,wdth,wght]",
+   "path": "google-fonts/ofl/merriweather/Merriweather-Italic[opsz,wdth,wght].ttf",
+   "score": 0.03988158702850342,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "MerriweatherSans-Italic[wght]",
+   "path": "google-fonts/ofl/merriweathersans/MerriweatherSans-Italic[wght].ttf",
+   "score": 0.025747597217559814,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Moul-Regular",
+   "path": "google-fonts/ofl/moul/Moul-Regular.ttf",
+   "score": 0.04594928026199341,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "MuktaVaani-Regular",
+   "path": "google-fonts/ofl/muktavaani/MuktaVaani-Regular.ttf",
+   "score": 0.014873206615447998,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Nobile-Regular",
+   "path": "google-fonts/ofl/nobile/Nobile-Regular.ttf",
+   "score": 0.014919042587280273,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Nokora[wght]",
+   "path": "google-fonts/ofl/nokora/Nokora[wght].ttf",
+   "score": 0.017209351062774658,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "NovaRound",
+   "path": "google-fonts/ofl/novaround/NovaRound.ttf",
+   "score": 0.03208649158477783,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "NovaSlim",
+   "path": "google-fonts/ofl/novaslim/NovaSlim.ttf",
+   "score": 0.03020787239074707,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "NuosuSIL-Regular",
+   "path": "google-fonts/ofl/nuosusil/NuosuSIL-Regular.ttf",
+   "score": 0.05679899454116821,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "OpenSans-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/opensans/OpenSans-Italic[wdth,wght].ttf",
+   "score": 0.023250162601470947,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Overpass-Italic[wght]",
+   "path": "google-fonts/ofl/overpass/Overpass-Italic[wght].ttf",
+   "score": 0.021405041217803955,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Oxygen-Regular",
+   "path": "google-fonts/ofl/oxygen/Oxygen-Regular.ttf",
+   "score": 0.019340336322784424,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "PT_Sans-Caption-Web-Regular",
+   "path": "google-fonts/ofl/ptsanscaption/PT_Sans-Caption-Web-Regular.ttf",
+   "score": 0.019786477088928223,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "PT_Serif-Caption-Web-Regular",
+   "path": "google-fonts/ofl/ptserifcaption/PT_Serif-Caption-Web-Regular.ttf",
+   "score": 0.041046857833862305,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "PT_Serif-Web-Regular",
+   "path": "google-fonts/ofl/ptserif/PT_Serif-Web-Regular.ttf",
+   "score": 0.039716243743896484,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Pattaya-Regular",
+   "path": "google-fonts/ofl/pattaya/Pattaya-Regular.ttf",
+   "score": 0.05875289440155029,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "PatuaOne-Regular",
+   "path": "google-fonts/ofl/patuaone/PatuaOne-Regular.ttf",
+   "score": 0.024019300937652588,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "PirataOne-Regular",
+   "path": "google-fonts/ofl/pirataone/PirataOne-Regular.ttf",
+   "score": 0.07224398851394653,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Platypi-Italic[wght]",
+   "path": "google-fonts/ofl/platypi/Platypi-Italic[wght].ttf",
+   "score": 0.04871487617492676,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "PlaypenSansArabic[wght]",
+   "path": "google-fonts/ofl/playpensansarabic/PlaypenSansArabic[wght].ttf",
+   "score": 0.04978501796722412,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "PlaypenSansDeva[wght]",
+   "path": "google-fonts/ofl/playpensansdeva/PlaypenSansDeva[wght].ttf",
+   "score": 0.04978501796722412,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "PlaypenSansHebrew[wght]",
+   "path": "google-fonts/ofl/playpensanshebrew/PlaypenSansHebrew[wght].ttf",
+   "score": 0.04978501796722412,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "PlaypenSansThai[wght]",
+   "path": "google-fonts/ofl/playpensansthai/PlaypenSansThai[wght].ttf",
+   "score": 0.04978501796722412,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "PlusJakartaSans-Italic[wght]",
+   "path": "google-fonts/ofl/plusjakartasans/PlusJakartaSans-Italic[wght].ttf",
+   "score": 0.031224846839904785,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "PodkovaVFBeta",
+   "path": "google-fonts/ofl/podkovavfbeta/PodkovaVFBeta.ttf",
+   "score": 0.01641637086868286,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "PoltawskiNowy-Italic[wght]",
+   "path": "google-fonts/ofl/poltawskinowy/PoltawskiNowy-Italic[wght].ttf",
+   "score": 0.0767664909362793,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Poppins-Regular",
+   "path": "google-fonts/ofl/poppins/Poppins-Regular.ttf",
+   "score": 0.029483556747436523,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Preahvihear-Regular",
+   "path": "google-fonts/ofl/preahvihear/Preahvihear-Regular.ttf",
+   "score": 0.033726513385772705,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Pushster-Regular",
+   "path": "google-fonts/ofl/pushster/Pushster-Regular.ttf",
+   "score": 0.06009000539779663,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "REM-Italic[wght]",
+   "path": "google-fonts/ofl/rem/REM-Italic[wght].ttf",
+   "score": 0.035085320472717285,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "RadioCanada-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/radiocanada/RadioCanada-Italic[wdth,wght].ttf",
+   "score": 0.02416825294494629,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "RadioCanadaBig-Italic[wght]",
+   "path": "google-fonts/ofl/radiocanadabig/RadioCanadaBig-Italic[wght].ttf",
+   "score": 0.02982461452484131,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Ramabhadra-Regular",
+   "path": "google-fonts/ofl/ramabhadra/Ramabhadra-Regular.ttf",
+   "score": 0.024644136428833008,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "RaviPrakash-Regular",
+   "path": "google-fonts/ofl/raviprakash/RaviPrakash-Regular.ttf",
+   "score": 0.07323890924453735,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "ReadexPro[HEXP,wght]",
+   "path": "google-fonts/ofl/readexpro/ReadexPro[HEXP,wght].ttf",
+   "score": 0.029613494873046875,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "RedHatDisplay-Italic[wght]",
+   "path": "google-fonts/ofl/redhatdisplay/RedHatDisplay-Italic[wght].ttf",
+   "score": 0.034244537353515625,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "RedditSans-Italic[wght]",
+   "path": "google-fonts/ofl/redditsans/RedditSans-Italic[wght].ttf",
+   "score": 0.025931179523468018,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "RethinkSans-Italic[wght]",
+   "path": "google-fonts/ofl/rethinksans/RethinkSans-Italic[wght].ttf",
+   "score": 0.022733032703399658,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Roboto-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/roboto/Roboto-Italic[wdth,wght].ttf",
+   "score": 0.02222573757171631,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "RobotoCondensed-Italic[wght]",
+   "path": "google-fonts/ofl/robotocondensed/RobotoCondensed-Italic[wght].ttf",
+   "score": 0.030388593673706055,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght]",
+   "path": "google-fonts/ofl/robotoflex/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].ttf",
+   "score": 0.02072817087173462,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "RobotoMono-Italic[wght]",
+   "path": "google-fonts/ofl/robotomono/RobotoMono-Italic[wght].ttf",
+   "score": 0.04374593496322632,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "RobotoSerif-Italic[GRAD,opsz,wdth,wght]",
+   "path": "google-fonts/ofl/robotoserif/RobotoSerif-Italic[GRAD,opsz,wdth,wght].ttf",
+   "score": 0.03815722465515137,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Rokkitt-Italic[wght]",
+   "path": "google-fonts/ofl/rokkitt/Rokkitt-Italic[wght].ttf",
+   "score": 0.0415424108505249,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Rosario-Italic[wght]",
+   "path": "google-fonts/ofl/rosario/Rosario-Italic[wght].ttf",
+   "score": 0.02504795789718628,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "RoundedMplus1c-Regular",
+   "path": "google-fonts/ofl/roundedmplus1c/RoundedMplus1c-Regular.ttf",
+   "score": 0.03979682922363281,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "RubikGemstones-Regular",
+   "path": "google-fonts/ofl/rubikgemstones/RubikGemstones-Regular.ttf",
+   "score": 0.42319607734680176,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "RubikMarkerHatch-Regular",
+   "path": "google-fonts/ofl/rubikmarkerhatch/RubikMarkerHatch-Regular.ttf",
+   "score": 0.36770790815353394,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "RubikMoonrocks-Regular",
+   "path": "google-fonts/ofl/rubikmoonrocks/RubikMoonrocks-Regular.ttf",
+   "score": 0.28998029232025146,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "RubikOne-Regular",
+   "path": "google-fonts/ofl/rubikone/RubikOne-Regular.ttf",
+   "score": 0.06695181131362915,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "RubikSprayPaint-Regular",
+   "path": "google-fonts/ofl/rubikspraypaint/RubikSprayPaint-Regular.ttf",
+   "score": 0.31223833560943604,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "RubikStorm-Regular",
+   "path": "google-fonts/ofl/rubikstorm/RubikStorm-Regular.ttf",
+   "score": 0.33947837352752686,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "RubikWetPaint-Regular",
+   "path": "google-fonts/ofl/rubikwetpaint/RubikWetPaint-Regular.ttf",
+   "score": 0.14068150520324707,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Ruwudu-Regular",
+   "path": "google-fonts/ofl/ruwudu/Ruwudu-Regular.ttf",
+   "score": 0.037849247455596924,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "SeaweedScript-Regular",
+   "path": "google-fonts/ofl/seaweedscript/SeaweedScript-Regular.ttf",
+   "score": 0.15816879272460938,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "ShantellSans-Italic[BNCE,INFM,SPAC,wght]",
+   "path": "google-fonts/ofl/shantellsans/ShantellSans-Italic[BNCE,INFM,SPAC,wght].ttf",
+   "score": 0.10883128643035889,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "ShareTech-Regular",
+   "path": "google-fonts/ofl/sharetech/ShareTech-Regular.ttf",
+   "score": 0.03800398111343384,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Sintony-Regular",
+   "path": "google-fonts/ofl/sintony/Sintony-Regular.ttf",
+   "score": 0.01887357234954834,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "SixtyfourConvergence[BLED,SCAN,XELA,YELA]",
+   "path": "google-fonts/ofl/sixtyfourconvergence/SixtyfourConvergence[BLED,SCAN,XELA,YELA].ttf",
+   "score": 0.29790055751800537,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "SofiaSans-Italic[wght]",
+   "path": "google-fonts/ofl/sofiasans/SofiaSans-Italic[wght].ttf",
+   "score": 0.030264198780059814,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "SourGummy-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/sourgummy/SourGummy-Italic[wdth,wght].ttf",
+   "score": 0.08710837364196777,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "SplineSansMono-Italic[wght]",
+   "path": "google-fonts/ofl/splinesansmono/SplineSansMono-Italic[wght].ttf",
+   "score": 0.0420382022857666,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "TASAExplorer[wght]",
+   "path": "google-fonts/ofl/tasaexplorer/TASAExplorer[wght].ttf",
+   "score": 0.024040699005126953,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "TASAOrbiter[wght]",
+   "path": "google-fonts/ofl/tasaorbiter/TASAOrbiter[wght].ttf",
+   "score": 0.021511495113372803,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Taprom-Regular",
+   "path": "google-fonts/ofl/taprom/Taprom-Regular.ttf",
+   "score": 0.15974867343902588,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Texturina-Italic[opsz,wght]",
+   "path": "google-fonts/ofl/texturina/Texturina-Italic[opsz,wght].ttf",
+   "score": 0.057929933071136475,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Thabit-BoldOblique",
+   "path": "google-fonts/ofl/thabit/Thabit-BoldOblique.ttf",
+   "score": 0.049866676330566406,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Tharlon-Regular",
+   "path": "google-fonts/ofl/tharlon/Tharlon-Regular.ttf",
+   "score": 0.015380322933197021,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Tienne-Regular",
+   "path": "google-fonts/ofl/tienne/Tienne-Regular.ttf",
+   "score": 0.035164713859558105,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "TiltWarp[XROT,YROT]",
+   "path": "google-fonts/ofl/tiltwarp/TiltWarp[XROT,YROT].ttf",
+   "score": 0.062007129192352295,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "TiroBangla-Regular",
+   "path": "google-fonts/ofl/tirobangla/TiroBangla-Regular.ttf",
+   "score": 0.05488640069961548,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "TiroDevanagariMarathi-Regular",
+   "path": "google-fonts/ofl/tirodevanagarimarathi/TiroDevanagariMarathi-Regular.ttf",
+   "score": 0.05488640069961548,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "TiroDevanagariSanskrit-Regular",
+   "path": "google-fonts/ofl/tirodevanagarisanskrit/TiroDevanagariSanskrit-Regular.ttf",
+   "score": 0.05488640069961548,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "TiroKannada-Regular",
+   "path": "google-fonts/ofl/tirokannada/TiroKannada-Regular.ttf",
+   "score": 0.05488640069961548,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "TitilliumWeb-Regular",
+   "path": "google-fonts/ofl/titilliumweb/TitilliumWeb-Regular.ttf",
+   "score": 0.024460434913635254,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Trirong-Regular",
+   "path": "google-fonts/ofl/trirong/Trirong-Regular.ttf",
+   "score": 0.05496394634246826,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Urbanist-Italic[wght]",
+   "path": "google-fonts/ofl/urbanist/Urbanist-Italic[wght].ttf",
+   "score": 0.034319281578063965,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Varela-Regular",
+   "path": "google-fonts/ofl/varela/Varela-Regular.ttf",
+   "score": 0.023806631565093994,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "VarelaRound-Regular",
+   "path": "google-fonts/ofl/varelaround/VarelaRound-Regular.ttf",
+   "score": 0.037814974784851074,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Vollkorn-Italic[wght]",
+   "path": "google-fonts/ofl/vollkorn/Vollkorn-Italic[wght].ttf",
+   "score": 0.04786401987075806,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "WinkyRough-Italic[wght]",
+   "path": "google-fonts/ofl/winkyrough/WinkyRough-Italic[wght].ttf",
+   "score": 0.1355355978012085,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "WinkySans-Italic[wght]",
+   "path": "google-fonts/ofl/winkysans/WinkySans-Italic[wght].ttf",
+   "score": 0.04016774892807007,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Wittgenstein-Italic[wght]",
+   "path": "google-fonts/ofl/wittgenstein/Wittgenstein-Italic[wght].ttf",
+   "score": 0.06837904453277588,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "WixMadeforDisplay[wght]",
+   "path": "google-fonts/ofl/wixmadefordisplay/WixMadeforDisplay[wght].ttf",
+   "score": 0.04287087917327881,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "WixMadeforText-Regular",
+   "path": "google-fonts/ofl/wixmadefortext/WixMadeforText-Regular.ttf",
+   "score": 0.03591632843017578,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "WorkSans-Italic[wght]",
+   "path": "google-fonts/ofl/worksans/WorkSans-Italic[wght].ttf",
+   "score": 0.02328205108642578,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Ysabeau-Italic[wght]",
+   "path": "google-fonts/ofl/ysabeau/Ysabeau-Italic[wght].ttf",
+   "score": 0.02876865863800049,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "YsabeauInfant-Italic[wght]",
+   "path": "google-fonts/ofl/ysabeauinfant/YsabeauInfant-Italic[wght].ttf",
+   "score": 0.028979182243347168,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "YsabeauOffice-Italic[wght]",
+   "path": "google-fonts/ofl/ysabeauoffice/YsabeauOffice-Italic[wght].ttf",
+   "score": 0.02893465757369995,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "YuseiMagic-Regular",
+   "path": "google-fonts/ofl/yuseimagic/YuseiMagic-Regular.ttf",
+   "score": 0.02168285846710205,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "ZenAntiqueSoft-Regular",
+   "path": "google-fonts/ofl/zenantiquesoft/ZenAntiqueSoft-Regular.ttf",
+   "score": 0.06041312217712402,
+   "instance": null,
+   "source": "expansion"
+  },
+  {
+   "stem": "Doto[ROND,wght]__named_Regular",
+   "parent": "Doto[ROND,wght]",
+   "path": "google-fonts\\ofl\\doto\\Doto[ROND,wght].ttf",
+   "instance": {
+    "ROND": 0.0,
+    "wght": 400.0
+   },
+   "label": "named:Regular",
+   "sep": 0.1336,
+   "score": 0.4186,
+   "parent_score": 0.4468,
+   "source": "instance/corpus"
+  },
+  {
+   "stem": "Workbench[BLED,SCAN]__grid_SCAN=-53,BLED=100",
+   "parent": "Workbench[BLED,SCAN]",
+   "path": "google-fonts\\ofl\\workbench\\Workbench[BLED,SCAN].ttf",
+   "instance": {
+    "SCAN": -53.0,
+    "BLED": 100.0
+   },
+   "label": "grid:SCAN=-53,BLED=100",
+   "sep": 0.3654,
+   "score": 0.4949,
+   "parent_score": 0.3299,
+   "source": "instance/corpus"
+  },
+  {
+   "stem": "Workbench[BLED,SCAN]__named_Overexposed",
+   "parent": "Workbench[BLED,SCAN]",
+   "path": "google-fonts\\ofl\\workbench\\Workbench[BLED,SCAN].ttf",
+   "instance": {
+    "SCAN": 67.0,
+    "BLED": 0.0
+   },
+   "label": "named:Overexposed",
+   "sep": 0.2474,
+   "score": 0.2625,
+   "parent_score": 0.3299,
+   "source": "instance/corpus"
+  },
+  {
+   "stem": "Workbench[BLED,SCAN]__named_Slight",
+   "parent": "Workbench[BLED,SCAN]",
+   "path": "google-fonts\\ofl\\workbench\\Workbench[BLED,SCAN].ttf",
+   "instance": {
+    "SCAN": -45.0,
+    "BLED": 0.0
+   },
+   "label": "named:Slight",
+   "sep": 0.1145,
+   "score": 0.4031,
+   "parent_score": 0.3299,
+   "source": "instance/corpus"
+  },
+  {
+   "stem": "Workbench[BLED,SCAN]__named_Touching",
+   "parent": "Workbench[BLED,SCAN]",
+   "path": "google-fonts\\ofl\\workbench\\Workbench[BLED,SCAN].ttf",
+   "instance": {
+    "SCAN": 21.0,
+    "BLED": 0.0
+   },
+   "label": "named:Touching",
+   "sep": 0.0922,
+   "score": 0.3113,
+   "parent_score": 0.3299,
+   "source": "instance/corpus"
+  },
+  {
+   "stem": "Sixtyfour[BLED,SCAN]__named_Overlapping",
+   "parent": "Sixtyfour[BLED,SCAN]",
+   "path": "google-fonts\\ofl\\sixtyfour\\Sixtyfour[BLED,SCAN].ttf",
+   "instance": {
+    "SCAN": 37.0,
+    "BLED": 0.0
+   },
+   "label": "named:Overlapping",
+   "sep": 0.1206,
+   "score": 0.2264,
+   "parent_score": 0.2979,
+   "source": "instance/corpus"
+  },
+  {
+   "stem": "Nabla[EDPT,EHLT]__grid_EDPT=0,EHLT=0",
+   "parent": "Nabla[EDPT,EHLT]",
+   "path": "google-fonts\\ofl\\nabla\\Nabla[EDPT,EHLT].ttf",
+   "instance": {
+    "EDPT": 0.0,
+    "EHLT": 0.0
+   },
+   "label": "grid:EDPT=0,EHLT=0",
+   "sep": 0.1205,
+   "score": 0.1504,
+   "parent_score": 0.2384,
+   "source": "instance/corpus"
+  },
+  {
+   "stem": "AmstelvarAlpha-VF__grid_XOPQ=5,XTRA=42,YOPQ=85",
+   "parent": "AmstelvarAlpha-VF",
+   "path": "google-fonts\\ofl\\amstelvaralpha\\AmstelvarAlpha-VF.ttf",
+   "instance": {
+    "wght": 88.0,
+    "wdth": 402.0,
+    "opsz": 14.0,
+    "XOPQ": 5.0,
+    "XTRA": 42.0,
+    "YOPQ": 85.0,
+    "YTLC": 500.0,
+    "YTSE": 18.0,
+    "GRAD": 88.0,
+    "XTCH": 1000.0,
+    "YTCH": 1000.0,
+    "YTAS": 750.0,
+    "YTDE": 250.0,
+    "YTUC": 750.0,
+    "YTRA": 1000.0
+   },
+   "label": "grid:XOPQ=5,XTRA=42,YOPQ=85",
+   "sep": 0.2911,
+   "score": 0.2323,
+   "parent_score": 0.0236,
+   "source": "instance/corpus"
+  },
+  {
+   "stem": "AmstelvarAlpha-VF__grid_XOPQ=88,XTRA=42,YOPQ=4",
+   "parent": "AmstelvarAlpha-VF",
+   "path": "google-fonts\\ofl\\amstelvaralpha\\AmstelvarAlpha-VF.ttf",
+   "instance": {
+    "wght": 88.0,
+    "wdth": 402.0,
+    "opsz": 14.0,
+    "XOPQ": 88.0,
+    "XTRA": 42.0,
+    "YOPQ": 4.0,
+    "YTLC": 500.0,
+    "YTSE": 18.0,
+    "GRAD": 88.0,
+    "XTCH": 1000.0,
+    "YTCH": 1000.0,
+    "YTAS": 750.0,
+    "YTDE": 250.0,
+    "YTUC": 750.0,
+    "YTRA": 1000.0
+   },
+   "label": "grid:XOPQ=88,XTRA=42,YOPQ=4",
+   "sep": 0.1258,
+   "score": 0.1518,
+   "parent_score": 0.0236,
+   "source": "instance/corpus"
+  }
+ ]
+}

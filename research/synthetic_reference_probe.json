@@ -1,0 +1,940 @@
+{
+ "checkpoint": "training_glyph_4b_r32_5000\\checkpoint-5000",
+ "model": "black-forest-labs/FLUX.2-klein-base-4B",
+ "steps": 20,
+ "seed": 42,
+ "comparisons": [
+  {
+   "arm": "mixed",
+   "metric": "identity_exact",
+   "p": 0.8631362509346718,
+   "effect_r": 0.0291380850041483,
+   "n": 50,
+   "significant": false,
+   "worse_than_oracle": true
+  },
+  {
+   "arm": "mixed",
+   "metric": "identity_lenient",
+   "p": 0.46354826453124043,
+   "effect_r": 0.15995735039241835,
+   "n": 50,
+   "significant": false,
+   "worse_than_oracle": true
+  },
+  {
+   "arm": "mixed",
+   "metric": "ink_cv",
+   "p": 0.4543822927004746,
+   "effect_r": 0.10580143157681816,
+   "n": 50,
+   "significant": false,
+   "worse_than_oracle": true
+  },
+  {
+   "arm": "perturbed",
+   "metric": "identity_exact",
+   "p": NaN,
+   "effect_r": NaN,
+   "n": 12,
+   "significant": false,
+   "worse_than_oracle": true
+  },
+  {
+   "arm": "perturbed",
+   "metric": "identity_lenient",
+   "p": NaN,
+   "effect_r": NaN,
+   "n": 12,
+   "significant": false,
+   "worse_than_oracle": true
+  },
+  {
+   "arm": "perturbed",
+   "metric": "ink_cv",
+   "p": 0.38037109375,
+   "effect_r": 0.271955765459602,
+   "n": 12,
+   "significant": false,
+   "worse_than_oracle": false
+  }
+ ],
+ "per_font": {
+  "oracle": {
+   "AkayaTelivigala-Regular": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8870889303532052,
+    "ink_mean": 0.06765041649939782,
+    "ink_cv": 0.4300103945235971
+   },
+   "AlikeAngular-Regular": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.873270700903649,
+    "ink_mean": 0.044570453633079085,
+    "ink_cv": 0.4280828023061207
+   },
+   "AveriaLibre-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8932188863449908,
+    "ink_mean": 0.07221685568044962,
+    "ink_cv": 0.4288341682878495
+   },
+   "AveriaSansLibre-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.889855000249883,
+    "ink_mean": 0.07133869429947812,
+    "ink_cv": 0.4360311699486701
+   },
+   "AveriaSerifLibre-Regular": {
+    "identity_exact": 0.9042553191489362,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8661039056296044,
+    "ink_mean": 0.05633028904054597,
+    "ink_cv": 0.44597955445328447
+   },
+   "BitcountGridDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]": {
+    "identity_exact": 0.8085106382978723,
+    "identity_lenient": 0.925531914893617,
+    "mean_confidence": 0.7511142956766677,
+    "ink_mean": 0.0948182205941389,
+    "ink_cv": 0.46090587763594804
+   },
+   "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]": {
+    "identity_exact": 0.8085106382978723,
+    "identity_lenient": 0.925531914893617,
+    "mean_confidence": 0.7511142956766677,
+    "ink_mean": 0.0948182205941389,
+    "ink_cv": 0.46090587763594804
+   },
+   "Dangrek-Regular": {
+    "identity_exact": 0.9574468085106383,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8727146992658047,
+    "ink_mean": 0.13732624949819353,
+    "ink_cv": 0.40236763973906325
+   },
+   "EncodeSansSemiExpanded-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9036557179816226,
+    "ink_mean": 0.05318772581292652,
+    "ink_cv": 0.45077126011557556
+   },
+   "FascinateInline-Regular": {
+    "identity_exact": 0.7553191489361702,
+    "identity_lenient": 0.8723404255319149,
+    "mean_confidence": 0.7201342080977369,
+    "ink_mean": 0.1142412685668406,
+    "ink_cv": 0.4168871463522564
+   },
+   "IBMPlexSansArabic-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9055868894495862,
+    "ink_mean": 0.054499322561220385,
+    "ink_cv": 0.4503468295808873
+   },
+   "IBMPlexSansThai-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9055868894495862,
+    "ink_mean": 0.054499322561220385,
+    "ink_cv": 0.4503468295808873
+   },
+   "IBMPlexSansThaiLooped-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9055868894495862,
+    "ink_mean": 0.054499322561220385,
+    "ink_cv": 0.4503468295808873
+   },
+   "IBMPlexSerif-Regular": {
+    "identity_exact": 0.9361702127659575,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8928487941305688,
+    "ink_mean": 0.04678592934564432,
+    "ink_cv": 0.44003419834127583
+   },
+   "InterTight[wght]": {
+    "identity_exact": 0.9361702127659575,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9027718013905465,
+    "ink_mean": 0.06182067944600562,
+    "ink_cv": 0.4484996363221587
+   },
+   "JainiPurva-Regular": {
+    "identity_exact": 0.8085106382978723,
+    "identity_lenient": 0.9468085106382979,
+    "mean_confidence": 0.8163732012852709,
+    "ink_mean": 0.07445240365315134,
+    "ink_cv": 0.47502906872504697
+   },
+   "KaiseiOpti-Regular": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8693663573011439,
+    "ink_mean": 0.04011503914090726,
+    "ink_cv": 0.4530753085332843
+   },
+   "Kavoon-Regular": {
+    "identity_exact": 0.8723404255319149,
+    "identity_lenient": 0.9893617021276596,
+    "mean_confidence": 0.864312545099157,
+    "ink_mean": 0.10439457045363308,
+    "ink_cv": 0.4090825904744751
+   },
+   "KohSantepheap-Regular": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8697742258614682,
+    "ink_mean": 0.04790056704134885,
+    "ink_cv": 0.4442307764862089
+   },
+   "KosugiMaru-Regular": {
+    "identity_exact": 0.9787234042553191,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9078846700648044,
+    "ink_mean": 0.06704636692091531,
+    "ink_cv": 0.4482741542461019
+   },
+   "MirandaSans[wght]": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.903212845008424,
+    "ink_mean": 0.06613872440786832,
+    "ink_cv": 0.4491751518239235
+   },
+   "MochiyPopPOne-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8736761202837559,
+    "ink_mean": 0.07598793155359294,
+    "ink_cv": 0.4449111284632104
+   },
+   "MomoTrustSans[wght]": {
+    "identity_exact": 0.9468085106382979,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9035389692859447,
+    "ink_mean": 0.07006159674829386,
+    "ink_cv": 0.45156276743065193
+   },
+   "MuktaMahee-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9055171494788312,
+    "ink_mean": 0.06265305098354076,
+    "ink_cv": 0.44600736978354444
+   },
+   "NovaSquare": {
+    "identity_exact": 0.8829787234042553,
+    "identity_lenient": 0.9787234042553191,
+    "mean_confidence": 0.8442869107139871,
+    "ink_mean": 0.06695478723404255,
+    "ink_cv": 0.4726994703484629
+   },
+   "PlaywriteAUQLD[wght]": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 0.9787234042553191,
+    "mean_confidence": 0.8734831334428584,
+    "ink_mean": 0.03852995784825372,
+    "ink_cv": 0.4854905665993416
+   },
+   "PlaywriteAUSA[wght]": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 0.9787234042553191,
+    "mean_confidence": 0.8734547784353824,
+    "ink_mean": 0.039256322761943,
+    "ink_cv": 0.48270830166884576
+   },
+   "PlaywriteCO[wght]": {
+    "identity_exact": 0.8936170212765957,
+    "identity_lenient": 0.9787234042553191,
+    "mean_confidence": 0.8473910663990264,
+    "ink_mean": 0.036691464271376956,
+    "ink_cv": 0.4963589630528903
+   },
+   "PlaywriteMXGuides-Regular": {
+    "identity_exact": 0.8617021276595744,
+    "identity_lenient": 0.8936170212765957,
+    "mean_confidence": 0.7264203451415325,
+    "ink_mean": 0.026469038538739456,
+    "ink_cv": 0.4438740031617114
+   },
+   "PlaywriteUSTradGuides-Regular": {
+    "identity_exact": 0.8085106382978723,
+    "identity_lenient": 0.8404255319148937,
+    "mean_confidence": 0.6956545838174668,
+    "ink_mean": 0.02669673323966278,
+    "ink_cv": 0.4480032925194922
+   },
+   "ProtestStrike-Regular": {
+    "identity_exact": 0.9361702127659575,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8680153489112854,
+    "ink_mean": 0.14054157466880773,
+    "ink_cv": 0.41785683287221176
+   },
+   "ReemKufiFun[wght]": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8930052249355519,
+    "ink_mean": 0.071487354476114,
+    "ink_cv": 0.46138984527080495
+   },
+   "ReemKufiInk-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8920402942185707,
+    "ink_mean": 0.0714440736651947,
+    "ink_cv": 0.46171671252662083
+   },
+   "RubikDistressed-Regular": {
+    "identity_exact": 0.8936170212765957,
+    "identity_lenient": 0.9893617021276596,
+    "mean_confidence": 0.8872131673579521,
+    "ink_mean": 0.1164454536330791,
+    "ink_cv": 0.3924182872763678
+   },
+   "SchibstedGrotesk[wght]": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9064342975616455,
+    "ink_mean": 0.05481420614211161,
+    "ink_cv": 0.4487491526533818
+   },
+   "ShipporiAntiqueB1-Regular": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9038481950125796,
+    "ink_mean": 0.06616506924929746,
+    "ink_cv": 0.44101764412278494
+   },
+   "StackSansText[wght]": {
+    "identity_exact": 0.9361702127659575,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9004351614003486,
+    "ink_mean": 0.05578582898434364,
+    "ink_cv": 0.4504274530939511
+   },
+   "Suwannaphum-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8870016754941737,
+    "ink_mean": 0.05818885487755922,
+    "ink_cv": 0.4438975084468021
+   },
+   "Telex-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9026114629938248,
+    "ink_mean": 0.06423875953432356,
+    "ink_cv": 0.4516818613515352
+   },
+   "TiroGurmukhi-Regular": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8639331101737124,
+    "ink_mean": 0.04727644520272982,
+    "ink_cv": 0.4469385006419544
+   },
+   "TiroTamil-Regular": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8639331101737124,
+    "ink_mean": 0.04727644520272982,
+    "ink_cv": 0.4469385006419544
+   },
+   "TiroTelugu-Regular": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8639331101737124,
+    "ink_mean": 0.04727644520272982,
+    "ink_cv": 0.4469385006419544
+   },
+   "Tirra-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9022404028380171,
+    "ink_mean": 0.055457145724608595,
+    "ink_cv": 0.4531853746667762
+   },
+   "UoqMunThenKhung-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8701941681669113,
+    "ink_mean": 0.05108452930549979,
+    "ink_cv": 0.4448093148471285
+   },
+   "Vazirmatn[wght]": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9036521004869583,
+    "ink_mean": 0.06574794259333602,
+    "ink_cv": 0.4503331568579395
+   },
+   "Volkhov-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8765774781399585,
+    "ink_mean": 0.05469753613006825,
+    "ink_cv": 0.43233747090246466
+   },
+   "WDXLLubrifontTC-Regular": {
+    "identity_exact": 0.8936170212765957,
+    "identity_lenient": 0.9893617021276596,
+    "mean_confidence": 0.8434616438251861,
+    "ink_mean": 0.08305462163789644,
+    "ink_cv": 0.42635984935018834
+   },
+   "Wonky[wdth,wght]": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9048688963372656,
+    "ink_mean": 0.05267525592131675,
+    "ink_cv": 0.441937232263633
+   },
+   "ZCOOLQingKeHuangYou-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 0.9893617021276596,
+    "mean_confidence": 0.8501706231147685,
+    "ink_mean": 0.084211912886391,
+    "ink_cv": 0.43251101051800495
+   },
+   "ZalandoSans[wdth,wght]": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9014069507730768,
+    "ink_mean": 0.06294974407868326,
+    "ink_cv": 0.4493871393834904
+   }
+  },
+  "mixed": {
+   "AkayaTelivigala-Regular": {
+    "identity_exact": 0.8723404255319149,
+    "identity_lenient": 0.9787234042553191,
+    "mean_confidence": 0.863886610941684,
+    "ink_mean": 0.05163463468486551,
+    "ink_cv": 0.45231877543839705
+   },
+   "AlikeAngular-Regular": {
+    "identity_exact": 0.9042553191489362,
+    "identity_lenient": 0.9787234042553191,
+    "mean_confidence": 0.8613193853104368,
+    "ink_mean": 0.04284612103572863,
+    "ink_cv": 0.44250865226140307
+   },
+   "AveriaLibre-Regular": {
+    "identity_exact": 0.8617021276595744,
+    "identity_lenient": 0.9680851063829787,
+    "mean_confidence": 0.863420668672374,
+    "ink_mean": 0.056873494580489764,
+    "ink_cv": 0.45767046536908135
+   },
+   "AveriaSansLibre-Regular": {
+    "identity_exact": 0.776595744680851,
+    "identity_lenient": 0.925531914893617,
+    "mean_confidence": 0.8265697613675543,
+    "ink_mean": 0.03866670012043356,
+    "ink_cv": 0.43479469798296067
+   },
+   "AveriaSerifLibre-Regular": {
+    "identity_exact": 0.776595744680851,
+    "identity_lenient": 0.9042553191489362,
+    "mean_confidence": 0.7904866066701869,
+    "ink_mean": 0.04062750903251706,
+    "ink_cv": 0.4539007842727488
+   },
+   "BitcountGridDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]": {
+    "identity_exact": 0.8617021276595744,
+    "identity_lenient": 0.9787234042553191,
+    "mean_confidence": 0.8414592326004454,
+    "ink_mean": 0.12131360397430752,
+    "ink_cv": 0.4652434008979835
+   },
+   "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]": {
+    "identity_exact": 0.851063829787234,
+    "identity_lenient": 0.9468085106382979,
+    "mean_confidence": 0.8259730277226326,
+    "ink_mean": 0.07752408671216378,
+    "ink_cv": 0.4561457484291078
+   },
+   "Dangrek-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8851507138064567,
+    "ink_mean": 0.11419924227217985,
+    "ink_cv": 0.42025194173798897
+   },
+   "EncodeSansSemiExpanded-Regular": {
+    "identity_exact": 0.9361702127659575,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.897060401579167,
+    "ink_mean": 0.08319261842633482,
+    "ink_cv": 0.4952095121681238
+   },
+   "FascinateInline-Regular": {
+    "identity_exact": 0.851063829787234,
+    "identity_lenient": 0.925531914893617,
+    "mean_confidence": 0.8169982804262892,
+    "ink_mean": 0.09345581593737455,
+    "ink_cv": 0.6966618356999228
+   },
+   "IBMPlexSansArabic-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9075938165187836,
+    "ink_mean": 0.057399764150943396,
+    "ink_cv": 0.44807706818738535
+   },
+   "IBMPlexSansThai-Regular": {
+    "identity_exact": 0.9361702127659575,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9022666428317415,
+    "ink_mean": 0.05753650642312324,
+    "ink_cv": 0.43982848392579177
+   },
+   "IBMPlexSansThaiLooped-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9001357409548252,
+    "ink_mean": 0.06288827278201525,
+    "ink_cv": 0.44615082355838137
+   },
+   "IBMPlexSerif-Regular": {
+    "identity_exact": 0.9361702127659575,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.896503802309645,
+    "ink_mean": 0.05319713468486553,
+    "ink_cv": 0.4436030871619102
+   },
+   "InterTight[wght]": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.90245096068433,
+    "ink_mean": 0.05011792452830189,
+    "ink_cv": 0.4378826394356867
+   },
+   "JainiPurva-Regular": {
+    "identity_exact": 0.8404255319148937,
+    "identity_lenient": 0.9468085106382979,
+    "mean_confidence": 0.8089916170277494,
+    "ink_mean": 0.06435856583701326,
+    "ink_cv": 0.47234783521657614
+   },
+   "KaiseiOpti-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8713810653128522,
+    "ink_mean": 0.04289943797671618,
+    "ink_cv": 0.4385609429749439
+   },
+   "Kavoon-Regular": {
+    "identity_exact": 0.8723404255319149,
+    "identity_lenient": 0.9787234042553191,
+    "mean_confidence": 0.8747382747366074,
+    "ink_mean": 0.0901834102769972,
+    "ink_cv": 0.579633462855718
+   },
+   "KohSantepheap-Regular": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.871254065569411,
+    "ink_mean": 0.04907730329185066,
+    "ink_cv": 0.42996792383973637
+   },
+   "KosugiMaru-Regular": {
+    "identity_exact": 0.9680851063829787,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.918173576289035,
+    "ink_mean": 0.08160690987555198,
+    "ink_cv": 0.43013638205663224
+   },
+   "MirandaSans[wght]": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9082391648850543,
+    "ink_mean": 0.0565993827780008,
+    "ink_cv": 0.4439600239926822
+   },
+   "MochiyPopPOne-Regular": {
+    "identity_exact": 0.8936170212765957,
+    "identity_lenient": 0.9787234042553191,
+    "mean_confidence": 0.8155757734116088,
+    "ink_mean": 0.0650817944600562,
+    "ink_cv": 0.5160601510290099
+   },
+   "MomoTrustSans[wght]": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9025299314488756,
+    "ink_mean": 0.05737906463267763,
+    "ink_cv": 0.44582003856670527
+   },
+   "MuktaMahee-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 0.9893617021276596,
+    "mean_confidence": 0.872067559272685,
+    "ink_mean": 0.08590990064231231,
+    "ink_cv": 0.4525513399513259
+   },
+   "NovaSquare": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8828861202965391,
+    "ink_mean": 0.06347664090726615,
+    "ink_cv": 0.4548370123830918
+   },
+   "PlaywriteAUQLD[wght]": {
+    "identity_exact": 0.9468085106382979,
+    "identity_lenient": 0.9893617021276596,
+    "mean_confidence": 0.8624948979692256,
+    "ink_mean": 0.04215049177037335,
+    "ink_cv": 0.46225845782915426
+   },
+   "PlaywriteAUSA[wght]": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 0.9787234042553191,
+    "mean_confidence": 0.8718603960377105,
+    "ink_mean": 0.040948665194700924,
+    "ink_cv": 0.4361247017319578
+   },
+   "PlaywriteCO[wght]": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 0.9574468085106383,
+    "mean_confidence": 0.8298117339294008,
+    "ink_mean": 0.04405484745082297,
+    "ink_cv": 0.5254722019501137
+   },
+   "PlaywriteMXGuides-Regular": {
+    "identity_exact": 0.8829787234042553,
+    "identity_lenient": 0.9148936170212766,
+    "mean_confidence": 0.7904533247681375,
+    "ink_mean": 0.03501166700120433,
+    "ink_cv": 0.42238655409764453
+   },
+   "PlaywriteUSTradGuides-Regular": {
+    "identity_exact": 0.8297872340425532,
+    "identity_lenient": 0.8723404255319149,
+    "mean_confidence": 0.7495033916957835,
+    "ink_mean": 0.028652524086712167,
+    "ink_cv": 0.44837225165255234
+   },
+   "ProtestStrike-Regular": {
+    "identity_exact": 0.8723404255319149,
+    "identity_lenient": 0.9680851063829787,
+    "mean_confidence": 0.8277794777395877,
+    "ink_mean": 0.11567204435969489,
+    "ink_cv": 0.46179710570466537
+   },
+   "ReemKufiFun[wght]": {
+    "identity_exact": 0.8936170212765957,
+    "identity_lenient": 0.9893617021276596,
+    "mean_confidence": 0.869515855737189,
+    "ink_mean": 0.06711975612203934,
+    "ink_cv": 0.44122224966740425
+   },
+   "ReemKufiInk-Regular": {
+    "identity_exact": 0.9680851063829787,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9066677191790115,
+    "ink_mean": 0.09795827478924128,
+    "ink_cv": 0.44174216750714873
+   },
+   "RubikDistressed-Regular": {
+    "identity_exact": 0.9042553191489362,
+    "identity_lenient": 0.9893617021276596,
+    "mean_confidence": 0.8779643663066499,
+    "ink_mean": 0.061837615415495796,
+    "ink_cv": 0.6521779006265366
+   },
+   "SchibstedGrotesk[wght]": {
+    "identity_exact": 0.8829787234042553,
+    "identity_lenient": 0.9680851063829787,
+    "mean_confidence": 0.8464726225492802,
+    "ink_mean": 0.06815034122842231,
+    "ink_cv": 0.5261738432890583
+   },
+   "ShipporiAntiqueB1-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9065942215792676,
+    "ink_mean": 0.05857336411079888,
+    "ink_cv": 0.4543094476616792
+   },
+   "StackSansText[wght]": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9058153103006646,
+    "ink_mean": 0.05195453633079086,
+    "ink_cv": 0.4460760215303729
+   },
+   "Suwannaphum-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8877312905610876,
+    "ink_mean": 0.05109707446808509,
+    "ink_cv": 0.4400594182937162
+   },
+   "Telex-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9068821389624413,
+    "ink_mean": 0.053330113408269764,
+    "ink_cv": 0.4413917686092331
+   },
+   "TiroGurmukhi-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8818783443024818,
+    "ink_mean": 0.05204109795262946,
+    "ink_cv": 0.43706009427583953
+   },
+   "TiroTamil-Regular": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8659191727638245,
+    "ink_mean": 0.05290985046166197,
+    "ink_cv": 0.42639811803152905
+   },
+   "TiroTelugu-Regular": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8675345822851709,
+    "ink_mean": 0.04329021979124849,
+    "ink_cv": 0.44954304774381476
+   },
+   "Tirra-Regular": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9047017671326374,
+    "ink_mean": 0.05895034624648735,
+    "ink_cv": 0.4692122914795467
+   },
+   "UoqMunThenKhung-Regular": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8730379771044914,
+    "ink_mean": 0.049596673022882384,
+    "ink_cv": 0.4472667345856322
+   },
+   "Vazirmatn[wght]": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9070970175114084,
+    "ink_mean": 0.06186333299879567,
+    "ink_cv": 0.4432165186007794
+   },
+   "Volkhov-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8854804891855159,
+    "ink_mean": 0.05865804395824971,
+    "ink_cv": 0.43011183576123835
+   },
+   "WDXLLubrifontTC-Regular": {
+    "identity_exact": 0.9042553191489362,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.88081098490573,
+    "ink_mean": 0.09705314130871139,
+    "ink_cv": 0.4513741900835179
+   },
+   "Wonky[wdth,wght]": {
+    "identity_exact": 0.9361702127659575,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9046159269327813,
+    "ink_mean": 0.06668820252910478,
+    "ink_cv": 0.44905152352464833
+   },
+   "ZCOOLQingKeHuangYou-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8973063848754192,
+    "ink_mean": 0.0742447812123645,
+    "ink_cv": 0.4280549762899179
+   },
+   "ZalandoSans[wdth,wght]": {
+    "identity_exact": 0.8829787234042553,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8488274226163296,
+    "ink_mean": 0.06076124046567645,
+    "ink_cv": 0.46012119726232614
+   }
+  },
+  "perturbed": {
+   "AkayaTelivigala-Regular": {
+    "identity_exact": 0.8936170212765957,
+    "identity_lenient": 0.9893617021276596,
+    "mean_confidence": 0.8942350713496513,
+    "ink_mean": 0.07484757627458853,
+    "ink_cv": 0.4084597228498433
+   },
+   "AlikeAngular-Regular": {
+    "identity_exact": 0.8936170212765957,
+    "identity_lenient": 0.9680851063829787,
+    "mean_confidence": 0.8735822160193261,
+    "ink_mean": 0.04481696607788036,
+    "ink_cv": 0.42361919558250055
+   },
+   "AveriaLibre-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8920678399661754,
+    "ink_mean": 0.0687029556403051,
+    "ink_cv": 0.42674929804686035
+   },
+   "AveriaSansLibre-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8933099701683572,
+    "ink_mean": 0.06822059413890004,
+    "ink_cv": 0.4323872611376005
+   },
+   "AveriaSerifLibre-Regular": {
+    "identity_exact": 0.9042553191489362,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.874299057303591,
+    "ink_mean": 0.055874899638699314,
+    "ink_cv": 0.43339443109621245
+   },
+   "BitcountGridDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]": {
+    "identity_exact": 0.7659574468085106,
+    "identity_lenient": 0.8617021276595744,
+    "mean_confidence": 0.743800772631422,
+    "ink_mean": 0.09169447511039741,
+    "ink_cv": 0.46435994578553963
+   },
+   "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]": {
+    "identity_exact": 0.7659574468085106,
+    "identity_lenient": 0.8617021276595744,
+    "mean_confidence": 0.743800772631422,
+    "ink_mean": 0.09169447511039741,
+    "ink_cv": 0.46435994578553963
+   },
+   "Dangrek-Regular": {
+    "identity_exact": 0.9574468085106383,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8862534913610904,
+    "ink_mean": 0.12719728522681653,
+    "ink_cv": 0.4193317884066916
+   },
+   "EncodeSansSemiExpanded-Regular": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8977759337805687,
+    "ink_mean": 0.04400403954235247,
+    "ink_cv": 0.45277109108946234
+   },
+   "FascinateInline-Regular": {
+    "identity_exact": 0.7659574468085106,
+    "identity_lenient": 0.8829787234042553,
+    "mean_confidence": 0.7287700339517695,
+    "ink_mean": 0.1106564883580891,
+    "ink_cv": 0.3845825933808106
+   },
+   "IBMPlexSansArabic-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9072565832670699,
+    "ink_mean": 0.05102619429947811,
+    "ink_cv": 0.4509444198572545
+   },
+   "IBMPlexSansThai-Regular": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9072565832670699,
+    "ink_mean": 0.05102619429947811,
+    "ink_cv": 0.4509444198572545
+   }
+  },
+  "external": {
+   "00-a_heavy_geometric_sans_serif": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9013339918344578,
+    "ink_mean": 0.09859995985547974,
+    "ink_cv": 0.4325718792195987
+   },
+   "01-a_high-contrast_didone_with_": {
+    "identity_exact": 0.9468085106382979,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8856992594739224,
+    "ink_mean": 0.05358540746688075,
+    "ink_cv": 0.4481406112464049
+   },
+   "02-a_chunky_slab_serif_with_blu": {
+    "identity_exact": 0.925531914893617,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8621581155568996,
+    "ink_mean": 0.0948960006021678,
+    "ink_cv": 0.4371840345113528
+   },
+   "03-a_humanist_sans_with_open_ap": {
+    "identity_exact": 0.9361702127659575,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8811210070518737,
+    "ink_mean": 0.05484494179044559,
+    "ink_cv": 0.4493706684563019
+   },
+   "04-a_condensed_grotesque": {
+    "identity_exact": 0.9680851063829787,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8951336250026175,
+    "ink_mean": 0.13666700120433561,
+    "ink_cv": 0.45809348308071474
+   },
+   "05-a_rounded_soft_sans_with_ful": {
+    "identity_exact": 0.9042553191489362,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8963046273652543,
+    "ink_mean": 0.10942141710156562,
+    "ink_cv": 0.42426498994681017
+   },
+   "06-a_wide_low-contrast_monospac": {
+    "identity_exact": 0.9787234042553191,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.901380550988177,
+    "ink_mean": 0.13040382878362103,
+    "ink_cv": 0.43343845140292425
+   },
+   "07-an_ultra-light_hairline_sans": {
+    "identity_exact": 0.9574468085106383,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.9047502450486447,
+    "ink_mean": 0.04611915395423524,
+    "ink_cv": 0.38280790770504386
+   },
+   "08-a_wedge-serif_face_with_flar": {
+    "identity_exact": 0.9148936170212766,
+    "identity_lenient": 0.9893617021276596,
+    "mean_confidence": 0.8741289754497245,
+    "ink_mean": 0.07055963970293054,
+    "ink_cv": 0.43908468604173234
+   },
+   "09-a_stencil_sans_with_delibera": {
+    "identity_exact": 0.9787234042553191,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8976159596696813,
+    "ink_mean": 0.12959780208751506,
+    "ink_cv": 0.43876042025491946
+   },
+   "10-an_inline_face_with_a_white_": {
+    "identity_exact": 0.9468085106382979,
+    "identity_lenient": 1.0,
+    "mean_confidence": 0.8899002940730846,
+    "ink_mean": 0.10762557707747894,
+    "ink_cv": 0.3883219649806505
+   },
+   "11-a_heavy_angular_blackletter-": {
+    "identity_exact": 0.8723404255319149,
+    "identity_lenient": 0.9893617021276596,
+    "mean_confidence": 0.847922406139526,
+    "ink_mean": 0.10570114913689284,
+    "ink_cv": 0.4641285661044944
+   }
+  }
+ }
+}

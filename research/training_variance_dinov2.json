@@ -1,0 +1,44 @@
+{
+ "_comment": "Training-run variance. Runs differ ONLY in --seed. largest_observed_gap is DESCRIPTIVE (the range of a small sample), not a threshold. Compare effects against run_mean_sd for THIS metric -- never against another metric's SD.",
+ "metric": "dinov2",
+ "n_runs": 3,
+ "n_fonts": 48,
+ "runs": [
+  "glyph_4b_r32_clean",
+  "glyph_4b_r32_clean_s43",
+  "glyph_4b_r32_clean_s44"
+ ],
+ "run_means": [
+  0.7775,
+  0.8104,
+  0.8213
+ ],
+ "run_mean_sd": 0.0228,
+ "largest_observed_gap": 0.0439,
+ "pairs": [
+  {
+   "pair": "glyph_4b_r32_clean vs glyph_4b_r32_clean_s43",
+   "delta_mean": 0.033,
+   "p": 1.507612515516376e-07,
+   "r": 0.758,
+   "passes_gate": true,
+   "main_effect_share": 0.54
+  },
+  {
+   "pair": "glyph_4b_r32_clean vs glyph_4b_r32_clean_s44",
+   "delta_mean": 0.0439,
+   "p": 2.4072049096151826e-08,
+   "r": 0.805,
+   "passes_gate": true,
+   "main_effect_share": 0.629
+  },
+  {
+   "pair": "glyph_4b_r32_clean_s43 vs glyph_4b_r32_clean_s44",
+   "delta_mean": 0.0109,
+   "p": 0.0010297601769620377,
+   "r": 0.474,
+   "passes_gate": true,
+   "main_effect_share": 0.207
+  }
+ ]
+}

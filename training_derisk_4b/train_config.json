@@ -1,0 +1,20 @@
+{
+  "dataset_dir": "dataset_v2",
+  "cache_dir": null,
+  "output_dir": "training_derisk_4b",
+  "model": "black-forest-labs/FLUX.2-klein-base-4B",
+  "steps": 400,
+  "rank": 16,
+  "lr": 0.0001,
+  "warmup_steps": 100,
+  "batch_size": 1,
+  "grad_accum": 2,
+  "seed": 42,
+  "resume": null,
+  "weight_decay": 1e-05,
+  "max_grad_norm": 1.0,
+  "num_train_timesteps": 1000,
+  "use_template": true,
+  "grad_checkpointing": true,
+  "checkpoint_every": null
+}

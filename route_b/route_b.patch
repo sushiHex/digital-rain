@@ -1,0 +1,182 @@
+--- a/nunchaku/models/transformers/transformer_flux2.py
++++ b/nunchaku/models/transformers/transformer_flux2.py
+@@ -47,6 +47,12 @@
+ from ..utils import CPUOffloadManager, fuse_linears
+ from .utils import NunchakuModelLoaderMixin, patch_scale_key
+ 
++# Route B: when set, route qkv through the non-fused path (proj(x) + torch
++# norm/rotary) instead of the fused fused_qkv_norm_rottary kernel, so a
++# forward-hook on the fused-qkv SVDQW4A4Linear fires and a parallel bf16 LoRA
++# branch can be applied. See docs/superpowers/plans/2026-06-02-route-b-nunchaku-v3-lora.md
++_FORCE_UNFUSED_QKV = os.getenv("NUNCHAKU_FORCE_UNFUSED_QKV", "0") == "1"
++
+ 
+ def _flux2_kv_causal_attention(
+     query: torch.Tensor,
+@@ -162,7 +168,8 @@
+         kv_cache_mode = kwargs.get("kv_cache_mode", None)
+         num_ref_tokens = int(kwargs.get("num_ref_tokens", 0))
+         use_packed_fp16 = (
+-            kv_cache_mode is None
++            not _FORCE_UNFUSED_QKV
++            and kv_cache_mode is None
+             and encoder_hidden_states is not None
+             and isinstance(image_rotary_emb, tuple)
+             and len(image_rotary_emb) == 2
+@@ -219,7 +226,8 @@
+             return hidden_states, encoder_hidden_states
+ 
+         if (
+-            encoder_hidden_states is not None
++            not _FORCE_UNFUSED_QKV
++            and encoder_hidden_states is not None
+             and isinstance(image_rotary_emb, tuple)
+             and len(image_rotary_emb) == 2
+             and image_rotary_emb[0].ndim == 3
+@@ -252,6 +260,38 @@
+             query = torch.cat([encoder_query, query], dim=1)
+             key = torch.cat([encoder_key, key], dim=1)
+             value = torch.cat([encoder_value, value], dim=1)
++        elif (
++            _FORCE_UNFUSED_QKV
++            and encoder_hidden_states is not None
++            and isinstance(image_rotary_emb, tuple)
++            and len(image_rotary_emb) == 2
++        ):
++            # Route B unfused double-block path: project qkv via __call__ (so a
++            # forward-hook LoRA branch fires), then apply per-stream norm + rotary
++            # in torch, mirroring the fused branch. image_rotary_emb is the UNPACKED
++            # ((cos,sin)_img, (cos,sin)_txt); apply_rotary_emb consumes (cos,sin).
++            batch_size = hidden_states.shape[0]
++            query, key, value = self.to_qkv(hidden_states).chunk(3, dim=-1)
++            query = query.view(batch_size, -1, self.heads, self.head_dim)
++            key = key.view(batch_size, -1, self.heads, self.head_dim)
++            value = value.view(batch_size, -1, self.heads, self.head_dim)
++            query = self.norm_q(query)
++            key = self.norm_k(key)
++            query = apply_rotary_emb(query, image_rotary_emb[0], sequence_dim=1)
++            key = apply_rotary_emb(key, image_rotary_emb[0], sequence_dim=1)
++
++            encoder_query, encoder_key, encoder_value = self.to_added_qkv(encoder_hidden_states).chunk(3, dim=-1)
++            encoder_query = encoder_query.view(batch_size, -1, self.heads, self.head_dim)
++            encoder_key = encoder_key.view(batch_size, -1, self.heads, self.head_dim)
++            encoder_value = encoder_value.view(batch_size, -1, self.heads, self.head_dim)
++            encoder_query = self.norm_added_q(encoder_query)
++            encoder_key = self.norm_added_k(encoder_key)
++            encoder_query = apply_rotary_emb(encoder_query, image_rotary_emb[1], sequence_dim=1)
++            encoder_key = apply_rotary_emb(encoder_key, image_rotary_emb[1], sequence_dim=1)
++            encoder_seq_len = encoder_hidden_states.shape[1]
++            query = torch.cat([encoder_query, query], dim=1)
++            key = torch.cat([encoder_key, key], dim=1)
++            value = torch.cat([encoder_value, value], dim=1)
+         else:
+             query, key, value = self.to_qkv(hidden_states).chunk(3, dim=-1)
+             query = query.unflatten(-1, (self.heads, -1))
+@@ -375,7 +415,7 @@
+         kv_cache_mode = kwargs.get("kv_cache_mode", None)
+         num_txt_tokens = int(kwargs.get("num_txt_tokens", 0))
+         num_ref_tokens = int(kwargs.get("num_ref_tokens", 0))
+-        use_packed_fp16 = kv_cache_mode is None and torch.is_tensor(image_rotary_emb) and image_rotary_emb.ndim == 3 and hidden_states.is_cuda
++        use_packed_fp16 = not _FORCE_UNFUSED_QKV and kv_cache_mode is None and torch.is_tensor(image_rotary_emb) and image_rotary_emb.ndim == 3 and hidden_states.is_cuda
+         if use_packed_fp16:
+             batch_size = hidden_states.shape[0]
+             num_tokens = hidden_states.shape[1]
+@@ -403,7 +443,7 @@
+             mlp_hidden_states = self.mlp_act_fn(self.mlp_fc1(hidden_states))
+             return self.out_proj(attn_output) + self.mlp_fc2(mlp_hidden_states)
+ 
+-        if torch.is_tensor(image_rotary_emb) and image_rotary_emb.ndim == 3:
++        if not _FORCE_UNFUSED_QKV and torch.is_tensor(image_rotary_emb) and image_rotary_emb.ndim == 3:
+             batch_size = hidden_states.shape[0]
+             qkv = fused_qkv_norm_rottary(hidden_states, self.qkv_proj, self.norm_q, self.norm_k, image_rotary_emb)
+             query, key, value = qkv.chunk(3, dim=-1)
+@@ -659,6 +699,17 @@
+                 torch.cat([text_rotary_emb[1], image_rotary_emb[1]], dim=0),
+             )
+         )
++        # Route B: when bypassing the fused qkv kernel, the torch path needs the
++        # UNPACKED (cos, sin) rotary (apply_rotary_emb), not the kernel-packed form.
++        if _FORCE_UNFUSED_QKV:
++            dbl_rotary = (image_rotary_emb, text_rotary_emb)  # ((cos,sin)_img, (cos,sin)_txt)
++            single_rotary = (
++                torch.cat([text_rotary_emb[0], image_rotary_emb[0]], dim=0),
++                torch.cat([text_rotary_emb[1], image_rotary_emb[1]], dim=0),
++            )
++        else:
++            dbl_rotary = (rotary_emb_img, rotary_emb_txt)
++            single_rotary = rotary_emb_single
+         kv_attn_kwargs = joint_attention_kwargs
+ 
+         if self.offload:
+@@ -674,7 +725,7 @@
+                             encoder_hidden_states,
+                             double_stream_mod_img,
+                             double_stream_mod_txt,
+-                            (rotary_emb_img, rotary_emb_txt),
++                            dbl_rotary,
+                             kv_attn_kwargs,
+                         )
+                     else:
+@@ -683,7 +734,7 @@
+                             encoder_hidden_states=encoder_hidden_states,
+                             temb_mod_img=double_stream_mod_img,
+                             temb_mod_txt=double_stream_mod_txt,
+-                            image_rotary_emb=(rotary_emb_img, rotary_emb_txt),
++                            image_rotary_emb=dbl_rotary,
+                             joint_attention_kwargs=kv_attn_kwargs,
+                         )
+                 self.transformer_block_offload_manager.step(compute_stream)
+@@ -696,7 +747,7 @@
+                         encoder_hidden_states,
+                         double_stream_mod_img,
+                         double_stream_mod_txt,
+-                        (rotary_emb_img, rotary_emb_txt),
++                        dbl_rotary,
+                         kv_attn_kwargs,
+                     )
+                 else:
+@@ -705,7 +756,7 @@
+                         encoder_hidden_states=encoder_hidden_states,
+                         temb_mod_img=double_stream_mod_img,
+                         temb_mod_txt=double_stream_mod_txt,
+-                        image_rotary_emb=(rotary_emb_img, rotary_emb_txt),
++                        image_rotary_emb=dbl_rotary,
+                         joint_attention_kwargs=kv_attn_kwargs,
+                     )
+ 
+@@ -723,7 +774,7 @@
+                             hidden_states,
+                             None,
+                             single_stream_mod,
+-                            rotary_emb_single,
++                            single_rotary,
+                             kv_attn_kwargs_single,
+                         )
+                     else:
+@@ -731,7 +782,7 @@
+                             hidden_states=hidden_states,
+                             encoder_hidden_states=None,
+                             temb_mod=single_stream_mod,
+-                            image_rotary_emb=rotary_emb_single,
++                            image_rotary_emb=single_rotary,
+                             joint_attention_kwargs=kv_attn_kwargs_single,
+                         )
+                 self.single_transformer_block_offload_manager.step(compute_stream)
+@@ -743,7 +794,7 @@
+                         hidden_states,
+                         None,
+                         single_stream_mod,
+-                        rotary_emb_single,
++                        single_rotary,
+                         kv_attn_kwargs_single,
+                     )
+                 else:
+@@ -751,7 +802,7 @@
+                         hidden_states=hidden_states,
+                         encoder_hidden_states=None,
+                         temb_mod=single_stream_mod,
+-                        image_rotary_emb=rotary_emb_single,
++                        image_rotary_emb=single_rotary,
+                         joint_attention_kwargs=kv_attn_kwargs_single,
+                     )
+ 

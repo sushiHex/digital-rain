@@ -1,0 +1,87 @@
+{
+  "run_a": "eval_runs/glyph_4b_r32_5000/per_cell.json",
+  "run_b": "eval_runs/distill_trained_s20/per_cell.json",
+  "label_a": "base4B20",
+  "label_b": "distilled20",
+  "n_shared_fonts": 50,
+  "results": [
+    {
+      "metric": "composite",
+      "larger_better": true,
+      "median_a": 0.8405057388744217,
+      "median_b": 0.8472433579709142,
+      "median_delta": -0.014871966439556905,
+      "W": 252.0,
+      "p": 0.00019808420760131196,
+      "effect_r": 0.5262921245036072,
+      "n_nonzero": 50,
+      "direction": -1,
+      "mean_delta_nonzero": -0.01266602069563531
+    },
+    {
+      "metric": "char_acc",
+      "larger_better": true,
+      "median_a": 0.7287234042553192,
+      "median_b": 0.7287234042553192,
+      "median_delta": -0.03723404255319146,
+      "W": 272.5,
+      "p": 0.000714909510536539,
+      "effect_r": 0.4833995102566629,
+      "n_nonzero": 49,
+      "direction": -1,
+      "mean_delta_nonzero": -0.033000434216239695
+    },
+    {
+      "metric": "racc",
+      "larger_better": true,
+      "median_a": 0.7872340425531915,
+      "median_b": 0.7659574468085106,
+      "median_delta": -0.03191489361702127,
+      "W": 70.0,
+      "p": 1.0875385547352867e-06,
+      "effect_r": 0.7434456402259944,
+      "n_nonzero": 43,
+      "direction": -1,
+      "mean_delta_nonzero": -0.039336961900049476
+    },
+    {
+      "metric": "dinov2",
+      "larger_better": true,
+      "median_a": 0.8632613896055424,
+      "median_b": 0.894814484296961,
+      "median_delta": 0.02151714550687911,
+      "W": 277.0,
+      "p": 0.0005010973655718873,
+      "effect_r": 0.49217023647268526,
+      "n_nonzero": 50,
+      "direction": 1,
+      "mean_delta_nonzero": 0.01759954297162116
+    },
+    {
+      "metric": "lpips",
+      "larger_better": false,
+      "median_a": 0.1256182197124717,
+      "median_b": 0.11571900774427551,
+      "median_delta": 0.00570480232226088,
+      "W": 455.0,
+      "p": 0.07810737726547229,
+      "effect_r": 0.24915256218393855,
+      "n_nonzero": 50,
+      "direction": 1,
+      "mean_delta_nonzero": 0.006931053218927157
+    },
+    {
+      "metric": "identity",
+      "larger_better": true,
+      "median_a": 1.0,
+      "median_b": 0.9891888733052828,
+      "median_delta": 0.0,
+      "W": 25.0,
+      "p": 0.00021063306253264389,
+      "effect_r": 0.7411820068478717,
+      "n_nonzero": 25,
+      "direction": -1,
+      "mean_delta_nonzero": -0.04582897318726524
+    }
+  ]
+}

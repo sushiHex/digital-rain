@@ -1,0 +1,127 @@
+{
+  "rows": [
+    {
+      "font": "BitcountGridDoubleInk",
+      "variant": "times",
+      "lpips": 0.4858299493789673,
+      "dinov2": 0.5521721839904785
+    },
+    {
+      "font": "BitcountGridDoubleInk",
+      "variant": "oracle",
+      "lpips": 0.36329489946365356,
+      "dinov2": 0.8771733641624451
+    },
+    {
+      "font": "BitcountGridDoubleInk",
+      "variant": "roboto",
+      "lpips": 0.47061973810195923,
+      "dinov2": 0.6398940086364746
+    },
+    {
+      "font": "PlaywriteUSTradGuides",
+      "variant": "times",
+      "lpips": 0.43390706181526184,
+      "dinov2": 0.6863613724708557
+    },
+    {
+      "font": "PlaywriteUSTradGuides",
+      "variant": "oracle",
+      "lpips": 0.4427279233932495,
+      "dinov2": 0.7110880613327026
+    },
+    {
+      "font": "PlaywriteUSTradGuides",
+      "variant": "roboto",
+      "lpips": 0.4551924467086792,
+      "dinov2": 0.7155032157897949
+    },
+    {
+      "font": "PlaywriteMXGuides",
+      "variant": "times",
+      "lpips": 0.43267279863357544,
+      "dinov2": 0.6887884736061096
+    },
+    {
+      "font": "PlaywriteMXGuides",
+      "variant": "oracle",
+      "lpips": 0.4377709925174713,
+      "dinov2": 0.8086084127426147
+    },
+    {
+      "font": "PlaywriteMXGuides",
+      "variant": "roboto",
+      "lpips": 0.45398569107055664,
+      "dinov2": 0.7203519344329834
+    },
+    {
+      "font": "RubikDistressed",
+      "variant": "times",
+      "lpips": 0.3873271346092224,
+      "dinov2": 0.7662256956100464
+    },
+    {
+      "font": "RubikDistressed",
+      "variant": "oracle",
+      "lpips": 0.1984109878540039,
+      "dinov2": 0.8523515462875366
+    },
+    {
+      "font": "RubikDistressed",
+      "variant": "roboto",
+      "lpips": 0.3727816343307495,
+      "dinov2": 0.8142218589782715
+    },
+    {
+      "font": "BitcountPropDoubleInk",
+      "variant": "times",
+      "lpips": 0.33845168352127075,
+      "dinov2": 0.7370424270629883
+    },
+    {
+      "font": "BitcountPropDoubleInk",
+      "variant": "oracle",
+      "lpips": 0.40980708599090576,
+      "dinov2": 0.7945829629898071
+    },
+    {
+      "font": "BitcountPropDoubleInk",
+      "variant": "roboto",
+      "lpips": 0.3452196717262268,
+      "dinov2": 0.8379138112068176
+    }
+  ],
+  "deltas": [
+    {
+      "font": "BitcountGridDoubleInk",
+      "d_lpips_o_t": -0.12253504991531372,
+      "d_dino_o_t": 0.32500118017196655
+    },
+    {
+      "font": "PlaywriteUSTradGuides",
+      "d_lpips_o_t": 0.008820861577987671,
+      "d_dino_o_t": 0.024726688861846924
+    },
+    {
+      "font": "PlaywriteMXGuides",
+      "d_lpips_o_t": 0.005098193883895874,
+      "d_dino_o_t": 0.11981993913650513
+    },
+    {
+      "font": "RubikDistressed",
+      "d_lpips_o_t": -0.1889161467552185,
+      "d_dino_o_t": 0.08612585067749023
+    },
+    {
+      "font": "BitcountPropDoubleInk",
+      "d_lpips_o_t": 0.07135540246963501,
+      "d_dino_o_t": 0.05754053592681885
+    }
+  ],
+  "mean_oracle_minus_times": {
+    "lpips": -0.04523534774780273,
+    "dino": 0.12264283895492553
+  },
+  "n_oracle_wins": 5,
+  "n_total": 5
+}

@@ -1,0 +1,4714 @@
+{
+ "run": "glyph_4b_r32_5000",
+ "specimen": "Hamburgefonstiv 123 the quick brown fox jumps over the lazy dog",
+ "render_px": 48,
+ "summary": {
+  "gt_traced": {
+   "advance_mae": 0.11681090096353797,
+   "advance_p90": 0.2131963703480258,
+   "text_width_err": -0.003046662829811182,
+   "ink_err": 0.045406184305098164,
+   "n_fonts": 50
+  },
+  "model": {
+   "advance_mae": 0.15820109946349117,
+   "advance_p90": 0.28541984458021596,
+   "text_width_err": -0.07635504420470993,
+   "ink_err": -0.030863473075664463,
+   "n_fonts": 50
+  },
+  "retrieval": {
+   "advance_mae": 0.1451436118638422,
+   "advance_p90": 0.2804069856521078,
+   "text_width_err": 0.011890922425208863,
+   "ink_err": 0.024276307717136437,
+   "n_fonts": 50
+  }
+ },
+ "comparisons": [
+  {
+   "contrast": "model vs gt_traced",
+   "metric": "advance_mae",
+   "p": 2.214681370144681e-08,
+   "effect_r": 0.7911585354671876,
+   "n": 50,
+   "significant": true,
+   "better": "gt_traced"
+  },
+  {
+   "contrast": "model vs gt_traced",
+   "metric": "text_width_err",
+   "p": 0.010125817098465027,
+   "effect_r": 0.3673575553391998,
+   "n": 50,
+   "significant": true,
+   "better": "gt_traced"
+  },
+  {
+   "contrast": "model vs gt_traced",
+   "metric": "ink_err",
+   "p": 0.11671066049838684,
+   "effect_r": 0.22185204834066952,
+   "n": 50,
+   "significant": false,
+   "better": null
+  },
+  {
+   "contrast": "model vs retrieval",
+   "metric": "advance_mae",
+   "p": 0.017329367412016176,
+   "effect_r": 0.3365324917906156,
+   "n": 50,
+   "significant": true,
+   "better": "retrieval"
+  },
+  {
+   "contrast": "model vs retrieval",
+   "metric": "text_width_err",
+   "p": 0.5022624931416463,
+   "effect_r": 0.09488441452108634,
+   "n": 50,
+   "significant": false,
+   "better": null
+  },
+  {
+   "contrast": "model vs retrieval",
+   "metric": "ink_err",
+   "p": 0.11671066049838684,
+   "effect_r": 0.22185204834066952,
+   "n": 50,
+   "significant": false,
+   "better": null
+  },
+  {
+   "contrast": "retrieval vs gt_traced",
+   "metric": "advance_mae",
+   "p": 4.373686413044229e-06,
+   "effect_r": 0.6699266116914349,
+   "n": 50,
+   "significant": true,
+   "better": "gt_traced"
+  },
+  {
+   "contrast": "retrieval vs gt_traced",
+   "metric": "text_width_err",
+   "p": 0.029735904237763074,
+   "effect_r": 0.33146944022989655,
+   "n": 50,
+   "significant": true,
+   "better": "gt_traced"
+  },
+  {
+   "contrast": "retrieval vs gt_traced",
+   "metric": "ink_err",
+   "p": 0.7995118441862564,
+   "effect_r": 0.03704663290459547,
+   "n": 50,
+   "significant": false,
+   "better": null
+  }
+ ],
+ "per_font": [
+  {
+   "font": "AkayaTelivigala-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.1530869142460745,
+     "advance_p90": 0.2693119891008175,
+     "text_width_err": 0.17021276595744683,
+     "ink_err": -0.026686950130115794,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.8171
+      },
+      {
+       "char": "f",
+       "err": 0.7059
+      },
+      {
+       "char": "/",
+       "err": 0.484
+      },
+      {
+       "char": "r",
+       "err": 0.3095
+      },
+      {
+       "char": "Q",
+       "err": 0.309
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.149831822168509,
+     "advance_p90": 0.3268327979182014,
+     "text_width_err": 0.08589440504334123,
+     "ink_err": -0.03742297076745449,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.8171
+      },
+      {
+       "char": "f",
+       "err": 0.7222
+      },
+      {
+       "char": "T",
+       "err": 0.502
+      },
+      {
+       "char": "/",
+       "err": 0.4144
+      },
+      {
+       "char": "L",
+       "err": 0.4077
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.28821357387577673,
+     "advance_p90": 0.552543103448276,
+     "text_width_err": 0.3601260835303388,
+     "ink_err": -0.039536340371173706,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 1.1057
+      },
+      {
+       "char": "t",
+       "err": 1.0716
+      },
+      {
+       "char": "q",
+       "err": 0.8925
+      },
+      {
+       "char": "f",
+       "err": 0.781
+      },
+      {
+       "char": "?",
+       "err": 0.7285
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "AlikeAngular-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.07951113911860264,
+     "advance_p90": 0.18770226537216828,
+     "text_width_err": 0.07805907172995785,
+     "ink_err": 0.006658778777593577,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.5668
+      },
+      {
+       "char": "f",
+       "err": 0.2812
+      },
+      {
+       "char": "l",
+       "err": 0.2724
+      },
+      {
+       "char": "'",
+       "err": 0.2565
+      },
+      {
+       "char": "i",
+       "err": 0.2241
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.12480681658604928,
+     "advance_p90": 0.2695040680322171,
+     "text_width_err": 0.06680731364275672,
+     "ink_err": -0.06449194750002585,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.9358
+      },
+      {
+       "char": "j",
+       "err": 0.5594
+      },
+      {
+       "char": "f",
+       "err": 0.3949
+      },
+      {
+       "char": ")",
+       "err": 0.3944
+      },
+      {
+       "char": "J",
+       "err": 0.3889
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.09528588605632947,
+     "advance_p90": 0.1915794819705436,
+     "text_width_err": 0.03375527426160341,
+     "ink_err": -0.030525725650899838,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.5824
+      },
+      {
+       "char": "J",
+       "err": 0.5741
+      },
+      {
+       "char": "`",
+       "err": 0.4332
+      },
+      {
+       "char": "#",
+       "err": 0.3125
+      },
+      {
+       "char": "_",
+       "err": 0.3089
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "AveriaLibre-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.04842118212773327,
+     "advance_p90": 0.0979095460076758,
+     "text_width_err": -0.0007127583749109156,
+     "ink_err": 0.12642054022312554,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "|",
+       "err": 0.3198
+      },
+      {
+       "char": "!",
+       "err": 0.2201
+      },
+      {
+       "char": "j",
+       "err": 0.2144
+      },
+      {
+       "char": "/",
+       "err": 0.1667
+      },
+      {
+       "char": "f",
+       "err": 0.1606
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.08318406647701003,
+     "advance_p90": 0.13245092752122756,
+     "text_width_err": -0.05915894511760511,
+     "ink_err": -0.00020801829556382767,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.3725
+      },
+      {
+       "char": "/",
+       "err": 0.2313
+      },
+      {
+       "char": "I",
+       "err": 0.2007
+      },
+      {
+       "char": "\\",
+       "err": 0.187
+      },
+      {
+       "char": "f",
+       "err": 0.1714
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.04557880906921808,
+     "advance_p90": 0.08655490478788753,
+     "text_width_err": 0.0,
+     "ink_err": 0.11963076006848827,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.3078
+      },
+      {
+       "char": "|",
+       "err": 0.2397
+      },
+      {
+       "char": "/",
+       "err": 0.2288
+      },
+      {
+       "char": "f",
+       "err": 0.1769
+      },
+      {
+       "char": "!",
+       "err": 0.1489
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "AveriaSansLibre-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.054265708445679815,
+     "advance_p90": 0.12292359683327422,
+     "text_width_err": -0.01384839650145775,
+     "ink_err": 0.13486019179403952,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "|",
+       "err": 0.3258
+      },
+      {
+       "char": "j",
+       "err": 0.2606
+      },
+      {
+       "char": "!",
+       "err": 0.2061
+      },
+      {
+       "char": "1",
+       "err": 0.1649
+      },
+      {
+       "char": "I",
+       "err": 0.1644
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.09710502911822522,
+     "advance_p90": 0.16003680041365534,
+     "text_width_err": -0.06705539358600587,
+     "ink_err": -0.021049819056708885,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.4082
+      },
+      {
+       "char": "|",
+       "err": 0.2859
+      },
+      {
+       "char": "I",
+       "err": 0.255
+      },
+      {
+       "char": "t",
+       "err": 0.2431
+      },
+      {
+       "char": " ",
+       "err": 0.203
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.04976814297580021,
+     "advance_p90": 0.1180305683691652,
+     "text_width_err": 0.022594752186589018,
+     "ink_err": 0.14489414605588613,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.378
+      },
+      {
+       "char": "|",
+       "err": 0.2424
+      },
+      {
+       "char": "/",
+       "err": 0.2026
+      },
+      {
+       "char": "f",
+       "err": 0.1974
+      },
+      {
+       "char": "T",
+       "err": 0.1648
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "AveriaSerifLibre-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.05629869401416265,
+     "advance_p90": 0.1304836306535899,
+     "text_width_err": 0.053250345781466146,
+     "ink_err": 0.042661746370925124,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "|",
+       "err": 0.3234
+      },
+      {
+       "char": "f",
+       "err": 0.2824
+      },
+      {
+       "char": "_",
+       "err": 0.192
+      },
+      {
+       "char": "j",
+       "err": 0.1839
+      },
+      {
+       "char": "!",
+       "err": 0.1822
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.08578325857912074,
+     "advance_p90": 0.1747330024936569,
+     "text_width_err": 0.07123098201936373,
+     "ink_err": 0.0051935357099817114,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "f",
+       "err": 0.4246
+      },
+      {
+       "char": "j",
+       "err": 0.3914
+      },
+      {
+       "char": "/",
+       "err": 0.325
+      },
+      {
+       "char": ")",
+       "err": 0.2924
+      },
+      {
+       "char": "|",
+       "err": 0.2836
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.07065562013232048,
+     "advance_p90": 0.13575447570332488,
+     "text_width_err": 0.03665283540802222,
+     "ink_err": -0.07752331722880335,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "|",
+       "err": 0.3415
+      },
+      {
+       "char": "f",
+       "err": 0.2386
+      },
+      {
+       "char": "!",
+       "err": 0.2299
+      },
+      {
+       "char": "]",
+       "err": 0.1837
+      },
+      {
+       "char": "^",
+       "err": 0.1821
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "BitcountGridDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.17742105263157906,
+     "advance_p90": 0.24266666666666661,
+     "text_width_err": 0.04588170259812041,
+     "ink_err": 0.13208559653268037,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "'",
+       "err": 0.62
+      },
+      {
+       "char": ":",
+       "err": 0.6183
+      },
+      {
+       "char": "|",
+       "err": 0.6133
+      },
+      {
+       "char": " ",
+       "err": 0.4317
+      },
+      {
+       "char": "!",
+       "err": 0.43
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.21656140350877193,
+     "advance_p90": 0.4883333333333335,
+     "text_width_err": -0.07241569928137093,
+     "ink_err": -0.12841145849527347,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "'",
+       "err": 0.605
+      },
+      {
+       "char": ":",
+       "err": 0.5933
+      },
+      {
+       "char": "|",
+       "err": 0.5917
+      },
+      {
+       "char": ".",
+       "err": 0.5533
+      },
+      {
+       "char": "m",
+       "err": 0.5367
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.17838596491228084,
+     "advance_p90": 0.24266666666666661,
+     "text_width_err": 0.04588170259812041,
+     "ink_err": -0.02203714990659089,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "'",
+       "err": 0.62
+      },
+      {
+       "char": ":",
+       "err": 0.6183
+      },
+      {
+       "char": "|",
+       "err": 0.6133
+      },
+      {
+       "char": " ",
+       "err": 0.4317
+      },
+      {
+       "char": "!",
+       "err": 0.43
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.15927468671679204,
+     "advance_p90": 0.17666666666666675,
+     "text_width_err": 0.14689612784265527,
+     "ink_err": 0.06406891623946431,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.5367
+      },
+      {
+       "char": "J",
+       "err": 0.5367
+      },
+      {
+       "char": "'",
+       "err": 0.3975
+      },
+      {
+       "char": "`",
+       "err": 0.37
+      },
+      {
+       "char": ":",
+       "err": 0.34
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.16620409356725147,
+     "advance_p90": 0.2985714285714288,
+     "text_width_err": 0.031346035648432746,
+     "ink_err": -0.08782851737856434,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "J",
+       "err": 1.1467
+      },
+      {
+       "char": "j",
+       "err": 0.6933
+      },
+      {
+       "char": "%",
+       "err": 0.54
+      },
+      {
+       "char": "`",
+       "err": 0.43
+      },
+      {
+       "char": "'",
+       "err": 0.4075
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.2105196741854638,
+     "advance_p90": 0.3724000000000001,
+     "text_width_err": 0.16287645974185616,
+     "ink_err": 0.023498796092826124,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "J",
+       "err": 1.29
+      },
+      {
+       "char": "i",
+       "err": 1.28
+      },
+      {
+       "char": "l",
+       "err": 1.2767
+      },
+      {
+       "char": "j",
+       "err": 0.9033
+      },
+      {
+       "char": "I",
+       "err": 0.8967
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "Dangrek-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.07771251955749191,
+     "advance_p90": 0.15888562946901072,
+     "text_width_err": 0.05806938159879338,
+     "ink_err": 0.0227802583585881,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "!",
+       "err": 0.2954
+      },
+      {
+       "char": "Y",
+       "err": 0.28
+      },
+      {
+       "char": "f",
+       "err": 0.2725
+      },
+      {
+       "char": "T",
+       "err": 0.2326
+      },
+      {
+       "char": "|",
+       "err": 0.2167
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.09889012895317667,
+     "advance_p90": 0.1796405900115865,
+     "text_width_err": -0.06485671191553544,
+     "ink_err": -0.032404840870903895,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "!",
+       "err": 0.3511
+      },
+      {
+       "char": "j",
+       "err": 0.2825
+      },
+      {
+       "char": "T",
+       "err": 0.2451
+      },
+      {
+       "char": "I",
+       "err": 0.2312
+      },
+      {
+       "char": "N",
+       "err": 0.2305
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.07725899431795352,
+     "advance_p90": 0.15586694545548424,
+     "text_width_err": 0.05580693815987936,
+     "ink_err": 0.014755581022587227,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "!",
+       "err": 0.2979
+      },
+      {
+       "char": "Y",
+       "err": 0.2739
+      },
+      {
+       "char": "f",
+       "err": 0.2698
+      },
+      {
+       "char": "T",
+       "err": 0.2263
+      },
+      {
+       "char": "|",
+       "err": 0.2134
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "EncodeSansSemiExpanded-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.09468994082565095,
+     "advance_p90": 0.17420356875934231,
+     "text_width_err": -0.05135135135135138,
+     "ink_err": 0.12340755986240937,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.4313
+      },
+      {
+       "char": "I",
+       "err": 0.2854
+      },
+      {
+       "char": "|",
+       "err": 0.2738
+      },
+      {
+       "char": "l",
+       "err": 0.2342
+      },
+      {
+       "char": "/",
+       "err": 0.231
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.12525688604378993,
+     "advance_p90": 0.21865224179992615,
+     "text_width_err": -0.10945945945945945,
+     "ink_err": 0.08375549589510145,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "/",
+       "err": 0.5469
+      },
+      {
+       "char": "\\",
+       "err": 0.517
+      },
+      {
+       "char": "`",
+       "err": 0.473
+      },
+      {
+       "char": "j",
+       "err": 0.4094
+      },
+      {
+       "char": "I",
+       "err": 0.3006
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.09291068220243087,
+     "advance_p90": 0.2097759674134421,
+     "text_width_err": 0.016216216216216273,
+     "ink_err": 0.11506033011804861,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.3896
+      },
+      {
+       "char": "\\",
+       "err": 0.3393
+      },
+      {
+       "char": "/",
+       "err": 0.3234
+      },
+      {
+       "char": "f",
+       "err": 0.3048
+      },
+      {
+       "char": "}",
+       "err": 0.2838
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "FascinateInline-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.06139892337291696,
+     "advance_p90": 0.13141163529994815,
+     "text_width_err": 0.04480286738351258,
+     "ink_err": -0.04799498632159871,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "|",
+       "err": 0.2345
+      },
+      {
+       "char": "j",
+       "err": 0.223
+      },
+      {
+       "char": "_",
+       "err": 0.2005
+      },
+      {
+       "char": "z",
+       "err": 0.1548
+      },
+      {
+       "char": "\\",
+       "err": 0.1512
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.16454077405316309,
+     "advance_p90": 0.36726710070435964,
+     "text_width_err": 0.05675029868578263,
+     "ink_err": 0.11544978685075469,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "\\",
+       "err": 0.8731
+      },
+      {
+       "char": "/",
+       "err": 0.8667
+      },
+      {
+       "char": "|",
+       "err": 0.7234
+      },
+      {
+       "char": "'",
+       "err": 0.6677
+      },
+      {
+       "char": "$",
+       "err": 0.5599
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.06075871309277759,
+     "advance_p90": 0.13257429178099317,
+     "text_width_err": 0.041816009557944955,
+     "ink_err": -0.0009996261228181202,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "|",
+       "err": 0.2345
+      },
+      {
+       "char": "j",
+       "err": 0.2186
+      },
+      {
+       "char": "_",
+       "err": 0.2005
+      },
+      {
+       "char": "\\",
+       "err": 0.148
+      },
+      {
+       "char": "z",
+       "err": 0.1477
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "IBMPlexSansArabic-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.0832575926808551,
+     "advance_p90": 0.14420910319963945,
+     "text_width_err": -0.010600706713780883,
+     "ink_err": 0.17177686437274065,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.51
+      },
+      {
+       "char": "|",
+       "err": 0.4363
+      },
+      {
+       "char": "!",
+       "err": 0.1866
+      },
+      {
+       "char": ":",
+       "err": 0.161
+      },
+      {
+       "char": "f",
+       "err": 0.1605
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.13346867382473518,
+     "advance_p90": 0.2105866209262435,
+     "text_width_err": -0.09752650176678446,
+     "ink_err": 0.06673657564757018,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "I",
+       "err": 0.5225
+      },
+      {
+       "char": "`",
+       "err": 0.495
+      },
+      {
+       "char": "1",
+       "err": 0.4283
+      },
+      {
+       "char": "|",
+       "err": 0.4204
+      },
+      {
+       "char": "J",
+       "err": 0.3784
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.11413243620769353,
+     "advance_p90": 0.2793987975951907,
+     "text_width_err": 0.0939929328621909,
+     "ink_err": 0.1179052820527644,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.54
+      },
+      {
+       "char": "I",
+       "err": 0.505
+      },
+      {
+       "char": "`",
+       "err": 0.485
+      },
+      {
+       "char": "f",
+       "err": 0.4414
+      },
+      {
+       "char": "|",
+       "err": 0.4076
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "IBMPlexSansThai-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.0832575926808551,
+     "advance_p90": 0.14420910319963945,
+     "text_width_err": -0.010600706713780883,
+     "ink_err": 0.17177686437274065,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.51
+      },
+      {
+       "char": "|",
+       "err": 0.4363
+      },
+      {
+       "char": "!",
+       "err": 0.1866
+      },
+      {
+       "char": ":",
+       "err": 0.161
+      },
+      {
+       "char": "f",
+       "err": 0.1605
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.13346867382473518,
+     "advance_p90": 0.2105866209262435,
+     "text_width_err": -0.09752650176678446,
+     "ink_err": 0.06673657564757018,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "I",
+       "err": 0.5225
+      },
+      {
+       "char": "`",
+       "err": 0.495
+      },
+      {
+       "char": "1",
+       "err": 0.4283
+      },
+      {
+       "char": "|",
+       "err": 0.4204
+      },
+      {
+       "char": "J",
+       "err": 0.3784
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.11413243620769353,
+     "advance_p90": 0.2793987975951907,
+     "text_width_err": 0.0939929328621909,
+     "ink_err": 0.1179052820527644,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.54
+      },
+      {
+       "char": "I",
+       "err": 0.505
+      },
+      {
+       "char": "`",
+       "err": 0.485
+      },
+      {
+       "char": "f",
+       "err": 0.4414
+      },
+      {
+       "char": "|",
+       "err": 0.4076
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "IBMPlexSansThaiLooped-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.0832575926808551,
+     "advance_p90": 0.14420910319963945,
+     "text_width_err": -0.010600706713780883,
+     "ink_err": 0.17177686437274065,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.51
+      },
+      {
+       "char": "|",
+       "err": 0.4363
+      },
+      {
+       "char": "!",
+       "err": 0.1866
+      },
+      {
+       "char": ":",
+       "err": 0.161
+      },
+      {
+       "char": "f",
+       "err": 0.1605
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.13346867382473518,
+     "advance_p90": 0.2105866209262435,
+     "text_width_err": -0.09752650176678446,
+     "ink_err": 0.06673657564757018,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "I",
+       "err": 0.5225
+      },
+      {
+       "char": "`",
+       "err": 0.495
+      },
+      {
+       "char": "1",
+       "err": 0.4283
+      },
+      {
+       "char": "|",
+       "err": 0.4204
+      },
+      {
+       "char": "J",
+       "err": 0.3784
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.11413243620769353,
+     "advance_p90": 0.2793987975951907,
+     "text_width_err": 0.0939929328621909,
+     "ink_err": 0.1179052820527644,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.54
+      },
+      {
+       "char": "I",
+       "err": 0.505
+      },
+      {
+       "char": "`",
+       "err": 0.485
+      },
+      {
+       "char": "f",
+       "err": 0.4414
+      },
+      {
+       "char": "|",
+       "err": 0.4076
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "IBMPlexSerif-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.07437368021099316,
+     "advance_p90": 0.16003713411970294,
+     "text_width_err": 0.051006711409395944,
+     "ink_err": -0.006920656722052554,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.5167
+      },
+      {
+       "char": "|",
+       "err": 0.4295
+      },
+      {
+       "char": "f",
+       "err": 0.3158
+      },
+      {
+       "char": " ",
+       "err": 0.2198
+      },
+      {
+       "char": ":",
+       "err": 0.191
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.09984593964969163,
+     "advance_p90": 0.20085511651469107,
+     "text_width_err": 0.016778523489932917,
+     "ink_err": -0.04340965748441605,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "f",
+       "err": 0.4123
+      },
+      {
+       "char": "`",
+       "err": 0.4067
+      },
+      {
+       "char": "|",
+       "err": 0.396
+      },
+      {
+       "char": "/",
+       "err": 0.3689
+      },
+      {
+       "char": "\\",
+       "err": 0.3534
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.08935221254558598,
+     "advance_p90": 0.1893529296272405,
+     "text_width_err": 0.07852348993288594,
+     "ink_err": -0.1253515189934341,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.5333
+      },
+      {
+       "char": "|",
+       "err": 0.4832
+      },
+      {
+       "char": "\\",
+       "err": 0.2685
+      },
+      {
+       "char": "/",
+       "err": 0.2623
+      },
+      {
+       "char": " ",
+       "err": 0.2586
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "InterTight[wght]",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.07743346356862531,
+     "advance_p90": 0.16612449197860973,
+     "text_width_err": 0.0355819125277983,
+     "ink_err": 0.03404072698903571,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.4966
+      },
+      {
+       "char": "|",
+       "err": 0.3685
+      },
+      {
+       "char": "_",
+       "err": 0.3078
+      },
+      {
+       "char": "\\",
+       "err": 0.2953
+      },
+      {
+       "char": "f",
+       "err": 0.2952
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.1254665563999369,
+     "advance_p90": 0.22421617062065663,
+     "text_width_err": -0.04002965159377314,
+     "ink_err": -0.10371300422085006,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.8905
+      },
+      {
+       "char": "/",
+       "err": 0.6701
+      },
+      {
+       "char": "\\",
+       "err": 0.6313
+      },
+      {
+       "char": "|",
+       "err": 0.3399
+      },
+      {
+       "char": "_",
+       "err": 0.325
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.07531099705144105,
+     "advance_p90": 0.15133523820245823,
+     "text_width_err": 0.026686434395848835,
+     "ink_err": 0.05003943297478175,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.4651
+      },
+      {
+       "char": "|",
+       "err": 0.3613
+      },
+      {
+       "char": "f",
+       "err": 0.2952
+      },
+      {
+       "char": "\\",
+       "err": 0.2857
+      },
+      {
+       "char": "_",
+       "err": 0.2856
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "JainiPurva-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.28826859687789413,
+     "advance_p90": 0.44149746192893435,
+     "text_width_err": 0.32894736842105265,
+     "ink_err": -0.13307630654720204,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": " ",
+       "err": 0.9769
+      },
+      {
+       "char": "f",
+       "err": 0.7874
+      },
+      {
+       "char": "_",
+       "err": 0.7682
+      },
+      {
+       "char": "{",
+       "err": 0.5861
+      },
+      {
+       "char": "l",
+       "err": 0.576
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.23024431427446124,
+     "advance_p90": 0.45597936124355054,
+     "text_width_err": 0.14661654135338353,
+     "ink_err": -0.18088758601029264,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": " ",
+       "err": 0.7
+      },
+      {
+       "char": "P",
+       "err": 0.6374
+      },
+      {
+       "char": "j",
+       "err": 0.5837
+      },
+      {
+       "char": "f",
+       "err": 0.5827
+      },
+      {
+       "char": "\\",
+       "err": 0.5443
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.28257476691254546,
+     "advance_p90": 0.5873604879200767,
+     "text_width_err": 0.2471804511278195,
+     "ink_err": 0.04419947894958676,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "\\",
+       "err": 0.9311
+      },
+      {
+       "char": "j",
+       "err": 0.8841
+      },
+      {
+       "char": " ",
+       "err": 0.8462
+      },
+      {
+       "char": "f",
+       "err": 0.8346
+      },
+      {
+       "char": "^",
+       "err": 0.8098
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "KaiseiOpti-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.09553544656547086,
+     "advance_p90": 0.22146892655367237,
+     "text_width_err": 0.03434867141931308,
+     "ink_err": 0.00527409626772779,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "!",
+       "err": 0.4
+      },
+      {
+       "char": ";",
+       "err": 0.3846
+      },
+      {
+       "char": "|",
+       "err": 0.368
+      },
+      {
+       "char": ":",
+       "err": 0.3205
+      },
+      {
+       "char": "}",
+       "err": 0.3133
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.0953696495987022,
+     "advance_p90": 0.264,
+     "text_width_err": -0.00777705767984449,
+     "ink_err": -0.027713089830374238,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "!",
+       "err": 0.3925
+      },
+      {
+       "char": ">",
+       "err": 0.3359
+      },
+      {
+       "char": ";",
+       "err": 0.3333
+      },
+      {
+       "char": "<",
+       "err": 0.3321
+      },
+      {
+       "char": "+",
+       "err": 0.3133
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.1109646858771895,
+     "advance_p90": 0.2603809523809524,
+     "text_width_err": -0.005184705119896327,
+     "ink_err": -0.02829291690985758,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "!",
+       "err": 0.435
+      },
+      {
+       "char": "#",
+       "err": 0.3833
+      },
+      {
+       "char": ":",
+       "err": 0.3744
+      },
+      {
+       "char": "|",
+       "err": 0.356
+      },
+      {
+       "char": "]",
+       "err": 0.3222
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "Kavoon-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.05594012386539064,
+     "advance_p90": 0.1412030596634369,
+     "text_width_err": 0.06295081967213112,
+     "ink_err": -0.10126856378568805,
+     "n_glyphs": 94,
+     "worst_glyphs": [
+      {
+       "char": " ",
+       "err": 0.3396
+      },
+      {
+       "char": "j",
+       "err": 0.2091
+      },
+      {
+       "char": "T",
+       "err": 0.1866
+      },
+      {
+       "char": "Y",
+       "err": 0.1821
+      },
+      {
+       "char": "l",
+       "err": 0.1715
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.08433074602269808,
+     "advance_p90": 0.16048212237911852,
+     "text_width_err": -0.030819672131147557,
+     "ink_err": -0.22997300009535837,
+     "n_glyphs": 94,
+     "worst_glyphs": [
+      {
+       "char": "_",
+       "err": 0.4609
+      },
+      {
+       "char": "\\",
+       "err": 0.3164
+      },
+      {
+       "char": "j",
+       "err": 0.2957
+      },
+      {
+       "char": "/",
+       "err": 0.2829
+      },
+      {
+       "char": "^",
+       "err": 0.2394
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.13555502730836358,
+     "advance_p90": 0.23988884802440547,
+     "text_width_err": -0.1442622950819672,
+     "ink_err": -0.13303422070443494,
+     "n_glyphs": 94,
+     "worst_glyphs": [
+      {
+       "char": "_",
+       "err": 0.4826
+      },
+      {
+       "char": "J",
+       "err": 0.2923
+      },
+      {
+       "char": "*",
+       "err": 0.2877
+      },
+      {
+       "char": "~",
+       "err": 0.2811
+      },
+      {
+       "char": "^",
+       "err": 0.2665
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "KohSantepheap-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.08375946325817825,
+     "advance_p90": 0.20312755297041607,
+     "text_width_err": 0.047213114754098395,
+     "ink_err": 0.00797853225008538,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "|",
+       "err": 0.6798
+      },
+      {
+       "char": "`",
+       "err": 0.4196
+      },
+      {
+       "char": "f",
+       "err": 0.368
+      },
+      {
+       "char": "\\",
+       "err": 0.3433
+      },
+      {
+       "char": "/",
+       "err": 0.3329
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.11520325531949359,
+     "advance_p90": 0.2255979320513224,
+     "text_width_err": 0.010491803278688483,
+     "ink_err": -0.061612793738015204,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "/",
+       "err": 0.8328
+      },
+      {
+       "char": "\\",
+       "err": 0.7738
+      },
+      {
+       "char": "|",
+       "err": 0.678
+      },
+      {
+       "char": "`",
+       "err": 0.3936
+      },
+      {
+       "char": "f",
+       "err": 0.3708
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.09877357788984119,
+     "advance_p90": 0.23791605633070811,
+     "text_width_err": 0.009180327868852478,
+     "ink_err": -0.03814018238334671,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "|",
+       "err": 0.6888
+      },
+      {
+       "char": "\\",
+       "err": 0.6176
+      },
+      {
+       "char": "/",
+       "err": 0.6176
+      },
+      {
+       "char": "`",
+       "err": 0.4577
+      },
+      {
+       "char": "f",
+       "err": 0.3247
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "KosugiMaru-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.12218947368421056,
+     "advance_p90": 0.4968000000000003,
+     "text_width_err": -0.16312997347480107,
+     "ink_err": 0.2572216216594425,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "|",
+       "err": 0.66
+      },
+      {
+       "char": "l",
+       "err": 0.618
+      },
+      {
+       "char": "I",
+       "err": 0.614
+      },
+      {
+       "char": "'",
+       "err": 0.584
+      },
+      {
+       "char": "i",
+       "err": 0.556
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.21475789473684212,
+     "advance_p90": 0.4852000000000001,
+     "text_width_err": -0.25,
+     "ink_err": -0.020498265531378124,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "|",
+       "err": 0.622
+      },
+      {
+       "char": " ",
+       "err": 0.594
+      },
+      {
+       "char": "'",
+       "err": 0.586
+      },
+      {
+       "char": "i",
+       "err": 0.56
+      },
+      {
+       "char": "!",
+       "err": 0.556
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.2589473684210527,
+     "advance_p90": 0.5676000000000002,
+     "text_width_err": -0.14323607427055707,
+     "ink_err": -0.03888375274695566,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "W",
+       "err": 0.982
+      },
+      {
+       "char": "@",
+       "err": 0.752
+      },
+      {
+       "char": "M",
+       "err": 0.716
+      },
+      {
+       "char": "Q",
+       "err": 0.712
+      },
+      {
+       "char": "A",
+       "err": 0.688
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "MirandaSans[wght]",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.07258974173985011,
+     "advance_p90": 0.12797953964194375,
+     "text_width_err": -0.027700831024930705,
+     "ink_err": 0.09022455766247761,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "|",
+       "err": 0.2778
+      },
+      {
+       "char": "I",
+       "err": 0.2667
+      },
+      {
+       "char": "'",
+       "err": 0.1944
+      },
+      {
+       "char": "j",
+       "err": 0.1686
+      },
+      {
+       "char": "H",
+       "err": 0.151
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.1352724286519042,
+     "advance_p90": 0.22724911452184177,
+     "text_width_err": -0.09626038781163437,
+     "ink_err": -0.03087396080998117,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.4392
+      },
+      {
+       "char": "/",
+       "err": 0.3325
+      },
+      {
+       "char": "|",
+       "err": 0.3111
+      },
+      {
+       "char": "\\",
+       "err": 0.2961
+      },
+      {
+       "char": "J",
+       "err": 0.2928
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.09124622832265575,
+     "advance_p90": 0.15970149253731367,
+     "text_width_err": -0.04085872576177285,
+     "ink_err": 0.06620212115883173,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "|",
+       "err": 0.337
+      },
+      {
+       "char": "l",
+       "err": 0.3037
+      },
+      {
+       "char": "I",
+       "err": 0.3037
+      },
+      {
+       "char": "'",
+       "err": 0.2222
+      },
+      {
+       "char": "f",
+       "err": 0.1941
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "MochiyPopPOne-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.16616367463709739,
+     "advance_p90": 0.23965217391304347,
+     "text_width_err": -0.1238789237668162,
+     "ink_err": -0.024897326673968823,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.4717
+      },
+      {
+       "char": "1",
+       "err": 0.4626
+      },
+      {
+       "char": "|",
+       "err": 0.3839
+      },
+      {
+       "char": "!",
+       "err": 0.3281
+      },
+      {
+       "char": "'",
+       "err": 0.3
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.2176995386021515,
+     "advance_p90": 0.33813957979831444,
+     "text_width_err": -0.21468609865470856,
+     "ink_err": -0.11874400158567078,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "/",
+       "err": 0.4821
+      },
+      {
+       "char": "+",
+       "err": 0.4731
+      },
+      {
+       "char": "\\",
+       "err": 0.4667
+      },
+      {
+       "char": "`",
+       "err": 0.4467
+      },
+      {
+       "char": "=",
+       "err": 0.4305
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.14375486546728802,
+     "advance_p90": 0.2913680386545147,
+     "text_width_err": -0.028587443946188396,
+     "ink_err": 0.049500026154513765,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "l",
+       "err": 0.381
+      },
+      {
+       "char": " ",
+       "err": 0.3668
+      },
+      {
+       "char": "?",
+       "err": 0.3611
+      },
+      {
+       "char": "L",
+       "err": 0.3386
+      },
+      {
+       "char": "+",
+       "err": 0.3323
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "MomoTrustSans[wght]",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.12788581545746336,
+     "advance_p90": 0.21148640239309152,
+     "text_width_err": -0.0786290322580645,
+     "ink_err": 0.050817876431015874,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "!",
+       "err": 0.3547
+      },
+      {
+       "char": "I",
+       "err": 0.3537
+      },
+      {
+       "char": "|",
+       "err": 0.326
+      },
+      {
+       "char": "]",
+       "err": 0.2638
+      },
+      {
+       "char": "[",
+       "err": 0.2468
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.20988247734510432,
+     "advance_p90": 0.33853761607324895,
+     "text_width_err": -0.16397849462365588,
+     "ink_err": -0.03736039311975414,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "\"",
+       "err": 0.393
+      },
+      {
+       "char": "]",
+       "err": 0.3872
+      },
+      {
+       "char": "[",
+       "err": 0.3787
+      },
+      {
+       "char": "+",
+       "err": 0.3786
+      },
+      {
+       "char": "}",
+       "err": 0.3475
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.1335153330787518,
+     "advance_p90": 0.24223769157357,
+     "text_width_err": -0.04771505376344087,
+     "ink_err": -0.011502970794047163,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "!",
+       "err": 0.3808
+      },
+      {
+       "char": "|",
+       "err": 0.348
+      },
+      {
+       "char": "I",
+       "err": 0.3401
+      },
+      {
+       "char": "=",
+       "err": 0.3217
+      },
+      {
+       "char": "~",
+       "err": 0.2894
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "MuktaMahee-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.15282900709373068,
+     "advance_p90": 0.3018678242988521,
+     "text_width_err": 0.13521772345301764,
+     "ink_err": 0.08712729504456984,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.5952
+      },
+      {
+       "char": "f",
+       "err": 0.4337
+      },
+      {
+       "char": "\\",
+       "err": 0.4139
+      },
+      {
+       "char": "/",
+       "err": 0.4126
+      },
+      {
+       "char": "j",
+       "err": 0.4024
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.1278755365058386,
+     "advance_p90": 0.2887558044250205,
+     "text_width_err": 0.012223071046600475,
+     "ink_err": 0.07900580123965173,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "\\",
+       "err": 0.5619
+      },
+      {
+       "char": "/",
+       "err": 0.5215
+      },
+      {
+       "char": "`",
+       "err": 0.4571
+      },
+      {
+       "char": "*",
+       "err": 0.4357
+      },
+      {
+       "char": "j",
+       "err": 0.3821
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.1280353556405648,
+     "advance_p90": 0.2653214601228521,
+     "text_width_err": 0.13139801375095495,
+     "ink_err": 0.08341897963784728,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.5952
+      },
+      {
+       "char": "f",
+       "err": 0.4337
+      },
+      {
+       "char": "j",
+       "err": 0.4024
+      },
+      {
+       "char": "_",
+       "err": 0.3115
+      },
+      {
+       "char": ",",
+       "err": 0.2944
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "NovaSquare",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.15308336180834614,
+     "advance_p90": 0.2123491688351446,
+     "text_width_err": -0.15568862275449102,
+     "ink_err": 0.27708890781511597,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "|",
+       "err": 0.4342
+      },
+      {
+       "char": " ",
+       "err": 0.4163
+      },
+      {
+       "char": "l",
+       "err": 0.3139
+      },
+      {
+       "char": "I",
+       "err": 0.3139
+      },
+      {
+       "char": "i",
+       "err": 0.2593
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.2700547206038352,
+     "advance_p90": 0.3783920567375887,
+     "text_width_err": -0.281437125748503,
+     "ink_err": 0.10186604974337832,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": " ",
+       "err": 0.5008
+      },
+      {
+       "char": "<",
+       "err": 0.4673
+      },
+      {
+       "char": ">",
+       "err": 0.4551
+      },
+      {
+       "char": "-",
+       "err": 0.4433
+      },
+      {
+       "char": "J",
+       "err": 0.442
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.15361212642348318,
+     "advance_p90": 0.2135143268242549,
+     "text_width_err": -0.15568862275449102,
+     "ink_err": 0.2657029938459956,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "|",
+       "err": 0.4342
+      },
+      {
+       "char": " ",
+       "err": 0.4163
+      },
+      {
+       "char": "l",
+       "err": 0.3139
+      },
+      {
+       "char": "I",
+       "err": 0.3139
+      },
+      {
+       "char": "i",
+       "err": 0.2593
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "PlaywriteAUQLD[wght]",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.22321303753248825,
+     "advance_p90": 0.3319742495512871,
+     "text_width_err": -0.18685955394816156,
+     "ink_err": -0.03853270789669394,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.7857
+      },
+      {
+       "char": "`",
+       "err": 0.5969
+      },
+      {
+       "char": "f",
+       "err": 0.5902
+      },
+      {
+       "char": "/",
+       "err": 0.5482
+      },
+      {
+       "char": "'",
+       "err": 0.4734
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.35224602759228474,
+     "advance_p90": 0.4859052814282172,
+     "text_width_err": -0.3701024713682941,
+     "ink_err": -0.1993448713824274,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.7714
+      },
+      {
+       "char": "`",
+       "err": 0.6682
+      },
+      {
+       "char": "^",
+       "err": 0.5714
+      },
+      {
+       "char": "f",
+       "err": 0.5519
+      },
+      {
+       "char": "+",
+       "err": 0.5308
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.22793168767347582,
+     "advance_p90": 0.33561049682773797,
+     "text_width_err": -0.20916214587100668,
+     "ink_err": -0.05234400406101025,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.7714
+      },
+      {
+       "char": "`",
+       "err": 0.5984
+      },
+      {
+       "char": "f",
+       "err": 0.5847
+      },
+      {
+       "char": "/",
+       "err": 0.5427
+      },
+      {
+       "char": "'",
+       "err": 0.4675
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "PlaywriteAUSA[wght]",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.21173319442959404,
+     "advance_p90": 0.3233656657778465,
+     "text_width_err": -0.16811955168119552,
+     "ink_err": -0.07727219243315953,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.8036
+      },
+      {
+       "char": "f",
+       "err": 0.6011
+      },
+      {
+       "char": "`",
+       "err": 0.5922
+      },
+      {
+       "char": "/",
+       "err": 0.5639
+      },
+      {
+       "char": "'",
+       "err": 0.4911
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.3368307585166395,
+     "advance_p90": 0.4745450506546397,
+     "text_width_err": -0.33748443337484435,
+     "ink_err": -0.21917514625254997,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.8214
+      },
+      {
+       "char": "`",
+       "err": 0.6651
+      },
+      {
+       "char": "f",
+       "err": 0.5902
+      },
+      {
+       "char": "^",
+       "err": 0.5583
+      },
+      {
+       "char": "+",
+       "err": 0.5229
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.21752694393475477,
+     "advance_p90": 0.32957356076759065,
+     "text_width_err": -0.18306351183063507,
+     "ink_err": -0.08061376214674365,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.7714
+      },
+      {
+       "char": "`",
+       "err": 0.5984
+      },
+      {
+       "char": "f",
+       "err": 0.5847
+      },
+      {
+       "char": "/",
+       "err": 0.5556
+      },
+      {
+       "char": "'",
+       "err": 0.4675
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "PlaywriteCO[wght]",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.32004906129298744,
+     "advance_p90": 0.46482614269642336,
+     "text_width_err": -0.2888235294117647,
+     "ink_err": -0.13040914773332923,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.6574
+      },
+      {
+       "char": "^",
+       "err": 0.5059
+      },
+      {
+       "char": "N",
+       "err": 0.5046
+      },
+      {
+       "char": "M",
+       "err": 0.5031
+      },
+      {
+       "char": "A",
+       "err": 0.4909
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.3929281143427424,
+     "advance_p90": 0.5360124252824692,
+     "text_width_err": -0.39647058823529413,
+     "ink_err": -0.2256424520946011,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "G",
+       "err": 0.6276
+      },
+      {
+       "char": "^",
+       "err": 0.5963
+      },
+      {
+       "char": "I",
+       "err": 0.5867
+      },
+      {
+       "char": "+",
+       "err": 0.5636
+      },
+      {
+       "char": "O",
+       "err": 0.562
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.3681096875356104,
+     "advance_p90": 0.512269286315088,
+     "text_width_err": -0.3735294117647059,
+     "ink_err": -0.14637361693594408,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.6775
+      },
+      {
+       "char": "I",
+       "err": 0.5857
+      },
+      {
+       "char": "^",
+       "err": 0.5491
+      },
+      {
+       "char": "U",
+       "err": 0.5363
+      },
+      {
+       "char": "Y",
+       "err": 0.5266
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "PlaywriteMXGuides-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.3115582678698865,
+     "advance_p90": 0.434486174318528,
+     "text_width_err": -0.3182086034177961,
+     "ink_err": -0.08671353308681196,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "'",
+       "err": 0.7219
+      },
+      {
+       "char": "M",
+       "err": 0.4742
+      },
+      {
+       "char": "D",
+       "err": 0.4552
+      },
+      {
+       "char": "N",
+       "err": 0.4528
+      },
+      {
+       "char": "G",
+       "err": 0.4527
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.3648613808840501,
+     "advance_p90": 0.5078404526411265,
+     "text_width_err": -0.37595757218621095,
+     "ink_err": 0.04713159438764403,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "'",
+       "err": 1.0473
+      },
+      {
+       "char": "G",
+       "err": 0.6208
+      },
+      {
+       "char": "S",
+       "err": 0.56
+      },
+      {
+       "char": "6",
+       "err": 0.5493
+      },
+      {
+       "char": "<",
+       "err": 0.5465
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.3385348797525363,
+     "advance_p90": 0.44841099163679815,
+     "text_width_err": -0.3576900412492634,
+     "ink_err": 0.017407673662213075,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "I",
+       "err": 0.6239
+      },
+      {
+       "char": "G",
+       "err": 0.4965
+      },
+      {
+       "char": "M",
+       "err": 0.4763
+      },
+      {
+       "char": "O",
+       "err": 0.4754
+      },
+      {
+       "char": "H",
+       "err": 0.458
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "PlaywriteUSTradGuides-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.31466693950781227,
+     "advance_p90": 0.4462545219121467,
+     "text_width_err": -0.31209053007742704,
+     "ink_err": -0.07773366076824784,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "'",
+       "err": 0.716
+      },
+      {
+       "char": "M",
+       "err": 0.4788
+      },
+      {
+       "char": "D",
+       "err": 0.4557
+      },
+      {
+       "char": "H",
+       "err": 0.4535
+      },
+      {
+       "char": "Q",
+       "err": 0.4523
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.3432417872900313,
+     "advance_p90": 0.4990493768757707,
+     "text_width_err": -0.34365693865396074,
+     "ink_err": -0.00515958326085042,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "'",
+       "err": 1.0473
+      },
+      {
+       "char": "G",
+       "err": 0.5442
+      },
+      {
+       "char": "<",
+       "err": 0.5387
+      },
+      {
+       "char": "I",
+       "err": 0.5238
+      },
+      {
+       "char": "@",
+       "err": 0.5224
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.3148980740319873,
+     "advance_p90": 0.44553061201304234,
+     "text_width_err": -0.31209053007742704,
+     "ink_err": -0.06305373495476985,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "'",
+       "err": 0.7219
+      },
+      {
+       "char": "M",
+       "err": 0.4719
+      },
+      {
+       "char": "O",
+       "err": 0.4698
+      },
+      {
+       "char": "D",
+       "err": 0.4671
+      },
+      {
+       "char": "K",
+       "err": 0.4652
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "ProtestStrike-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.0806398167411101,
+     "advance_p90": 0.13898438560760365,
+     "text_width_err": 0.07063197026022294,
+     "ink_err": -0.08133764252942277,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "F",
+       "err": 0.2194
+      },
+      {
+       "char": "`",
+       "err": 0.2064
+      },
+      {
+       "char": "/",
+       "err": 0.2037
+      },
+      {
+       "char": "\\",
+       "err": 0.2014
+      },
+      {
+       "char": "|",
+       "err": 0.2
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.08868711343790357,
+     "advance_p90": 0.15229290375683466,
+     "text_width_err": -0.059479553903345694,
+     "ink_err": -0.13302505246924923,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.3385
+      },
+      {
+       "char": "N",
+       "err": 0.2085
+      },
+      {
+       "char": "E",
+       "err": 0.2036
+      },
+      {
+       "char": "0",
+       "err": 0.1921
+      },
+      {
+       "char": "&",
+       "err": 0.1863
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.2277804117730842,
+     "advance_p90": 0.44811836379460407,
+     "text_width_err": 0.18810408921933086,
+     "ink_err": -0.17620903968629764,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "I",
+       "err": 0.6702
+      },
+      {
+       "char": "~",
+       "err": 0.6556
+      },
+      {
+       "char": "j",
+       "err": 0.6231
+      },
+      {
+       "char": "_",
+       "err": 0.6
+      },
+      {
+       "char": "^",
+       "err": 0.5911
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "ReemKufiFun[wght]",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.13192673831920082,
+     "advance_p90": 0.21242300097261932,
+     "text_width_err": -0.03803131991051456,
+     "ink_err": 0.03852978663728579,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": " ",
+       "err": 0.7846
+      },
+      {
+       "char": ";",
+       "err": 0.4706
+      },
+      {
+       "char": ".",
+       "err": 0.4615
+      },
+      {
+       "char": ",",
+       "err": 0.4187
+      },
+      {
+       "char": ":",
+       "err": 0.3876
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.15383592114860298,
+     "advance_p90": 0.3244379276637344,
+     "text_width_err": -0.03430275913497394,
+     "ink_err": 0.009985344219102688,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": " ",
+       "err": 0.8077
+      },
+      {
+       "char": ".",
+       "err": 0.6154
+      },
+      {
+       "char": "j",
+       "err": 0.4566
+      },
+      {
+       "char": "*",
+       "err": 0.4358
+      },
+      {
+       "char": ":",
+       "err": 0.427
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.14631277317477917,
+     "advance_p90": 0.3290082721442515,
+     "text_width_err": 0.09395973154362425,
+     "ink_err": 0.07343375179572931,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": " ",
+       "err": 1.0308
+      },
+      {
+       "char": ".",
+       "err": 0.6095
+      },
+      {
+       "char": "j",
+       "err": 0.5358
+      },
+      {
+       "char": "-",
+       "err": 0.4803
+      },
+      {
+       "char": "*",
+       "err": 0.4448
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "ReemKufiInk-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.13201348851545944,
+     "advance_p90": 0.21242300097261932,
+     "text_width_err": -0.03803131991051456,
+     "ink_err": 0.04089386253638416,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": " ",
+       "err": 0.7846
+      },
+      {
+       "char": ";",
+       "err": 0.4755
+      },
+      {
+       "char": ".",
+       "err": 0.4615
+      },
+      {
+       "char": ",",
+       "err": 0.4187
+      },
+      {
+       "char": ":",
+       "err": 0.3876
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.15394064868601068,
+     "advance_p90": 0.32724784793750333,
+     "text_width_err": -0.03803131991051456,
+     "ink_err": 0.014413426518452344,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": " ",
+       "err": 0.8
+      },
+      {
+       "char": ".",
+       "err": 0.6154
+      },
+      {
+       "char": "j",
+       "err": 0.4528
+      },
+      {
+       "char": "*",
+       "err": 0.4328
+      },
+      {
+       "char": ":",
+       "err": 0.4101
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.14631277317477917,
+     "advance_p90": 0.3290082721442515,
+     "text_width_err": 0.09395973154362425,
+     "ink_err": 0.07343375179572931,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": " ",
+       "err": 1.0308
+      },
+      {
+       "char": ".",
+       "err": 0.6095
+      },
+      {
+       "char": "j",
+       "err": 0.5358
+      },
+      {
+       "char": "-",
+       "err": 0.4803
+      },
+      {
+       "char": "*",
+       "err": 0.4448
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "RubikDistressed-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.05721374123147608,
+     "advance_p90": 0.12648183967332904,
+     "text_width_err": 0.07636363636363641,
+     "ink_err": -0.028962401189757903,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": " ",
+       "err": 0.7151
+      },
+      {
+       "char": "j",
+       "err": 0.3913
+      },
+      {
+       "char": "'",
+       "err": 0.197
+      },
+      {
+       "char": ";",
+       "err": 0.1662
+      },
+      {
+       "char": "{",
+       "err": 0.1603
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.074434023114187,
+     "advance_p90": 0.14212202891448183,
+     "text_width_err": 0.0018181818181817189,
+     "ink_err": -0.031504402651796104,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": " ",
+       "err": 0.6075
+      },
+      {
+       "char": "j",
+       "err": 0.3681
+      },
+      {
+       "char": "*",
+       "err": 0.2748
+      },
+      {
+       "char": "`",
+       "err": 0.2556
+      },
+      {
+       "char": ")",
+       "err": 0.227
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.04761325755441262,
+     "advance_p90": 0.10367941129419293,
+     "text_width_err": 0.07333333333333325,
+     "ink_err": -0.04537073191354091,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": " ",
+       "err": 0.7043
+      },
+      {
+       "char": "j",
+       "err": 0.3594
+      },
+      {
+       "char": ".",
+       "err": 0.3141
+      },
+      {
+       "char": "{",
+       "err": 0.1456
+      },
+      {
+       "char": "}",
+       "err": 0.1414
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "SchibstedGrotesk[wght]",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.05753042509094374,
+     "advance_p90": 0.11368067226890755,
+     "text_width_err": -0.013085399449035862,
+     "ink_err": 0.17642687364279497,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.396
+      },
+      {
+       "char": "|",
+       "err": 0.2017
+      },
+      {
+       "char": "'",
+       "err": 0.1696
+      },
+      {
+       "char": "(",
+       "err": 0.1374
+      },
+      {
+       "char": ")",
+       "err": 0.1309
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.11915843312920497,
+     "advance_p90": 0.19632876966944776,
+     "text_width_err": -0.10606060606060608,
+     "ink_err": 0.04062203633003425,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "I",
+       "err": 0.4654
+      },
+      {
+       "char": "J",
+       "err": 0.4367
+      },
+      {
+       "char": "`",
+       "err": 0.388
+      },
+      {
+       "char": "-",
+       "err": 0.2538
+      },
+      {
+       "char": "|",
+       "err": 0.2351
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.11906521651138997,
+     "advance_p90": 0.27173419433445023,
+     "text_width_err": -0.0792011019283747,
+     "ink_err": 0.17914367758004546,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "I",
+       "err": 0.4597
+      },
+      {
+       "char": "`",
+       "err": 0.418
+      },
+      {
+       "char": "+",
+       "err": 0.3572
+      },
+      {
+       "char": ">",
+       "err": 0.3431
+      },
+      {
+       "char": "<",
+       "err": 0.3431
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "ShipporiAntiqueB1-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.0935787614687673,
+     "advance_p90": 0.16047261009667016,
+     "text_width_err": -0.043824701195219085,
+     "ink_err": 0.09036337768596714,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.4424
+      },
+      {
+       "char": "|",
+       "err": 0.3649
+      },
+      {
+       "char": "I",
+       "err": 0.298
+      },
+      {
+       "char": "l",
+       "err": 0.2811
+      },
+      {
+       "char": "1",
+       "err": 0.2744
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.16471689246756238,
+     "advance_p90": 0.2714449064449065,
+     "text_width_err": -0.11686586985391767,
+     "ink_err": -0.030390221523710514,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "J",
+       "err": 0.5356
+      },
+      {
+       "char": "`",
+       "err": 0.5068
+      },
+      {
+       "char": "/",
+       "err": 0.467
+      },
+      {
+       "char": "\\",
+       "err": 0.4355
+      },
+      {
+       "char": "L",
+       "err": 0.3384
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.14847495684135817,
+     "advance_p90": 0.28671482445424135,
+     "text_width_err": -0.06905710491367867,
+     "ink_err": 0.031105520578129653,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "J",
+       "err": 0.4472
+      },
+      {
+       "char": "`",
+       "err": 0.439
+      },
+      {
+       "char": "|",
+       "err": 0.3754
+      },
+      {
+       "char": "\\",
+       "err": 0.3582
+      },
+      {
+       "char": "[",
+       "err": 0.3493
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "StackSansText[wght]",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.05926363029844629,
+     "advance_p90": 0.13019242554234603,
+     "text_width_err": -0.013227513227513255,
+     "ink_err": 0.04031917922258743,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.3429
+      },
+      {
+       "char": "j",
+       "err": 0.2138
+      },
+      {
+       "char": ",",
+       "err": 0.1949
+      },
+      {
+       "char": "'",
+       "err": 0.1949
+      },
+      {
+       "char": ".",
+       "err": 0.1799
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.14328142958742549,
+     "advance_p90": 0.2657584541062802,
+     "text_width_err": -0.10383597883597884,
+     "ink_err": -0.041416439327956356,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.4619
+      },
+      {
+       "char": "/",
+       "err": 0.4342
+      },
+      {
+       "char": "\\",
+       "err": 0.395
+      },
+      {
+       "char": ".",
+       "err": 0.381
+      },
+      {
+       "char": "1",
+       "err": 0.3727
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.12888040500028367,
+     "advance_p90": 0.2544679921345867,
+     "text_width_err": -0.06944444444444442,
+     "ink_err": 0.02771797431131162,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "/",
+       "err": 0.6246
+      },
+      {
+       "char": "\\",
+       "err": 0.6218
+      },
+      {
+       "char": "J",
+       "err": 0.5819
+      },
+      {
+       "char": "`",
+       "err": 0.4619
+      },
+      {
+       "char": ",",
+       "err": 0.3846
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "Suwannaphum-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.05743943862223005,
+     "advance_p90": 0.15098391844403464,
+     "text_width_err": 0.01885565669700906,
+     "ink_err": 0.02775246561201139,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": ",",
+       "err": 0.4042
+      },
+      {
+       "char": "`",
+       "err": 0.2511
+      },
+      {
+       "char": ";",
+       "err": 0.222
+      },
+      {
+       "char": "j",
+       "err": 0.221
+      },
+      {
+       "char": "f",
+       "err": 0.1864
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.09057158546225148,
+     "advance_p90": 0.2316042420052264,
+     "text_width_err": -0.0039011703511053764,
+     "ink_err": 0.002587873409275021,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.5487
+      },
+      {
+       "char": ",",
+       "err": 0.4245
+      },
+      {
+       "char": "`",
+       "err": 0.4204
+      },
+      {
+       "char": ";",
+       "err": 0.3476
+      },
+      {
+       "char": "f",
+       "err": 0.3361
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.10432292234514665,
+     "advance_p90": 0.24336456015062008,
+     "text_width_err": 0.05851755526657998,
+     "ink_err": -0.10803117575367549,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": ",",
+       "err": 0.4904
+      },
+      {
+       "char": "j",
+       "err": 0.4668
+      },
+      {
+       "char": "/",
+       "err": 0.3521
+      },
+      {
+       "char": ";",
+       "err": 0.3428
+      },
+      {
+       "char": ":",
+       "err": 0.3393
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "Telex-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.09185081080982005,
+     "advance_p90": 0.15661764705882347,
+     "text_width_err": -0.027986348122866933,
+     "ink_err": 0.06798856683100496,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "'",
+       "err": 0.6894
+      },
+      {
+       "char": "`",
+       "err": 0.3691
+      },
+      {
+       "char": "\\",
+       "err": 0.2871
+      },
+      {
+       "char": "f",
+       "err": 0.244
+      },
+      {
+       "char": "I",
+       "err": 0.2435
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.13461679047988084,
+     "advance_p90": 0.25217010171306226,
+     "text_width_err": -0.1003412969283276,
+     "ink_err": 0.00961433394767841,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "'",
+       "err": 0.5682
+      },
+      {
+       "char": "j",
+       "err": 0.3684
+      },
+      {
+       "char": "1",
+       "err": 0.3461
+      },
+      {
+       "char": "`",
+       "err": 0.3305
+      },
+      {
+       "char": "/",
+       "err": 0.3299
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.10072268907679237,
+     "advance_p90": 0.1960596632068976,
+     "text_width_err": -0.004778156996587013,
+     "ink_err": 0.11787525148467592,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "'",
+       "err": 0.6515
+      },
+      {
+       "char": "J",
+       "err": 0.475
+      },
+      {
+       "char": "I",
+       "err": 0.4723
+      },
+      {
+       "char": "j",
+       "err": 0.391
+      },
+      {
+       "char": "`",
+       "err": 0.3305
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "TiroGurmukhi-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.11034768137724768,
+     "advance_p90": 0.23376850234439664,
+     "text_width_err": 0.1294200848656295,
+     "ink_err": 0.013896816710223359,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "f",
+       "err": 0.6152
+      },
+      {
+       "char": "J",
+       "err": 0.5593
+      },
+      {
+       "char": "_",
+       "err": 0.4525
+      },
+      {
+       "char": "|",
+       "err": 0.4507
+      },
+      {
+       "char": "j",
+       "err": 0.4007
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.11209790478746251,
+     "advance_p90": 0.22736505268601725,
+     "text_width_err": 0.09476661951909482,
+     "ink_err": -0.004568403597124404,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "f",
+       "err": 0.5364
+      },
+      {
+       "char": "|",
+       "err": 0.4079
+      },
+      {
+       "char": "/",
+       "err": 0.4032
+      },
+      {
+       "char": "J",
+       "err": 0.3982
+      },
+      {
+       "char": "j",
+       "err": 0.3936
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.11034768137724768,
+     "advance_p90": 0.23376850234439664,
+     "text_width_err": 0.1294200848656295,
+     "ink_err": 0.013896816710223359,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "f",
+       "err": 0.6152
+      },
+      {
+       "char": "J",
+       "err": 0.5593
+      },
+      {
+       "char": "_",
+       "err": 0.4525
+      },
+      {
+       "char": "|",
+       "err": 0.4507
+      },
+      {
+       "char": "j",
+       "err": 0.4007
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "TiroTamil-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.11034768137724768,
+     "advance_p90": 0.23376850234439664,
+     "text_width_err": 0.1294200848656295,
+     "ink_err": 0.013896816710223359,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "f",
+       "err": 0.6152
+      },
+      {
+       "char": "J",
+       "err": 0.5593
+      },
+      {
+       "char": "_",
+       "err": 0.4525
+      },
+      {
+       "char": "|",
+       "err": 0.4507
+      },
+      {
+       "char": "j",
+       "err": 0.4007
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.11209790478746251,
+     "advance_p90": 0.22736505268601725,
+     "text_width_err": 0.09476661951909482,
+     "ink_err": -0.004568403597124404,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "f",
+       "err": 0.5364
+      },
+      {
+       "char": "|",
+       "err": 0.4079
+      },
+      {
+       "char": "/",
+       "err": 0.4032
+      },
+      {
+       "char": "J",
+       "err": 0.3982
+      },
+      {
+       "char": "j",
+       "err": 0.3936
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.11034768137724768,
+     "advance_p90": 0.23376850234439664,
+     "text_width_err": 0.1294200848656295,
+     "ink_err": 0.013896816710223359,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "f",
+       "err": 0.6152
+      },
+      {
+       "char": "J",
+       "err": 0.5593
+      },
+      {
+       "char": "_",
+       "err": 0.4525
+      },
+      {
+       "char": "|",
+       "err": 0.4507
+      },
+      {
+       "char": "j",
+       "err": 0.4007
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "TiroTelugu-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.11034768137724768,
+     "advance_p90": 0.23376850234439664,
+     "text_width_err": 0.1294200848656295,
+     "ink_err": 0.013896816710223359,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "f",
+       "err": 0.6152
+      },
+      {
+       "char": "J",
+       "err": 0.5593
+      },
+      {
+       "char": "_",
+       "err": 0.4525
+      },
+      {
+       "char": "|",
+       "err": 0.4507
+      },
+      {
+       "char": "j",
+       "err": 0.4007
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.11209790478746251,
+     "advance_p90": 0.22736505268601725,
+     "text_width_err": 0.09476661951909482,
+     "ink_err": -0.004568403597124404,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "f",
+       "err": 0.5364
+      },
+      {
+       "char": "|",
+       "err": 0.4079
+      },
+      {
+       "char": "/",
+       "err": 0.4032
+      },
+      {
+       "char": "J",
+       "err": 0.3982
+      },
+      {
+       "char": "j",
+       "err": 0.3936
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.11034768137724768,
+     "advance_p90": 0.23376850234439664,
+     "text_width_err": 0.1294200848656295,
+     "ink_err": 0.013896816710223359,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "f",
+       "err": 0.6152
+      },
+      {
+       "char": "J",
+       "err": 0.5593
+      },
+      {
+       "char": "_",
+       "err": 0.4525
+      },
+      {
+       "char": "|",
+       "err": 0.4507
+      },
+      {
+       "char": "j",
+       "err": 0.4007
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "Tirra-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.09673700825557043,
+     "advance_p90": 0.21523651205936933,
+     "text_width_err": -0.003558718861209953,
+     "ink_err": 0.13766038441475104,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.3974
+      },
+      {
+       "char": "f",
+       "err": 0.3608
+      },
+      {
+       "char": "|",
+       "err": 0.3214
+      },
+      {
+       "char": "j",
+       "err": 0.3044
+      },
+      {
+       "char": "I",
+       "err": 0.275
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.11844109895894483,
+     "advance_p90": 0.2766272029588535,
+     "text_width_err": -0.11672597864768686,
+     "ink_err": 0.021757046780191747,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.4602
+      },
+      {
+       "char": "J",
+       "err": 0.3811
+      },
+      {
+       "char": "1",
+       "err": 0.3593
+      },
+      {
+       "char": "/",
+       "err": 0.3589
+      },
+      {
+       "char": "\\",
+       "err": 0.334
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.13781190306761823,
+     "advance_p90": 0.28086414690627426,
+     "text_width_err": -0.04839857651245549,
+     "ink_err": 0.2671111669001778,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.4781
+      },
+      {
+       "char": "f",
+       "err": 0.3777
+      },
+      {
+       "char": "1",
+       "err": 0.373
+      },
+      {
+       "char": "Y",
+       "err": 0.3207
+      },
+      {
+       "char": "!",
+       "err": 0.3082
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "UoqMunThenKhung-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.08970485697074931,
+     "advance_p90": 0.2090666666666667,
+     "text_width_err": 0.04925469863901499,
+     "ink_err": 0.04851520024179834,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "!",
+       "err": 0.3725
+      },
+      {
+       "char": ";",
+       "err": 0.3538
+      },
+      {
+       "char": ":",
+       "err": 0.3513
+      },
+      {
+       "char": "|",
+       "err": 0.32
+      },
+      {
+       "char": "}",
+       "err": 0.2511
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.09043073935968271,
+     "advance_p90": 0.23345278450363188,
+     "text_width_err": 0.0012961762799741372,
+     "ink_err": -0.043747629326398974,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "<",
+       "err": 0.3346
+      },
+      {
+       "char": ">",
+       "err": 0.3269
+      },
+      {
+       "char": "!",
+       "err": 0.3175
+      },
+      {
+       "char": ":",
+       "err": 0.3154
+      },
+      {
+       "char": "=",
+       "err": 0.3093
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.10469515120338158,
+     "advance_p90": 0.2385714285714287,
+     "text_width_err": -0.036292935839274176,
+     "ink_err": -0.1509174879117079,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "!",
+       "err": 0.4275
+      },
+      {
+       "char": ":",
+       "err": 0.3564
+      },
+      {
+       "char": ";",
+       "err": 0.3487
+      },
+      {
+       "char": "1",
+       "err": 0.3136
+      },
+      {
+       "char": "_",
+       "err": 0.292
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "Vazirmatn[wght]",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.08589176083835878,
+     "advance_p90": 0.18466022097305684,
+     "text_width_err": -0.01700921332388372,
+     "ink_err": 0.13496136563908734,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "1",
+       "err": 0.3488
+      },
+      {
+       "char": ",",
+       "err": 0.3213
+      },
+      {
+       "char": "|",
+       "err": 0.2832
+      },
+      {
+       "char": "I",
+       "err": 0.283
+      },
+      {
+       "char": ";",
+       "err": 0.2818
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.12864226619936664,
+     "advance_p90": 0.23375843612841096,
+     "text_width_err": -0.10418143160878812,
+     "ink_err": 0.020961527632769927,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.5256
+      },
+      {
+       "char": "1",
+       "err": 0.4644
+      },
+      {
+       "char": "J",
+       "err": 0.3584
+      },
+      {
+       "char": ",",
+       "err": 0.3315
+      },
+      {
+       "char": "^",
+       "err": 0.3087
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.08591082501130284,
+     "advance_p90": 0.18577449538413396,
+     "text_width_err": -0.01700921332388372,
+     "ink_err": 0.1381597913559791,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "1",
+       "err": 0.3434
+      },
+      {
+       "char": ",",
+       "err": 0.3264
+      },
+      {
+       "char": "|",
+       "err": 0.2832
+      },
+      {
+       "char": "j",
+       "err": 0.279
+      },
+      {
+       "char": "I",
+       "err": 0.2683
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "Volkhov-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.08101793734964421,
+     "advance_p90": 0.18948567378758727,
+     "text_width_err": 0.09346405228758159,
+     "ink_err": -0.03868418415647723,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.5113
+      },
+      {
+       "char": "f",
+       "err": 0.3173
+      },
+      {
+       "char": " ",
+       "err": 0.316
+      },
+      {
+       "char": "'",
+       "err": 0.29
+      },
+      {
+       "char": "_",
+       "err": 0.2728
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.10808489465072414,
+     "advance_p90": 0.24368283946597202,
+     "text_width_err": 0.07647058823529407,
+     "ink_err": -0.059399003196689226,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.733
+      },
+      {
+       "char": "j",
+       "err": 0.3399
+      },
+      {
+       "char": ".",
+       "err": 0.3377
+      },
+      {
+       "char": ")",
+       "err": 0.3072
+      },
+      {
+       "char": "J",
+       "err": 0.304
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.09572814341429185,
+     "advance_p90": 0.24676747116409808,
+     "text_width_err": 0.0607843137254902,
+     "ink_err": -0.06785436514554155,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.5294
+      },
+      {
+       "char": "\\",
+       "err": 0.4099
+      },
+      {
+       "char": "/",
+       "err": 0.4032
+      },
+      {
+       "char": "J",
+       "err": 0.3733
+      },
+      {
+       "char": "#",
+       "err": 0.322
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "WDXLLubrifontTC-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.07040590089516863,
+     "advance_p90": 0.18001026367879575,
+     "text_width_err": 0.015582034830430747,
+     "ink_err": 0.08214526394139621,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.6382
+      },
+      {
+       "char": "'",
+       "err": 0.5692
+      },
+      {
+       "char": ".",
+       "err": 0.2431
+      },
+      {
+       "char": "j",
+       "err": 0.2286
+      },
+      {
+       "char": "1",
+       "err": 0.2121
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.15549950278024577,
+     "advance_p90": 0.3036920243529186,
+     "text_width_err": -0.06232813932172321,
+     "ink_err": 0.007457799235809137,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.8355
+      },
+      {
+       "char": "j",
+       "err": 0.5857
+      },
+      {
+       "char": "'",
+       "err": 0.5385
+      },
+      {
+       "char": "r",
+       "err": 0.3814
+      },
+      {
+       "char": "\\",
+       "err": 0.3677
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.2143051891184774,
+     "advance_p90": 0.475509588450765,
+     "text_width_err": 0.24197983501374876,
+     "ink_err": 0.18141379554520487,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "}",
+       "err": 0.6557
+      },
+      {
+       "char": "{",
+       "err": 0.6384
+      },
+      {
+       "char": "`",
+       "err": 0.6053
+      },
+      {
+       "char": "r",
+       "err": 0.5975
+      },
+      {
+       "char": ".",
+       "err": 0.5193
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "Wonky[wdth,wght]",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.09852567895675517,
+     "advance_p90": 0.18380978038308704,
+     "text_width_err": -0.034506089309878196,
+     "ink_err": 0.10447198402530744,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "|",
+       "err": 0.6796
+      },
+      {
+       "char": "1",
+       "err": 0.3739
+      },
+      {
+       "char": "f",
+       "err": 0.3584
+      },
+      {
+       "char": "J",
+       "err": 0.3256
+      },
+      {
+       "char": "j",
+       "err": 0.3072
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.12496019899544192,
+     "advance_p90": 0.22994753381692867,
+     "text_width_err": -0.12246278755074425,
+     "ink_err": 0.01278429201118958,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "|",
+       "err": 0.6687
+      },
+      {
+       "char": "1",
+       "err": 0.4019
+      },
+      {
+       "char": "/",
+       "err": 0.4017
+      },
+      {
+       "char": "\\",
+       "err": 0.3799
+      },
+      {
+       "char": "I",
+       "err": 0.3305
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.1104966121210104,
+     "advance_p90": 0.2192592336977928,
+     "text_width_err": -0.05277401894451961,
+     "ink_err": 0.1091276687872631,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "J",
+       "err": 0.7985
+      },
+      {
+       "char": "|",
+       "err": 0.696
+      },
+      {
+       "char": "_",
+       "err": 0.3631
+      },
+      {
+       "char": "I",
+       "err": 0.3054
+      },
+      {
+       "char": "j",
+       "err": 0.2993
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "ZCOOLQingKeHuangYou-Regular",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.0850633735894378,
+     "advance_p90": 0.20995403686336422,
+     "text_width_err": 0.01831501831501825,
+     "ink_err": 0.03888816817320362,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.8939
+      },
+      {
+       "char": "'",
+       "err": 0.7757
+      },
+      {
+       "char": "\"",
+       "err": 0.2995
+      },
+      {
+       "char": "T",
+       "err": 0.2899
+      },
+      {
+       "char": "?",
+       "err": 0.2653
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.16558038923156165,
+     "advance_p90": 0.34105156072344295,
+     "text_width_err": -0.048534798534798584,
+     "ink_err": -0.11159102582836866,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 1.1288
+      },
+      {
+       "char": "'",
+       "err": 0.8598
+      },
+      {
+       "char": "\"",
+       "err": 0.4424
+      },
+      {
+       "char": "T",
+       "err": 0.4388
+      },
+      {
+       "char": "j",
+       "err": 0.4286
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.22794651724575712,
+     "advance_p90": 0.4947165139886111,
+     "text_width_err": 0.24084249084249088,
+     "ink_err": 0.006324189019813575,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "`",
+       "err": 0.8485
+      },
+      {
+       "char": "'",
+       "err": 0.7944
+      },
+      {
+       "char": "}",
+       "err": 0.6557
+      },
+      {
+       "char": "r",
+       "err": 0.6391
+      },
+      {
+       "char": "{",
+       "err": 0.6384
+      }
+     ]
+    }
+   }
+  },
+  {
+   "font": "ZalandoSans[wdth,wght]",
+   "arms": {
+    "gt_traced": {
+     "advance_mae": 0.0775727475927494,
+     "advance_p90": 0.13473736033806055,
+     "text_width_err": -0.02539464653397394,
+     "ink_err": 0.1221447510986664,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "|",
+       "err": 0.3656
+      },
+      {
+       "char": "!",
+       "err": 0.2721
+      },
+      {
+       "char": "I",
+       "err": 0.2405
+      },
+      {
+       "char": "`",
+       "err": 0.1975
+      },
+      {
+       "char": "i",
+       "err": 0.1811
+      }
+     ]
+    },
+    "model": {
+     "advance_mae": 0.13019790425749334,
+     "advance_p90": 0.22473789196521185,
+     "text_width_err": -0.088538091969801,
+     "ink_err": 0.024735038259607878,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "j",
+       "err": 0.3373
+      },
+      {
+       "char": "|",
+       "err": 0.3226
+      },
+      {
+       "char": "I",
+       "err": 0.2634
+      },
+      {
+       "char": "=",
+       "err": 0.2619
+      },
+      {
+       "char": "<",
+       "err": 0.2604
+      }
+     ]
+    },
+    "retrieval": {
+     "advance_mae": 0.09938061511594064,
+     "advance_p90": 0.20211007561104283,
+     "text_width_err": -0.017844886753603295,
+     "ink_err": 0.055847870993785964,
+     "n_glyphs": 95,
+     "worst_glyphs": [
+      {
+       "char": "|",
+       "err": 0.3656
+      },
+      {
+       "char": "!",
+       "err": 0.2857
+      },
+      {
+       "char": "I",
+       "err": 0.2748
+      },
+      {
+       "char": "+",
+       "err": 0.2664
+      },
+      {
+       "char": "<",
+       "err": 0.2649
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "skipped": []
+}

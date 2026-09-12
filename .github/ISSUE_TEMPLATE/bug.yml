@@ -1,0 +1,69 @@
+name: Bug report
+description: A reproducible mismatch between what the code says it does and what it does
+title: "bug: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Search existing issues and pull requests first, including closed ones.
+        Do not include credentials, home-directory paths, machine names, font files from the training corpus, model weights, or generated fonts you do not hold the rights to. Replace sensitive values with `[REDACTED]`.
+        Report vulnerabilities through [private vulnerability reporting](https://github.com/sushiHex/digital-rain/security/advisories/new) instead of a public issue.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Preflight
+      options:
+        - label: I searched existing issues and pull requests, including closed ones.
+          required: true
+        - label: This is not a security vulnerability.
+          required: true
+        - label: I removed secrets, personal paths and private data from all text and attachments.
+          required: true
+  - type: input
+    id: commit
+    attributes:
+      label: Commit
+      placeholder: full SHA on main
+    validations:
+      required: true
+  - type: dropdown
+    id: track
+    attributes:
+      label: Track
+      description: Model-track results and product-track results are scored by different instruments and never compared.
+      options:
+        - Model track (training, eval harness, metrics)
+        - Product track (description → reference → font, the picker, the gate)
+        - Instruments (coherence, identity, adherence)
+        - Tooling (runners, analysis scripts, docs)
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Expected and actual behaviour
+      description: What should happen, what happened, and how you know.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Exact commands. Say which inputs you cannot share (a checkpoint, a corpus) and what stands in for them. GPU-free reproductions are strongly preferred.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python, torch/diffusers versions, GPU if relevant. No hostnames.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Relevant output
+      description: The smallest redacted traceback or log excerpt that shows the failure.
+      render: text

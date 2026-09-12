@@ -1,0 +1,44 @@
+{
+ "_comment": "Training-run variance. Runs differ ONLY in --seed. largest_observed_gap is DESCRIPTIVE (the range of a small sample), not a threshold. Compare effects against run_mean_sd for THIS metric -- never against another metric's SD.",
+ "metric": "composite",
+ "n_runs": 3,
+ "n_fonts": 48,
+ "runs": [
+  "glyph_4b_r32_clean",
+  "glyph_4b_r32_clean_s43",
+  "glyph_4b_r32_clean_s44"
+ ],
+ "run_means": [
+  0.803,
+  0.81,
+  0.806
+ ],
+ "run_mean_sd": 0.0035,
+ "largest_observed_gap": 0.007,
+ "pairs": [
+  {
+   "pair": "glyph_4b_r32_clean vs glyph_4b_r32_clean_s43",
+   "delta_mean": 0.007,
+   "p": 0.07944303779549095,
+   "r": 0.253,
+   "passes_gate": false,
+   "main_effect_share": 0.059
+  },
+  {
+   "pair": "glyph_4b_r32_clean vs glyph_4b_r32_clean_s44",
+   "delta_mean": 0.003,
+   "p": 0.30990025583666303,
+   "r": 0.147,
+   "passes_gate": false,
+   "main_effect_share": 0.033
+  },
+  {
+   "pair": "glyph_4b_r32_clean_s43 vs glyph_4b_r32_clean_s44",
+   "delta_mean": -0.004,
+   "p": 0.13160791301406824,
+   "r": 0.218,
+   "passes_gate": false,
+   "main_effect_share": 0.014
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+{
+  "prompt_style": "trained-short",
+  "reference_chars": "Rg",
+  "use_template": true,
+  "template_pt": "dataset_v2\\cache\\template.pt",
+  "prompt_text": null
+}

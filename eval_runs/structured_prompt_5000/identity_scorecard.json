@@ -1,0 +1,854 @@
+{
+ "fidelity": 0.6676595744680851,
+ "identity": 0.9361022364217252,
+ "scored": 2191,
+ "abstained": 2509,
+ "abstain_reasons": {
+  "reader misreads GT glyph (can't judge)": 659,
+  "thin-stroke (OCR-blind)": 500,
+  "symbol (needs GOT pass)": 1350
+ },
+ "reclassified_correct_letter": 646,
+ "wrong_letter_target": [
+  {
+   "font": "AkayaTelivigala-Regular",
+   "char": "B",
+   "decoded": "3",
+   "fidelity_match": 0
+  },
+  {
+   "font": "AlikeAngular-Regular",
+   "char": "A",
+   "decoded": "^A",
+   "fidelity_match": 1
+  },
+  {
+   "font": "AlikeAngular-Regular",
+   "char": "U",
+   "decoded": "J",
+   "fidelity_match": 1
+  },
+  {
+   "font": "AlikeAngular-Regular",
+   "char": "m",
+   "decoded": "I",
+   "fidelity_match": 0
+  },
+  {
+   "font": "AlikeAngular-Regular",
+   "char": "q",
+   "decoded": "D",
+   "fidelity_match": 0
+  },
+  {
+   "font": "AveriaLibre-Regular",
+   "char": "T",
+   "decoded": "I",
+   "fidelity_match": 1
+  },
+  {
+   "font": "AveriaSansLibre-Regular",
+   "char": "e",
+   "decoded": "C",
+   "fidelity_match": 1
+  },
+  {
+   "font": "AveriaSerifLibre-Regular",
+   "char": "U",
+   "decoded": "J",
+   "fidelity_match": 1
+  },
+  {
+   "font": "AveriaSerifLibre-Regular",
+   "char": "e",
+   "decoded": "C",
+   "fidelity_match": 1
+  },
+  {
+   "font": "AveriaSerifLibre-Regular",
+   "char": "h",
+   "decoded": "1",
+   "fidelity_match": 0
+  },
+  {
+   "font": "AveriaSerifLibre-Regular",
+   "char": "n",
+   "decoded": "1",
+   "fidelity_match": 0
+  },
+  {
+   "font": "AveriaSerifLibre-Regular",
+   "char": "u",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "BitcountGridDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "char": "T",
+   "decoded": "F",
+   "fidelity_match": 0
+  },
+  {
+   "font": "BitcountGridDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "char": "W",
+   "decoded": "M",
+   "fidelity_match": 0
+  },
+  {
+   "font": "BitcountGridDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "char": "m",
+   "decoded": "TM",
+   "fidelity_match": 0
+  },
+  {
+   "font": "BitcountGridDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "char": "q",
+   "decoded": "4",
+   "fidelity_match": 1
+  },
+  {
+   "font": "BitcountGridDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "char": "u",
+   "decoded": "=",
+   "fidelity_match": 1
+  },
+  {
+   "font": "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "char": "T",
+   "decoded": "F",
+   "fidelity_match": 0
+  },
+  {
+   "font": "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "char": "W",
+   "decoded": "M",
+   "fidelity_match": 0
+  },
+  {
+   "font": "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "char": "a",
+   "decoded": "8",
+   "fidelity_match": 0
+  },
+  {
+   "font": "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "char": "e",
+   "decoded": "S",
+   "fidelity_match": 0
+  },
+  {
+   "font": "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "char": "h",
+   "decoded": "I",
+   "fidelity_match": 0
+  },
+  {
+   "font": "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "char": "m",
+   "decoded": "TM",
+   "fidelity_match": 0
+  },
+  {
+   "font": "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "char": "n",
+   "decoded": "I",
+   "fidelity_match": 0
+  },
+  {
+   "font": "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "char": "q",
+   "decoded": "4",
+   "fidelity_match": 1
+  },
+  {
+   "font": "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "char": "t",
+   "decoded": "+",
+   "fidelity_match": 0
+  },
+  {
+   "font": "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "char": "u",
+   "decoded": "=",
+   "fidelity_match": 0
+  },
+  {
+   "font": "Dangrek-Regular",
+   "char": "u",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "Dangrek-Regular",
+   "char": "w",
+   "decoded": "~",
+   "fidelity_match": 1
+  },
+  {
+   "font": "FascinateInline-Regular",
+   "char": "V",
+   "decoded": "~",
+   "fidelity_match": 1
+  },
+  {
+   "font": "FascinateInline-Regular",
+   "char": "r",
+   "decoded": ":",
+   "fidelity_match": 0
+  },
+  {
+   "font": "FascinateInline-Regular",
+   "char": "v",
+   "decoded": "<",
+   "fidelity_match": 0
+  },
+  {
+   "font": "FascinateInline-Regular",
+   "char": "y",
+   "decoded": "V",
+   "fidelity_match": 0
+  },
+  {
+   "font": "FascinateInline-Regular",
+   "char": "z",
+   "decoded": "%",
+   "fidelity_match": 1
+  },
+  {
+   "font": "FascinateInline-Regular",
+   "char": "3",
+   "decoded": "8",
+   "fidelity_match": 0
+  },
+  {
+   "font": "IBMPlexSansArabic-Regular",
+   "char": "T",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "IBMPlexSansArabic-Regular",
+   "char": "a",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "IBMPlexSansThai-Regular",
+   "char": "T",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "IBMPlexSansThai-Regular",
+   "char": "a",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "IBMPlexSansThaiLooped-Regular",
+   "char": "T",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "IBMPlexSansThaiLooped-Regular",
+   "char": "a",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "IBMPlexSerif-Regular",
+   "char": "e",
+   "decoded": "6",
+   "fidelity_match": 0
+  },
+  {
+   "font": "IBMPlexSerif-Regular",
+   "char": "m",
+   "decoded": "I",
+   "fidelity_match": 1
+  },
+  {
+   "font": "IBMPlexSerif-Regular",
+   "char": "u",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "IBMPlexSerif-Regular",
+   "char": "y",
+   "decoded": "V",
+   "fidelity_match": 1
+  },
+  {
+   "font": "InterTight[wght]",
+   "char": "A",
+   "decoded": "^",
+   "fidelity_match": 1
+  },
+  {
+   "font": "InterTight[wght]",
+   "char": "F",
+   "decoded": "E",
+   "fidelity_match": 1
+  },
+  {
+   "font": "InterTight[wght]",
+   "char": "f",
+   "decoded": "-",
+   "fidelity_match": 1
+  },
+  {
+   "font": "InterTight[wght]",
+   "char": "r",
+   "decoded": ":",
+   "fidelity_match": 1
+  },
+  {
+   "font": "JainiPurva-Regular",
+   "char": "U",
+   "decoded": "D",
+   "fidelity_match": 0
+  },
+  {
+   "font": "JainiPurva-Regular",
+   "char": "a",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "JainiPurva-Regular",
+   "char": "h",
+   "decoded": "1",
+   "fidelity_match": 0
+  },
+  {
+   "font": "JainiPurva-Regular",
+   "char": "t",
+   "decoded": "1",
+   "fidelity_match": 0
+  },
+  {
+   "font": "JainiPurva-Regular",
+   "char": "u",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "KaiseiOpti-Regular",
+   "char": "r",
+   "decoded": ":",
+   "fidelity_match": 1
+  },
+  {
+   "font": "KaiseiOpti-Regular",
+   "char": "z",
+   "decoded": "%",
+   "fidelity_match": 1
+  },
+  {
+   "font": "Kavoon-Regular",
+   "char": "K",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "Kavoon-Regular",
+   "char": "f",
+   "decoded": ":",
+   "fidelity_match": 0
+  },
+  {
+   "font": "KohSantepheap-Regular",
+   "char": "e",
+   "decoded": "C",
+   "fidelity_match": 1
+  },
+  {
+   "font": "KosugiMaru-Regular",
+   "char": "L",
+   "decoded": ":",
+   "fidelity_match": 1
+  },
+  {
+   "font": "KosugiMaru-Regular",
+   "char": "u",
+   "decoded": "L",
+   "fidelity_match": 1
+  },
+  {
+   "font": "MirandaSans[wght]",
+   "char": "T",
+   "decoded": "I",
+   "fidelity_match": 1
+  },
+  {
+   "font": "MirandaSans[wght]",
+   "char": "k",
+   "decoded": "<",
+   "fidelity_match": 1
+  },
+  {
+   "font": "MirandaSans[wght]",
+   "char": "u",
+   "decoded": "L",
+   "fidelity_match": 1
+  },
+  {
+   "font": "MochiyPopPOne-Regular",
+   "char": "L",
+   "decoded": ":",
+   "fidelity_match": 0
+  },
+  {
+   "font": "MochiyPopPOne-Regular",
+   "char": "N",
+   "decoded": "Z",
+   "fidelity_match": 0
+  },
+  {
+   "font": "MochiyPopPOne-Regular",
+   "char": "e",
+   "decoded": ":",
+   "fidelity_match": 0
+  },
+  {
+   "font": "MochiyPopPOne-Regular",
+   "char": "f",
+   "decoded": ":",
+   "fidelity_match": 0
+  },
+  {
+   "font": "MochiyPopPOne-Regular",
+   "char": "r",
+   "decoded": ":",
+   "fidelity_match": 1
+  },
+  {
+   "font": "MochiyPopPOne-Regular",
+   "char": "s",
+   "decoded": ":",
+   "fidelity_match": 1
+  },
+  {
+   "font": "MochiyPopPOne-Regular",
+   "char": "t",
+   "decoded": ":",
+   "fidelity_match": 0
+  },
+  {
+   "font": "MochiyPopPOne-Regular",
+   "char": "u",
+   "decoded": "1",
+   "fidelity_match": 0
+  },
+  {
+   "font": "MochiyPopPOne-Regular",
+   "char": "w",
+   "decoded": "~",
+   "fidelity_match": 0
+  },
+  {
+   "font": "MomoTrustSans[wght]",
+   "char": "A",
+   "decoded": "^",
+   "fidelity_match": 1
+  },
+  {
+   "font": "MuktaMahee-Regular",
+   "char": "e",
+   "decoded": "C",
+   "fidelity_match": 1
+  },
+  {
+   "font": "NovaSquare",
+   "char": "L",
+   "decoded": ":",
+   "fidelity_match": 1
+  },
+  {
+   "font": "PlaywriteAUQLD[wght]",
+   "char": "a",
+   "decoded": "Q",
+   "fidelity_match": 0
+  },
+  {
+   "font": "PlaywriteAUQLD[wght]",
+   "char": "s",
+   "decoded": ":",
+   "fidelity_match": 0
+  },
+  {
+   "font": "PlaywriteAUQLD[wght]",
+   "char": "w",
+   "decoded": "V",
+   "fidelity_match": 0
+  },
+  {
+   "font": "PlaywriteAUSA[wght]",
+   "char": "a",
+   "decoded": "Q",
+   "fidelity_match": 0
+  },
+  {
+   "font": "PlaywriteAUSA[wght]",
+   "char": "m",
+   "decoded": "~",
+   "fidelity_match": 1
+  },
+  {
+   "font": "PlaywriteCO[wght]",
+   "char": "D",
+   "decoded": "2",
+   "fidelity_match": 0
+  },
+  {
+   "font": "PlaywriteCO[wght]",
+   "char": "F",
+   "decoded": "%",
+   "fidelity_match": 0
+  },
+  {
+   "font": "PlaywriteCO[wght]",
+   "char": "L",
+   "decoded": "C",
+   "fidelity_match": 0
+  },
+  {
+   "font": "PlaywriteCO[wght]",
+   "char": "N",
+   "decoded": "~",
+   "fidelity_match": 0
+  },
+  {
+   "font": "PlaywriteCO[wght]",
+   "char": "P",
+   "decoded": "S",
+   "fidelity_match": 0
+  },
+  {
+   "font": "PlaywriteCO[wght]",
+   "char": "V",
+   "decoded": "^",
+   "fidelity_match": 1
+  },
+  {
+   "font": "PlaywriteCO[wght]",
+   "char": "a",
+   "decoded": "^",
+   "fidelity_match": 1
+  },
+  {
+   "font": "PlaywriteCO[wght]",
+   "char": "g",
+   "decoded": "Q",
+   "fidelity_match": 1
+  },
+  {
+   "font": "PlaywriteCO[wght]",
+   "char": "n",
+   "decoded": "~",
+   "fidelity_match": 1
+  },
+  {
+   "font": "PlaywriteCO[wght]",
+   "char": "s",
+   "decoded": "4",
+   "fidelity_match": 1
+  },
+  {
+   "font": "PlaywriteMXGuides-Regular",
+   "char": "D",
+   "decoded": "2",
+   "fidelity_match": 0
+  },
+  {
+   "font": "PlaywriteMXGuides-Regular",
+   "char": "P",
+   "decoded": "2",
+   "fidelity_match": 0
+  },
+  {
+   "font": "PlaywriteMXGuides-Regular",
+   "char": "W",
+   "decoded": "N",
+   "fidelity_match": 1
+  },
+  {
+   "font": "PlaywriteUSTradGuides-Regular",
+   "char": "B",
+   "decoded": "0",
+   "fidelity_match": 0
+  },
+  {
+   "font": "PlaywriteUSTradGuides-Regular",
+   "char": "P",
+   "decoded": "2",
+   "fidelity_match": 0
+  },
+  {
+   "font": "PlaywriteUSTradGuides-Regular",
+   "char": "R",
+   "decoded": "2",
+   "fidelity_match": 1
+  },
+  {
+   "font": "PlaywriteUSTradGuides-Regular",
+   "char": "h",
+   "decoded": "6",
+   "fidelity_match": 0
+  },
+  {
+   "font": "PlaywriteUSTradGuides-Regular",
+   "char": "z",
+   "decoded": "7",
+   "fidelity_match": 0
+  },
+  {
+   "font": "ProtestStrike-Regular",
+   "char": "e",
+   "decoded": ":",
+   "fidelity_match": 1
+  },
+  {
+   "font": "ReemKufiFun[wght]",
+   "char": "w",
+   "decoded": "~",
+   "fidelity_match": 1
+  },
+  {
+   "font": "RubikDistressed-Regular",
+   "char": "f",
+   "decoded": "C",
+   "fidelity_match": 0
+  },
+  {
+   "font": "SchibstedGrotesk[wght]",
+   "char": "a",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "SchibstedGrotesk[wght]",
+   "char": "r",
+   "decoded": ":",
+   "fidelity_match": 1
+  },
+  {
+   "font": "StackSansText[wght]",
+   "char": "e",
+   "decoded": "6",
+   "fidelity_match": 1
+  },
+  {
+   "font": "StackSansText[wght]",
+   "char": "r",
+   "decoded": ":",
+   "fidelity_match": 1
+  },
+  {
+   "font": "Suwannaphum-Regular",
+   "char": "Z",
+   "decoded": "%",
+   "fidelity_match": 1
+  },
+  {
+   "font": "Suwannaphum-Regular",
+   "char": "a",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "Suwannaphum-Regular",
+   "char": "e",
+   "decoded": "C",
+   "fidelity_match": 1
+  },
+  {
+   "font": "Suwannaphum-Regular",
+   "char": "g",
+   "decoded": "Q",
+   "fidelity_match": 0
+  },
+  {
+   "font": "Suwannaphum-Regular",
+   "char": "u",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "Suwannaphum-Regular",
+   "char": "z",
+   "decoded": "%",
+   "fidelity_match": 0
+  },
+  {
+   "font": "Telex-Regular",
+   "char": "e",
+   "decoded": "C",
+   "fidelity_match": 1
+  },
+  {
+   "font": "Telex-Regular",
+   "char": "f",
+   "decoded": ":",
+   "fidelity_match": 1
+  },
+  {
+   "font": "UoqMunThenKhung-Regular",
+   "char": "T",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "UoqMunThenKhung-Regular",
+   "char": "r",
+   "decoded": ":",
+   "fidelity_match": 1
+  },
+  {
+   "font": "UoqMunThenKhung-Regular",
+   "char": "t",
+   "decoded": ":",
+   "fidelity_match": 1
+  },
+  {
+   "font": "UoqMunThenKhung-Regular",
+   "char": "z",
+   "decoded": "%",
+   "fidelity_match": 0
+  },
+  {
+   "font": "Vazirmatn[wght]",
+   "char": "A",
+   "decoded": "^",
+   "fidelity_match": 1
+  },
+  {
+   "font": "Vazirmatn[wght]",
+   "char": "F",
+   "decoded": "E",
+   "fidelity_match": 1
+  },
+  {
+   "font": "Volkhov-Regular",
+   "char": "A",
+   "decoded": "^",
+   "fidelity_match": 1
+  },
+  {
+   "font": "Volkhov-Regular",
+   "char": "a",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "Volkhov-Regular",
+   "char": "h",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "WDXLLubrifontTC-Regular",
+   "char": "L",
+   "decoded": ":",
+   "fidelity_match": 1
+  },
+  {
+   "font": "WDXLLubrifontTC-Regular",
+   "char": "U",
+   "decoded": "J",
+   "fidelity_match": 0
+  },
+  {
+   "font": "WDXLLubrifontTC-Regular",
+   "char": "c",
+   "decoded": ":",
+   "fidelity_match": 0
+  },
+  {
+   "font": "WDXLLubrifontTC-Regular",
+   "char": "t",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "Wonky[wdth,wght]",
+   "char": "A",
+   "decoded": "^",
+   "fidelity_match": 1
+  },
+  {
+   "font": "Wonky[wdth,wght]",
+   "char": "f",
+   "decoded": ":",
+   "fidelity_match": 1
+  },
+  {
+   "font": "Wonky[wdth,wght]",
+   "char": "h",
+   "decoded": "L",
+   "fidelity_match": 0
+  },
+  {
+   "font": "Wonky[wdth,wght]",
+   "char": "r",
+   "decoded": ":",
+   "fidelity_match": 1
+  },
+  {
+   "font": "ZCOOLQingKeHuangYou-Regular",
+   "char": "L",
+   "decoded": ":",
+   "fidelity_match": 1
+  },
+  {
+   "font": "ZCOOLQingKeHuangYou-Regular",
+   "char": "U",
+   "decoded": "D",
+   "fidelity_match": 0
+  },
+  {
+   "font": "ZCOOLQingKeHuangYou-Regular",
+   "char": "c",
+   "decoded": ":",
+   "fidelity_match": 0
+  },
+  {
+   "font": "ZCOOLQingKeHuangYou-Regular",
+   "char": "e",
+   "decoded": ":",
+   "fidelity_match": 0
+  },
+  {
+   "font": "ZCOOLQingKeHuangYou-Regular",
+   "char": "g",
+   "decoded": "Q",
+   "fidelity_match": 1
+  },
+  {
+   "font": "ZCOOLQingKeHuangYou-Regular",
+   "char": "u",
+   "decoded": "L",
+   "fidelity_match": 0
+  },
+  {
+   "font": "ZalandoSans[wdth,wght]",
+   "char": "A",
+   "decoded": "^A",
+   "fidelity_match": 1
+  },
+  {
+   "font": "ZalandoSans[wdth,wght]",
+   "char": "T",
+   "decoded": "1",
+   "fidelity_match": 1
+  },
+  {
+   "font": "ZalandoSans[wdth,wght]",
+   "char": "h",
+   "decoded": "-",
+   "fidelity_match": 1
+  }
+ ]
+}

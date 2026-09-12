@@ -1,0 +1,667 @@
+{
+ "_comment": "Evidence for the corpus fonts with no embedded licence. A verdict here is a research aid, NOT a legal conclusion.",
+ "counts": {
+  "OFL_UPSTREAM": 4,
+  "VENDOR_REVIEW": 4,
+  "ITF_FFL_PRESUMED": 36,
+  "UNKNOWN": 1
+ },
+ "fonts": [
+  {
+   "stem": "Fira_Sans",
+   "source_file": "extra-fonts\\fontshare\\Fira_Sans.ttf",
+   "verdict": "OFL_UPSTREAM",
+   "evidence": "google-fonts/ofl/firasans ships an OFL file",
+   "names": {
+    "copyright": "Digitized data copyright \u00a9 2012-2015, The Mozilla Foundation and Telefonica S.A.",
+    "family": "Fira Sans",
+    "trademark": "Fira Sans is a trademark of The Mozilla Corporation.",
+    "manufacturer": "Carrois Corporate GbR & Edenspiekermann AG",
+    "designer": "Carrois Corporate & Edenspiekermann AG",
+    "vendor_url": "http://www.carrois.com",
+    "designer_url": "http://www.carrois.com"
+   }
+  },
+  {
+   "stem": "knewave",
+   "source_file": "extra-fonts\\league\\knewave.ttf",
+   "verdict": "OFL_UPSTREAM",
+   "evidence": "google-fonts/ofl/knewave ships an OFL file (matched on 'Knewave', trailing style word dropped)",
+   "names": {
+    "copyright": "Copyright (c) 2011 by Tyler Finck. All rights reserved.",
+    "family": "Knewave Outline",
+    "trademark": "Knewave Outline is a trademark of Tyler Finck.",
+    "manufacturer": "Tyler Finck",
+    "designer": "Tyler Finck",
+    "vendor_url": "www.sursly.com",
+    "designer_url": "www.sursly.com"
+   }
+  },
+  {
+   "stem": "prociono",
+   "source_file": "extra-fonts\\league\\prociono.ttf",
+   "verdict": "OFL_UPSTREAM",
+   "evidence": "google-fonts/ofl/prociono ships an OFL file",
+   "names": {
+    "copyright": "This font has been released into the public domain by its author, Barry Schwartz. This applies worldwide.\n\nIn some countries this may not be legally possible; i",
+    "family": "Prociono"
+   }
+  },
+  {
+   "stem": "sniglet",
+   "source_file": "extra-fonts\\league\\sniglet.ttf",
+   "verdict": "OFL_UPSTREAM",
+   "evidence": "google-fonts/ofl/sniglet ships an OFL file",
+   "names": {
+    "copyright": "Generated in 2010 by FontLab Studio. Copyright info pending.",
+    "family": "Sniglet",
+    "manufacturer": "Haley Fiege",
+    "designer": "Haley Fiege",
+    "designer_url": "kingdomofawesome.com"
+   }
+  },
+  {
+   "stem": "20db",
+   "source_file": "extra-fonts\\fontsquirrel\\20db.ttf",
+   "verdict": "VENDOR_REVIEW",
+   "evidence": "identifiable source: Jovanny Lemonad Jovanny Lemonad Copyright (c) 2008 by Jovanny Lemonad. All rights reserved.",
+   "names": {
+    "copyright": "Copyright (c) 2008 by Jovanny Lemonad. All rights reserved.",
+    "family": "20 db",
+    "trademark": "20 db is a trademark of Jovanny Lemonad.",
+    "manufacturer": "Jovanny Lemonad",
+    "designer": "Jovanny Lemonad",
+    "designer_url": "www.livejournal.com/users/neucha"
+   }
+  },
+  {
+   "stem": "chunk",
+   "source_file": "extra-fonts\\league\\chunk.ttf",
+   "verdict": "VENDOR_REVIEW",
+   "evidence": "identifiable source: The League of Moveable Type Meredith Mandel http://www.theleagueofmoveabletype.com Copyright \u00a9 2018 by Meredit",
+   "names": {
+    "copyright": "Copyright \u00a9 2018 by Meredith Mandel. All rights reserved.",
+    "family": "ChunkFive",
+    "manufacturer": "The League of Moveable Type",
+    "designer": "Meredith Mandel",
+    "vendor_url": "http://www.theleagueofmoveabletype.com"
+   }
+  },
+  {
+   "stem": "junction",
+   "source_file": "extra-fonts\\league\\junction.ttf",
+   "verdict": "VENDOR_REVIEW",
+   "evidence": "identifiable source: Caroline Hadilaksono Caroline Hadilaksono http://www.theleagueofmoveabletype.com/ Copyright (c) 2010 by Caroli",
+   "names": {
+    "copyright": "Copyright (c) 2010 by Caroline Hadilaksono. All rights reserved.",
+    "family": "Junction",
+    "trademark": "Junction Regular is a trademark of Caroline Hadilaksono.",
+    "manufacturer": "Caroline Hadilaksono",
+    "designer": "Caroline Hadilaksono",
+    "vendor_url": "http://www.theleagueofmoveabletype.com/",
+    "designer_url": "http://www.hadilaksono.com/"
+   }
+  },
+  {
+   "stem": "Striper",
+   "source_file": "extra-fonts\\fontshare\\Striper.ttf",
+   "verdict": "VENDOR_REVIEW",
+   "evidence": "identifiable source: Fontstore Pte Ltd\nFontstore Pte Ltd Jitka Janeckova www.fontstore.com Copyright (c) 2017 Fontstore Pte Ltd. Al",
+   "names": {
+    "copyright": "Copyright (c) 2017 Fontstore Pte Ltd. All rights reserved.",
+    "family": "Striper",
+    "trademark": "Astrup is a trademark of Fontstore Pte Ltd",
+    "manufacturer": "Fontstore Pte Ltd\nFontstore Pte Ltd",
+    "designer": "Jitka Janeckova",
+    "vendor_url": "www.fontstore.com",
+    "designer_url": "www.fontstore.com"
+   }
+  },
+  {
+   "stem": "Aktura",
+   "source_file": "extra-fonts\\fontshare\\Aktura.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2016-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Aktura",
+    "trademark": "Aktura is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Gaetan Baehr",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com"
+   }
+  },
+  {
+   "stem": "Amulya",
+   "source_file": "extra-fonts\\fontshare\\Amulya.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2015-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Amulya",
+    "trademark": "Amulya is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Joana Correia",
+    "vendor_url": "https://www.indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com"
+   }
+  },
+  {
+   "stem": "Array",
+   "source_file": "extra-fonts\\fontshare\\Array.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2018-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Array",
+    "trademark": "Array is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Frode Helland",
+    "vendor_url": "https://www.indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com"
+   }
+  },
+  {
+   "stem": "Bespoke_Sans",
+   "source_file": "extra-fonts\\fontshare\\Bespoke_Sans.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2017-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Bespoke Sans",
+    "trademark": "Bespoke is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Jeremie Hornus, Theo Guillard, Morgane Pambrun, Alisa Nowak, Joachim Vu",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "www.indiantypefoundry.com/designers"
+   }
+  },
+  {
+   "stem": "Bevellier",
+   "source_file": "extra-fonts\\fontshare\\Bevellier.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2019-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Bevellier",
+    "trademark": "Bevellier is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Aarya Purohit",
+    "vendor_url": "https://www.indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com"
+   }
+  },
+  {
+   "stem": "Boxing",
+   "source_file": "extra-fonts\\fontshare\\Boxing.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2016 Indian Type Foundry",
+    "family": "Boxing",
+    "trademark": "Boxing is a trademark of indian Type Foundry",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Ruosi HUANG",
+    "vendor_url": "www.indiantypefoundry.com",
+    "designer_url": "www.indiantypefoundry.com/designers"
+   }
+  },
+  {
+   "stem": "Chubbo",
+   "source_file": "extra-fonts\\fontshare\\Chubbo.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2021 Indian Type Foundry. All rights reserved.",
+    "family": "Chubbo",
+    "trademark": "Chubbo is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Rafa\u0142 Buchner",
+    "vendor_url": "https://www.indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com"
+   }
+  },
+  {
+   "stem": "Excon",
+   "source_file": "extra-fonts\\fontshare\\Excon.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2016-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Excon",
+    "trademark": "Excon is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Alisa Nowak",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "www.indiantypefoundry.com/designers"
+   }
+  },
+  {
+   "stem": "Expose",
+   "source_file": "extra-fonts\\fontshare\\Expose.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2016-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Expose",
+    "trademark": "Expose is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Lukas Schneider",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "www.indiantypefoundry.com/designers/lucas-schneider"
+   }
+  },
+  {
+   "stem": "Gambarino",
+   "source_file": "extra-fonts\\fontshare\\Gambarino.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2016-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Gambarino",
+    "trademark": "Gambarino is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Th\u00e9o Guillard",
+    "vendor_url": "https://www.indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com"
+   }
+  },
+  {
+   "stem": "General_Sans",
+   "source_file": "extra-fonts\\fontshare\\General_Sans.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2017-2021 Indian Type Foundry. All rights reserved.",
+    "family": "General Sans",
+    "trademark": "General is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Frode Helland",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com"
+   }
+  },
+  {
+   "stem": "Hoover",
+   "source_file": "extra-fonts\\fontshare\\Hoover.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2016-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Hoover",
+    "trademark": "Hoover is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Gaetan Baehr",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "www.indiantypefoundry.com/designers"
+   }
+  },
+  {
+   "stem": "Kihim",
+   "source_file": "extra-fonts\\fontshare\\Kihim.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2018 Indian Type Foundry. All rights reserved.",
+    "family": "Kihim",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Hitesh Malaviya (Rocky)",
+    "vendor_url": "http://www.indiantypefoundry.com",
+    "designer_url": "http://www.indiantypefoundry.com/designers"
+   }
+  },
+  {
+   "stem": "Kohinoor_Zerone",
+   "source_file": "extra-fonts\\fontshare\\Kohinoor_Zerone.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2007-2022 Indian Type Foundry. All rights reserved.",
+    "family": "Kohinoor Zerone Zero",
+    "trademark": "Kohinoor is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Satya Rajpurohit",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com/designers"
+   }
+  },
+  {
+   "stem": "Kola",
+   "source_file": "extra-fonts\\fontshare\\Kola.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2017-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Kola",
+    "trademark": "Kola is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Indian Type Foundry",
+    "vendor_url": "https://www.indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com"
+   }
+  },
+  {
+   "stem": "Neco",
+   "source_file": "extra-fonts\\fontshare\\Neco.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2021 Indian Type Foundry. All rights reserved.",
+    "family": "Neco",
+    "trademark": "Neco is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Jitka Jane\u010dkov\u00e1",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "www.jitkajaneckova.com"
+   }
+  },
+  {
+   "stem": "Nippo",
+   "source_file": "extra-fonts\\fontshare\\Nippo.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2019-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Nippo",
+    "trademark": "Nippo is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Manushi Parikh, Barbara Bigosinska",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com/designers/manushi-parikh"
+   }
+  },
+  {
+   "stem": "Pally",
+   "source_file": "extra-fonts\\fontshare\\Pally.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2017-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Pally",
+    "trademark": "Pally is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Indian Type Foundry",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "www.indiantypefoundry.com/designers"
+   }
+  },
+  {
+   "stem": "Panchang",
+   "source_file": "extra-fonts\\fontshare\\Panchang.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2015-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Panchang",
+    "trademark": "Panchang is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Rocky Malaviya",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com"
+   }
+  },
+  {
+   "stem": "Paquito",
+   "source_file": "extra-fonts\\fontshare\\Paquito.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2017-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Paquito",
+    "trademark": "Paquito is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Juanjo Lopez",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "www.fontstore.com/designers/juanjo-lopez"
+   }
+  },
+  {
+   "stem": "Plein",
+   "source_file": "extra-fonts\\fontshare\\Plein.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2021 Indian Type Foundry. All rights reserved.",
+    "family": "Plein",
+    "trademark": "Plein is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Inga Ploennigs",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com"
+   }
+  },
+  {
+   "stem": "Quilon",
+   "source_file": "extra-fonts\\fontshare\\Quilon.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2020-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Quilon",
+    "trademark": "Quilon is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Jonny Pinhorn",
+    "vendor_url": "https://www.indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com"
+   }
+  },
+  {
+   "stem": "Ranade",
+   "source_file": "extra-fonts\\fontshare\\Ranade.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2017-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Ranade",
+    "trademark": "Ranade is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Easha Ranade",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "www.fontstore.com"
+   }
+  },
+  {
+   "stem": "Recia",
+   "source_file": "extra-fonts\\fontshare\\Recia.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2015-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Recia",
+    "trademark": "Recia is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Carlos de Toro",
+    "vendor_url": "https://www.indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com"
+   }
+  },
+  {
+   "stem": "Rowan",
+   "source_file": "extra-fonts\\fontshare\\Rowan.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2017-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Rowan",
+    "trademark": "Rowan is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Inga Plonnings",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "www.fontstore.com"
+   }
+  },
+  {
+   "stem": "Satoshi",
+   "source_file": "extra-fonts\\fontshare\\Satoshi.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2017-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Satoshi",
+    "trademark": "Satoshi is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Deni Anggara",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com"
+   }
+  },
+  {
+   "stem": "Sharpie",
+   "source_file": "extra-fonts\\fontshare\\Sharpie.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2016-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Sharpie",
+    "trademark": "Sharpie is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Th\u00e9o Guillard",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "www.indiantypefoundry.com/designers"
+   }
+  },
+  {
+   "stem": "Stardom",
+   "source_file": "extra-fonts\\fontshare\\Stardom.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2017-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Stardom",
+    "trademark": "Stardom is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "ITF",
+    "vendor_url": "https://www.indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com"
+   }
+  },
+  {
+   "stem": "Supreme",
+   "source_file": "extra-fonts\\fontshare\\Supreme.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2016-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Supreme",
+    "trademark": "Supreme is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Jeremie Hornus, Ilya Naumoff",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "www.indiantypefoundry.com/designers"
+   }
+  },
+  {
+   "stem": "Switzer",
+   "source_file": "extra-fonts\\fontshare\\Switzer.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2015-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Switzer",
+    "trademark": "Switzer is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Jeremie Hornus",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "www.indiantypefoundry.com/designers"
+   }
+  },
+  {
+   "stem": "Tabular",
+   "source_file": "extra-fonts\\fontshare\\Tabular.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2016-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Tabular",
+    "trademark": "Tabular is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "J\u00e9r\u00e9mie Hornus,  Julie Soudanne",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "www.indiantypefoundry.com/designers"
+   }
+  },
+  {
+   "stem": "Technor",
+   "source_file": "extra-fonts\\fontshare\\Technor.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2016-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Technor",
+    "trademark": "Technor is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Jean-Baptiste Morizot",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "www.indiantypefoundry.com/designers"
+   }
+  },
+  {
+   "stem": "Telma",
+   "source_file": "extra-fonts\\fontshare\\Telma.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2017-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Telma",
+    "trademark": "Telma is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Jitka Jane\u010dkov\u00e1",
+    "vendor_url": "https://www.indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com"
+   }
+  },
+  {
+   "stem": "Trench_Slab",
+   "source_file": "extra-fonts\\fontshare\\Trench_Slab.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2016-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Trench Slab",
+    "trademark": "Trench is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Shiva Nallaperumal",
+    "vendor_url": "https://www.indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com"
+   }
+  },
+  {
+   "stem": "Zina",
+   "source_file": "extra-fonts\\fontshare\\Zina.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2016-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Zina",
+    "trademark": "Zina is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Theo Guillard",
+    "vendor_url": "https://www.indiantypefoundry.com",
+    "designer_url": "https://www.indiantypefoundry.com"
+   }
+  },
+  {
+   "stem": "Zodiak",
+   "source_file": "extra-fonts\\fontshare\\Zodiak.ttf",
+   "verdict": "ITF_FFL_PRESUMED",
+   "evidence": "Indian Type Foundry / Fontshare with NO licence field -- presumed closed-source ITF-FFL, which forbids modification and redistribution and claims derivative works. VERIFY per font.",
+   "names": {
+    "copyright": "Copyright 2017-2021 Indian Type Foundry. All rights reserved.",
+    "family": "Zodiak",
+    "trademark": "Zodiak is a trademark of the Indian Type Foundry.",
+    "manufacturer": "Indian Type Foundry",
+    "designer": "Jeremie Hornus, Gaetan Baehr, Jean-Baptiste Morizot, Alisa Nowak, Theo Guillard",
+    "vendor_url": "https://indiantypefoundry.com",
+    "designer_url": "www.indiantypefoundry.com/designers"
+   }
+  },
+  {
+   "stem": "unispace_bd",
+   "source_file": null,
+   "verdict": "UNKNOWN",
+   "evidence": "file not present on disk",
+   "names": {}
+  }
+ ]
+}

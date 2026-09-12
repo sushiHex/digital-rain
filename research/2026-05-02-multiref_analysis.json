@@ -1,0 +1,141 @@
+{
+  "rows": [
+    {
+      "font": "BitcountGridDoubleInk",
+      "variant": "1_kg",
+      "lpips": 0.36329489946365356,
+      "dinov2": 0.8771733641624451
+    },
+    {
+      "font": "BitcountGridDoubleInk",
+      "variant": "2_kg_mn",
+      "lpips": 0.3548814654350281,
+      "dinov2": 0.8957679271697998
+    },
+    {
+      "font": "BitcountGridDoubleInk",
+      "variant": "2_mn_kg",
+      "lpips": 0.3634689748287201,
+      "dinov2": 0.920764684677124
+    },
+    {
+      "font": "PlaywriteUSTradGuides",
+      "variant": "1_kg",
+      "lpips": 0.4427279233932495,
+      "dinov2": 0.7110880613327026
+    },
+    {
+      "font": "PlaywriteUSTradGuides",
+      "variant": "2_kg_mn",
+      "lpips": 0.45474934577941895,
+      "dinov2": 0.7030935287475586
+    },
+    {
+      "font": "PlaywriteUSTradGuides",
+      "variant": "2_mn_kg",
+      "lpips": 0.4533314108848572,
+      "dinov2": 0.7183178067207336
+    },
+    {
+      "font": "PlaywriteMXGuides",
+      "variant": "1_kg",
+      "lpips": 0.4377709925174713,
+      "dinov2": 0.8086084127426147
+    },
+    {
+      "font": "PlaywriteMXGuides",
+      "variant": "2_kg_mn",
+      "lpips": 0.4405395984649658,
+      "dinov2": 0.7078176140785217
+    },
+    {
+      "font": "PlaywriteMXGuides",
+      "variant": "2_mn_kg",
+      "lpips": 0.4434960186481476,
+      "dinov2": 0.7141207456588745
+    },
+    {
+      "font": "RubikDistressed",
+      "variant": "1_kg",
+      "lpips": 0.1984109878540039,
+      "dinov2": 0.8523515462875366
+    },
+    {
+      "font": "RubikDistressed",
+      "variant": "2_kg_mn",
+      "lpips": 0.19190606474876404,
+      "dinov2": 0.8623235821723938
+    },
+    {
+      "font": "RubikDistressed",
+      "variant": "2_mn_kg",
+      "lpips": 0.1965370923280716,
+      "dinov2": 0.8500472903251648
+    },
+    {
+      "font": "BitcountPropDoubleInk",
+      "variant": "1_kg",
+      "lpips": 0.40980708599090576,
+      "dinov2": 0.7945829629898071
+    },
+    {
+      "font": "BitcountPropDoubleInk",
+      "variant": "2_kg_mn",
+      "lpips": 0.39600884914398193,
+      "dinov2": 0.7899792194366455
+    },
+    {
+      "font": "BitcountPropDoubleInk",
+      "variant": "2_mn_kg",
+      "lpips": 0.3964803218841553,
+      "dinov2": 0.7837470173835754
+    }
+  ],
+  "deltas": [
+    {
+      "font": "BitcountGridDoubleInk",
+      "d_lp_kgmn": -0.008413434028625488,
+      "d_di_kgmn": 0.018594563007354736,
+      "d_lp_mnkg": 0.00017407536506652832,
+      "d_di_mnkg": 0.043591320514678955,
+      "order_eff_lpips": 0.008587509393692017
+    },
+    {
+      "font": "PlaywriteUSTradGuides",
+      "d_lp_kgmn": 0.012021422386169434,
+      "d_di_kgmn": -0.007994532585144043,
+      "d_lp_mnkg": 0.010603487491607666,
+      "d_di_mnkg": 0.007229745388031006,
+      "order_eff_lpips": -0.0014179348945617676
+    },
+    {
+      "font": "PlaywriteMXGuides",
+      "d_lp_kgmn": 0.002768605947494507,
+      "d_di_kgmn": -0.10079079866409302,
+      "d_lp_mnkg": 0.0057250261306762695,
+      "d_di_mnkg": -0.09448766708374023,
+      "order_eff_lpips": 0.0029564201831817627
+    },
+    {
+      "font": "RubikDistressed",
+      "d_lp_kgmn": -0.006504923105239868,
+      "d_di_kgmn": 0.009972035884857178,
+      "d_lp_mnkg": -0.001873895525932312,
+      "d_di_mnkg": -0.002304255962371826,
+      "order_eff_lpips": 0.004631027579307556
+    },
+    {
+      "font": "BitcountPropDoubleInk",
+      "d_lp_kgmn": -0.013798236846923828,
+      "d_di_kgmn": -0.004603743553161621,
+      "d_lp_mnkg": -0.013326764106750488,
+      "d_di_mnkg": -0.01083594560623169,
+      "order_eff_lpips": 0.00047147274017333984
+    }
+  ],
+  "summary": {
+    "mean_d_lpips_kgmn": -0.002785313129425049,
+    "mean_d_dino_kgmn": -0.016964495182037354,
+    "mean_abs_order_effect_lpips": 0.0036128729581832884
+  }
+}

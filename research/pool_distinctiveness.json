@@ -1,0 +1,1242 @@
+{
+ "telling_chars": "aegRQMW4&osk",
+ "metric": "cosine distance from the CORPUS centroid (dataset_v2) of mean DINOv2 cell embedding",
+ "note": "comparable to research/font_distinctiveness.json; same telling chars, same origin",
+ "centroid_n": 925,
+ "rejected": {
+  "charset": 1021,
+  "render": 0
+ },
+ "scores": {
+  "AlbertSans-Italic[wght]": {
+   "score": 0.028940856456756592,
+   "family": "albertsans",
+   "path": "google-fonts/ofl/albertsans/AlbertSans-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Aleo-Italic[wght]": {
+   "score": 0.02391815185546875,
+   "family": "aleo",
+   "path": "google-fonts/ofl/aleo/Aleo-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "AlumniSansInlineOne-Regular": {
+   "score": 0.0799141526222229,
+   "family": "alumnisansinlineone",
+   "path": "google-fonts/ofl/alumnisansinlineone/AlumniSansInlineOne-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Amarna-Italic[wght]": {
+   "score": 0.02254587411880493,
+   "family": "amarna",
+   "path": "google-fonts/ofl/amarna/Amarna-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "AndadaPro-Italic[wght]": {
+   "score": 0.038108766078948975,
+   "family": "andadapro",
+   "path": "google-fonts/ofl/andadapro/AndadaPro-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "AnekDevanagari[wdth,wght]": {
+   "score": 0.01606827974319458,
+   "family": "anekdevanagari",
+   "path": "google-fonts/ofl/anekdevanagari/AnekDevanagari[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "AnekGujarati[wdth,wght]": {
+   "score": 0.01606827974319458,
+   "family": "anekgujarati",
+   "path": "google-fonts/ofl/anekgujarati/AnekGujarati[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "AnekGurmukhi[wdth,wght]": {
+   "score": 0.01606827974319458,
+   "family": "anekgurmukhi",
+   "path": "google-fonts/ofl/anekgurmukhi/AnekGurmukhi[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "AnekKannada[wdth,wght]": {
+   "score": 0.01606827974319458,
+   "family": "anekkannada",
+   "path": "google-fonts/ofl/anekkannada/AnekKannada[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "AnekLatin[wdth,wght]": {
+   "score": 0.01606827974319458,
+   "family": "aneklatin",
+   "path": "google-fonts/ofl/aneklatin/AnekLatin[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "AnekMalayalam[wdth,wght]": {
+   "score": 0.01606827974319458,
+   "family": "anekmalayalam",
+   "path": "google-fonts/ofl/anekmalayalam/AnekMalayalam[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "AnekOdia[wdth,wght]": {
+   "score": 0.01606827974319458,
+   "family": "anekodia",
+   "path": "google-fonts/ofl/anekodia/AnekOdia[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "AnekTamil[wdth,wght]": {
+   "score": 0.01606827974319458,
+   "family": "anektamil",
+   "path": "google-fonts/ofl/anektamil/AnekTamil[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "AnekTelugu[wdth,wght]": {
+   "score": 0.01606827974319458,
+   "family": "anektelugu",
+   "path": "google-fonts/ofl/anektelugu/AnekTelugu[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "Archivo-Italic[wdth,wght]": {
+   "score": 0.04651594161987305,
+   "family": "archivo",
+   "path": "google-fonts/ofl/archivo/Archivo-Italic[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "ArchivoNarrow-Italic[wght]": {
+   "score": 0.029008984565734863,
+   "family": "archivonarrow",
+   "path": "google-fonts/ofl/archivonarrow/ArchivoNarrow-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Asap-Italic[wdth,wght]": {
+   "score": 0.024483323097229004,
+   "family": "asap",
+   "path": "google-fonts/ofl/asap/Asap-Italic[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "AtkinsonHyperlegibleNext-Italic[wght]": {
+   "score": 0.02006608247756958,
+   "family": "atkinsonhyperlegiblenext",
+   "path": "google-fonts/ofl/atkinsonhyperlegiblenext/AtkinsonHyperlegibleNext-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Besley-Italic[wght]": {
+   "score": 0.049702465534210205,
+   "family": "besley",
+   "path": "google-fonts/ofl/besley/Besley-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "BitcountGridDouble[CRSV,ELSH,ELXP,slnt,wght]": {
+   "score": 0.5113295316696167,
+   "family": "bitcountgriddouble",
+   "path": "google-fonts/ofl/bitcountgriddouble/BitcountGridDouble[CRSV,ELSH,ELXP,slnt,wght].ttf",
+   "licence": "ofl"
+  },
+  "BitcountInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]": {
+   "score": 0.5113295316696167,
+   "family": "bitcountink",
+   "path": "google-fonts/ofl/bitcountink/BitcountInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght].ttf",
+   "licence": "ofl"
+  },
+  "BlakaHollow-Regular": {
+   "score": 0.17909127473831177,
+   "family": "blakahollow",
+   "path": "google-fonts/ofl/blakahollow/BlakaHollow-Regular.ttf",
+   "licence": "ofl"
+  },
+  "BlakaInk-Regular": {
+   "score": 0.15807396173477173,
+   "family": "blakaink",
+   "path": "google-fonts/ofl/blakaink/BlakaInk-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Cabin-Italic[wdth,wght]": {
+   "score": 0.024260103702545166,
+   "family": "cabin",
+   "path": "google-fonts/ofl/cabin/Cabin-Italic[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "CairoPlay[slnt,wght]": {
+   "score": 0.02238023281097412,
+   "family": "cairoplay",
+   "path": "google-fonts/ofl/cairoplay/CairoPlay[slnt,wght].ttf",
+   "licence": "ofl"
+  },
+  "CascadiaCode-Italic[wght]": {
+   "score": 0.06170952320098877,
+   "family": "cascadiacode",
+   "path": "google-fonts/ofl/cascadiacode/CascadiaCode-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "CascadiaMono-Italic[wght]": {
+   "score": 0.06170952320098877,
+   "family": "cascadiamono",
+   "path": "google-fonts/ofl/cascadiamono/CascadiaMono-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Chivo-Italic[wght]": {
+   "score": 0.03899514675140381,
+   "family": "chivo",
+   "path": "google-fonts/ofl/chivo/Chivo-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "ChivoMono-Italic[wght]": {
+   "score": 0.05638796091079712,
+   "family": "chivomono",
+   "path": "google-fonts/ofl/chivomono/ChivoMono-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "ChocolateClassicalSans-Regular": {
+   "score": 0.01257336139678955,
+   "family": "chocolateclassicalsans",
+   "path": "google-fonts/ofl/chocolateclassicalsans/ChocolateClassicalSans-Regular.ttf",
+   "licence": "ofl"
+  },
+  "DMSans-Italic[opsz,wght]": {
+   "score": 0.02343994379043579,
+   "family": "dmsans",
+   "path": "google-fonts/ofl/dmsans/DMSans-Italic[opsz,wght].ttf",
+   "licence": "ofl"
+  },
+  "DMSerifText-Regular": {
+   "score": 0.05643707513809204,
+   "family": "dmseriftext",
+   "path": "google-fonts/ofl/dmseriftext/DMSerifText-Regular.ttf",
+   "licence": "ofl"
+  },
+  "DeliusUnicase-Regular": {
+   "score": 0.052361249923706055,
+   "family": "deliusunicase",
+   "path": "google-fonts/ofl/deliusunicase/DeliusUnicase-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Epilogue-Italic[wght]": {
+   "score": 0.02392411231994629,
+   "family": "epilogue",
+   "path": "google-fonts/ofl/epilogue/Epilogue-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Exo2-Italic[wght]": {
+   "score": 0.03580421209335327,
+   "family": "exo2",
+   "path": "google-fonts/ofl/exo2/Exo2-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "ExpletusSans-Italic[wght]": {
+   "score": 0.02499568462371826,
+   "family": "expletussans",
+   "path": "google-fonts/ofl/expletussans/ExpletusSans-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "FamiljenGrotesk-Italic[wght]": {
+   "score": 0.027415096759796143,
+   "family": "familjengrotesk",
+   "path": "google-fonts/ofl/familjengrotesk/FamiljenGrotesk-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "FiraSans-Regular": {
+   "score": 0.011830568313598633,
+   "family": "firasans",
+   "path": "google-fonts/ofl/firasans/FiraSans-Regular.ttf",
+   "licence": "ofl"
+  },
+  "FiraSansCondensed-Regular": {
+   "score": 0.013775646686553955,
+   "family": "firasanscondensed",
+   "path": "google-fonts/ofl/firasanscondensed/FiraSansCondensed-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Fraunces-Italic[SOFT,WONK,opsz,wght]": {
+   "score": 0.04797852039337158,
+   "family": "fraunces",
+   "path": "google-fonts/ofl/fraunces/Fraunces-Italic[SOFT,WONK,opsz,wght].ttf",
+   "licence": "ofl"
+  },
+  "Freehand-Regular": {
+   "score": 0.15974867343902588,
+   "family": "freehand",
+   "path": "google-fonts/ofl/freehand/Freehand-Regular.ttf",
+   "licence": "ofl"
+  },
+  "FunnelSans-Italic[wght]": {
+   "score": 0.03146493434906006,
+   "family": "funnelsans",
+   "path": "google-fonts/ofl/funnelsans/FunnelSans-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Gantari-Italic[wght]": {
+   "score": 0.024247407913208008,
+   "family": "gantari",
+   "path": "google-fonts/ofl/gantari/Gantari-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Gelasio-Italic[wght]": {
+   "score": 0.042661190032958984,
+   "family": "gelasio",
+   "path": "google-fonts/ofl/gelasio/Gelasio-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Geom-Italic[wght]": {
+   "score": 0.02844858169555664,
+   "family": "geom",
+   "path": "google-fonts/ofl/geom/Geom-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "GoogleSansCode-Italic[wght]": {
+   "score": 0.04734444618225098,
+   "family": "googlesanscode",
+   "path": "google-fonts/ofl/googlesanscode/GoogleSansCode-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "HankenGrotesk-Italic[wght]": {
+   "score": 0.02786862850189209,
+   "family": "hankengrotesk",
+   "path": "google-fonts/ofl/hankengrotesk/HankenGrotesk-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Hanuman[wght]": {
+   "score": 0.01479494571685791,
+   "family": "hanuman",
+   "path": "google-fonts/ofl/hanuman/Hanuman[wght].ttf",
+   "licence": "ofl"
+  },
+  "HedvigLettersSans-Regular": {
+   "score": 0.019409537315368652,
+   "family": "hedvigletterssans",
+   "path": "google-fonts/ofl/hedvigletterssans/HedvigLettersSans-Regular.ttf",
+   "licence": "ofl"
+  },
+  "HostGrotesk-Italic[wght]": {
+   "score": 0.03646969795227051,
+   "family": "hostgrotesk",
+   "path": "google-fonts/ofl/hostgrotesk/HostGrotesk-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Huninn-Regular": {
+   "score": 0.036542534828186035,
+   "family": "huninn",
+   "path": "google-fonts/ofl/huninn/Huninn-Regular.ttf",
+   "licence": "ofl"
+  },
+  "IBMPlexSans-Italic[wdth,wght]": {
+   "score": 0.022707045078277588,
+   "family": "ibmplexsans",
+   "path": "google-fonts/ofl/ibmplexsans/IBMPlexSans-Italic[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "IBMPlexSansDevanagari-Regular": {
+   "score": 0.01872718334197998,
+   "family": "ibmplexsansdevanagari",
+   "path": "google-fonts/ofl/ibmplexsansdevanagari/IBMPlexSansDevanagari-Regular.ttf",
+   "licence": "ofl"
+  },
+  "IBMPlexSansHebrew-Regular": {
+   "score": 0.01872718334197998,
+   "family": "ibmplexsanshebrew",
+   "path": "google-fonts/ofl/ibmplexsanshebrew/IBMPlexSansHebrew-Regular.ttf",
+   "licence": "ofl"
+  },
+  "IBMPlexSansJP-Regular": {
+   "score": 0.02036309242248535,
+   "family": "ibmplexsansjp",
+   "path": "google-fonts/ofl/ibmplexsansjp/IBMPlexSansJP-Regular.ttf",
+   "licence": "ofl"
+  },
+  "IBMPlexSansKR-Regular": {
+   "score": 0.01872718334197998,
+   "family": "ibmplexsanskr",
+   "path": "google-fonts/ofl/ibmplexsanskr/IBMPlexSansKR-Regular.ttf",
+   "licence": "ofl"
+  },
+  "InclusiveSans-Italic[wght]": {
+   "score": 0.027954697608947754,
+   "family": "inclusivesans",
+   "path": "google-fonts/ofl/inclusivesans/InclusiveSans-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "InstrumentSans-Italic[wdth,wght]": {
+   "score": 0.03041177988052368,
+   "family": "instrumentsans",
+   "path": "google-fonts/ofl/instrumentsans/InstrumentSans-Italic[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "Inter-Italic[opsz,wght]": {
+   "score": 0.026176095008850098,
+   "family": "inter",
+   "path": "google-fonts/ofl/inter/Inter-Italic[opsz,wght].ttf",
+   "licence": "ofl"
+  },
+  "InterTight-Italic[wght]": {
+   "score": 0.02344667911529541,
+   "family": "intertight",
+   "path": "google-fonts/ofl/intertight/InterTight-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "IosevkaCharonMono-Regular": {
+   "score": 0.02610546350479126,
+   "family": "iosevkacharonmono",
+   "path": "google-fonts/ofl/iosevkacharonmono/IosevkaCharonMono-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Jacquard24Charted-Regular": {
+   "score": 0.2621476650238037,
+   "family": "jacquard24charted",
+   "path": "google-fonts/ofl/jacquard24charted/Jacquard24Charted-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Jersey20-Regular": {
+   "score": 0.14180052280426025,
+   "family": "jersey20",
+   "path": "google-fonts/ofl/jersey20/Jersey20-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Jersey20Charted-Regular": {
+   "score": 0.30008721351623535,
+   "family": "jersey20charted",
+   "path": "google-fonts/ofl/jersey20charted/Jersey20Charted-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Jersey25-Regular": {
+   "score": 0.09322774410247803,
+   "family": "jersey25",
+   "path": "google-fonts/ofl/jersey25/Jersey25-Regular.ttf",
+   "licence": "ofl"
+  },
+  "JetBrainsMono-Italic[wght]": {
+   "score": 0.05213850736618042,
+   "family": "jetbrainsmono",
+   "path": "google-fonts/ofl/jetbrainsmono/JetBrainsMono-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Jost-Italic[wght]": {
+   "score": 0.031014561653137207,
+   "family": "jost",
+   "path": "google-fonts/ofl/jost/Jost-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "KaiseiHarunoUmi-Regular": {
+   "score": 0.07422846555709839,
+   "family": "kaiseiharunoumi",
+   "path": "google-fonts/ofl/kaiseiharunoumi/KaiseiHarunoUmi-Regular.ttf",
+   "licence": "ofl"
+  },
+  "KaiseiTokumin-Regular": {
+   "score": 0.07422846555709839,
+   "family": "kaiseitokumin",
+   "path": "google-fonts/ofl/kaiseitokumin/KaiseiTokumin-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Kanchenjunga-Regular": {
+   "score": 0.01414787769317627,
+   "family": "kanchenjunga",
+   "path": "google-fonts/ofl/kanchenjunga/Kanchenjunga-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Kufam-Italic[wght]": {
+   "score": 0.029550671577453613,
+   "family": "kufam",
+   "path": "google-fonts/ofl/kufam/Kufam-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Kurale-Regular": {
+   "score": 0.055300772190093994,
+   "family": "kurale",
+   "path": "google-fonts/ofl/kurale/Kurale-Regular.ttf",
+   "licence": "ofl"
+  },
+  "LakkiReddy-Regular": {
+   "score": 0.06589704751968384,
+   "family": "lakkireddy",
+   "path": "google-fonts/ofl/lakkireddy/LakkiReddy-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Lato-Regular": {
+   "score": 0.018877923488616943,
+   "family": "lato",
+   "path": "google-fonts/ofl/lato/Lato-Regular.ttf",
+   "licence": "ofl"
+  },
+  "LemonadaVFBeta": {
+   "score": 0.04189145565032959,
+   "family": "lemonadavfbeta",
+   "path": "google-fonts/ofl/lemonadavfbeta/LemonadaVFBeta.ttf",
+   "licence": "ofl"
+  },
+  "LexendDeca[wght]": {
+   "score": 0.033693671226501465,
+   "family": "lexenddeca",
+   "path": "google-fonts/ofl/lexenddeca/LexendDeca[wght].ttf",
+   "licence": "ofl"
+  },
+  "LexendGiga[wght]": {
+   "score": 0.0363919734954834,
+   "family": "lexendgiga",
+   "path": "google-fonts/ofl/lexendgiga/LexendGiga[wght].ttf",
+   "licence": "ofl"
+  },
+  "LexendMega[wght]": {
+   "score": 0.03488624095916748,
+   "family": "lexendmega",
+   "path": "google-fonts/ofl/lexendmega/LexendMega[wght].ttf",
+   "licence": "ofl"
+  },
+  "LexendPeta[wght]": {
+   "score": 0.034725964069366455,
+   "family": "lexendpeta",
+   "path": "google-fonts/ofl/lexendpeta/LexendPeta[wght].ttf",
+   "licence": "ofl"
+  },
+  "LexendTera[wght]": {
+   "score": 0.03484046459197998,
+   "family": "lexendtera",
+   "path": "google-fonts/ofl/lexendtera/LexendTera[wght].ttf",
+   "licence": "ofl"
+  },
+  "LibreBaskerville-Italic[wght]": {
+   "score": 0.05941057205200195,
+   "family": "librebaskerville",
+   "path": "google-fonts/ofl/librebaskerville/LibreBaskerville-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "LibreBodoni-Italic[wght]": {
+   "score": 0.07448863983154297,
+   "family": "librebodoni",
+   "path": "google-fonts/ofl/librebodoni/LibreBodoni-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "LibreCaslonText-Italic[wght]": {
+   "score": 0.07784461975097656,
+   "family": "librecaslontext",
+   "path": "google-fonts/ofl/librecaslontext/LibreCaslonText-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Lilex-Italic[wght]": {
+   "score": 0.038213491439819336,
+   "family": "lilex",
+   "path": "google-fonts/ofl/lilex/Lilex-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Liter-Regular": {
+   "score": 0.022855639457702637,
+   "family": "liter",
+   "path": "google-fonts/ofl/liter/Liter-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Literata-Italic[opsz,wght]": {
+   "score": 0.0319056510925293,
+   "family": "literata",
+   "path": "google-fonts/ofl/literata/Literata-Italic[opsz,wght].ttf",
+   "licence": "ofl"
+  },
+  "Lobster-Regular": {
+   "score": 0.06009000539779663,
+   "family": "lobster",
+   "path": "google-fonts/ofl/lobster/Lobster-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Mada[wght]": {
+   "score": 0.01303321123123169,
+   "family": "mada",
+   "path": "google-fonts/ofl/mada/Mada[wght].ttf",
+   "licence": "ofl"
+  },
+  "Merriweather-Italic[opsz,wdth,wght]": {
+   "score": 0.03988158702850342,
+   "family": "merriweather",
+   "path": "google-fonts/ofl/merriweather/Merriweather-Italic[opsz,wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "MerriweatherSans-Italic[wght]": {
+   "score": 0.025747597217559814,
+   "family": "merriweathersans",
+   "path": "google-fonts/ofl/merriweathersans/MerriweatherSans-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "MirandaSans-Italic[wght]": {
+   "score": 0.023257136344909668,
+   "family": "mirandasans",
+   "path": "google-fonts/ofl/mirandasans/MirandaSans-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Moul-Regular": {
+   "score": 0.04594928026199341,
+   "family": "moul",
+   "path": "google-fonts/ofl/moul/Moul-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Mukta-Regular": {
+   "score": 0.014873206615447998,
+   "family": "mukta",
+   "path": "google-fonts/ofl/mukta/Mukta-Regular.ttf",
+   "licence": "ofl"
+  },
+  "MuktaVaani-Regular": {
+   "score": 0.014873206615447998,
+   "family": "muktavaani",
+   "path": "google-fonts/ofl/muktavaani/MuktaVaani-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Nobile-Regular": {
+   "score": 0.014919042587280273,
+   "family": "nobile",
+   "path": "google-fonts/ofl/nobile/Nobile-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Nokora[wght]": {
+   "score": 0.017209351062774658,
+   "family": "nokora",
+   "path": "google-fonts/ofl/nokora/Nokora[wght].ttf",
+   "licence": "ofl"
+  },
+  "NovaRound": {
+   "score": 0.03208649158477783,
+   "family": "novaround",
+   "path": "google-fonts/ofl/novaround/NovaRound.ttf",
+   "licence": "ofl"
+  },
+  "NovaSlim": {
+   "score": 0.03020787239074707,
+   "family": "novaslim",
+   "path": "google-fonts/ofl/novaslim/NovaSlim.ttf",
+   "licence": "ofl"
+  },
+  "NuosuSIL-Regular": {
+   "score": 0.05679899454116821,
+   "family": "nuosusil",
+   "path": "google-fonts/ofl/nuosusil/NuosuSIL-Regular.ttf",
+   "licence": "ofl"
+  },
+  "OpenSans-Italic[wdth,wght]": {
+   "score": 0.023250162601470947,
+   "family": "opensans",
+   "path": "google-fonts/ofl/opensans/OpenSans-Italic[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "Overpass-Italic[wght]": {
+   "score": 0.021405041217803955,
+   "family": "overpass",
+   "path": "google-fonts/ofl/overpass/Overpass-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Oxygen-Regular": {
+   "score": 0.019340336322784424,
+   "family": "oxygen",
+   "path": "google-fonts/ofl/oxygen/Oxygen-Regular.ttf",
+   "licence": "ofl"
+  },
+  "PT_Sans-Caption-Web-Regular": {
+   "score": 0.019786477088928223,
+   "family": "ptsanscaption",
+   "path": "google-fonts/ofl/ptsanscaption/PT_Sans-Caption-Web-Regular.ttf",
+   "licence": "ofl"
+  },
+  "PT_Serif-Caption-Web-Regular": {
+   "score": 0.041046857833862305,
+   "family": "ptserifcaption",
+   "path": "google-fonts/ofl/ptserifcaption/PT_Serif-Caption-Web-Regular.ttf",
+   "licence": "ofl"
+  },
+  "PT_Serif-Web-Regular": {
+   "score": 0.039716243743896484,
+   "family": "ptserif",
+   "path": "google-fonts/ofl/ptserif/PT_Serif-Web-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Pattaya-Regular": {
+   "score": 0.05875289440155029,
+   "family": "pattaya",
+   "path": "google-fonts/ofl/pattaya/Pattaya-Regular.ttf",
+   "licence": "ofl"
+  },
+  "PatuaOne-Regular": {
+   "score": 0.024019300937652588,
+   "family": "patuaone",
+   "path": "google-fonts/ofl/patuaone/PatuaOne-Regular.ttf",
+   "licence": "ofl"
+  },
+  "PirataOne-Regular": {
+   "score": 0.07224398851394653,
+   "family": "pirataone",
+   "path": "google-fonts/ofl/pirataone/PirataOne-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Platypi-Italic[wght]": {
+   "score": 0.04871487617492676,
+   "family": "platypi",
+   "path": "google-fonts/ofl/platypi/Platypi-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaypenSansArabic[wght]": {
+   "score": 0.04978501796722412,
+   "family": "playpensansarabic",
+   "path": "google-fonts/ofl/playpensansarabic/PlaypenSansArabic[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaypenSansDeva[wght]": {
+   "score": 0.04978501796722412,
+   "family": "playpensansdeva",
+   "path": "google-fonts/ofl/playpensansdeva/PlaypenSansDeva[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaypenSansHebrew[wght]": {
+   "score": 0.04978501796722412,
+   "family": "playpensanshebrew",
+   "path": "google-fonts/ofl/playpensanshebrew/PlaypenSansHebrew[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaypenSansThai[wght]": {
+   "score": 0.04978501796722412,
+   "family": "playpensansthai",
+   "path": "google-fonts/ofl/playpensansthai/PlaypenSansThai[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywriteAT-Italic[wght]": {
+   "score": 0.07204622030258179,
+   "family": "playwriteat",
+   "path": "google-fonts/ofl/playwriteat/PlaywriteAT-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywriteAUTAS[wght]": {
+   "score": 0.05781203508377075,
+   "family": "playwriteautas",
+   "path": "google-fonts/ofl/playwriteautas/PlaywriteAUTAS[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywriteAUVIC[wght]": {
+   "score": 0.057373762130737305,
+   "family": "playwriteauvic",
+   "path": "google-fonts/ofl/playwriteauvic/PlaywriteAUVIC[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywriteBR[wght]": {
+   "score": 0.07023823261260986,
+   "family": "playwritebr",
+   "path": "google-fonts/ofl/playwritebr/PlaywriteBR[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywriteDKUloopet[wght]": {
+   "score": 0.060054779052734375,
+   "family": "playwritedkuloopet",
+   "path": "google-fonts/ofl/playwritedkuloopet/PlaywriteDKUloopet[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywriteFRModerne[wght]": {
+   "score": 0.047540128231048584,
+   "family": "playwritefrmoderne",
+   "path": "google-fonts/ofl/playwritefrmoderne/PlaywriteFRModerne[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywriteFRTrad[wght]": {
+   "score": 0.09179770946502686,
+   "family": "playwritefrtrad",
+   "path": "google-fonts/ofl/playwritefrtrad/PlaywriteFRTrad[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywriteGBJ-Italic[wght]": {
+   "score": 0.03883171081542969,
+   "family": "playwritegbj",
+   "path": "google-fonts/ofl/playwritegbj/PlaywriteGBJ-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywriteGBS-Italic[wght]": {
+   "score": 0.039715707302093506,
+   "family": "playwritegbs",
+   "path": "google-fonts/ofl/playwritegbs/PlaywriteGBS-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywriteIS[wght]": {
+   "score": 0.04587644338607788,
+   "family": "playwriteis",
+   "path": "google-fonts/ofl/playwriteis/PlaywriteIS[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywriteITModerna[wght]": {
+   "score": 0.041915953159332275,
+   "family": "playwriteitmoderna",
+   "path": "google-fonts/ofl/playwriteitmoderna/PlaywriteITModerna[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywriteITTrad[wght]": {
+   "score": 0.06008040904998779,
+   "family": "playwriteittrad",
+   "path": "google-fonts/ofl/playwriteittrad/PlaywriteITTrad[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywriteMX[wght]": {
+   "score": 0.0841473937034607,
+   "family": "playwritemx",
+   "path": "google-fonts/ofl/playwritemx/PlaywriteMX[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywriteNGModern[wght]": {
+   "score": 0.04548579454421997,
+   "family": "playwritengmodern",
+   "path": "google-fonts/ofl/playwritengmodern/PlaywriteNGModern[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywriteNZ[wght]": {
+   "score": 0.05141383409500122,
+   "family": "playwritenz",
+   "path": "google-fonts/ofl/playwritenz/PlaywriteNZ[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywritePL[wght]": {
+   "score": 0.06665325164794922,
+   "family": "playwritepl",
+   "path": "google-fonts/ofl/playwritepl/PlaywritePL[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywriteSK[wght]": {
+   "score": 0.07506763935089111,
+   "family": "playwritesk",
+   "path": "google-fonts/ofl/playwritesk/PlaywriteSK[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywriteUSModern[wght]": {
+   "score": 0.04361522197723389,
+   "family": "playwriteusmodern",
+   "path": "google-fonts/ofl/playwriteusmodern/PlaywriteUSModern[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlaywriteUSTrad[wght]": {
+   "score": 0.08711361885070801,
+   "family": "playwriteustrad",
+   "path": "google-fonts/ofl/playwriteustrad/PlaywriteUSTrad[wght].ttf",
+   "licence": "ofl"
+  },
+  "PlusJakartaSans-Italic[wght]": {
+   "score": 0.031224846839904785,
+   "family": "plusjakartasans",
+   "path": "google-fonts/ofl/plusjakartasans/PlusJakartaSans-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "PodkovaVFBeta": {
+   "score": 0.01641637086868286,
+   "family": "podkovavfbeta",
+   "path": "google-fonts/ofl/podkovavfbeta/PodkovaVFBeta.ttf",
+   "licence": "ofl"
+  },
+  "PoltawskiNowy-Italic[wght]": {
+   "score": 0.0767664909362793,
+   "family": "poltawskinowy",
+   "path": "google-fonts/ofl/poltawskinowy/PoltawskiNowy-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Poppins-Regular": {
+   "score": 0.029483556747436523,
+   "family": "poppins",
+   "path": "google-fonts/ofl/poppins/Poppins-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Preahvihear-Regular": {
+   "score": 0.033726513385772705,
+   "family": "preahvihear",
+   "path": "google-fonts/ofl/preahvihear/Preahvihear-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Pushster-Regular": {
+   "score": 0.06009000539779663,
+   "family": "pushster",
+   "path": "google-fonts/ofl/pushster/Pushster-Regular.ttf",
+   "licence": "ofl"
+  },
+  "REM-Italic[wght]": {
+   "score": 0.035085320472717285,
+   "family": "rem",
+   "path": "google-fonts/ofl/rem/REM-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "RadioCanada-Italic[wdth,wght]": {
+   "score": 0.02416825294494629,
+   "family": "radiocanada",
+   "path": "google-fonts/ofl/radiocanada/RadioCanada-Italic[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "RadioCanadaBig-Italic[wght]": {
+   "score": 0.02982461452484131,
+   "family": "radiocanadabig",
+   "path": "google-fonts/ofl/radiocanadabig/RadioCanadaBig-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Ramabhadra-Regular": {
+   "score": 0.024644136428833008,
+   "family": "ramabhadra",
+   "path": "google-fonts/ofl/ramabhadra/Ramabhadra-Regular.ttf",
+   "licence": "ofl"
+  },
+  "RaviPrakash-Regular": {
+   "score": 0.07323890924453735,
+   "family": "raviprakash",
+   "path": "google-fonts/ofl/raviprakash/RaviPrakash-Regular.ttf",
+   "licence": "ofl"
+  },
+  "ReadexPro[HEXP,wght]": {
+   "score": 0.029613494873046875,
+   "family": "readexpro",
+   "path": "google-fonts/ofl/readexpro/ReadexPro[HEXP,wght].ttf",
+   "licence": "ofl"
+  },
+  "RedHatDisplay-Italic[wght]": {
+   "score": 0.034244537353515625,
+   "family": "redhatdisplay",
+   "path": "google-fonts/ofl/redhatdisplay/RedHatDisplay-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "RedditSans-Italic[wght]": {
+   "score": 0.025931179523468018,
+   "family": "redditsans",
+   "path": "google-fonts/ofl/redditsans/RedditSans-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "RethinkSans-Italic[wght]": {
+   "score": 0.022733032703399658,
+   "family": "rethinksans",
+   "path": "google-fonts/ofl/rethinksans/RethinkSans-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Roboto-Italic[wdth,wght]": {
+   "score": 0.02222573757171631,
+   "family": "roboto",
+   "path": "google-fonts/ofl/roboto/Roboto-Italic[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "RobotoCondensed-Italic[wght]": {
+   "score": 0.030388593673706055,
+   "family": "robotocondensed",
+   "path": "google-fonts/ofl/robotocondensed/RobotoCondensed-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght]": {
+   "score": 0.02072817087173462,
+   "family": "robotoflex",
+   "path": "google-fonts/ofl/robotoflex/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "RobotoMono-Italic[wght]": {
+   "score": 0.04374593496322632,
+   "family": "robotomono",
+   "path": "google-fonts/ofl/robotomono/RobotoMono-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "RobotoSerif-Italic[GRAD,opsz,wdth,wght]": {
+   "score": 0.03815722465515137,
+   "family": "robotoserif",
+   "path": "google-fonts/ofl/robotoserif/RobotoSerif-Italic[GRAD,opsz,wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "Rokkitt-Italic[wght]": {
+   "score": 0.0415424108505249,
+   "family": "rokkitt",
+   "path": "google-fonts/ofl/rokkitt/Rokkitt-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Rosario-Italic[wght]": {
+   "score": 0.02504795789718628,
+   "family": "rosario",
+   "path": "google-fonts/ofl/rosario/Rosario-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "RoundedMplus1c-Regular": {
+   "score": 0.03979682922363281,
+   "family": "roundedmplus1c",
+   "path": "google-fonts/ofl/roundedmplus1c/RoundedMplus1c-Regular.ttf",
+   "licence": "ofl"
+  },
+  "RubikGemstones-Regular": {
+   "score": 0.42319607734680176,
+   "family": "rubikgemstones",
+   "path": "google-fonts/ofl/rubikgemstones/RubikGemstones-Regular.ttf",
+   "licence": "ofl"
+  },
+  "RubikMarkerHatch-Regular": {
+   "score": 0.36770790815353394,
+   "family": "rubikmarkerhatch",
+   "path": "google-fonts/ofl/rubikmarkerhatch/RubikMarkerHatch-Regular.ttf",
+   "licence": "ofl"
+  },
+  "RubikMoonrocks-Regular": {
+   "score": 0.28998029232025146,
+   "family": "rubikmoonrocks",
+   "path": "google-fonts/ofl/rubikmoonrocks/RubikMoonrocks-Regular.ttf",
+   "licence": "ofl"
+  },
+  "RubikOne-Regular": {
+   "score": 0.06695181131362915,
+   "family": "rubikone",
+   "path": "google-fonts/ofl/rubikone/RubikOne-Regular.ttf",
+   "licence": "ofl"
+  },
+  "RubikSprayPaint-Regular": {
+   "score": 0.31223833560943604,
+   "family": "rubikspraypaint",
+   "path": "google-fonts/ofl/rubikspraypaint/RubikSprayPaint-Regular.ttf",
+   "licence": "ofl"
+  },
+  "RubikStorm-Regular": {
+   "score": 0.33947837352752686,
+   "family": "rubikstorm",
+   "path": "google-fonts/ofl/rubikstorm/RubikStorm-Regular.ttf",
+   "licence": "ofl"
+  },
+  "RubikWetPaint-Regular": {
+   "score": 0.14068150520324707,
+   "family": "rubikwetpaint",
+   "path": "google-fonts/ofl/rubikwetpaint/RubikWetPaint-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Ruwudu-Regular": {
+   "score": 0.037849247455596924,
+   "family": "ruwudu",
+   "path": "google-fonts/ofl/ruwudu/Ruwudu-Regular.ttf",
+   "licence": "ofl"
+  },
+  "SchibstedGrotesk-Italic[wght]": {
+   "score": 0.018561959266662598,
+   "family": "schibstedgrotesk",
+   "path": "google-fonts/ofl/schibstedgrotesk/SchibstedGrotesk-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "SeaweedScript-Regular": {
+   "score": 0.15816879272460938,
+   "family": "seaweedscript",
+   "path": "google-fonts/ofl/seaweedscript/SeaweedScript-Regular.ttf",
+   "licence": "ofl"
+  },
+  "ShantellSans-Italic[BNCE,INFM,SPAC,wght]": {
+   "score": 0.10883128643035889,
+   "family": "shantellsans",
+   "path": "google-fonts/ofl/shantellsans/ShantellSans-Italic[BNCE,INFM,SPAC,wght].ttf",
+   "licence": "ofl"
+  },
+  "ShareTech-Regular": {
+   "score": 0.03800398111343384,
+   "family": "sharetech",
+   "path": "google-fonts/ofl/sharetech/ShareTech-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Sintony-Regular": {
+   "score": 0.01887357234954834,
+   "family": "sintony",
+   "path": "google-fonts/ofl/sintony/Sintony-Regular.ttf",
+   "licence": "ofl"
+  },
+  "SixtyfourConvergence[BLED,SCAN,XELA,YELA]": {
+   "score": 0.29790055751800537,
+   "family": "sixtyfourconvergence",
+   "path": "google-fonts/ofl/sixtyfourconvergence/SixtyfourConvergence[BLED,SCAN,XELA,YELA].ttf",
+   "licence": "ofl"
+  },
+  "SofiaSans-Italic[wght]": {
+   "score": 0.030264198780059814,
+   "family": "sofiasans",
+   "path": "google-fonts/ofl/sofiasans/SofiaSans-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "SourGummy-Italic[wdth,wght]": {
+   "score": 0.08710837364196777,
+   "family": "sourgummy",
+   "path": "google-fonts/ofl/sourgummy/SourGummy-Italic[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "SplineSansMono-Italic[wght]": {
+   "score": 0.0420382022857666,
+   "family": "splinesansmono",
+   "path": "google-fonts/ofl/splinesansmono/SplineSansMono-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "StackSansNotch[wght]": {
+   "score": 0.02912306785583496,
+   "family": "stacksansnotch",
+   "path": "google-fonts/ofl/stacksansnotch/StackSansNotch[wght].ttf",
+   "licence": "ofl"
+  },
+  "TASAExplorer[wght]": {
+   "score": 0.024040699005126953,
+   "family": "tasaexplorer",
+   "path": "google-fonts/ofl/tasaexplorer/TASAExplorer[wght].ttf",
+   "licence": "ofl"
+  },
+  "TASAOrbiter[wght]": {
+   "score": 0.021511495113372803,
+   "family": "tasaorbiter",
+   "path": "google-fonts/ofl/tasaorbiter/TASAOrbiter[wght].ttf",
+   "licence": "ofl"
+  },
+  "Taprom-Regular": {
+   "score": 0.15974867343902588,
+   "family": "taprom",
+   "path": "google-fonts/ofl/taprom/Taprom-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Texturina-Italic[opsz,wght]": {
+   "score": 0.057929933071136475,
+   "family": "texturina",
+   "path": "google-fonts/ofl/texturina/Texturina-Italic[opsz,wght].ttf",
+   "licence": "ofl"
+  },
+  "Thabit-BoldOblique": {
+   "score": 0.049866676330566406,
+   "family": "thabit",
+   "path": "google-fonts/ofl/thabit/Thabit-BoldOblique.ttf",
+   "licence": "ofl"
+  },
+  "Tharlon-Regular": {
+   "score": 0.015380322933197021,
+   "family": "tharlon",
+   "path": "google-fonts/ofl/tharlon/Tharlon-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Tienne-Regular": {
+   "score": 0.035164713859558105,
+   "family": "tienne",
+   "path": "google-fonts/ofl/tienne/Tienne-Regular.ttf",
+   "licence": "ofl"
+  },
+  "TiltWarp[XROT,YROT]": {
+   "score": 0.062007129192352295,
+   "family": "tiltwarp",
+   "path": "google-fonts/ofl/tiltwarp/TiltWarp[XROT,YROT].ttf",
+   "licence": "ofl"
+  },
+  "TiroBangla-Regular": {
+   "score": 0.05488640069961548,
+   "family": "tirobangla",
+   "path": "google-fonts/ofl/tirobangla/TiroBangla-Regular.ttf",
+   "licence": "ofl"
+  },
+  "TiroDevanagariMarathi-Regular": {
+   "score": 0.05488640069961548,
+   "family": "tirodevanagarimarathi",
+   "path": "google-fonts/ofl/tirodevanagarimarathi/TiroDevanagariMarathi-Regular.ttf",
+   "licence": "ofl"
+  },
+  "TiroDevanagariSanskrit-Regular": {
+   "score": 0.05488640069961548,
+   "family": "tirodevanagarisanskrit",
+   "path": "google-fonts/ofl/tirodevanagarisanskrit/TiroDevanagariSanskrit-Regular.ttf",
+   "licence": "ofl"
+  },
+  "TiroKannada-Regular": {
+   "score": 0.05488640069961548,
+   "family": "tirokannada",
+   "path": "google-fonts/ofl/tirokannada/TiroKannada-Regular.ttf",
+   "licence": "ofl"
+  },
+  "TitilliumWeb-Regular": {
+   "score": 0.024460434913635254,
+   "family": "titilliumweb",
+   "path": "google-fonts/ofl/titilliumweb/TitilliumWeb-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Trirong-Regular": {
+   "score": 0.05496394634246826,
+   "family": "trirong",
+   "path": "google-fonts/ofl/trirong/Trirong-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Urbanist-Italic[wght]": {
+   "score": 0.034319281578063965,
+   "family": "urbanist",
+   "path": "google-fonts/ofl/urbanist/Urbanist-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Varela-Regular": {
+   "score": 0.023806631565093994,
+   "family": "varela",
+   "path": "google-fonts/ofl/varela/Varela-Regular.ttf",
+   "licence": "ofl"
+  },
+  "VarelaRound-Regular": {
+   "score": 0.037814974784851074,
+   "family": "varelaround",
+   "path": "google-fonts/ofl/varelaround/VarelaRound-Regular.ttf",
+   "licence": "ofl"
+  },
+  "Vollkorn-Italic[wght]": {
+   "score": 0.04786401987075806,
+   "family": "vollkorn",
+   "path": "google-fonts/ofl/vollkorn/Vollkorn-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "WinkyRough-Italic[wght]": {
+   "score": 0.1355355978012085,
+   "family": "winkyrough",
+   "path": "google-fonts/ofl/winkyrough/WinkyRough-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "WinkySans-Italic[wght]": {
+   "score": 0.04016774892807007,
+   "family": "winkysans",
+   "path": "google-fonts/ofl/winkysans/WinkySans-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Wittgenstein-Italic[wght]": {
+   "score": 0.06837904453277588,
+   "family": "wittgenstein",
+   "path": "google-fonts/ofl/wittgenstein/Wittgenstein-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "WixMadeforDisplay[wght]": {
+   "score": 0.04287087917327881,
+   "family": "wixmadefordisplay",
+   "path": "google-fonts/ofl/wixmadefordisplay/WixMadeforDisplay[wght].ttf",
+   "licence": "ofl"
+  },
+  "WixMadeforText-Regular": {
+   "score": 0.03591632843017578,
+   "family": "wixmadefortext",
+   "path": "google-fonts/ofl/wixmadefortext/WixMadeforText-Regular.ttf",
+   "licence": "ofl"
+  },
+  "WorkSans-Italic[wght]": {
+   "score": 0.02328205108642578,
+   "family": "worksans",
+   "path": "google-fonts/ofl/worksans/WorkSans-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "Ysabeau-Italic[wght]": {
+   "score": 0.02876865863800049,
+   "family": "ysabeau",
+   "path": "google-fonts/ofl/ysabeau/Ysabeau-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "YsabeauInfant-Italic[wght]": {
+   "score": 0.028979182243347168,
+   "family": "ysabeauinfant",
+   "path": "google-fonts/ofl/ysabeauinfant/YsabeauInfant-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "YsabeauOffice-Italic[wght]": {
+   "score": 0.02893465757369995,
+   "family": "ysabeauoffice",
+   "path": "google-fonts/ofl/ysabeauoffice/YsabeauOffice-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "YuseiMagic-Regular": {
+   "score": 0.02168285846710205,
+   "family": "yuseimagic",
+   "path": "google-fonts/ofl/yuseimagic/YuseiMagic-Regular.ttf",
+   "licence": "ofl"
+  },
+  "ZalandoSans-Italic[wdth,wght]": {
+   "score": 0.020466387271881104,
+   "family": "zalandosans",
+   "path": "google-fonts/ofl/zalandosans/ZalandoSans-Italic[wdth,wght].ttf",
+   "licence": "ofl"
+  },
+  "ZalandoSansExpanded-Italic[wght]": {
+   "score": 0.029363572597503662,
+   "family": "zalandosansexpanded",
+   "path": "google-fonts/ofl/zalandosansexpanded/ZalandoSansExpanded-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "ZalandoSansSemiExpanded-Italic[wght]": {
+   "score": 0.0223768949508667,
+   "family": "zalandosanssemiexpanded",
+   "path": "google-fonts/ofl/zalandosanssemiexpanded/ZalandoSansSemiExpanded-Italic[wght].ttf",
+   "licence": "ofl"
+  },
+  "ZenAntiqueSoft-Regular": {
+   "score": 0.06041312217712402,
+   "family": "zenantiquesoft",
+   "path": "google-fonts/ofl/zenantiquesoft/ZenAntiqueSoft-Regular.ttf",
+   "licence": "ofl"
+  }
+ }
+}

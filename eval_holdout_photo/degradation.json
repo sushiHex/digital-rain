@@ -1,0 +1,7 @@
+{
+ "tier": "photo",
+ "source": "eval_holdout",
+ "n_references": 50,
+ "mean_abs_diff_vs_oracle": 5.627,
+ "note": "GROUND-TRUTH ATLASES ARE UNCHANGED; only the reference images are degraded."
+}

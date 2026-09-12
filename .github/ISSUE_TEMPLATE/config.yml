@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/sushiHex/digital-rain/security/advisories/new
+    about: Report vulnerabilities privately. Do not open a public issue.
+  - name: How this repository is published, and what is withheld
+    url: https://github.com/sushiHex/digital-rain/blob/main/docs/public-release.md
+    about: The public/private split, the gates, and the open licence question.
+  - name: The claim discipline, before you file a number
+    url: https://github.com/sushiHex/digital-rain/blob/main/CLAUDE.md
+    about: Two axes, seed variance, training-run variance -- read before quoting a metric.

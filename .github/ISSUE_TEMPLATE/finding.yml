@@ -1,0 +1,56 @@
+name: Research finding or claim
+description: A number, a comparison, or a result that should enter the record
+title: "finding: "
+labels: ["finding", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A claim with a number in it is the unit of contribution here, and most of the numbers this project has retracted were retracted because of what this form asks for.
+        Read the top of [`CLAUDE.md`](https://github.com/sushiHex/digital-rain/blob/main/CLAUDE.md) first: `char_acc` is not letter correctness, a single-seed A/B cannot resolve a model difference, and training-run variance swallows most of the record.
+        Negative results are welcome and are recorded, not deleted.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Preflight
+      options:
+        - label: I searched existing issues, pull requests and `research/` for this question, including retracted notes.
+          required: true
+        - label: I removed secrets, personal paths and private data from all text and attachments.
+          required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: The claim, in one sentence
+      description: What is true, on what data, by what measure. Model track and product track are never compared.
+    validations:
+      required: true
+  - type: dropdown
+    id: registration
+    attributes:
+      label: Pre-registration
+      description: Was the bar, statistic and sample fixed and committed BEFORE the data was produced?
+      options:
+        - Yes -- the registration commit is linked below
+        - No -- this is exploratory and is labelled as such
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: The command, the artifact it wrote, the commit it ran at. If the number came from a script you wrote, say so.
+    validations:
+      required: true
+  - type: textarea
+    id: noise
+    attributes:
+      label: Against its own noise
+      description: The effect divided by ITS OWN metric's SD (see the training-variance table in CLAUDE.md), and how many seeds, fonts or families it rests on. Ranks, not absolute probabilities, for the adherence measure.
+    validations:
+      required: true
+  - type: textarea
+    id: overturns
+    attributes:
+      label: What this overturns or extends
+      description: Which dated note in `research/` it corrects, if any. A correction is added as a marked section; the original is never rewritten.

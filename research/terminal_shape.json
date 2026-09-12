@@ -1,0 +1,26 @@
+{
+ "preregistered": true,
+ "bar": 0.75,
+ "offset": 50,
+ "cap": 50,
+ "terminal_features": [
+  "term_count",
+  "term_ratio"
+ ],
+ "results": {
+  "six features (baseline)": {
+   "auc": 0.8685714285714285,
+   "p": 0.0004997501249375312,
+   "n": 99,
+   "families": 99
+  },
+  "+ terminal shape": {
+   "auc": 0.8440816326530612,
+   "p": 0.0004997501249375312,
+   "n": 99,
+   "families": 99
+  }
+ },
+ "passed": true,
+ "note": "families before the offset were scored by the run that failed at 0.733 and are excluded here"
+}

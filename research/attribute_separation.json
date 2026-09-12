@@ -1,0 +1,101 @@
+{
+ "preregistered": true,
+ "cap": 50,
+ "bar_carried": 0.75,
+ "bar_weak": 0.6,
+ "features": [
+  "stroke",
+  "slant",
+  "fill",
+  "parts",
+  "width_cv",
+  "aspect"
+ ],
+ "attributes": {
+  "weight": {
+   "auc": 0.9696,
+   "p": 0.0004997501249375312,
+   "n": 100,
+   "families": 83,
+   "rare": false,
+   "verdict": "carried"
+  },
+  "width": {
+   "auc": 0.8392857142857143,
+   "p": 0.0004997501249375312,
+   "n": 58,
+   "families": 58,
+   "rare": false,
+   "verdict": "carried"
+  },
+  "slant": {
+   "auc": 0.9145833333333333,
+   "p": 0.0004997501249375312,
+   "n": 98,
+   "families": 89,
+   "rare": false,
+   "verdict": "carried"
+  },
+  "serif vs sans": {
+   "auc": 0.7328,
+   "p": 0.0004997501249375312,
+   "n": 100,
+   "families": 100,
+   "rare": false,
+   "verdict": "weak"
+  },
+  "mono": {
+   "auc": 0.9458333333333333,
+   "p": 0.0004997501249375312,
+   "n": 98,
+   "families": 98,
+   "rare": false,
+   "verdict": "carried"
+  },
+  "stencil": {
+   "auc": 0.91,
+   "p": 0.0004997501249375312,
+   "n": 20,
+   "families": 20,
+   "rare": true,
+   "verdict": "descriptive only"
+  },
+  "inline": {
+   "auc": 0.86,
+   "p": 0.0034982508745627187,
+   "n": 20,
+   "families": 20,
+   "rare": true,
+   "verdict": "descriptive only"
+  },
+  "outline": {
+   "skipped": "too few families",
+   "pos_families": 3,
+   "neg_families": 2220
+  },
+  "shadow": {
+   "auc": 0.7777777777777779,
+   "p": 0.054972513743128434,
+   "n": 12,
+   "families": 12,
+   "rare": true,
+   "verdict": "descriptive only"
+  },
+  "slab": {
+   "auc": 0.3131868131868132,
+   "p": 0.9450274862568716,
+   "n": 27,
+   "families": 27,
+   "rare": true,
+   "verdict": "descriptive only"
+  },
+  "rounded": {
+   "auc": 0.7222222222222223,
+   "p": 0.10844577711144428,
+   "n": 12,
+   "families": 12,
+   "rare": true,
+   "verdict": "descriptive only"
+  }
+ }
+}

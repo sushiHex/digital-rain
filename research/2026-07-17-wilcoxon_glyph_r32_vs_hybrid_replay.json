@@ -1,0 +1,64 @@
+{
+  "run_a": "eval_runs/glyph_r32_5000/per_cell.json",
+  "run_b": "eval_runs/hybrid_replay/per_cell.json",
+  "label_a": "glyph_r32",
+  "label_b": "hybrid_replay",
+  "n_shared_fonts": 50,
+  "results": [
+    {
+      "metric": "composite",
+      "larger_better": true,
+      "median_a": 0.8462177023846418,
+      "median_b": 0.8405775618323303,
+      "median_delta": 0.004399778107379404,
+      "W": 617.0,
+      "p": 0.8431221823213594,
+      "effect_r": 0.027987489175284465,
+      "n_nonzero": 50
+    },
+    {
+      "metric": "char_acc",
+      "larger_better": true,
+      "median_a": 0.7712765957446808,
+      "median_b": 0.7287234042553192,
+      "median_delta": -0.015957446808510634,
+      "W": 414.5,
+      "p": 0.07486098787302489,
+      "effect_r": 0.25711068916636726,
+      "n_nonzero": 48
+    },
+    {
+      "metric": "racc",
+      "larger_better": true,
+      "median_a": 0.7978723404255319,
+      "median_b": 0.8085106382978723,
+      "median_delta": 0.0,
+      "W": 538.0,
+      "p": 0.9781173334763178,
+      "effect_r": 0.004044228823335283,
+      "n_nonzero": 46
+    },
+    {
+      "metric": "dinov2",
+      "larger_better": true,
+      "median_a": 0.8937734764941194,
+      "median_b": 0.8702215209920356,
+      "median_delta": -0.016532371494364206,
+      "W": 144.0,
+      "p": 1.8968430308621106e-06,
+      "effect_r": 0.6737476052684332,
+      "n_nonzero": 50
+    },
+    {
+      "metric": "lpips",
+      "larger_better": false,
+      "median_a": 0.1363702528773153,
+      "median_b": 0.13235091657793902,
+      "median_delta": -0.010981877245246727,
+      "W": 423.0,
+      "p": 0.038384525095590774,
+      "effect_r": 0.29284470380968375,
+      "n_nonzero": 50
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "run_a": "eval_runs/glyph_4b_r32_5000/per_cell.json",
+  "run_b": "eval_runs/glyph_4b_v3_6016/per_cell.json",
+  "label_a": "glyph_4b_r32_5000",
+  "label_b": "glyph_4b_v3_6016",
+  "n_shared_fonts": 50,
+  "results": [
+    {
+      "metric": "composite",
+      "larger_better": true,
+      "median_a": 0.8405057388744217,
+      "median_b": 0.8092304467362291,
+      "median_delta": -0.04045125979613107,
+      "W": 166.0,
+      "p": 5.32058360918722e-06,
+      "effect_r": 0.6437122510315426,
+      "n_nonzero": 50,
+      "direction": -1,
+      "mean_delta_nonzero": -0.03339001457609158
+    },
+    {
+      "metric": "char_acc",
+      "larger_better": true,
+      "median_a": 0.7287234042553192,
+      "median_b": 0.6170212765957447,
+      "median_delta": -0.05851063829787234,
+      "W": 135.0,
+      "p": 2.0255171469353095e-06,
+      "effect_r": 0.6786945171821082,
+      "n_nonzero": 49,
+      "direction": -1,
+      "mean_delta_nonzero": -0.08076422058184976
+    },
+    {
+      "metric": "racc",
+      "larger_better": true,
+      "median_a": 0.7872340425531915,
+      "median_b": 0.75,
+      "median_delta": -0.037234042553191515,
+      "W": 197.5,
+      "p": 0.00017673168726883265,
+      "effect_r": 0.5529288523524166,
+      "n_nonzero": 46,
+      "direction": -1,
+      "mean_delta_nonzero": -0.03330249768732656
+    },
+    {
+      "metric": "dinov2",
+      "larger_better": true,
+      "median_a": 0.8632613896055424,
+      "median_b": 0.8617841908906368,
+      "median_delta": 0.0001270498367066386,
+      "W": 580.0,
+      "p": 0.578833521235539,
+      "effect_r": 0.0785014940282369,
+      "n_nonzero": 50,
+      "direction": -1,
+      "mean_delta_nonzero": -0.006708677423761249
+    },
+    {
+      "metric": "lpips",
+      "larger_better": false,
+      "median_a": 0.1256182197124717,
+      "median_b": 0.1712541543938061,
+      "median_delta": 0.05305102064789453,
+      "W": 153.0,
+      "p": 2.9077400400404705e-06,
+      "effect_r": 0.6614604148987963,
+      "n_nonzero": 50,
+      "direction": 1,
+      "mean_delta_nonzero": 0.043320617414416465
+    },
+    {
+      "metric": "identity",
+      "larger_better": true,
+      "median_a": 1.0,
+      "median_b": 0.9891304347826086,
+      "median_delta": -0.010752688172043001,
+      "W": 97.0,
+      "p": 0.0030636083483974834,
+      "effect_r": 0.5318620300343531,
+      "n_nonzero": 31,
+      "direction": -1,
+      "mean_delta_nonzero": -0.012591040815578172
+    }
+  ],
+  "redistribution": {
+    "composite": {
+      "rho": -0.4018350386703175,
+      "p": 0.003821342195043086,
+      "mean_delta": -0.03339001457609158,
+      "harder_half": -0.020073335516167475,
+      "easier_half": -0.046706693636015685,
+      "n_harder": 25,
+      "n_easier": 25,
+      "sign_convention": "quality (higher = better) for every metric"
+    },
+    "char_acc": {
+      "rho": -0.5109315578923532,
+      "p": 0.00014980868295597446,
+      "mean_delta": -0.07914893617021276,
+      "harder_half": -0.03148936170212766,
+      "easier_half": -0.12680851063829784,
+      "n_harder": 25,
+      "n_easier": 25,
+      "sign_convention": "quality (higher = better) for every metric"
+    },
+    "racc": {
+      "rho": -0.5452157818900186,
+      "p": 4.235967953270159e-05,
+      "mean_delta": -0.030638297872340434,
+      "harder_half": -0.010638297872340425,
+      "easier_half": -0.052304964539007105,
+      "n_harder": 26,
+      "n_easier": 24,
+      "sign_convention": "quality (higher = better) for every metric"
+    },
+    "dinov2": {
+      "rho": -0.5174136523034059,
+      "p": 0.00011920046831586727,
+      "mean_delta": -0.006708677423761249,
+      "harder_half": 0.008394024524282897,
+      "easier_half": -0.021811379371805394,
+      "n_harder": 25,
+      "n_easier": 25,
+      "sign_convention": "quality (higher = better) for every metric"
+    },
+    "lpips": {
+      "rho": -0.30537541432483073,
+      "p": 0.031043101319417014,
+      "mean_delta": -0.043320617414416465,
+      "harder_half": -0.02034009216551451,
+      "easier_half": -0.06630114266331842,
+      "n_harder": 25,
+      "n_easier": 25,
+      "sign_convention": "quality (higher = better) for every metric"
+    },
+    "identity": {
+      "rho": -0.058637776217521434,
+      "p": 0.6858503452614362,
+      "mean_delta": -0.007806445305658467,
+      "harder_half": -0.007806445305658467,
+      "easier_half": NaN,
+      "n_harder": 50,
+      "n_easier": 0,
+      "sign_convention": "quality (higher = better) for every metric"
+    }
+  }
+}

@@ -1,0 +1,219 @@
+{
+ "preregistered": true,
+ "generated": "<HOME>\\repos\\fonts\\eval_runs\\_synthetic_probe\\external",
+ "rows": [
+  {
+   "idx": 0,
+   "attribute": "weight",
+   "direction": "high",
+   "recorded": null,
+   "words": "heavy geometric sans",
+   "rank": 7,
+   "of": 12,
+   "prob": 0.9342570368184695,
+   "train_n": 100,
+   "top3": [
+    [
+     2,
+     0.9877815937222546
+    ],
+    [
+     9,
+     0.9749360282514998
+    ],
+    [
+     6,
+     0.9723929961523747
+    ]
+   ]
+  },
+  {
+   "idx": 2,
+   "attribute": "weight",
+   "direction": "high",
+   "recorded": null,
+   "words": "chunky slab serif",
+   "rank": 1,
+   "of": 12,
+   "prob": 0.9877815937222546,
+   "train_n": 100,
+   "top3": [
+    [
+     2,
+     0.9877815937222546
+    ],
+    [
+     9,
+     0.9749360282514998
+    ],
+    [
+     6,
+     0.9723929961523747
+    ]
+   ]
+  },
+  {
+   "idx": 11,
+   "attribute": "weight",
+   "direction": "high",
+   "recorded": null,
+   "words": "heavy angular blackletter-influenced",
+   "rank": 6,
+   "of": 12,
+   "prob": 0.9497982772780549,
+   "train_n": 100,
+   "top3": [
+    [
+     2,
+     0.9877815937222546
+    ],
+    [
+     9,
+     0.9749360282514998
+    ],
+    [
+     6,
+     0.9723929961523747
+    ]
+   ]
+  },
+  {
+   "idx": 7,
+   "attribute": "weight",
+   "direction": "low",
+   "recorded": "REINT",
+   "words": "ultra-light hairline -- 'reinterpreted as an outline'",
+   "rank": 12,
+   "of": 12,
+   "prob": 0.0010003693728575028,
+   "train_n": 100,
+   "top3": [
+    [
+     2,
+     0.9877815937222546
+    ],
+    [
+     9,
+     0.9749360282514998
+    ],
+    [
+     6,
+     0.9723929961523747
+    ]
+   ]
+  },
+  {
+   "idx": 4,
+   "attribute": "width",
+   "direction": "high",
+   "recorded": "HIT",
+   "words": "condensed grotesque -- 'came through legibly'",
+   "rank": 1,
+   "of": 12,
+   "prob": 0.9569008144115313,
+   "train_n": 58,
+   "top3": [
+    [
+     4,
+     0.9569008144115313
+    ],
+    [
+     6,
+     0.940964500627193
+    ],
+    [
+     9,
+     0.92613357306228
+    ]
+   ]
+  },
+  {
+   "idx": 6,
+   "attribute": "mono",
+   "direction": "high",
+   "recorded": "MISS",
+   "words": "wide low-contrast monospace -- 'an ordinary heavy sans'",
+   "rank": 3,
+   "of": 12,
+   "prob": 0.24058989049810364,
+   "train_n": 98,
+   "top3": [
+    [
+     10,
+     0.8205960273198603
+    ],
+    [
+     7,
+     0.8046083847232514
+    ],
+    [
+     6,
+     0.24058989049810364
+    ]
+   ]
+  },
+  {
+   "idx": 9,
+   "attribute": "stencil",
+   "direction": "high",
+   "recorded": "MISS",
+   "words": "stencil with deliberate breaks -- 'solid, no breaks'",
+   "rank": 5,
+   "of": 12,
+   "prob": 0.2692404397379178,
+   "train_n": 20,
+   "top3": [
+    [
+     10,
+     0.6961355797315135
+    ],
+    [
+     7,
+     0.4862661528324257
+    ],
+    [
+     4,
+     0.33116086886566815
+    ]
+   ]
+  },
+  {
+   "idx": 10,
+   "attribute": "inline",
+   "direction": "high",
+   "recorded": "HIT",
+   "words": "inline stripe -- 'came through legibly'",
+   "rank": 1,
+   "of": 12,
+   "prob": 0.7169018589755203,
+   "train_n": 20,
+   "top3": [
+    [
+     10,
+     0.7169018589755203
+    ],
+    [
+     4,
+     0.4919299996973888
+    ],
+    [
+     6,
+     0.45599854885313856
+    ]
+   ]
+  }
+ ],
+ "primary": {
+  "hit_ranks": [
+   1,
+   1
+  ],
+  "miss_ranks": [
+   3,
+   5
+  ],
+  "hits_rank_better": true,
+  "best_attainable_p": 0.16666666666666666,
+  "falsified_by": []
+ }
+}

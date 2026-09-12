@@ -1,0 +1,210 @@
+{
+ "metric": "cosine distance from the FROZEN training-corpus centroid of the mean DINOv2 telling-cell embedding",
+ "corpus_atlas_dir": "dataset_v2/atlases",
+ "n_corpus": 925,
+ "note": "computed from GROUND TRUTH atlases only -- independent of every model, fixed before any comparison",
+ "ink_spearman_rho": 0.10217610606715667,
+ "ink_spearman_p": 0.48014371279300183,
+ "scores": {
+  "AkayaTelivigala-Regular": {
+   "distinctiveness": 0.05139470100402832,
+   "ink_fraction": 0.06177
+  },
+  "AlikeAngular-Regular": {
+   "distinctiveness": 0.06985163688659668,
+   "ink_fraction": 0.04742
+  },
+  "AveriaLibre-Regular": {
+   "distinctiveness": 0.04618191719055176,
+   "ink_fraction": 0.06076
+  },
+  "AveriaSansLibre-Regular": {
+   "distinctiveness": 0.050009727478027344,
+   "ink_fraction": 0.06268
+  },
+  "AveriaSerifLibre-Regular": {
+   "distinctiveness": 0.03985017538070679,
+   "ink_fraction": 0.05215
+  },
+  "BitcountGridDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]": {
+   "distinctiveness": 0.5113295316696167,
+   "ink_fraction": 0.15121
+  },
+  "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]": {
+   "distinctiveness": 0.45944976806640625,
+   "ink_fraction": 0.06621
+  },
+  "Dangrek-Regular": {
+   "distinctiveness": 0.04779207706451416,
+   "ink_fraction": 0.10276
+  },
+  "EncodeSansSemiExpanded-Regular": {
+   "distinctiveness": 0.032357096672058105,
+   "ink_fraction": 0.03929
+  },
+  "FascinateInline-Regular": {
+   "distinctiveness": 0.06850028038024902,
+   "ink_fraction": 0.10784
+  },
+  "IBMPlexSansArabic-Regular": {
+   "distinctiveness": 0.01872718334197998,
+   "ink_fraction": 0.05519
+  },
+  "IBMPlexSansThai-Regular": {
+   "distinctiveness": 0.01872718334197998,
+   "ink_fraction": 0.05519
+  },
+  "IBMPlexSansThaiLooped-Regular": {
+   "distinctiveness": 0.01872718334197998,
+   "ink_fraction": 0.05519
+  },
+  "IBMPlexSerif-Regular": {
+   "distinctiveness": 0.030328691005706787,
+   "ink_fraction": 0.04931
+  },
+  "InterTight[wght]": {
+   "distinctiveness": 0.022282838821411133,
+   "ink_fraction": 0.06222
+  },
+  "JainiPurva-Regular": {
+   "distinctiveness": 0.07688343524932861,
+   "ink_fraction": 0.09591
+  },
+  "KaiseiOpti-Regular": {
+   "distinctiveness": 0.07422846555709839,
+   "ink_fraction": 0.04627
+  },
+  "Kavoon-Regular": {
+   "distinctiveness": 0.06163293123245239,
+   "ink_fraction": 0.1054
+  },
+  "KohSantepheap-Regular": {
+   "distinctiveness": 0.03930401802062988,
+   "ink_fraction": 0.04869
+  },
+  "KosugiMaru-Regular": {
+   "distinctiveness": 0.04787635803222656,
+   "ink_fraction": 0.09846
+  },
+  "MirandaSans[wght]": {
+   "distinctiveness": 0.0188368558883667,
+   "ink_fraction": 0.05573
+  },
+  "MochiyPopPOne-Regular": {
+   "distinctiveness": 0.054326653480529785,
+   "ink_fraction": 0.1144
+  },
+  "MomoTrustSans[wght]": {
+   "distinctiveness": 0.023499369621276855,
+   "ink_fraction": 0.05457
+  },
+  "MuktaMahee-Regular": {
+   "distinctiveness": 0.015006422996520996,
+   "ink_fraction": 0.04624
+  },
+  "NovaSquare": {
+   "distinctiveness": 0.04893535375595093,
+   "ink_fraction": 0.04963
+  },
+  "PlaywriteAUQLD[wght]": {
+   "distinctiveness": 0.05744469165802002,
+   "ink_fraction": 0.0309
+  },
+  "PlaywriteAUSA[wght]": {
+   "distinctiveness": 0.055655717849731445,
+   "ink_fraction": 0.03011
+  },
+  "PlaywriteCO[wght]": {
+   "distinctiveness": 0.08585512638092041,
+   "ink_fraction": 0.03176
+  },
+  "PlaywriteMXGuides-Regular": {
+   "distinctiveness": 0.12733972072601318,
+   "ink_fraction": 0.02604
+  },
+  "PlaywriteUSTradGuides-Regular": {
+   "distinctiveness": 0.13088929653167725,
+   "ink_fraction": 0.02639
+  },
+  "ProtestStrike-Regular": {
+   "distinctiveness": 0.05570507049560547,
+   "ink_fraction": 0.12426
+  },
+  "ReemKufiFun[wght]": {
+   "distinctiveness": 0.029610633850097656,
+   "ink_fraction": 0.05154
+  },
+  "ReemKufiInk-Regular": {
+   "distinctiveness": 0.0297929048538208,
+   "ink_fraction": 0.05157
+  },
+  "RubikDistressed-Regular": {
+   "distinctiveness": 0.42030978202819824,
+   "ink_fraction": 0.14151
+  },
+  "SchibstedGrotesk[wght]": {
+   "distinctiveness": 0.015288114547729492,
+   "ink_fraction": 0.05958
+  },
+  "ShipporiAntiqueB1-Regular": {
+   "distinctiveness": 0.019802749156951904,
+   "ink_fraction": 0.06322
+  },
+  "StackSansText[wght]": {
+   "distinctiveness": 0.0354275107383728,
+   "ink_fraction": 0.05332
+  },
+  "Suwannaphum-Regular": {
+   "distinctiveness": 0.014320135116577148,
+   "ink_fraction": 0.05452
+  },
+  "Telex-Regular": {
+   "distinctiveness": 0.01634424924850464,
+   "ink_fraction": 0.05082
+  },
+  "TiroGurmukhi-Regular": {
+   "distinctiveness": 0.05488640069961548,
+   "ink_fraction": 0.04414
+  },
+  "TiroTamil-Regular": {
+   "distinctiveness": 0.05488640069961548,
+   "ink_fraction": 0.04414
+  },
+  "TiroTelugu-Regular": {
+   "distinctiveness": 0.05488640069961548,
+   "ink_fraction": 0.04414
+  },
+  "Tirra-Regular": {
+   "distinctiveness": 0.015897929668426514,
+   "ink_fraction": 0.05498
+  },
+  "UoqMunThenKhung-Regular": {
+   "distinctiveness": 0.06142163276672363,
+   "ink_fraction": 0.06042
+  },
+  "Vazirmatn[wght]": {
+   "distinctiveness": 0.01784217357635498,
+   "ink_fraction": 0.06278
+  },
+  "Volkhov-Regular": {
+   "distinctiveness": 0.024123549461364746,
+   "ink_fraction": 0.05744
+  },
+  "WDXLLubrifontTC-Regular": {
+   "distinctiveness": 0.08131206035614014,
+   "ink_fraction": 0.11652
+  },
+  "Wonky[wdth,wght]": {
+   "distinctiveness": 0.0174749493598938,
+   "ink_fraction": 0.05651
+  },
+  "ZCOOLQingKeHuangYou-Regular": {
+   "distinctiveness": 0.09273022413253784,
+   "ink_fraction": 0.11409
+  },
+  "ZalandoSans[wdth,wght]": {
+   "distinctiveness": 0.01851332187652588,
+   "ink_fraction": 0.06288
+  }
+ }
+}

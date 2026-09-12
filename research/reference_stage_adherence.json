@@ -1,0 +1,144 @@
+{
+ "preregistered": true,
+ "bar": "9/11 and p<0.05",
+ "ref_chars": "Kg",
+ "sources": 60,
+ "train_n": 232,
+ "correct": 9,
+ "n": 11,
+ "p": 0.03271484375,
+ "passed": true,
+ "real": [
+  {
+   "face": "allerta",
+   "stem": "AllertaStencil-Regular",
+   "true": "stencil",
+   "pred": "stencil",
+   "ok": true,
+   "p_stencil": 0.4992898395105213,
+   "p_inline": 0.0032091829416842368,
+   "argmax4": "stencil"
+  },
+  {
+   "face": "alumnisans",
+   "stem": "AlumniSansInlineOne-Italic",
+   "true": "inline",
+   "pred": "inline",
+   "ok": true,
+   "p_stencil": 0.0009389119054138612,
+   "p_inline": 0.971388904932763,
+   "argmax4": "inline"
+  },
+  {
+   "face": "bigshoulders",
+   "stem": "BigShouldersInlineDisplaySC[wght]",
+   "true": "inline",
+   "pred": "stencil",
+   "ok": false,
+   "p_stencil": 0.7703822744514962,
+   "p_inline": 0.09411487200095772,
+   "argmax4": "stencil"
+  },
+  {
+   "face": "bigshoulders",
+   "stem": "BigShouldersStencilDisplaySC[wght]",
+   "true": "stencil",
+   "pred": "stencil",
+   "ok": true,
+   "p_stencil": 0.6557331238423749,
+   "p_inline": 0.012567751426647969,
+   "argmax4": "stencil"
+  },
+  {
+   "face": "bungee",
+   "stem": "BungeeInline-Regular",
+   "true": "inline",
+   "pred": "inline",
+   "ok": true,
+   "p_stencil": 0.026198956984738266,
+   "p_inline": 0.24050271493703002,
+   "argmax4": "solid"
+  },
+  {
+   "face": "fascinate",
+   "stem": "FascinateInline-Regular",
+   "true": "inline",
+   "pred": "stencil",
+   "ok": false,
+   "p_stencil": 0.15028222623924806,
+   "p_inline": 0.0020843179197408976,
+   "argmax4": "solid"
+  },
+  {
+   "face": "runicsans",
+   "stem": "Runic_Sans_Inline",
+   "true": "inline",
+   "pred": "inline",
+   "ok": true,
+   "p_stencil": 0.0071237520606848535,
+   "p_inline": 0.963824370292851,
+   "argmax4": "inline"
+  },
+  {
+   "face": "saira",
+   "stem": "SairaStencil-Italic[wdth,wght]",
+   "true": "stencil",
+   "pred": "stencil",
+   "ok": true,
+   "p_stencil": 0.6551139433666453,
+   "p_inline": 0.033134502334695635,
+   "argmax4": "stencil"
+  },
+  {
+   "face": "sirin",
+   "stem": "SirinStencil-Regular",
+   "true": "stencil",
+   "pred": "stencil",
+   "ok": true,
+   "p_stencil": 0.7360143988343245,
+   "p_inline": 0.010449535624099348,
+   "argmax4": "stencil"
+  },
+  {
+   "face": "stardos",
+   "stem": "StardosStencil-Bold",
+   "true": "stencil",
+   "pred": "stencil",
+   "ok": true,
+   "p_stencil": 0.44088720026949696,
+   "p_inline": 0.005733675766790581,
+   "argmax4": "solid"
+  },
+  {
+   "face": "theleagueofostrichsansostrichsans",
+   "stem": "theleagueof_ostrich-sans_OstrichSansInline-Italic",
+   "true": "inline",
+   "pred": "inline",
+   "ok": true,
+   "p_stencil": 0.06132305707653251,
+   "p_inline": 0.23243882250082862,
+   "argmax4": "solid"
+  }
+ ],
+ "generated": [
+  {
+   "stem": "00-a_heavy_geometric_sans_serif__s0",
+   "argmax": "solid",
+   "p_stencil": 0.11251181777836516,
+   "p_inline": 0.002229009093760852
+  },
+  {
+   "stem": "00-a_heavy_geometric_sans_serif__s1",
+   "argmax": "solid",
+   "p_stencil": 0.23176898750865674,
+   "p_inline": 0.0022061094331921917
+  },
+  {
+   "stem": "00-a_heavy_geometric_sans_serif__s2",
+   "argmax": "solid",
+   "p_stencil": 0.36204322835534913,
+   "p_inline": 0.0006805970351413436
+  }
+ ],
+ "note_94cell": "10/11 on the same faces, p=0.0059"
+}

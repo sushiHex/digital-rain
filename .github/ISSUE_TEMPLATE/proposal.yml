@@ -1,0 +1,47 @@
+name: Proposal or decision
+description: Compare alternatives and request a scoped decision before implementation
+title: "decision: "
+labels: ["decision", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Creating an issue does not approve a design. Closed tracks (`CLAUDE.md`, *Closed tracks -- don't redo these*) stay closed unless the proposal says what changed since they were closed; a track closed on an external model's capabilities may have expired, one closed on this project's own measurement has not.
+        Do not include credentials, home-directory paths, private corpora, or material from the private archive.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Preflight
+      options:
+        - label: I searched existing issues and pull requests, including closed ones, and the closed-tracks list.
+          required: true
+        - label: I removed secrets, personal paths and private data from all text and attachments.
+          required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and desired outcome
+      description: Who needs this, and why does what exists not suffice?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives and trade-offs
+      description: Include doing nothing. Licensing implications for anything that touches weights, the corpus, or a hosted demo -- both blockers in the README's Licensing section are unresolved.
+    validations:
+      required: true
+  - type: textarea
+    id: measure
+    attributes:
+      label: How it would be measured
+      description: Which instrument, which metric, against which noise floor, at what cost in GPU hours. A proposal that cannot be measured is a proposal to eyeball.
+    validations:
+      required: true
+  - type: textarea
+    id: decision
+    attributes:
+      label: Decision requested
+      description: The exact choice, and what evidence would settle it.
+    validations:
+      required: true

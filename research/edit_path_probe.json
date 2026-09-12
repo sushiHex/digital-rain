@@ -1,0 +1,75 @@
+{
+ "preregistered": true,
+ "style": "09",
+ "prompt": "a stencil sans with deliberate breaks in the strokes",
+ "source_font": "ABeeZee-Regular.ttf",
+ "steps": 8,
+ "source_parts": 0.6931471805599453,
+ "source_holes": 0.34657359027997264,
+ "rows": [
+  {
+   "name": "s0.30_seed42",
+   "strength": 0.3,
+   "seed": 42,
+   "parts": 0.6931471805599453,
+   "holes": 0.34657359027997264,
+   "seconds": 10.445231199264526
+  },
+  {
+   "name": "s0.30_seed43",
+   "strength": 0.3,
+   "seed": 43,
+   "parts": 0.6931471805599453,
+   "holes": 0.34657359027997264,
+   "seconds": 7.649416446685791
+  },
+  {
+   "name": "s0.50_seed42",
+   "strength": 0.5,
+   "seed": 42,
+   "parts": 0.6931471805599453,
+   "holes": 0.34657359027997264,
+   "seconds": 10.43667459487915
+  },
+  {
+   "name": "s0.50_seed43",
+   "strength": 0.5,
+   "seed": 43,
+   "parts": 0.6931471805599453,
+   "holes": 0.34657359027997264,
+   "seconds": 12.29335331916809
+  },
+  {
+   "name": "s0.70_seed42",
+   "strength": 0.7,
+   "seed": 42,
+   "parts": 0.6931471805599453,
+   "holes": 0.34657359027997264,
+   "seconds": 18.223935842514038
+  },
+  {
+   "name": "s0.70_seed43",
+   "strength": 0.7,
+   "seed": 43,
+   "parts": 0.6931471805599453,
+   "holes": 0.34657359027997264,
+   "seconds": 17.802901029586792
+  },
+  {
+   "name": "s0.90_seed42",
+   "strength": 0.9,
+   "seed": 42,
+   "parts": 0.8958797346140275,
+   "holes": 0.34657359027997264,
+   "seconds": 23.56465792655945
+  },
+  {
+   "name": "s0.90_seed43",
+   "strength": 0.9,
+   "seed": 43,
+   "parts": 1.0397207708399179,
+   "holes": 0.34657359027997264,
+   "seconds": 23.409687042236328
+  }
+ ]
+}

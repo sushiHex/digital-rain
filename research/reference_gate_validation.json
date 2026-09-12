@@ -1,0 +1,458 @@
+{
+ "chars": "Kg",
+ "rows": {
+  "oracle": {
+   "AkayaTelivigala-Regular": {
+    "reference_distance": 0.9122588965440674,
+    "atlas_dispersion": 0.39464799680313223
+   },
+   "AlikeAngular-Regular": {
+    "reference_distance": 0.39317537340745823,
+    "atlas_dispersion": 0.2650699244053313
+   },
+   "AveriaLibre-Regular": {
+    "reference_distance": 0.5924172590097464,
+    "atlas_dispersion": 0.2747438513700448
+   },
+   "AveriaSansLibre-Regular": {
+    "reference_distance": 0.7051816630725686,
+    "atlas_dispersion": 0.24735185400873422
+   },
+   "AveriaSerifLibre-Regular": {
+    "reference_distance": 0.9662277174286112,
+    "atlas_dispersion": 0.22162097352088928
+   },
+   "BitcountGridDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]": {
+    "reference_distance": 1.7087346268135508,
+    "atlas_dispersion": 0.6041054633169702
+   },
+   "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]": {
+    "reference_distance": 1.7087346268135508,
+    "atlas_dispersion": 0.6041054633169702
+   },
+   "Dangrek-Regular": {
+    "reference_distance": 0.8049438760332012,
+    "atlas_dispersion": 0.42716554580257315
+   },
+   "EncodeSansSemiExpanded-Regular": {
+    "reference_distance": 0.6365647880191854,
+    "atlas_dispersion": 0.24400287437719143
+   },
+   "FascinateInline-Regular": {
+    "reference_distance": 1.3972946910100064,
+    "atlas_dispersion": 0.8207570008249694
+   },
+   "IBMPlexSansArabic-Regular": {
+    "reference_distance": 0.34634089285458025,
+    "atlas_dispersion": 0.2471116965295084
+   },
+   "IBMPlexSansThai-Regular": {
+    "reference_distance": 0.34634089285458025,
+    "atlas_dispersion": 0.2471116965295084
+   },
+   "IBMPlexSansThaiLooped-Regular": {
+    "reference_distance": 0.34634089285458025,
+    "atlas_dispersion": 0.2471116965295084
+   },
+   "IBMPlexSerif-Regular": {
+    "reference_distance": 0.6859050301806034,
+    "atlas_dispersion": 0.2556558635327534
+   },
+   "InterTight[wght]": {
+    "reference_distance": 0.8251964237501626,
+    "atlas_dispersion": 0.23172484416312986
+   },
+   "JainiPurva-Regular": {
+    "reference_distance": 0.398881134221501,
+    "atlas_dispersion": 0.34845918656271624
+   },
+   "KaiseiOpti-Regular": {
+    "reference_distance": 1.16559724560137,
+    "atlas_dispersion": 0.2974626887920492
+   },
+   "Kavoon-Regular": {
+    "reference_distance": 0.9499465584707688,
+    "atlas_dispersion": 0.4864032765911072
+   },
+   "KohSantepheap-Regular": {
+    "reference_distance": 0.6913788232582443,
+    "atlas_dispersion": 0.22790657689225663
+   },
+   "KosugiMaru-Regular": {
+    "reference_distance": 0.3942204002810003,
+    "atlas_dispersion": 0.23883715109369236
+   },
+   "MirandaSans[wght]": {
+    "reference_distance": 0.5417630907927619,
+    "atlas_dispersion": 0.22479037627001078
+   },
+   "MochiyPopPOne-Regular": {
+    "reference_distance": 1.285923922687267,
+    "atlas_dispersion": 0.3637572652440674
+   },
+   "MomoTrustSans[wght]": {
+    "reference_distance": 0.36910460751767016,
+    "atlas_dispersion": 0.2220061771953756
+   },
+   "MuktaMahee-Regular": {
+    "reference_distance": 0.5011340732931207,
+    "atlas_dispersion": 0.2153278060062063
+   },
+   "NovaSquare": {
+    "reference_distance": 0.951726967576282,
+    "atlas_dispersion": 0.34654252858209816
+   },
+   "PlaywriteAUQLD[wght]": {
+    "reference_distance": 1.0298990957773906,
+    "atlas_dispersion": 0.4792447325864147
+   },
+   "PlaywriteAUSA[wght]": {
+    "reference_distance": 0.9721204250414135,
+    "atlas_dispersion": 0.4761504600054643
+   },
+   "PlaywriteCO[wght]": {
+    "reference_distance": 0.4798564457777938,
+    "atlas_dispersion": 0.5264327696495882
+   },
+   "PlaywriteMXGuides-Regular": {
+    "reference_distance": 0.38668476810105895,
+    "atlas_dispersion": 0.7247383550359807
+   },
+   "PlaywriteUSTradGuides-Regular": {
+    "reference_distance": 0.2740795260122909,
+    "atlas_dispersion": 0.735269078158734
+   },
+   "ProtestStrike-Regular": {
+    "reference_distance": 1.2582199081313197,
+    "atlas_dispersion": 0.4123277720758949
+   },
+   "ReemKufiFun[wght]": {
+    "reference_distance": 0.7633135978223675,
+    "atlas_dispersion": 0.29268773292716904
+   },
+   "ReemKufiInk-Regular": {
+    "reference_distance": 0.7641728115786063,
+    "atlas_dispersion": 0.29360431240206325
+   },
+   "RubikDistressed-Regular": {
+    "reference_distance": 2.035513827940231,
+    "atlas_dispersion": 0.5377068480731998
+   },
+   "SchibstedGrotesk[wght]": {
+    "reference_distance": 0.5456763001478905,
+    "atlas_dispersion": 0.2369420728408171
+   },
+   "ShipporiAntiqueB1-Regular": {
+    "reference_distance": 0.4018246603574131,
+    "atlas_dispersion": 0.20937308179018485
+   },
+   "StackSansText[wght]": {
+    "reference_distance": 0.5127726187068197,
+    "atlas_dispersion": 0.24603075341852457
+   },
+   "Suwannaphum-Regular": {
+    "reference_distance": 0.545516548623453,
+    "atlas_dispersion": 0.22103370293989116
+   },
+   "Telex-Regular": {
+    "reference_distance": 0.9771195180501633,
+    "atlas_dispersion": 0.24112593962915715
+   },
+   "TiroGurmukhi-Regular": {
+    "reference_distance": 0.9004647108759893,
+    "atlas_dispersion": 0.24677603963812633
+   },
+   "TiroTamil-Regular": {
+    "reference_distance": 0.9004647108759893,
+    "atlas_dispersion": 0.24677603963812633
+   },
+   "TiroTelugu-Regular": {
+    "reference_distance": 0.9004647108759893,
+    "atlas_dispersion": 0.24677603963812633
+   },
+   "Tirra-Regular": {
+    "reference_distance": 0.351971199341284,
+    "atlas_dispersion": 0.24207444864360578
+   },
+   "UoqMunThenKhung-Regular": {
+    "reference_distance": 0.818772508561093,
+    "atlas_dispersion": 0.2636606010939872
+   },
+   "Vazirmatn[wght]": {
+    "reference_distance": 0.5995143212445766,
+    "atlas_dispersion": 0.22108484597460068
+   },
+   "Volkhov-Regular": {
+    "reference_distance": 1.3201800531377894,
+    "atlas_dispersion": 0.25004927233715823
+   },
+   "WDXLLubrifontTC-Regular": {
+    "reference_distance": 1.1848999818909949,
+    "atlas_dispersion": 0.34266370039580385
+   },
+   "Wonky[wdth,wght]": {
+    "reference_distance": 0.20261805242358277,
+    "atlas_dispersion": 0.25206704107045164
+   },
+   "ZCOOLQingKeHuangYou-Regular": {
+    "reference_distance": 1.5240922542559574,
+    "atlas_dispersion": 0.3529853305132423
+   },
+   "ZalandoSans[wdth,wght]": {
+    "reference_distance": 0.39495143542653194,
+    "atlas_dispersion": 0.23932345621717116
+   }
+  },
+  "mixed": {
+   "AkayaTelivigala-Regular": {
+    "reference_distance": 2.8394166735841555,
+    "atlas_dispersion": 0.4292720592396925
+   },
+   "AlikeAngular-Regular": {
+    "reference_distance": 2.5058296888235323,
+    "atlas_dispersion": 0.4538355598587961
+   },
+   "AveriaLibre-Regular": {
+    "reference_distance": 3.3281360010768775,
+    "atlas_dispersion": 0.461450178242236
+   },
+   "AveriaSansLibre-Regular": {
+    "reference_distance": 4.036339829121189,
+    "atlas_dispersion": 0.790805084740399
+   },
+   "AveriaSerifLibre-Regular": {
+    "reference_distance": 3.941550666505222,
+    "atlas_dispersion": 0.7560974416421266
+   },
+   "BitcountGridDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]": {
+    "reference_distance": 3.263010270420277,
+    "atlas_dispersion": 0.7278250541677447
+   },
+   "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]": {
+    "reference_distance": 1.7387184506916455,
+    "atlas_dispersion": 0.5284107230395945
+   },
+   "Dangrek-Regular": {
+    "reference_distance": 1.916943457156279,
+    "atlas_dispersion": 0.3543212065329253
+   },
+   "EncodeSansSemiExpanded-Regular": {
+    "reference_distance": 2.626343563686163,
+    "atlas_dispersion": 0.5746005094553818
+   },
+   "FascinateInline-Regular": {
+    "reference_distance": 4.284944284085685,
+    "atlas_dispersion": 0.9109702958478159
+   },
+   "IBMPlexSansArabic-Regular": {
+    "reference_distance": 0.6717684810772825,
+    "atlas_dispersion": 0.2422135090597696
+   },
+   "IBMPlexSansThai-Regular": {
+    "reference_distance": 0.5298567060393978,
+    "atlas_dispersion": 0.246970621196181
+   },
+   "IBMPlexSansThaiLooped-Regular": {
+    "reference_distance": 0.4933818260489502,
+    "atlas_dispersion": 0.24281040955594968
+   },
+   "IBMPlexSerif-Regular": {
+    "reference_distance": 0.7535423687702928,
+    "atlas_dispersion": 0.2286036227437873
+   },
+   "InterTight[wght]": {
+    "reference_distance": 0.43212772228544505,
+    "atlas_dispersion": 0.2994555540823902
+   },
+   "JainiPurva-Regular": {
+    "reference_distance": 1.4122098005193449,
+    "atlas_dispersion": 0.3767583472641173
+   },
+   "KaiseiOpti-Regular": {
+    "reference_distance": 1.684637966621313,
+    "atlas_dispersion": 0.295933913149912
+   },
+   "Kavoon-Regular": {
+    "reference_distance": 3.2195264689330005,
+    "atlas_dispersion": 0.6665999513271488
+   },
+   "KohSantepheap-Regular": {
+    "reference_distance": 0.2881185006824719,
+    "atlas_dispersion": 0.2359998829930344
+   },
+   "KosugiMaru-Regular": {
+    "reference_distance": 0.5400352852265597,
+    "atlas_dispersion": 0.2348218559684037
+   },
+   "MirandaSans[wght]": {
+    "reference_distance": 0.8476199652352058,
+    "atlas_dispersion": 0.24852201565725165
+   },
+   "MochiyPopPOne-Regular": {
+    "reference_distance": 1.2722401126767744,
+    "atlas_dispersion": 0.42928648864195673
+   },
+   "MomoTrustSans[wght]": {
+    "reference_distance": 0.6797880564637535,
+    "atlas_dispersion": 0.24202764592943504
+   },
+   "MuktaMahee-Regular": {
+    "reference_distance": 1.8827014853543933,
+    "atlas_dispersion": 0.36320286894270637
+   },
+   "NovaSquare": {
+    "reference_distance": 0.4396268805273371,
+    "atlas_dispersion": 0.22817083545271144
+   },
+   "PlaywriteAUQLD[wght]": {
+    "reference_distance": 3.465817362556281,
+    "atlas_dispersion": 0.47394253351861704
+   },
+   "PlaywriteAUSA[wght]": {
+    "reference_distance": 2.9835652850427268,
+    "atlas_dispersion": 0.44330414812680224
+   },
+   "PlaywriteCO[wght]": {
+    "reference_distance": 3.5503117063052243,
+    "atlas_dispersion": 0.687777648280543
+   },
+   "PlaywriteMXGuides-Regular": {
+    "reference_distance": 4.204692747849525,
+    "atlas_dispersion": 0.684337926196176
+   },
+   "PlaywriteUSTradGuides-Regular": {
+    "reference_distance": 3.057532924557452,
+    "atlas_dispersion": 0.7010902712077215
+   },
+   "ProtestStrike-Regular": {
+    "reference_distance": 3.3044028064010167,
+    "atlas_dispersion": 0.6665872244015851
+   },
+   "ReemKufiFun[wght]": {
+    "reference_distance": 0.8194845247517173,
+    "atlas_dispersion": 0.4414236465590352
+   },
+   "ReemKufiInk-Regular": {
+    "reference_distance": 2.8327130151890088,
+    "atlas_dispersion": 0.3756049882844099
+   },
+   "RubikDistressed-Regular": {
+    "reference_distance": 3.349216020368857,
+    "atlas_dispersion": 0.5898578273674282
+   },
+   "SchibstedGrotesk[wght]": {
+    "reference_distance": 2.791793393783311,
+    "atlas_dispersion": 0.6981777506797632
+   },
+   "ShipporiAntiqueB1-Regular": {
+    "reference_distance": 1.0697498289651108,
+    "atlas_dispersion": 0.23150586611009727
+   },
+   "StackSansText[wght]": {
+    "reference_distance": 0.21637086263921695,
+    "atlas_dispersion": 0.24176250562331522
+   },
+   "Suwannaphum-Regular": {
+    "reference_distance": 0.7746812608899388,
+    "atlas_dispersion": 0.2461124783001388
+   },
+   "Telex-Regular": {
+    "reference_distance": 1.3155526490143616,
+    "atlas_dispersion": 0.30681407548637196
+   },
+   "TiroGurmukhi-Regular": {
+    "reference_distance": 0.42573640560265597,
+    "atlas_dispersion": 0.2339914948936588
+   },
+   "TiroTamil-Regular": {
+    "reference_distance": 0.9657861233151637,
+    "atlas_dispersion": 0.2518299896544004
+   },
+   "TiroTelugu-Regular": {
+    "reference_distance": 1.121898777810454,
+    "atlas_dispersion": 0.28582909123134653
+   },
+   "Tirra-Regular": {
+    "reference_distance": 2.2406826674306033,
+    "atlas_dispersion": 0.3162479466694974
+   },
+   "UoqMunThenKhung-Regular": {
+    "reference_distance": 1.467137937271961,
+    "atlas_dispersion": 0.26745326870906744
+   },
+   "Vazirmatn[wght]": {
+    "reference_distance": 0.3740678605168148,
+    "atlas_dispersion": 0.21818150652391002
+   },
+   "Volkhov-Regular": {
+    "reference_distance": 0.918599773385169,
+    "atlas_dispersion": 0.2621302156467913
+   },
+   "WDXLLubrifontTC-Regular": {
+    "reference_distance": 1.9169603956108459,
+    "atlas_dispersion": 0.3170420112807084
+   },
+   "Wonky[wdth,wght]": {
+    "reference_distance": 0.688105795277066,
+    "atlas_dispersion": 0.23233025959422762
+   },
+   "ZCOOLQingKeHuangYou-Regular": {
+    "reference_distance": 1.105739862010407,
+    "atlas_dispersion": 0.22495678726744442
+   },
+   "ZalandoSans[wdth,wght]": {
+    "reference_distance": 1.5126563974659826,
+    "atlas_dispersion": 0.35081785327383674
+   }
+  }
+ },
+ "separates": true,
+ "separation": {
+  "p": 1.6442621929354076e-06,
+  "effect_r": 0.6778117519727769,
+  "n": 50
+ },
+ "predicts": {
+  "spearman_rho": 0.6663126121422699,
+  "p": 3.854576411805304e-14,
+  "n": 100
+ },
+ "operating_points": [
+  {
+   "percentile": 99,
+   "threshold": 1.875392019388157,
+   "recall_on_mixed": 0.44,
+   "false_positive_on_coherent": 0.02
+  },
+  {
+   "percentile": 95,
+   "threshold": 1.6256455591626333,
+   "recall_on_mixed": 0.48,
+   "false_positive_on_coherent": 0.06
+  },
+  {
+   "percentile": 90,
+   "threshold": 1.3278915169250112,
+   "recall_on_mixed": 0.54,
+   "false_positive_on_coherent": 0.1
+  },
+  {
+   "percentile": 80,
+   "threshold": 1.057038725742187,
+   "recall_on_mixed": 0.64,
+   "false_positive_on_coherent": 0.2
+  },
+  {
+   "percentile": 75,
+   "threshold": 0.9706472481382129,
+   "recall_on_mixed": 0.64,
+   "false_positive_on_coherent": 0.26
+  }
+ ],
+ "suggested": {
+  "percentile": 90,
+  "threshold": 1.3278915169250112,
+  "recall_on_mixed": 0.54,
+  "false_positive_on_coherent": 0.1
+ }
+}

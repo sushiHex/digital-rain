@@ -1,0 +1,64 @@
+{
+  "run_a": "eval_runs/glyph_cc_2000_full/per_cell.json",
+  "run_b": "eval_runs/glyph_r32_5000/per_cell.json",
+  "label_a": "glyph_cc_2000",
+  "label_b": "glyph_r32_5000",
+  "n_shared_fonts": 50,
+  "results": [
+    {
+      "metric": "composite",
+      "larger_better": true,
+      "median_a": 0.8485147938607854,
+      "median_b": 0.8462177023846418,
+      "median_delta": 0.0020040412215476255,
+      "W": 538.0,
+      "p": 0.33678049949623867,
+      "effect_r": 0.13584171575320994,
+      "n_nonzero": 50
+    },
+    {
+      "metric": "char_acc",
+      "larger_better": true,
+      "median_a": 0.723404255319149,
+      "median_b": 0.7712765957446808,
+      "median_delta": 0.05319148936170215,
+      "W": 130.5,
+      "p": 9.758984066538709e-07,
+      "effect_r": 0.6924607825454968,
+      "n_nonzero": 50
+    },
+    {
+      "metric": "racc",
+      "larger_better": true,
+      "median_a": 0.7925531914893618,
+      "median_b": 0.7978723404255319,
+      "median_delta": 0.010638297872340385,
+      "W": 441.0,
+      "p": 0.19215275501967943,
+      "effect_r": 0.1902425330665983,
+      "n_nonzero": 47
+    },
+    {
+      "metric": "dinov2",
+      "larger_better": true,
+      "median_a": 0.8581127208915162,
+      "median_b": 0.8937734764941194,
+      "median_delta": 0.029962783164166396,
+      "W": 71.0,
+      "p": 4.52997626382083e-08,
+      "effect_r": 0.773410371599934,
+      "n_nonzero": 50
+    },
+    {
+      "metric": "lpips",
+      "larger_better": false,
+      "median_a": 0.10911686445011738,
+      "median_b": 0.1363702528773153,
+      "median_delta": 0.006158978460316961,
+      "W": 435.0,
+      "p": 0.050597233677100506,
+      "effect_r": 0.2764617833168343,
+      "n_nonzero": 50
+    }
+  ]
+}

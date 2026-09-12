@@ -1,0 +1,52 @@
+[project]
+name = "fontgen"
+version = "0.1.0"
+description = "Glyph-latent channel conditioning for FLUX.2 font generation, with a font-invariant identity metric"
+requires-python = ">=3.12"
+dependencies = [
+    # Diffusion / model stack. Install torch from the CUDA index FIRST --
+    # see the note at the top of requirements.txt.
+    "torch>=2.6.0",
+    "torchvision>=0.21.0",
+    "diffusers>=0.36.0",
+    "transformers>=4.45.0",
+    "peft>=0.14.0",
+    "safetensors>=0.4.5",
+    "huggingface-hub>=0.26.0",
+    "optimum-quanto>=0.2.6",
+    "accelerate>=1.0.0",
+    # Metrics / analysis
+    "numpy>=1.26.0",
+    "scipy>=1.11.0",
+    "lpips>=0.1.4",
+    "psutil>=5.9.0",
+    "tqdm>=4.66.0",
+    # Font & image handling
+    "Pillow>=10.0.0",
+    "fonttools[woff]>=4.51.0",
+    "freetype-py>=2.4.0",
+    "svgpathtools>=1.6.0",
+    # Corpus sourcing
+    "requests>=2.31.0",
+    "beautifulsoup4>=4.12.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.5.0",
+]
+demo = ["gradio>=5.0.0"]                        # app.py
+sft = ["datasets>=3.0.0", "trl>=0.12.0"]        # pipeline/train_font_model.py
+vecglypher = ["fal-client>=0.13.0"]             # src/vecglypher.py, superseded external-API path
+# Route B (INT4/SVDQuant) additionally needs `nunchaku`, which is not on PyPI --
+# build from source: https://github.com/nunchaku-tech/nunchaku
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

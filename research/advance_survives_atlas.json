@@ -1,0 +1,47 @@
+{
+ "rows": [
+  {
+   "stem": "CourierPrime-Bold.ttf",
+   "class": "mono",
+   "advance_cv": 0.0,
+   "atlas_ink_cv": 0.23779911498799206
+  },
+  {
+   "stem": "JetBrainsMono-Italic[wght].ttf",
+   "class": "mono",
+   "advance_cv": 0.0,
+   "atlas_ink_cv": 0.20861242178289932
+  },
+  {
+   "stem": "RobotoMono-Italic[wght].ttf",
+   "class": "mono",
+   "advance_cv": 0.0,
+   "atlas_ink_cv": 0.23965655628680083
+  },
+  {
+   "stem": "SpaceMono-Bold.ttf",
+   "class": "mono",
+   "advance_cv": 0.0,
+   "atlas_ink_cv": 0.21857768210500783
+  },
+  {
+   "stem": "OpenSans-Italic[wdth,wght].ttf",
+   "class": "proportional",
+   "advance_cv": 0.3119846449989771,
+   "atlas_ink_cv": 0.32586291533639994
+  },
+  {
+   "stem": "Lato-Black.ttf",
+   "class": "proportional",
+   "advance_cv": 0.3270041491857686,
+   "atlas_ink_cv": 0.3943954764631479
+  },
+  {
+   "stem": "Merriweather-Italic[opsz,wdth,wght].ttf",
+   "class": "proportional",
+   "advance_cv": 0.2976492312141184,
+   "atlas_ink_cv": 0.3543843253745517
+  }
+ ],
+ "missing": []
+}

@@ -1,0 +1,502 @@
+{
+ "_comment": "Replacements for the licence-excluded fonts, selected toward the ORDINARY end of the distinctiveness distribution. CPU-only: no DINOv2 duplicate guard and no variable-axis instancing. Run those before adopting.",
+ "target": 87,
+ "selected_count": 81,
+ "rejected": {
+  "licence": 0,
+  "holdout_family": 37,
+  "in_corpus": 0,
+  "unrenderable": 0,
+  "ink": 1,
+  "duplicate": 5
+ },
+ "corpus_ink_median": 0.05829315185546875,
+ "fonts": [
+  {
+   "stem": "FiraSans-Regular",
+   "path": "google-fonts/ofl/firasans/FiraSans-Regular.ttf",
+   "score": 0.011830568313598633,
+   "ink_fraction": 0.04883
+  },
+  {
+   "stem": "FiraSansCondensed-Regular",
+   "path": "google-fonts/ofl/firasanscondensed/FiraSansCondensed-Regular.ttf",
+   "score": 0.013775646686553955,
+   "ink_fraction": 0.05627
+  },
+  {
+   "stem": "Kanchenjunga-Regular",
+   "path": "google-fonts/ofl/kanchenjunga/Kanchenjunga-Regular.ttf",
+   "score": 0.01414787769317627,
+   "ink_fraction": 0.04848
+  },
+  {
+   "stem": "Tharlon-Regular",
+   "path": "google-fonts/ofl/tharlon/Tharlon-Regular.ttf",
+   "score": 0.015380322933197021,
+   "ink_fraction": 0.04803
+  },
+  {
+   "stem": "AnekDevanagari[wdth,wght]",
+   "path": "google-fonts/ofl/anekdevanagari/AnekDevanagari[wdth,wght].ttf",
+   "score": 0.01606827974319458,
+   "ink_fraction": 0.06969
+  },
+  {
+   "stem": "PodkovaVFBeta",
+   "path": "google-fonts/ofl/podkovavfbeta/PodkovaVFBeta.ttf",
+   "score": 0.01641637086868286,
+   "ink_fraction": 0.05099
+  },
+  {
+   "stem": "Nokora[wght]",
+   "path": "google-fonts/ofl/nokora/Nokora[wght].ttf",
+   "score": 0.017209351062774658,
+   "ink_fraction": 0.05711
+  },
+  {
+   "stem": "Sintony-Regular",
+   "path": "google-fonts/ofl/sintony/Sintony-Regular.ttf",
+   "score": 0.01887357234954834,
+   "ink_fraction": 0.04954
+  },
+  {
+   "stem": "Lato-Regular",
+   "path": "google-fonts/ofl/lato/Lato-Regular.ttf",
+   "score": 0.018877923488616943,
+   "ink_fraction": 0.04512
+  },
+  {
+   "stem": "Oxygen-Regular",
+   "path": "google-fonts/ofl/oxygen/Oxygen-Regular.ttf",
+   "score": 0.019340336322784424,
+   "ink_fraction": 0.04877
+  },
+  {
+   "stem": "HedvigLettersSans-Regular",
+   "path": "google-fonts/ofl/hedvigletterssans/HedvigLettersSans-Regular.ttf",
+   "score": 0.019409537315368652,
+   "ink_fraction": 0.05484
+  },
+  {
+   "stem": "RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght]",
+   "path": "google-fonts/ofl/robotoflex/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].ttf",
+   "score": 0.02072817087173462,
+   "ink_fraction": 0.04914
+  },
+  {
+   "stem": "Overpass-Italic[wght]",
+   "path": "google-fonts/ofl/overpass/Overpass-Italic[wght].ttf",
+   "score": 0.021405041217803955,
+   "ink_fraction": 0.06219
+  },
+  {
+   "stem": "CairoPlay[slnt,wght]",
+   "path": "google-fonts/ofl/cairoplay/CairoPlay[slnt,wght].ttf",
+   "score": 0.02238023281097412,
+   "ink_fraction": 0.0487
+  },
+  {
+   "stem": "Liter-Regular",
+   "path": "google-fonts/ofl/liter/Liter-Regular.ttf",
+   "score": 0.022855639457702637,
+   "ink_fraction": 0.05481
+  },
+  {
+   "stem": "RethinkSans-Italic[wght]",
+   "path": "google-fonts/ofl/rethinksans/RethinkSans-Italic[wght].ttf",
+   "score": 0.022733032703399658,
+   "ink_fraction": 0.04479
+  },
+  {
+   "stem": "RadioCanada-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/radiocanada/RadioCanada-Italic[wdth,wght].ttf",
+   "score": 0.02416825294494629,
+   "ink_fraction": 0.05596
+  },
+  {
+   "stem": "Cabin-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/cabin/Cabin-Italic[wdth,wght].ttf",
+   "score": 0.024260103702545166,
+   "ink_fraction": 0.05591
+  },
+  {
+   "stem": "Ramabhadra-Regular",
+   "path": "google-fonts/ofl/ramabhadra/Ramabhadra-Regular.ttf",
+   "score": 0.024644136428833008,
+   "ink_fraction": 0.0781
+  },
+  {
+   "stem": "Asap-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/asap/Asap-Italic[wdth,wght].ttf",
+   "score": 0.024483323097229004,
+   "ink_fraction": 0.04797
+  },
+  {
+   "stem": "Rosario-Italic[wght]",
+   "path": "google-fonts/ofl/rosario/Rosario-Italic[wght].ttf",
+   "score": 0.02504795789718628,
+   "ink_fraction": 0.04309
+  },
+  {
+   "stem": "ExpletusSans-Italic[wght]",
+   "path": "google-fonts/ofl/expletussans/ExpletusSans-Italic[wght].ttf",
+   "score": 0.02499568462371826,
+   "ink_fraction": 0.04648
+  },
+  {
+   "stem": "MerriweatherSans-Italic[wght]",
+   "path": "google-fonts/ofl/merriweathersans/MerriweatherSans-Italic[wght].ttf",
+   "score": 0.025747597217559814,
+   "ink_fraction": 0.0678
+  },
+  {
+   "stem": "FamiljenGrotesk-Italic[wght]",
+   "path": "google-fonts/ofl/familjengrotesk/FamiljenGrotesk-Italic[wght].ttf",
+   "score": 0.027415096759796143,
+   "ink_fraction": 0.05389
+  },
+  {
+   "stem": "Poppins-Regular",
+   "path": "google-fonts/ofl/poppins/Poppins-Regular.ttf",
+   "score": 0.029483556747436523,
+   "ink_fraction": 0.05464
+  },
+  {
+   "stem": "RadioCanadaBig-Italic[wght]",
+   "path": "google-fonts/ofl/radiocanadabig/RadioCanadaBig-Italic[wght].ttf",
+   "score": 0.02982461452484131,
+   "ink_fraction": 0.06193
+  },
+  {
+   "stem": "NovaSlim",
+   "path": "google-fonts/ofl/novaslim/NovaSlim.ttf",
+   "score": 0.03020787239074707,
+   "ink_fraction": 0.0418
+  },
+  {
+   "stem": "NovaRound",
+   "path": "google-fonts/ofl/novaround/NovaRound.ttf",
+   "score": 0.03208649158477783,
+   "ink_fraction": 0.04835
+  },
+  {
+   "stem": "LexendDeca[wght]",
+   "path": "google-fonts/ofl/lexenddeca/LexendDeca[wght].ttf",
+   "score": 0.033693671226501465,
+   "ink_fraction": 0.06113
+  },
+  {
+   "stem": "Preahvihear-Regular",
+   "path": "google-fonts/ofl/preahvihear/Preahvihear-Regular.ttf",
+   "score": 0.033726513385772705,
+   "ink_fraction": 0.0741
+  },
+  {
+   "stem": "LexendPeta[wght]",
+   "path": "google-fonts/ofl/lexendpeta/LexendPeta[wght].ttf",
+   "score": 0.034725964069366455,
+   "ink_fraction": 0.0477
+  },
+  {
+   "stem": "Exo2-Italic[wght]",
+   "path": "google-fonts/ofl/exo2/Exo2-Italic[wght].ttf",
+   "score": 0.03580421209335327,
+   "ink_fraction": 0.04819
+  },
+  {
+   "stem": "WixMadeforText-Regular",
+   "path": "google-fonts/ofl/wixmadefortext/WixMadeforText-Regular.ttf",
+   "score": 0.03591632843017578,
+   "ink_fraction": 0.04331
+  },
+  {
+   "stem": "VarelaRound-Regular",
+   "path": "google-fonts/ofl/varelaround/VarelaRound-Regular.ttf",
+   "score": 0.037814974784851074,
+   "ink_fraction": 0.05121
+  },
+  {
+   "stem": "ShareTech-Regular",
+   "path": "google-fonts/ofl/sharetech/ShareTech-Regular.ttf",
+   "score": 0.03800398111343384,
+   "ink_fraction": 0.06255
+  },
+  {
+   "stem": "Chivo-Italic[wght]",
+   "path": "google-fonts/ofl/chivo/Chivo-Italic[wght].ttf",
+   "score": 0.03899514675140381,
+   "ink_fraction": 0.0664
+  },
+  {
+   "stem": "PT_Serif-Web-Regular",
+   "path": "google-fonts/ofl/ptserif/PT_Serif-Web-Regular.ttf",
+   "score": 0.039716243743896484,
+   "ink_fraction": 0.04103
+  },
+  {
+   "stem": "RoundedMplus1c-Regular",
+   "path": "google-fonts/ofl/roundedmplus1c/RoundedMplus1c-Regular.ttf",
+   "score": 0.03979682922363281,
+   "ink_fraction": 0.06158
+  },
+  {
+   "stem": "Merriweather-Italic[opsz,wdth,wght]",
+   "path": "google-fonts/ofl/merriweather/Merriweather-Italic[opsz,wdth,wght].ttf",
+   "score": 0.03988158702850342,
+   "ink_fraction": 0.04622
+  },
+  {
+   "stem": "PT_Serif-Caption-Web-Regular",
+   "path": "google-fonts/ofl/ptserifcaption/PT_Serif-Caption-Web-Regular.ttf",
+   "score": 0.041046857833862305,
+   "ink_fraction": 0.04336
+  },
+  {
+   "stem": "SplineSansMono-Italic[wght]",
+   "path": "google-fonts/ofl/splinesansmono/SplineSansMono-Italic[wght].ttf",
+   "score": 0.0420382022857666,
+   "ink_fraction": 0.11735
+  },
+  {
+   "stem": "Moul-Regular",
+   "path": "google-fonts/ofl/moul/Moul-Regular.ttf",
+   "score": 0.04594928026199341,
+   "ink_fraction": 0.07362
+  },
+  {
+   "stem": "Archivo-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/archivo/Archivo-Italic[wdth,wght].ttf",
+   "score": 0.04651594161987305,
+   "ink_fraction": 0.06635
+  },
+  {
+   "stem": "GoogleSansCode-Italic[wght]",
+   "path": "google-fonts/ofl/googlesanscode/GoogleSansCode-Italic[wght].ttf",
+   "score": 0.04734444618225098,
+   "ink_fraction": 0.12567
+  },
+  {
+   "stem": "Vollkorn-Italic[wght]",
+   "path": "google-fonts/ofl/vollkorn/Vollkorn-Italic[wght].ttf",
+   "score": 0.04786401987075806,
+   "ink_fraction": 0.03996
+  },
+  {
+   "stem": "Fraunces-Italic[SOFT,WONK,opsz,wght]",
+   "path": "google-fonts/ofl/fraunces/Fraunces-Italic[SOFT,WONK,opsz,wght].ttf",
+   "score": 0.04797852039337158,
+   "ink_fraction": 0.06939
+  },
+  {
+   "stem": "Platypi-Italic[wght]",
+   "path": "google-fonts/ofl/platypi/Platypi-Italic[wght].ttf",
+   "score": 0.04871487617492676,
+   "ink_fraction": 0.03225
+  },
+  {
+   "stem": "Thabit-BoldOblique",
+   "path": "google-fonts/ofl/thabit/Thabit-BoldOblique.ttf",
+   "score": 0.049866676330566406,
+   "ink_fraction": 0.10215
+  },
+  {
+   "stem": "PlaypenSansArabic[wght]",
+   "path": "google-fonts/ofl/playpensansarabic/PlaypenSansArabic[wght].ttf",
+   "score": 0.04978501796722412,
+   "ink_fraction": 0.05521
+  },
+  {
+   "stem": "JetBrainsMono-Italic[wght]",
+   "path": "google-fonts/ofl/jetbrainsmono/JetBrainsMono-Italic[wght].ttf",
+   "score": 0.05213850736618042,
+   "ink_fraction": 0.11282
+  },
+  {
+   "stem": "DeliusUnicase-Regular",
+   "path": "google-fonts/ofl/deliusunicase/DeliusUnicase-Regular.ttf",
+   "score": 0.052361249923706055,
+   "ink_fraction": 0.07032
+  },
+  {
+   "stem": "TiroBangla-Regular",
+   "path": "google-fonts/ofl/tirobangla/TiroBangla-Regular.ttf",
+   "score": 0.05488640069961548,
+   "ink_fraction": 0.04493
+  },
+  {
+   "stem": "Trirong-Regular",
+   "path": "google-fonts/ofl/trirong/Trirong-Regular.ttf",
+   "score": 0.05496394634246826,
+   "ink_fraction": 0.04002
+  },
+  {
+   "stem": "Kurale-Regular",
+   "path": "google-fonts/ofl/kurale/Kurale-Regular.ttf",
+   "score": 0.055300772190093994,
+   "ink_fraction": 0.04441
+  },
+  {
+   "stem": "ChivoMono-Italic[wght]",
+   "path": "google-fonts/ofl/chivomono/ChivoMono-Italic[wght].ttf",
+   "score": 0.05638796091079712,
+   "ink_fraction": 0.12256
+  },
+  {
+   "stem": "DMSerifText-Regular",
+   "path": "google-fonts/ofl/dmseriftext/DMSerifText-Regular.ttf",
+   "score": 0.05643707513809204,
+   "ink_fraction": 0.0611
+  },
+  {
+   "stem": "NuosuSIL-Regular",
+   "path": "google-fonts/ofl/nuosusil/NuosuSIL-Regular.ttf",
+   "score": 0.05679899454116821,
+   "ink_fraction": 0.04498
+  },
+  {
+   "stem": "Texturina-Italic[opsz,wght]",
+   "path": "google-fonts/ofl/texturina/Texturina-Italic[opsz,wght].ttf",
+   "score": 0.057929933071136475,
+   "ink_fraction": 0.03491
+  },
+  {
+   "stem": "Pattaya-Regular",
+   "path": "google-fonts/ofl/pattaya/Pattaya-Regular.ttf",
+   "score": 0.05875289440155029,
+   "ink_fraction": 0.06196
+  },
+  {
+   "stem": "CascadiaCode-Italic[wght]",
+   "path": "google-fonts/ofl/cascadiacode/CascadiaCode-Italic[wght].ttf",
+   "score": 0.06170952320098877,
+   "ink_fraction": 0.14018
+  },
+  {
+   "stem": "RubikOne-Regular",
+   "path": "google-fonts/ofl/rubikone/RubikOne-Regular.ttf",
+   "score": 0.06695181131362915,
+   "ink_fraction": 0.15261
+  },
+  {
+   "stem": "Wittgenstein-Italic[wght]",
+   "path": "google-fonts/ofl/wittgenstein/Wittgenstein-Italic[wght].ttf",
+   "score": 0.06837904453277588,
+   "ink_fraction": 0.03375
+  },
+  {
+   "stem": "LakkiReddy-Regular",
+   "path": "google-fonts/ofl/lakkireddy/LakkiReddy-Regular.ttf",
+   "score": 0.06589704751968384,
+   "ink_fraction": 0.06364
+  },
+  {
+   "stem": "PirataOne-Regular",
+   "path": "google-fonts/ofl/pirataone/PirataOne-Regular.ttf",
+   "score": 0.07224398851394653,
+   "ink_fraction": 0.09577
+  },
+  {
+   "stem": "RaviPrakash-Regular",
+   "path": "google-fonts/ofl/raviprakash/RaviPrakash-Regular.ttf",
+   "score": 0.07323890924453735,
+   "ink_fraction": 0.07041
+  },
+  {
+   "stem": "LibreBodoni-Italic[wght]",
+   "path": "google-fonts/ofl/librebodoni/LibreBodoni-Italic[wght].ttf",
+   "score": 0.07448863983154297,
+   "ink_fraction": 0.04399
+  },
+  {
+   "stem": "PoltawskiNowy-Italic[wght]",
+   "path": "google-fonts/ofl/poltawskinowy/PoltawskiNowy-Italic[wght].ttf",
+   "score": 0.0767664909362793,
+   "ink_fraction": 0.03779
+  },
+  {
+   "stem": "LibreCaslonText-Italic[wght]",
+   "path": "google-fonts/ofl/librecaslontext/LibreCaslonText-Italic[wght].ttf",
+   "score": 0.07784461975097656,
+   "ink_fraction": 0.03261
+  },
+  {
+   "stem": "AlumniSansInlineOne-Regular",
+   "path": "google-fonts/ofl/alumnisansinlineone/AlumniSansInlineOne-Regular.ttf",
+   "score": 0.0799141526222229,
+   "ink_fraction": 0.10638
+  },
+  {
+   "stem": "SourGummy-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/sourgummy/SourGummy-Italic[wdth,wght].ttf",
+   "score": 0.08710837364196777,
+   "ink_fraction": 0.08134
+  },
+  {
+   "stem": "Jersey25-Regular",
+   "path": "google-fonts/ofl/jersey25/Jersey25-Regular.ttf",
+   "score": 0.09322774410247803,
+   "ink_fraction": 0.10063
+  },
+  {
+   "stem": "TiltWarp[XROT,YROT]",
+   "path": "google-fonts/ofl/tiltwarp/TiltWarp[XROT,YROT].ttf",
+   "score": 0.062007129192352295,
+   "ink_fraction": 0.08677
+  },
+  {
+   "stem": "ShantellSans-Italic[BNCE,INFM,SPAC,wght]",
+   "path": "google-fonts/ofl/shantellsans/ShantellSans-Italic[BNCE,INFM,SPAC,wght].ttf",
+   "score": 0.10883128643035889,
+   "ink_fraction": 0.04449
+  },
+  {
+   "stem": "ZenAntiqueSoft-Regular",
+   "path": "google-fonts/ofl/zenantiquesoft/ZenAntiqueSoft-Regular.ttf",
+   "score": 0.06041312217712402,
+   "ink_fraction": 0.05624
+  },
+  {
+   "stem": "Lobster-Regular",
+   "path": "google-fonts/ofl/lobster/Lobster-Regular.ttf",
+   "score": 0.06009000539779663,
+   "ink_fraction": 0.06146
+  },
+  {
+   "stem": "WinkyRough-Italic[wght]",
+   "path": "google-fonts/ofl/winkyrough/WinkyRough-Italic[wght].ttf",
+   "score": 0.1355355978012085,
+   "ink_fraction": 0.06256
+  },
+  {
+   "stem": "Jersey20-Regular",
+   "path": "google-fonts/ofl/jersey20/Jersey20-Regular.ttf",
+   "score": 0.14180052280426025,
+   "ink_fraction": 0.10227
+  },
+  {
+   "stem": "BlakaInk-Regular",
+   "path": "google-fonts/ofl/blakaink/BlakaInk-Regular.ttf",
+   "score": 0.15807396173477173,
+   "ink_fraction": 0.0963
+  },
+  {
+   "stem": "BlakaHollow-Regular",
+   "path": "google-fonts/ofl/blakahollow/BlakaHollow-Regular.ttf",
+   "score": 0.17909127473831177,
+   "ink_fraction": 0.0861
+  },
+  {
+   "stem": "Jacquard24Charted-Regular",
+   "path": "google-fonts/ofl/jacquard24charted/Jacquard24Charted-Regular.ttf",
+   "score": 0.2621476650238037,
+   "ink_fraction": 0.04633
+  },
+  {
+   "stem": "RubikMarkerHatch-Regular",
+   "path": "google-fonts/ofl/rubikmarkerhatch/RubikMarkerHatch-Regular.ttf",
+   "score": 0.36770790815353394,
+   "ink_fraction": 0.12941
+  }
+ ]
+}

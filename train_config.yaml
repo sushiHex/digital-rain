@@ -1,0 +1,60 @@
+---
+job: extension
+config:
+  name: "font_atlas_lora_v1"
+  process:
+    - type: 'sd_trainer'
+      training_folder: "training_output"
+      performance_log_every: 100
+      device: cuda:0
+      network:
+        type: "lora"
+        linear: 16
+        linear_alpha: 16
+      save:
+        dtype: float16
+        save_every: 500
+        max_step_saves_to_keep: 3
+        push_to_hub: false
+      datasets:
+        # Relative to the repo root, matching training_folder above. Run the
+        # trainer from the repo root, or make this absolute for your machine.
+        - folder_path: "dataset/atlases"
+          caption_ext: "txt"
+          caption_dropout_rate: 0.05
+          shuffle_tokens: false
+          cache_latents_to_disk: true
+          resolution: [ 1280 ]
+      train:
+        batch_size: 1
+        steps: 5000
+        gradient_accumulation_steps: 1
+        train_unet: true
+        train_text_encoder: false
+        gradient_checkpointing: true
+        noise_scheduler: "flowmatch"
+        optimizer: "adamw8bit"
+        lr: 1e-4
+        ema_config:
+          use_ema: true
+          ema_decay: 0.99
+        dtype: bf16
+      model:
+        name_or_path: "black-forest-labs/FLUX.2-klein-base-9B"
+        is_flux: true
+        quantize: true
+      sample:
+        sampler: "flowmatch"
+        sample_every: 500
+        width: 1280
+        height: 1280
+        prompts:
+          - 'A technical font atlas grid of the Latin charset: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!?.,;:-"&". The style is strictly derived from the reference image "Aa".'
+        neg: ""
+        seed: 42
+        walk_seed: true
+        guidance_scale: 5
+        sample_steps: 20
+meta:
+  name: "[name]"
+  version: '1.0'

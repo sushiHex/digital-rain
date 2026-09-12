@@ -1,0 +1,538 @@
+{
+ "_comment": "Replacements for the licence-excluded fonts, selected toward the ORDINARY end of the distinctiveness distribution. CPU-only: no DINOv2 duplicate guard and no variable-axis instancing. Run those before adopting.",
+ "target": 87,
+ "selected_count": 87,
+ "rejected": {
+  "licence": 0,
+  "holdout_family": 37,
+  "in_corpus": 0,
+  "unrenderable": 0,
+  "ink": 0,
+  "duplicate": 6
+ },
+ "corpus_ink_median": 0.05829315185546875,
+ "fonts": [
+  {
+   "stem": "FiraSans-Regular",
+   "path": "google-fonts/ofl/firasans/FiraSans-Regular.ttf",
+   "score": 0.011830568313598633,
+   "ink_fraction": 0.04883
+  },
+  {
+   "stem": "ChocolateClassicalSans-Regular",
+   "path": "google-fonts/ofl/chocolateclassicalsans/ChocolateClassicalSans-Regular.ttf",
+   "score": 0.01257336139678955,
+   "ink_fraction": 0.06246
+  },
+  {
+   "stem": "Mada[wght]",
+   "path": "google-fonts/ofl/mada/Mada[wght].ttf",
+   "score": 0.01303321123123169,
+   "ink_fraction": 0.05852
+  },
+  {
+   "stem": "FiraSansCondensed-Regular",
+   "path": "google-fonts/ofl/firasanscondensed/FiraSansCondensed-Regular.ttf",
+   "score": 0.013775646686553955,
+   "ink_fraction": 0.05627
+  },
+  {
+   "stem": "Kanchenjunga-Regular",
+   "path": "google-fonts/ofl/kanchenjunga/Kanchenjunga-Regular.ttf",
+   "score": 0.01414787769317627,
+   "ink_fraction": 0.04848
+  },
+  {
+   "stem": "Hanuman[wght]",
+   "path": "google-fonts/ofl/hanuman/Hanuman[wght].ttf",
+   "score": 0.01479494571685791,
+   "ink_fraction": 0.0511
+  },
+  {
+   "stem": "MuktaVaani-Regular",
+   "path": "google-fonts/ofl/muktavaani/MuktaVaani-Regular.ttf",
+   "score": 0.014873206615447998,
+   "ink_fraction": 0.04906
+  },
+  {
+   "stem": "Nobile-Regular",
+   "path": "google-fonts/ofl/nobile/Nobile-Regular.ttf",
+   "score": 0.014919042587280273,
+   "ink_fraction": 0.05646
+  },
+  {
+   "stem": "Tharlon-Regular",
+   "path": "google-fonts/ofl/tharlon/Tharlon-Regular.ttf",
+   "score": 0.015380322933197021,
+   "ink_fraction": 0.04803
+  },
+  {
+   "stem": "AnekDevanagari[wdth,wght]",
+   "path": "google-fonts/ofl/anekdevanagari/AnekDevanagari[wdth,wght].ttf",
+   "score": 0.01606827974319458,
+   "ink_fraction": 0.06969
+  },
+  {
+   "stem": "AnekGujarati[wdth,wght]",
+   "path": "google-fonts/ofl/anekgujarati/AnekGujarati[wdth,wght].ttf",
+   "score": 0.01606827974319458,
+   "ink_fraction": 0.06969
+  },
+  {
+   "stem": "AnekKannada[wdth,wght]",
+   "path": "google-fonts/ofl/anekkannada/AnekKannada[wdth,wght].ttf",
+   "score": 0.01606827974319458,
+   "ink_fraction": 0.06969
+  },
+  {
+   "stem": "PodkovaVFBeta",
+   "path": "google-fonts/ofl/podkovavfbeta/PodkovaVFBeta.ttf",
+   "score": 0.01641637086868286,
+   "ink_fraction": 0.05099
+  },
+  {
+   "stem": "Nokora[wght]",
+   "path": "google-fonts/ofl/nokora/Nokora[wght].ttf",
+   "score": 0.017209351062774658,
+   "ink_fraction": 0.05711
+  },
+  {
+   "stem": "Sintony-Regular",
+   "path": "google-fonts/ofl/sintony/Sintony-Regular.ttf",
+   "score": 0.01887357234954834,
+   "ink_fraction": 0.04954
+  },
+  {
+   "stem": "Lato-Regular",
+   "path": "google-fonts/ofl/lato/Lato-Regular.ttf",
+   "score": 0.018877923488616943,
+   "ink_fraction": 0.04512
+  },
+  {
+   "stem": "Oxygen-Regular",
+   "path": "google-fonts/ofl/oxygen/Oxygen-Regular.ttf",
+   "score": 0.019340336322784424,
+   "ink_fraction": 0.04877
+  },
+  {
+   "stem": "HedvigLettersSans-Regular",
+   "path": "google-fonts/ofl/hedvigletterssans/HedvigLettersSans-Regular.ttf",
+   "score": 0.019409537315368652,
+   "ink_fraction": 0.05484
+  },
+  {
+   "stem": "PT_Sans-Caption-Web-Regular",
+   "path": "google-fonts/ofl/ptsanscaption/PT_Sans-Caption-Web-Regular.ttf",
+   "score": 0.019786477088928223,
+   "ink_fraction": 0.04089
+  },
+  {
+   "stem": "AtkinsonHyperlegibleNext-Italic[wght]",
+   "path": "google-fonts/ofl/atkinsonhyperlegiblenext/AtkinsonHyperlegibleNext-Italic[wght].ttf",
+   "score": 0.02006608247756958,
+   "ink_fraction": 0.05539
+  },
+  {
+   "stem": "RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght]",
+   "path": "google-fonts/ofl/robotoflex/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].ttf",
+   "score": 0.02072817087173462,
+   "ink_fraction": 0.04914
+  },
+  {
+   "stem": "Overpass-Italic[wght]",
+   "path": "google-fonts/ofl/overpass/Overpass-Italic[wght].ttf",
+   "score": 0.021405041217803955,
+   "ink_fraction": 0.06219
+  },
+  {
+   "stem": "TASAOrbiter[wght]",
+   "path": "google-fonts/ofl/tasaorbiter/TASAOrbiter[wght].ttf",
+   "score": 0.021511495113372803,
+   "ink_fraction": 0.05398
+  },
+  {
+   "stem": "YuseiMagic-Regular",
+   "path": "google-fonts/ofl/yuseimagic/YuseiMagic-Regular.ttf",
+   "score": 0.02168285846710205,
+   "ink_fraction": 0.08832
+  },
+  {
+   "stem": "Roboto-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/roboto/Roboto-Italic[wdth,wght].ttf",
+   "score": 0.02222573757171631,
+   "ink_fraction": 0.05965
+  },
+  {
+   "stem": "CairoPlay[slnt,wght]",
+   "path": "google-fonts/ofl/cairoplay/CairoPlay[slnt,wght].ttf",
+   "score": 0.02238023281097412,
+   "ink_fraction": 0.0487
+  },
+  {
+   "stem": "Amarna-Italic[wght]",
+   "path": "google-fonts/ofl/amarna/Amarna-Italic[wght].ttf",
+   "score": 0.02254587411880493,
+   "ink_fraction": 0.04114
+  },
+  {
+   "stem": "RethinkSans-Italic[wght]",
+   "path": "google-fonts/ofl/rethinksans/RethinkSans-Italic[wght].ttf",
+   "score": 0.022733032703399658,
+   "ink_fraction": 0.04479
+  },
+  {
+   "stem": "Liter-Regular",
+   "path": "google-fonts/ofl/liter/Liter-Regular.ttf",
+   "score": 0.022855639457702637,
+   "ink_fraction": 0.05481
+  },
+  {
+   "stem": "OpenSans-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/opensans/OpenSans-Italic[wdth,wght].ttf",
+   "score": 0.023250162601470947,
+   "ink_fraction": 0.05249
+  },
+  {
+   "stem": "WorkSans-Italic[wght]",
+   "path": "google-fonts/ofl/worksans/WorkSans-Italic[wght].ttf",
+   "score": 0.02328205108642578,
+   "ink_fraction": 0.04539
+  },
+  {
+   "stem": "DMSans-Italic[opsz,wght]",
+   "path": "google-fonts/ofl/dmsans/DMSans-Italic[opsz,wght].ttf",
+   "score": 0.02343994379043579,
+   "ink_fraction": 0.0473
+  },
+  {
+   "stem": "Varela-Regular",
+   "path": "google-fonts/ofl/varela/Varela-Regular.ttf",
+   "score": 0.023806631565093994,
+   "ink_fraction": 0.05342
+  },
+  {
+   "stem": "Aleo-Italic[wght]",
+   "path": "google-fonts/ofl/aleo/Aleo-Italic[wght].ttf",
+   "score": 0.02391815185546875,
+   "ink_fraction": 0.03905
+  },
+  {
+   "stem": "Epilogue-Italic[wght]",
+   "path": "google-fonts/ofl/epilogue/Epilogue-Italic[wght].ttf",
+   "score": 0.02392411231994629,
+   "ink_fraction": 0.05439
+  },
+  {
+   "stem": "PatuaOne-Regular",
+   "path": "google-fonts/ofl/patuaone/PatuaOne-Regular.ttf",
+   "score": 0.024019300937652588,
+   "ink_fraction": 0.07505
+  },
+  {
+   "stem": "TASAExplorer[wght]",
+   "path": "google-fonts/ofl/tasaexplorer/TASAExplorer[wght].ttf",
+   "score": 0.024040699005126953,
+   "ink_fraction": 0.05152
+  },
+  {
+   "stem": "RadioCanada-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/radiocanada/RadioCanada-Italic[wdth,wght].ttf",
+   "score": 0.02416825294494629,
+   "ink_fraction": 0.05596
+  },
+  {
+   "stem": "Gantari-Italic[wght]",
+   "path": "google-fonts/ofl/gantari/Gantari-Italic[wght].ttf",
+   "score": 0.024247407913208008,
+   "ink_fraction": 0.04026
+  },
+  {
+   "stem": "Cabin-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/cabin/Cabin-Italic[wdth,wght].ttf",
+   "score": 0.024260103702545166,
+   "ink_fraction": 0.05591
+  },
+  {
+   "stem": "TitilliumWeb-Regular",
+   "path": "google-fonts/ofl/titilliumweb/TitilliumWeb-Regular.ttf",
+   "score": 0.024460434913635254,
+   "ink_fraction": 0.04793
+  },
+  {
+   "stem": "Asap-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/asap/Asap-Italic[wdth,wght].ttf",
+   "score": 0.024483323097229004,
+   "ink_fraction": 0.04797
+  },
+  {
+   "stem": "Ramabhadra-Regular",
+   "path": "google-fonts/ofl/ramabhadra/Ramabhadra-Regular.ttf",
+   "score": 0.024644136428833008,
+   "ink_fraction": 0.0781
+  },
+  {
+   "stem": "ExpletusSans-Italic[wght]",
+   "path": "google-fonts/ofl/expletussans/ExpletusSans-Italic[wght].ttf",
+   "score": 0.02499568462371826,
+   "ink_fraction": 0.04648
+  },
+  {
+   "stem": "Rosario-Italic[wght]",
+   "path": "google-fonts/ofl/rosario/Rosario-Italic[wght].ttf",
+   "score": 0.02504795789718628,
+   "ink_fraction": 0.04309
+  },
+  {
+   "stem": "MerriweatherSans-Italic[wght]",
+   "path": "google-fonts/ofl/merriweathersans/MerriweatherSans-Italic[wght].ttf",
+   "score": 0.025747597217559814,
+   "ink_fraction": 0.0678
+  },
+  {
+   "stem": "RedditSans-Italic[wght]",
+   "path": "google-fonts/ofl/redditsans/RedditSans-Italic[wght].ttf",
+   "score": 0.025931179523468018,
+   "ink_fraction": 0.05145
+  },
+  {
+   "stem": "IosevkaCharonMono-Regular",
+   "path": "google-fonts/ofl/iosevkacharonmono/IosevkaCharonMono-Regular.ttf",
+   "score": 0.02610546350479126,
+   "ink_fraction": 0.09342
+  },
+  {
+   "stem": "FamiljenGrotesk-Italic[wght]",
+   "path": "google-fonts/ofl/familjengrotesk/FamiljenGrotesk-Italic[wght].ttf",
+   "score": 0.027415096759796143,
+   "ink_fraction": 0.05389
+  },
+  {
+   "stem": "HankenGrotesk-Italic[wght]",
+   "path": "google-fonts/ofl/hankengrotesk/HankenGrotesk-Italic[wght].ttf",
+   "score": 0.02786862850189209,
+   "ink_fraction": 0.04887
+  },
+  {
+   "stem": "InclusiveSans-Italic[wght]",
+   "path": "google-fonts/ofl/inclusivesans/InclusiveSans-Italic[wght].ttf",
+   "score": 0.027954697608947754,
+   "ink_fraction": 0.05078
+  },
+  {
+   "stem": "Geom-Italic[wght]",
+   "path": "google-fonts/ofl/geom/Geom-Italic[wght].ttf",
+   "score": 0.02844858169555664,
+   "ink_fraction": 0.0466
+  },
+  {
+   "stem": "Ysabeau-Italic[wght]",
+   "path": "google-fonts/ofl/ysabeau/Ysabeau-Italic[wght].ttf",
+   "score": 0.02876865863800049,
+   "ink_fraction": 0.05211
+  },
+  {
+   "stem": "YsabeauOffice-Italic[wght]",
+   "path": "google-fonts/ofl/ysabeauoffice/YsabeauOffice-Italic[wght].ttf",
+   "score": 0.02893465757369995,
+   "ink_fraction": 0.05321
+  },
+  {
+   "stem": "AlbertSans-Italic[wght]",
+   "path": "google-fonts/ofl/albertsans/AlbertSans-Italic[wght].ttf",
+   "score": 0.028940856456756592,
+   "ink_fraction": 0.04221
+  },
+  {
+   "stem": "YsabeauInfant-Italic[wght]",
+   "path": "google-fonts/ofl/ysabeauinfant/YsabeauInfant-Italic[wght].ttf",
+   "score": 0.028979182243347168,
+   "ink_fraction": 0.05307
+  },
+  {
+   "stem": "ArchivoNarrow-Italic[wght]",
+   "path": "google-fonts/ofl/archivonarrow/ArchivoNarrow-Italic[wght].ttf",
+   "score": 0.029008984565734863,
+   "ink_fraction": 0.06642
+  },
+  {
+   "stem": "Poppins-Regular",
+   "path": "google-fonts/ofl/poppins/Poppins-Regular.ttf",
+   "score": 0.029483556747436523,
+   "ink_fraction": 0.05464
+  },
+  {
+   "stem": "Kufam-Italic[wght]",
+   "path": "google-fonts/ofl/kufam/Kufam-Italic[wght].ttf",
+   "score": 0.029550671577453613,
+   "ink_fraction": 0.04328
+  },
+  {
+   "stem": "ReadexPro[HEXP,wght]",
+   "path": "google-fonts/ofl/readexpro/ReadexPro[HEXP,wght].ttf",
+   "score": 0.029613494873046875,
+   "ink_fraction": 0.0611
+  },
+  {
+   "stem": "RadioCanadaBig-Italic[wght]",
+   "path": "google-fonts/ofl/radiocanadabig/RadioCanadaBig-Italic[wght].ttf",
+   "score": 0.02982461452484131,
+   "ink_fraction": 0.06193
+  },
+  {
+   "stem": "NovaSlim",
+   "path": "google-fonts/ofl/novaslim/NovaSlim.ttf",
+   "score": 0.03020787239074707,
+   "ink_fraction": 0.0418
+  },
+  {
+   "stem": "SofiaSans-Italic[wght]",
+   "path": "google-fonts/ofl/sofiasans/SofiaSans-Italic[wght].ttf",
+   "score": 0.030264198780059814,
+   "ink_fraction": 0.04709
+  },
+  {
+   "stem": "RobotoCondensed-Italic[wght]",
+   "path": "google-fonts/ofl/robotocondensed/RobotoCondensed-Italic[wght].ttf",
+   "score": 0.030388593673706055,
+   "ink_fraction": 0.07332
+  },
+  {
+   "stem": "InstrumentSans-Italic[wdth,wght]",
+   "path": "google-fonts/ofl/instrumentsans/InstrumentSans-Italic[wdth,wght].ttf",
+   "score": 0.03041177988052368,
+   "ink_fraction": 0.03637
+  },
+  {
+   "stem": "Jost-Italic[wght]",
+   "path": "google-fonts/ofl/jost/Jost-Italic[wght].ttf",
+   "score": 0.031014561653137207,
+   "ink_fraction": 0.04116
+  },
+  {
+   "stem": "PlusJakartaSans-Italic[wght]",
+   "path": "google-fonts/ofl/plusjakartasans/PlusJakartaSans-Italic[wght].ttf",
+   "score": 0.031224846839904785,
+   "ink_fraction": 0.04613
+  },
+  {
+   "stem": "FunnelSans-Italic[wght]",
+   "path": "google-fonts/ofl/funnelsans/FunnelSans-Italic[wght].ttf",
+   "score": 0.03146493434906006,
+   "ink_fraction": 0.04563
+  },
+  {
+   "stem": "Literata-Italic[opsz,wght]",
+   "path": "google-fonts/ofl/literata/Literata-Italic[opsz,wght].ttf",
+   "score": 0.0319056510925293,
+   "ink_fraction": 0.04661
+  },
+  {
+   "stem": "NovaRound",
+   "path": "google-fonts/ofl/novaround/NovaRound.ttf",
+   "score": 0.03208649158477783,
+   "ink_fraction": 0.04835
+  },
+  {
+   "stem": "LexendDeca[wght]",
+   "path": "google-fonts/ofl/lexenddeca/LexendDeca[wght].ttf",
+   "score": 0.033693671226501465,
+   "ink_fraction": 0.06113
+  },
+  {
+   "stem": "Preahvihear-Regular",
+   "path": "google-fonts/ofl/preahvihear/Preahvihear-Regular.ttf",
+   "score": 0.033726513385772705,
+   "ink_fraction": 0.0741
+  },
+  {
+   "stem": "RedHatDisplay-Italic[wght]",
+   "path": "google-fonts/ofl/redhatdisplay/RedHatDisplay-Italic[wght].ttf",
+   "score": 0.034244537353515625,
+   "ink_fraction": 0.04932
+  },
+  {
+   "stem": "Urbanist-Italic[wght]",
+   "path": "google-fonts/ofl/urbanist/Urbanist-Italic[wght].ttf",
+   "score": 0.034319281578063965,
+   "ink_fraction": 0.05396
+  },
+  {
+   "stem": "LexendPeta[wght]",
+   "path": "google-fonts/ofl/lexendpeta/LexendPeta[wght].ttf",
+   "score": 0.034725964069366455,
+   "ink_fraction": 0.0477
+  },
+  {
+   "stem": "LexendTera[wght]",
+   "path": "google-fonts/ofl/lexendtera/LexendTera[wght].ttf",
+   "score": 0.03484046459197998,
+   "ink_fraction": 0.04824
+  },
+  {
+   "stem": "LexendMega[wght]",
+   "path": "google-fonts/ofl/lexendmega/LexendMega[wght].ttf",
+   "score": 0.03488624095916748,
+   "ink_fraction": 0.04975
+  },
+  {
+   "stem": "REM-Italic[wght]",
+   "path": "google-fonts/ofl/rem/REM-Italic[wght].ttf",
+   "score": 0.035085320472717285,
+   "ink_fraction": 0.05748
+  },
+  {
+   "stem": "Tienne-Regular",
+   "path": "google-fonts/ofl/tienne/Tienne-Regular.ttf",
+   "score": 0.035164713859558105,
+   "ink_fraction": 0.04015
+  },
+  {
+   "stem": "Exo2-Italic[wght]",
+   "path": "google-fonts/ofl/exo2/Exo2-Italic[wght].ttf",
+   "score": 0.03580421209335327,
+   "ink_fraction": 0.04819
+  },
+  {
+   "stem": "WixMadeforText-Regular",
+   "path": "google-fonts/ofl/wixmadefortext/WixMadeforText-Regular.ttf",
+   "score": 0.03591632843017578,
+   "ink_fraction": 0.04331
+  },
+  {
+   "stem": "LexendGiga[wght]",
+   "path": "google-fonts/ofl/lexendgiga/LexendGiga[wght].ttf",
+   "score": 0.0363919734954834,
+   "ink_fraction": 0.05025
+  },
+  {
+   "stem": "HostGrotesk-Italic[wght]",
+   "path": "google-fonts/ofl/hostgrotesk/HostGrotesk-Italic[wght].ttf",
+   "score": 0.03646969795227051,
+   "ink_fraction": 0.0397
+  },
+  {
+   "stem": "Huninn-Regular",
+   "path": "google-fonts/ofl/huninn/Huninn-Regular.ttf",
+   "score": 0.036542534828186035,
+   "ink_fraction": 0.05466
+  },
+  {
+   "stem": "VarelaRound-Regular",
+   "path": "google-fonts/ofl/varelaround/VarelaRound-Regular.ttf",
+   "score": 0.037814974784851074,
+   "ink_fraction": 0.05121
+  },
+  {
+   "stem": "Ruwudu-Regular",
+   "path": "google-fonts/ofl/ruwudu/Ruwudu-Regular.ttf",
+   "score": 0.037849247455596924,
+   "ink_fraction": 0.04214
+  },
+  {
+   "stem": "ShareTech-Regular",
+   "path": "google-fonts/ofl/sharetech/ShareTech-Regular.ttf",
+   "score": 0.03800398111343384,
+   "ink_fraction": 0.06255
+  }
+ ]
+}

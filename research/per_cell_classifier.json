@@ -1,0 +1,444 @@
+{
+ "n_fonts": 48,
+ "aggregate": {
+  "seed0": 0.6496,
+  "cell_medoid": 0.6547,
+  "cell_conf": 0.6394,
+  "cell_combo": 0.6507,
+  "oracle_cell": 0.7711
+ },
+ "per_font": [
+  {
+   "font": "AkayaTelivigala-Regular",
+   "n_seeds": 6,
+   "seed0": 0.6064,
+   "cell_medoid": 0.5957,
+   "cell_conf": 0.6277,
+   "cell_combo": 0.617,
+   "oracle_cell": 0.7447
+  },
+  {
+   "font": "AlikeAngular-Regular",
+   "n_seeds": 6,
+   "seed0": 0.4468,
+   "cell_medoid": 0.5319,
+   "cell_conf": 0.5,
+   "cell_combo": 0.5213,
+   "oracle_cell": 0.7021
+  },
+  {
+   "font": "AveriaLibre-Regular",
+   "n_seeds": 6,
+   "seed0": 0.5426,
+   "cell_medoid": 0.6489,
+   "cell_conf": 0.6596,
+   "cell_combo": 0.6383,
+   "oracle_cell": 0.6702
+  },
+  {
+   "font": "AveriaSansLibre-Regular",
+   "n_seeds": 6,
+   "seed0": 0.6277,
+   "cell_medoid": 0.7021,
+   "cell_conf": 0.6596,
+   "cell_combo": 0.7128,
+   "oracle_cell": 0.7979
+  },
+  {
+   "font": "AveriaSerifLibre-Regular",
+   "n_seeds": 6,
+   "seed0": 0.7447,
+   "cell_medoid": 0.7234,
+   "cell_conf": 0.766,
+   "cell_combo": 0.7128,
+   "oracle_cell": 0.8404
+  },
+  {
+   "font": "Dangrek-Regular",
+   "n_seeds": 6,
+   "seed0": 0.5532,
+   "cell_medoid": 0.5957,
+   "cell_conf": 0.5745,
+   "cell_combo": 0.617,
+   "oracle_cell": 0.7021
+  },
+  {
+   "font": "EncodeSansSemiExpanded-Regular",
+   "n_seeds": 6,
+   "seed0": 0.5532,
+   "cell_medoid": 0.6915,
+   "cell_conf": 0.6277,
+   "cell_combo": 0.6702,
+   "oracle_cell": 0.8298
+  },
+  {
+   "font": "FascinateInline-Regular",
+   "n_seeds": 6,
+   "seed0": 0.234,
+   "cell_medoid": 0.266,
+   "cell_conf": 0.2447,
+   "cell_combo": 0.266,
+   "oracle_cell": 0.3936
+  },
+  {
+   "font": "IBMPlexSansArabic-Regular",
+   "n_seeds": 6,
+   "seed0": 0.7872,
+   "cell_medoid": 0.7872,
+   "cell_conf": 0.7553,
+   "cell_combo": 0.7872,
+   "oracle_cell": 0.8511
+  },
+  {
+   "font": "IBMPlexSansThai-Regular",
+   "n_seeds": 6,
+   "seed0": 0.7872,
+   "cell_medoid": 0.7872,
+   "cell_conf": 0.7553,
+   "cell_combo": 0.7872,
+   "oracle_cell": 0.8511
+  },
+  {
+   "font": "IBMPlexSansThaiLooped-Regular",
+   "n_seeds": 6,
+   "seed0": 0.7872,
+   "cell_medoid": 0.7872,
+   "cell_conf": 0.7553,
+   "cell_combo": 0.7872,
+   "oracle_cell": 0.8511
+  },
+  {
+   "font": "IBMPlexSerif-Regular",
+   "n_seeds": 6,
+   "seed0": 0.6809,
+   "cell_medoid": 0.5957,
+   "cell_conf": 0.617,
+   "cell_combo": 0.6064,
+   "oracle_cell": 0.7872
+  },
+  {
+   "font": "InterTight[wght]",
+   "n_seeds": 6,
+   "seed0": 0.8404,
+   "cell_medoid": 0.7128,
+   "cell_conf": 0.7447,
+   "cell_combo": 0.7021,
+   "oracle_cell": 0.8404
+  },
+  {
+   "font": "JainiPurva-Regular",
+   "n_seeds": 6,
+   "seed0": 0.3511,
+   "cell_medoid": 0.3298,
+   "cell_conf": 0.3298,
+   "cell_combo": 0.3298,
+   "oracle_cell": 0.383
+  },
+  {
+   "font": "KaiseiOpti-Regular",
+   "n_seeds": 6,
+   "seed0": 0.6383,
+   "cell_medoid": 0.734,
+   "cell_conf": 0.6383,
+   "cell_combo": 0.6489,
+   "oracle_cell": 0.8191
+  },
+  {
+   "font": "Kavoon-Regular",
+   "n_seeds": 6,
+   "seed0": 0.4681,
+   "cell_medoid": 0.4255,
+   "cell_conf": 0.383,
+   "cell_combo": 0.4255,
+   "oracle_cell": 0.4574
+  },
+  {
+   "font": "KohSantepheap-Regular",
+   "n_seeds": 6,
+   "seed0": 0.7234,
+   "cell_medoid": 0.734,
+   "cell_conf": 0.6915,
+   "cell_combo": 0.7234,
+   "oracle_cell": 0.8511
+  },
+  {
+   "font": "KosugiMaru-Regular",
+   "n_seeds": 6,
+   "seed0": 0.7234,
+   "cell_medoid": 0.5319,
+   "cell_conf": 0.6064,
+   "cell_combo": 0.5957,
+   "oracle_cell": 0.6596
+  },
+  {
+   "font": "MirandaSans[wght]",
+   "n_seeds": 6,
+   "seed0": 0.8298,
+   "cell_medoid": 0.8298,
+   "cell_conf": 0.6915,
+   "cell_combo": 0.766,
+   "oracle_cell": 0.8617
+  },
+  {
+   "font": "MochiyPopPOne-Regular",
+   "n_seeds": 6,
+   "seed0": 0.5,
+   "cell_medoid": 0.5106,
+   "cell_conf": 0.5319,
+   "cell_combo": 0.5319,
+   "oracle_cell": 0.6596
+  },
+  {
+   "font": "MomoTrustSans[wght]",
+   "n_seeds": 6,
+   "seed0": 0.7128,
+   "cell_medoid": 0.7872,
+   "cell_conf": 0.766,
+   "cell_combo": 0.7766,
+   "oracle_cell": 0.9043
+  },
+  {
+   "font": "MuktaMahee-Regular",
+   "n_seeds": 6,
+   "seed0": 0.7128,
+   "cell_medoid": 0.734,
+   "cell_conf": 0.7021,
+   "cell_combo": 0.6915,
+   "oracle_cell": 0.8936
+  },
+  {
+   "font": "NovaSquare",
+   "n_seeds": 6,
+   "seed0": 0.4681,
+   "cell_medoid": 0.5213,
+   "cell_conf": 0.5319,
+   "cell_combo": 0.5532,
+   "oracle_cell": 0.6489
+  },
+  {
+   "font": "PlaywriteAUQLD[wght]",
+   "n_seeds": 6,
+   "seed0": 0.6809,
+   "cell_medoid": 0.7234,
+   "cell_conf": 0.6383,
+   "cell_combo": 0.7021,
+   "oracle_cell": 0.8404
+  },
+  {
+   "font": "PlaywriteAUSA[wght]",
+   "n_seeds": 6,
+   "seed0": 0.6915,
+   "cell_medoid": 0.7234,
+   "cell_conf": 0.6702,
+   "cell_combo": 0.6915,
+   "oracle_cell": 0.883
+  },
+  {
+   "font": "PlaywriteCO[wght]",
+   "n_seeds": 6,
+   "seed0": 0.6809,
+   "cell_medoid": 0.6702,
+   "cell_conf": 0.6702,
+   "cell_combo": 0.6809,
+   "oracle_cell": 0.7766
+  },
+  {
+   "font": "PlaywriteMXGuides-Regular",
+   "n_seeds": 6,
+   "seed0": 0.5213,
+   "cell_medoid": 0.5106,
+   "cell_conf": 0.4681,
+   "cell_combo": 0.5106,
+   "oracle_cell": 0.6383
+  },
+  {
+   "font": "PlaywriteUSTradGuides-Regular",
+   "n_seeds": 6,
+   "seed0": 0.4362,
+   "cell_medoid": 0.5,
+   "cell_conf": 0.5,
+   "cell_combo": 0.5106,
+   "oracle_cell": 0.5851
+  },
+  {
+   "font": "ProtestStrike-Regular",
+   "n_seeds": 6,
+   "seed0": 0.6064,
+   "cell_medoid": 0.6064,
+   "cell_conf": 0.5638,
+   "cell_combo": 0.5957,
+   "oracle_cell": 0.7447
+  },
+  {
+   "font": "ReemKufiFun[wght]",
+   "n_seeds": 6,
+   "seed0": 0.7766,
+   "cell_medoid": 0.7447,
+   "cell_conf": 0.7553,
+   "cell_combo": 0.734,
+   "oracle_cell": 0.8511
+  },
+  {
+   "font": "ReemKufiInk-Regular",
+   "n_seeds": 6,
+   "seed0": 0.7872,
+   "cell_medoid": 0.8085,
+   "cell_conf": 0.766,
+   "cell_combo": 0.7979,
+   "oracle_cell": 0.8511
+  },
+  {
+   "font": "RubikDistressed-Regular",
+   "n_seeds": 6,
+   "seed0": 0.2128,
+   "cell_medoid": 0.1596,
+   "cell_conf": 0.2553,
+   "cell_combo": 0.2234,
+   "oracle_cell": 0.3723
+  },
+  {
+   "font": "SchibstedGrotesk[wght]",
+   "n_seeds": 6,
+   "seed0": 0.7553,
+   "cell_medoid": 0.7234,
+   "cell_conf": 0.6915,
+   "cell_combo": 0.7128,
+   "oracle_cell": 0.8723
+  },
+  {
+   "font": "ShipporiAntiqueB1-Regular",
+   "n_seeds": 6,
+   "seed0": 0.8723,
+   "cell_medoid": 0.7447,
+   "cell_conf": 0.7979,
+   "cell_combo": 0.734,
+   "oracle_cell": 0.8936
+  },
+  {
+   "font": "StackSansText[wght]",
+   "n_seeds": 6,
+   "seed0": 0.6915,
+   "cell_medoid": 0.7128,
+   "cell_conf": 0.6277,
+   "cell_combo": 0.6809,
+   "oracle_cell": 0.7979
+  },
+  {
+   "font": "Suwannaphum-Regular",
+   "n_seeds": 6,
+   "seed0": 0.7766,
+   "cell_medoid": 0.7872,
+   "cell_conf": 0.7766,
+   "cell_combo": 0.7872,
+   "oracle_cell": 0.9149
+  },
+  {
+   "font": "Telex-Regular",
+   "n_seeds": 6,
+   "seed0": 0.6702,
+   "cell_medoid": 0.7447,
+   "cell_conf": 0.6702,
+   "cell_combo": 0.7128,
+   "oracle_cell": 0.8617
+  },
+  {
+   "font": "TiroGurmukhi-Regular",
+   "n_seeds": 6,
+   "seed0": 0.6915,
+   "cell_medoid": 0.7872,
+   "cell_conf": 0.766,
+   "cell_combo": 0.766,
+   "oracle_cell": 0.8936
+  },
+  {
+   "font": "TiroTamil-Regular",
+   "n_seeds": 6,
+   "seed0": 0.6915,
+   "cell_medoid": 0.7872,
+   "cell_conf": 0.766,
+   "cell_combo": 0.766,
+   "oracle_cell": 0.8936
+  },
+  {
+   "font": "TiroTelugu-Regular",
+   "n_seeds": 6,
+   "seed0": 0.6915,
+   "cell_medoid": 0.7872,
+   "cell_conf": 0.766,
+   "cell_combo": 0.766,
+   "oracle_cell": 0.8936
+  },
+  {
+   "font": "Tirra-Regular",
+   "n_seeds": 6,
+   "seed0": 0.734,
+   "cell_medoid": 0.7553,
+   "cell_conf": 0.734,
+   "cell_combo": 0.734,
+   "oracle_cell": 0.8404
+  },
+  {
+   "font": "UoqMunThenKhung-Regular",
+   "n_seeds": 6,
+   "seed0": 0.734,
+   "cell_medoid": 0.7766,
+   "cell_conf": 0.7979,
+   "cell_combo": 0.766,
+   "oracle_cell": 0.9255
+  },
+  {
+   "font": "Vazirmatn[wght]",
+   "n_seeds": 6,
+   "seed0": 0.7766,
+   "cell_medoid": 0.8191,
+   "cell_conf": 0.7872,
+   "cell_combo": 0.7872,
+   "oracle_cell": 0.8723
+  },
+  {
+   "font": "Volkhov-Regular",
+   "n_seeds": 6,
+   "seed0": 0.7553,
+   "cell_medoid": 0.7128,
+   "cell_conf": 0.7128,
+   "cell_combo": 0.7128,
+   "oracle_cell": 0.8936
+  },
+  {
+   "font": "WDXLLubrifontTC-Regular",
+   "n_seeds": 6,
+   "seed0": 0.5532,
+   "cell_medoid": 0.4255,
+   "cell_conf": 0.4681,
+   "cell_combo": 0.4894,
+   "oracle_cell": 0.6702
+  },
+  {
+   "font": "Wonky[wdth,wght]",
+   "n_seeds": 6,
+   "seed0": 0.734,
+   "cell_medoid": 0.7234,
+   "cell_conf": 0.7021,
+   "cell_combo": 0.7234,
+   "oracle_cell": 0.8404
+  },
+  {
+   "font": "ZCOOLQingKeHuangYou-Regular",
+   "n_seeds": 6,
+   "seed0": 0.5745,
+   "cell_medoid": 0.4574,
+   "cell_conf": 0.4894,
+   "cell_combo": 0.5213,
+   "oracle_cell": 0.6064
+  },
+  {
+   "font": "ZalandoSans[wdth,wght]",
+   "n_seeds": 6,
+   "seed0": 0.766,
+   "cell_medoid": 0.6702,
+   "cell_conf": 0.6915,
+   "cell_combo": 0.6596,
+   "oracle_cell": 0.7979
+  }
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "preregistered": true,
+ "dir": "<HOME>\\repos\\fonts\\eval_runs\\_candidate_refs\\klein-base-n4",
+ "collapse_below": 0.15,
+ "saturated_above": 0.85,
+ "within_mean": 1.3018334462455288,
+ "between_mean": 2.514042746038577,
+ "ratio": 0.5178247061617594,
+ "p": 0.0004997501249375312,
+ "verdict": "the picker has something to offer",
+ "frac_within_above_gate": 0.1527777777777778,
+ "unscoreable": [],
+ "per_style": {
+  "00-a_heavy_geometric_sans_serif": {
+   "n": 4,
+   "mean": 0.6789287380256134,
+   "min": 0.44329882527794984,
+   "max": 0.8315657975894893
+  },
+  "01-a_high-contrast_didone_with_": {
+   "n": 4,
+   "mean": 0.8435753198837591,
+   "min": 0.21578558559825717,
+   "max": 1.504549995544956
+  },
+  "02-a_chunky_slab_serif_with_blu": {
+   "n": 4,
+   "mean": 1.7640369069540751,
+   "min": 0.4394671097314962,
+   "max": 3.307062223754118
+  },
+  "03-a_humanist_sans_with_open_ap": {
+   "n": 4,
+   "mean": 1.033943835285222,
+   "min": 0.4678130052782884,
+   "max": 1.688931507714662
+  },
+  "04-a_condensed_grotesque": {
+   "n": 4,
+   "mean": 1.584461405779167,
+   "min": 0.47831721488167395,
+   "max": 2.879379868485394
+  },
+  "05-a_rounded_soft_sans_with_ful": {
+   "n": 4,
+   "mean": 0.9349888880923576,
+   "min": 0.3470349772194049,
+   "max": 1.6732295250555393
+  },
+  "06-a_wide_low-contrast_monospac": {
+   "n": 4,
+   "mean": 0.9155675880996342,
+   "min": 0.4579936077312086,
+   "max": 1.262777706153542
+  },
+  "07-an_ultra-light_hairline_sans": {
+   "n": 4,
+   "mean": 0.4540013728243064,
+   "min": 0.2102071480024912,
+   "max": 0.7775095235428184
+  },
+  "08-a_wedge-serif_face_with_flar": {
+   "n": 4,
+   "mean": 0.89721993000578,
+   "min": 0.24327501134337756,
+   "max": 1.4831130156655938
+  },
+  "09-a_stencil_sans_with_delibera": {
+   "n": 4,
+   "mean": 0.5718797121243251,
+   "min": 0.29509440014642646,
+   "max": 0.792320213545587
+  },
+  "10-an_inline_face_with_a_white_": {
+   "n": 4,
+   "mean": 3.959821190441444,
+   "min": 1.1693689280472594,
+   "max": 7.323946408691986
+  },
+  "11-a_heavy_angular_blackletter-": {
+   "n": 4,
+   "mean": 1.9835764674306613,
+   "min": 0.3138200131312819,
+   "max": 3.6685882945126327
+  }
+ }
+}

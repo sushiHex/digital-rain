@@ -1,0 +1,66 @@
+# GPU-free gate on every push to main and every pull request.
+#
+# The suite is designed to pass without a GPU, the font corpus, model weights,
+# potrace or a network: tests that need any of those skip. The two tests that
+# would download TrOCR and DINOv2 are held off with FONTGEN_NO_MODEL_DOWNLOADS
+# so a pull request does not pull a gigabyte of weights per run. Anything that
+# needs the 3090 -- training, the eval harness, the product loop -- is run and
+# reported by hand, with the number's own noise stated (CLAUDE.md).
+#
+# Two jobs, three required checks: `tests (3.12)`, `tests (3.14)`,
+# `public-audit`. Third-party actions are pinned to full commit SHAs.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.12", "3.14"]
+    env:
+      FONTGEN_NO_MODEL_DOWNLOADS: "1"
+      PYTHONUTF8: "1"
+    steps:
+      # v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      # v7.0.0
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - name: Install CPU torch first (the CUDA wheels are 2 GB and useless here)
+        run: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+      - name: Install the pipeline, the demo's UI library, and pytest
+        run: pip install -r requirements.txt gradio pytest
+      - name: Run the suite
+        run: python -m pytest -q -p no:cacheprovider
+
+  # The same gate the release runbook runs before any visibility change
+  # (docs/public-release.md): no home paths, pasted tool noise, machine names
+  # or key-shaped strings in any tracked file.
+  public-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      # v7.0.0
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12"
+      - name: Sanitizer gate on the tracked tree
+        run: python analysis/sanitize_for_publish.py --check

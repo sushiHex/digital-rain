@@ -1,0 +1,44 @@
+{
+ "fidelity": 0.6453900709219859,
+ "identity": 0.9629629629629629,
+ "scored": 135,
+ "abstained": 147,
+ "abstain_reasons": {
+  "reader misreads GT glyph (can't judge)": 36,
+  "thin-stroke (OCR-blind)": 30,
+  "symbol (needs GOT pass)": 81
+ },
+ "reclassified_correct_letter": 45,
+ "wrong_letter_target": [
+  {
+   "font": "AkayaTelivigala-Regular",
+   "char": "Y",
+   "decoded": "n",
+   "fidelity_match": 1
+  },
+  {
+   "font": "AkayaTelivigala-Regular",
+   "char": "e",
+   "decoded": "t",
+   "fidelity_match": 1
+  },
+  {
+   "font": "AkayaTelivigala-Regular",
+   "char": "6",
+   "decoded": "e",
+   "fidelity_match": 0
+  },
+  {
+   "font": "AlikeAngular-Regular",
+   "char": "W",
+   "decoded": "N",
+   "fidelity_match": 1
+  },
+  {
+   "font": "AlikeAngular-Regular",
+   "char": "h",
+   "decoded": "b",
+   "fidelity_match": 0
+  }
+ ]
+}

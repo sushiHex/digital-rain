@@ -1,0 +1,64 @@
+{
+  "run_a": "eval_runs/structured_prompt_5000/per_cell.json",
+  "run_b": "eval_runs/glyph_cc_2000_full/per_cell.json",
+  "label_a": "structured5000",
+  "label_b": "glyph_cc_2000",
+  "n_shared_fonts": 50,
+  "results": [
+    {
+      "metric": "composite",
+      "larger_better": true,
+      "median_a": 0.8390895885019067,
+      "median_b": 0.8485147938607854,
+      "median_delta": -0.004525239549656501,
+      "W": 563.0,
+      "p": 0.4720159918420278,
+      "effect_r": 0.10171063139310695,
+      "n_nonzero": 50
+    },
+    {
+      "metric": "char_acc",
+      "larger_better": true,
+      "median_a": 0.7287234042553192,
+      "median_b": 0.723404255319149,
+      "median_delta": -0.0425531914893617,
+      "W": 265.0,
+      "p": 0.000916071211688987,
+      "effect_r": 0.47849488972466075,
+      "n_nonzero": 48
+    },
+    {
+      "metric": "racc",
+      "larger_better": true,
+      "median_a": 0.803191489361702,
+      "median_b": 0.7925531914893618,
+      "median_delta": 0.0,
+      "W": 373.5,
+      "p": 0.3286564370004157,
+      "effect_r": 0.15072717040011377,
+      "n_nonzero": 42
+    },
+    {
+      "metric": "dinov2",
+      "larger_better": true,
+      "median_a": 0.8671907427463126,
+      "median_b": 0.8581127208915162,
+      "median_delta": -0.0053648774294143275,
+      "W": 433.0,
+      "p": 0.048360429741488346,
+      "effect_r": 0.27919227006564257,
+      "n_nonzero": 50
+    },
+    {
+      "metric": "lpips",
+      "larger_better": false,
+      "median_a": 0.132262714979972,
+      "median_b": 0.10911686445011738,
+      "median_delta": -0.003692903902698705,
+      "W": 595.0,
+      "p": 0.6815980234730303,
+      "effect_r": 0.058022843412175104,
+      "n_nonzero": 50
+    }
+  ]
+}

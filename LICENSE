@@ -1,0 +1,74 @@
+Copyright (c) 2026 sushiHex. All rights reserved.
+
+NO LICENSE IS GRANTED AT THIS TIME.
+
+This repository is published without a licence. Reading and forking it on
+GitHub is permitted by GitHub's Terms of Service; nothing else is. No
+permission is given to any person to use, copy, modify, merge, publish,
+distribute, sublicense, or sell this software or any part of it. All rights
+are retained by the copyright holder.
+
+CONTRIBUTIONS. A pull request is an offer of code to an unlicensed project.
+Until a licence is chosen, contributors are asked to confirm in the pull
+request that they hold the rights to what they submit and that the copyright
+holder may relicense it under whatever licence this repository adopts. This is
+recorded in .github/PULL_REQUEST_TEMPLATE.md.
+
+This file previously carried an MIT license. That was replaced on 2026-08-18
+because MIT permits anyone -- including a competitor -- to take this code and
+operate it as a commercial service, which is incompatible with the intended
+direction of this project. Removing it preserves every option: adding a
+permissive license later is easy, while withdrawing one already published is
+not.
+
+WHEN A LICENSE IS CHOSEN, two are designed for this exact situation and are
+worth reading before defaulting to MIT or Apache-2.0:
+
+  AGPL-3.0  Copyleft that extends to NETWORK use. A third party may run it,
+            but must publish their modified source. Closes the "operate it as
+            a closed SaaS" gap that MIT leaves wide open.
+
+  BSL 1.1   Business Source License. Source-available with a time delay:
+            restricted commercial use for a fixed term (commonly 3-4 years),
+            then converts automatically to an open license you nominate.
+
+A dual arrangement -- AGPL-3.0 for the public, a separate commercial license
+for paying customers -- is the usual pattern for an open-core product.
+
+This is not legal advice. Obtain counsel before publishing under any license,
+and before any commercial use.
+
+===============================================================================
+SCOPE AND DOWNSTREAM CONSTRAINTS — PLEASE READ
+===============================================================================
+
+Whatever license is eventually chosen for THE CODE, it cannot grant rights over
+the model weights, the training data, or the fonts this software generates.
+Three separate constraints apply downstream, and the decision above does not
+affect any of them:
+
+1. BASE MODEL — FLUX.2-klein-base-9B is distributed under the FLUX
+   Non-Commercial License. Commercial use of that model is NOT permitted.
+   The Apache-2.0 FLUX.2-klein-4B line is a permissive alternative but would
+   require retraining the adapter.
+   See research/2026-07-27-klein-licensing-and-4b-port.md
+
+2. TRAINING DATA — the corpus is ~87% SIL Open Font License fonts (NOT the
+   97.5% previously stated here; see research/2026-08-08-the-corpus-is-not-
+   97-percent-ofl.md). 49 files (~5%) carry vendor-supplied terms that permit
+   rendering content but not redistribution or conversion, and ~5% more has
+   provenance that could not be established. That is an unresolved
+   right-to-train question separate from, and not cured by, the OFL terms
+   below. SIL's
+   OFL FAQ 1.25 (Nov 2023) states that a font produced by a system whose
+   training data contains OFL sources "should be considered a derivative
+   work," and must itself be licensed under the OFL. Enforceability is
+   genuinely unsettled and no case law exists.
+   See research/2026-07-27-ofl-derivative-work-constraint.md
+
+3. GENERATED FONTS — per (2), fonts produced by this software should be
+   treated as OFL derivatives. OFL permits commercial use and modification,
+   but requires the OFL license accompany them and forbids selling the font
+   software on its own.
+
+None of the above is legal advice. Obtain counsel before any commercial use.

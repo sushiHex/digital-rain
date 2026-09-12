@@ -1,0 +1,354 @@
+{
+ "_comment": "Every claim on every metric, each against its OWN metric's training-run SD. sigma is 2 df with a ~12x CI: xSE ranks, it does not establish.",
+ "training_sd": {
+  "composite": 0.0035,
+  "char_acc": 0.0618,
+  "dinov2": 0.0228,
+  "racc": 0.008,
+  "lpips": 0.0027
+ },
+ "claims": [
+  {
+   "claim": "glyph vs baseline LoRA",
+   "arm_a": "structured_prompt_5000",
+   "arm_b": "prompt_trained_short",
+   "kind": "1v1",
+   "metrics": {
+    "composite": {
+     "delta": -0.0003,
+     "se": 0.0049,
+     "x_se": -0.05,
+     "n": 48
+    },
+    "char_acc": {
+     "delta": 0.0235,
+     "se": 0.0874,
+     "x_se": 0.27,
+     "n": 48
+    },
+    "dinov2": {
+     "delta": 0.0243,
+     "se": 0.0322,
+     "x_se": 0.75,
+     "n": 48
+    },
+    "racc": {
+     "delta": -0.0124,
+     "se": 0.0113,
+     "x_se": -1.1,
+     "n": 48
+    },
+    "lpips": {
+     "delta": 0.0009,
+     "se": 0.0038,
+     "x_se": 0.23,
+     "n": 48
+    }
+   }
+  },
+  {
+   "claim": "4B -> 9B",
+   "arm_a": "glyph_4b_r32_5000",
+   "arm_b": "glyph_r32_5000",
+   "kind": "1v1",
+   "metrics": {
+    "composite": {
+     "delta": -0.0025,
+     "se": 0.0049,
+     "x_se": -0.5,
+     "n": 48
+    },
+    "char_acc": {
+     "delta": 0.0368,
+     "se": 0.0874,
+     "x_se": 0.42,
+     "n": 48
+    },
+    "dinov2": {
+     "delta": 0.0192,
+     "se": 0.0322,
+     "x_se": 0.59,
+     "n": 48
+    },
+    "racc": {
+     "delta": 0.0082,
+     "se": 0.0113,
+     "x_se": 0.72,
+     "n": 48
+    },
+    "lpips": {
+     "delta": -0.0164,
+     "se": 0.0038,
+     "x_se": -4.31,
+     "n": 48
+    }
+   }
+  },
+  {
+   "claim": "rank 64",
+   "arm_a": "glyph_4b_r32_5000",
+   "arm_b": "glyph_4b_r64_5000",
+   "kind": "1v1",
+   "metrics": {
+    "composite": {
+     "delta": 0.0024,
+     "se": 0.0049,
+     "x_se": 0.48,
+     "n": 48
+    },
+    "char_acc": {
+     "delta": -0.0002,
+     "se": 0.0874,
+     "x_se": -0.0,
+     "n": 48
+    },
+    "dinov2": {
+     "delta": 0.0037,
+     "se": 0.0322,
+     "x_se": 0.11,
+     "n": 48
+    },
+    "racc": {
+     "delta": -0.0,
+     "se": 0.0113,
+     "x_se": -0.0,
+     "n": 48
+    },
+    "lpips": {
+     "delta": 0.0036,
+     "se": 0.0038,
+     "x_se": 0.95,
+     "n": 48
+    }
+   }
+  },
+  {
+   "claim": "oversampling",
+   "arm_a": "glyph_4b_r32_5000",
+   "arm_b": "glyph_4b_distinct_5000",
+   "kind": "1v1",
+   "metrics": {
+    "composite": {
+     "delta": -0.0033,
+     "se": 0.0049,
+     "x_se": -0.67,
+     "n": 48
+    },
+    "char_acc": {
+     "delta": -0.0095,
+     "se": 0.0874,
+     "x_se": -0.11,
+     "n": 48
+    },
+    "dinov2": {
+     "delta": -0.0109,
+     "se": 0.0322,
+     "x_se": -0.34,
+     "n": 48
+    },
+    "racc": {
+     "delta": -0.0089,
+     "se": 0.0113,
+     "x_se": -0.78,
+     "n": 48
+    },
+    "lpips": {
+     "delta": 0.0029,
+     "se": 0.0038,
+     "x_se": 0.75,
+     "n": 48
+    }
+   }
+  },
+  {
+   "claim": "rank64 + oversampling",
+   "arm_a": "glyph_4b_r32_5000",
+   "arm_b": "glyph_4b_r64_distinct_5000",
+   "kind": "1v1",
+   "metrics": {
+    "composite": {
+     "delta": -0.0389,
+     "se": 0.0049,
+     "x_se": -7.85,
+     "n": 48
+    },
+    "char_acc": {
+     "delta": -0.0443,
+     "se": 0.0874,
+     "x_se": -0.51,
+     "n": 48
+    },
+    "dinov2": {
+     "delta": -0.034,
+     "se": 0.0322,
+     "x_se": -1.06,
+     "n": 48
+    },
+    "racc": {
+     "delta": -0.0226,
+     "se": 0.0113,
+     "x_se": -2.0,
+     "n": 48
+    },
+    "lpips": {
+     "delta": -0.0517,
+     "se": 0.0038,
+     "x_se": -13.54,
+     "n": 48
+    }
+   }
+  },
+  {
+   "claim": "corpus expansion v3",
+   "arm_a": "glyph_4b_r32_5000",
+   "arm_b": "glyph_4b_v3_5000",
+   "kind": "1v1",
+   "metrics": {
+    "composite": {
+     "delta": 0.0011,
+     "se": 0.0049,
+     "x_se": 0.23,
+     "n": 48
+    },
+    "char_acc": {
+     "delta": -0.0419,
+     "se": 0.0874,
+     "x_se": -0.48,
+     "n": 48
+    },
+    "dinov2": {
+     "delta": -0.0213,
+     "se": 0.0322,
+     "x_se": -0.66,
+     "n": 48
+    },
+    "racc": {
+     "delta": 0.006,
+     "se": 0.0113,
+     "x_se": 0.53,
+     "n": 48
+    },
+    "lpips": {
+     "delta": 0.0045,
+     "se": 0.0038,
+     "x_se": 1.17,
+     "n": 48
+    }
+   }
+  },
+  {
+   "claim": "LR-horizon fix",
+   "arm_a": "glyph_4b_r32_5000",
+   "arm_b": "glyph_4b_r32_5000_lrfix",
+   "kind": "1v1",
+   "metrics": {
+    "composite": {
+     "delta": -0.008,
+     "se": 0.0049,
+     "x_se": -1.62,
+     "n": 48
+    },
+    "char_acc": {
+     "delta": -0.0293,
+     "se": 0.0874,
+     "x_se": -0.33,
+     "n": 48
+    },
+    "dinov2": {
+     "delta": -0.0087,
+     "se": 0.0322,
+     "x_se": -0.27,
+     "n": 48
+    },
+    "racc": {
+     "delta": -0.0082,
+     "se": 0.0113,
+     "x_se": -0.72,
+     "n": 48
+    },
+    "lpips": {
+     "delta": -0.0077,
+     "se": 0.0038,
+     "x_se": -2.01,
+     "n": 48
+    }
+   }
+  },
+  {
+   "claim": "licence filter (838)",
+   "arm_a": "lrfix_ckpt4500",
+   "arm_b": "CLEAN3",
+   "kind": "3v1",
+   "metrics": {
+    "composite": {
+     "delta": -0.0088,
+     "se": 0.004,
+     "x_se": -2.17,
+     "n": 48
+    },
+    "char_acc": {
+     "delta": -0.0723,
+     "se": 0.0714,
+     "x_se": -1.01,
+     "n": 48
+    },
+    "dinov2": {
+     "delta": -0.0396,
+     "se": 0.0263,
+     "x_se": -1.5,
+     "n": 48
+    },
+    "racc": {
+     "delta": -0.0092,
+     "se": 0.0092,
+     "x_se": -1.0,
+     "n": 48
+    },
+    "lpips": {
+     "delta": 0.0008,
+     "se": 0.0031,
+     "x_se": 0.26,
+     "n": 48
+    }
+   }
+  },
+  {
+   "claim": "non-oracle ref (photo)",
+   "arm_a": "glyph_4b_r32_5000_lrfix",
+   "arm_b": "nonoracle_photo",
+   "kind": "same-ckpt",
+   "metrics": {
+    "composite": {
+     "delta": -0.0019,
+     "se": 0.0049,
+     "x_se": -0.38,
+     "n": 48
+    },
+    "char_acc": {
+     "delta": -0.0264,
+     "se": 0.0874,
+     "x_se": -0.3,
+     "n": 48
+    },
+    "dinov2": {
+     "delta": -0.002,
+     "se": 0.0322,
+     "x_se": -0.06,
+     "n": 48
+    },
+    "racc": {
+     "delta": -0.0024,
+     "se": 0.0113,
+     "x_se": -0.22,
+     "n": 48
+    },
+    "lpips": {
+     "delta": -0.0015,
+     "se": 0.0038,
+     "x_se": -0.4,
+     "n": 48
+    }
+   }
+  }
+ ]
+}

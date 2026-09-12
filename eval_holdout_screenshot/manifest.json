@@ -1,0 +1,312 @@
+{
+  "source_font_dir": "google-fonts",
+  "excluded_dataset": "dataset_Kg",
+  "count": 50,
+  "count_requested": 50,
+  "reference_chars": "Kg",
+  "canvas": 1280,
+  "seed": 42,
+  "fonts": [
+    {
+      "name": "AkayaTelivigala-Regular",
+      "font_file": "AkayaTelivigala-Regular.ttf",
+      "atlas": "atlases/AkayaTelivigala-Regular.png",
+      "reference": "references/AkayaTelivigala-Regular.png"
+    },
+    {
+      "name": "AlikeAngular-Regular",
+      "font_file": "AlikeAngular-Regular.ttf",
+      "atlas": "atlases/AlikeAngular-Regular.png",
+      "reference": "references/AlikeAngular-Regular.png"
+    },
+    {
+      "name": "AveriaLibre-Regular",
+      "font_file": "AveriaLibre-Regular.ttf",
+      "atlas": "atlases/AveriaLibre-Regular.png",
+      "reference": "references/AveriaLibre-Regular.png"
+    },
+    {
+      "name": "AveriaSansLibre-Regular",
+      "font_file": "AveriaSansLibre-Regular.ttf",
+      "atlas": "atlases/AveriaSansLibre-Regular.png",
+      "reference": "references/AveriaSansLibre-Regular.png"
+    },
+    {
+      "name": "AveriaSerifLibre-Regular",
+      "font_file": "AveriaSerifLibre-Regular.ttf",
+      "atlas": "atlases/AveriaSerifLibre-Regular.png",
+      "reference": "references/AveriaSerifLibre-Regular.png"
+    },
+    {
+      "name": "BitcountGridDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+      "font_file": "BitcountGridDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght].ttf",
+      "atlas": "atlases/BitcountGridDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght].png",
+      "reference": "references/BitcountGridDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght].png"
+    },
+    {
+      "name": "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+      "font_file": "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght].ttf",
+      "atlas": "atlases/BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght].png",
+      "reference": "references/BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght].png"
+    },
+    {
+      "name": "Dangrek-Regular",
+      "font_file": "Dangrek-Regular.ttf",
+      "atlas": "atlases/Dangrek-Regular.png",
+      "reference": "references/Dangrek-Regular.png"
+    },
+    {
+      "name": "EncodeSansSemiExpanded-Regular",
+      "font_file": "EncodeSansSemiExpanded-Regular.ttf",
+      "atlas": "atlases/EncodeSansSemiExpanded-Regular.png",
+      "reference": "references/EncodeSansSemiExpanded-Regular.png"
+    },
+    {
+      "name": "FascinateInline-Regular",
+      "font_file": "FascinateInline-Regular.ttf",
+      "atlas": "atlases/FascinateInline-Regular.png",
+      "reference": "references/FascinateInline-Regular.png"
+    },
+    {
+      "name": "IBMPlexSansArabic-Regular",
+      "font_file": "IBMPlexSansArabic-Regular.ttf",
+      "atlas": "atlases/IBMPlexSansArabic-Regular.png",
+      "reference": "references/IBMPlexSansArabic-Regular.png"
+    },
+    {
+      "name": "IBMPlexSansThai-Regular",
+      "font_file": "IBMPlexSansThai-Regular.ttf",
+      "atlas": "atlases/IBMPlexSansThai-Regular.png",
+      "reference": "references/IBMPlexSansThai-Regular.png"
+    },
+    {
+      "name": "IBMPlexSansThaiLooped-Regular",
+      "font_file": "IBMPlexSansThaiLooped-Regular.ttf",
+      "atlas": "atlases/IBMPlexSansThaiLooped-Regular.png",
+      "reference": "references/IBMPlexSansThaiLooped-Regular.png"
+    },
+    {
+      "name": "IBMPlexSerif-Regular",
+      "font_file": "IBMPlexSerif-Regular.ttf",
+      "atlas": "atlases/IBMPlexSerif-Regular.png",
+      "reference": "references/IBMPlexSerif-Regular.png"
+    },
+    {
+      "name": "InterTight[wght]",
+      "font_file": "InterTight[wght].ttf",
+      "atlas": "atlases/InterTight[wght].png",
+      "reference": "references/InterTight[wght].png"
+    },
+    {
+      "name": "JainiPurva-Regular",
+      "font_file": "JainiPurva-Regular.ttf",
+      "atlas": "atlases/JainiPurva-Regular.png",
+      "reference": "references/JainiPurva-Regular.png"
+    },
+    {
+      "name": "KaiseiOpti-Regular",
+      "font_file": "KaiseiOpti-Regular.ttf",
+      "atlas": "atlases/KaiseiOpti-Regular.png",
+      "reference": "references/KaiseiOpti-Regular.png"
+    },
+    {
+      "name": "Kavoon-Regular",
+      "font_file": "Kavoon-Regular.ttf",
+      "atlas": "atlases/Kavoon-Regular.png",
+      "reference": "references/Kavoon-Regular.png"
+    },
+    {
+      "name": "KohSantepheap-Regular",
+      "font_file": "KohSantepheap-Regular.ttf",
+      "atlas": "atlases/KohSantepheap-Regular.png",
+      "reference": "references/KohSantepheap-Regular.png"
+    },
+    {
+      "name": "KosugiMaru-Regular",
+      "font_file": "KosugiMaru-Regular.ttf",
+      "atlas": "atlases/KosugiMaru-Regular.png",
+      "reference": "references/KosugiMaru-Regular.png"
+    },
+    {
+      "name": "MirandaSans[wght]",
+      "font_file": "MirandaSans[wght].ttf",
+      "atlas": "atlases/MirandaSans[wght].png",
+      "reference": "references/MirandaSans[wght].png"
+    },
+    {
+      "name": "MochiyPopPOne-Regular",
+      "font_file": "MochiyPopPOne-Regular.ttf",
+      "atlas": "atlases/MochiyPopPOne-Regular.png",
+      "reference": "references/MochiyPopPOne-Regular.png"
+    },
+    {
+      "name": "MomoTrustSans[wght]",
+      "font_file": "MomoTrustSans[wght].ttf",
+      "atlas": "atlases/MomoTrustSans[wght].png",
+      "reference": "references/MomoTrustSans[wght].png"
+    },
+    {
+      "name": "MuktaMahee-Regular",
+      "font_file": "MuktaMahee-Regular.ttf",
+      "atlas": "atlases/MuktaMahee-Regular.png",
+      "reference": "references/MuktaMahee-Regular.png"
+    },
+    {
+      "name": "NovaSquare",
+      "font_file": "NovaSquare.ttf",
+      "atlas": "atlases/NovaSquare.png",
+      "reference": "references/NovaSquare.png"
+    },
+    {
+      "name": "PlaywriteAUQLD[wght]",
+      "font_file": "PlaywriteAUQLD[wght].ttf",
+      "atlas": "atlases/PlaywriteAUQLD[wght].png",
+      "reference": "references/PlaywriteAUQLD[wght].png"
+    },
+    {
+      "name": "PlaywriteAUSA[wght]",
+      "font_file": "PlaywriteAUSA[wght].ttf",
+      "atlas": "atlases/PlaywriteAUSA[wght].png",
+      "reference": "references/PlaywriteAUSA[wght].png"
+    },
+    {
+      "name": "PlaywriteCO[wght]",
+      "font_file": "PlaywriteCO[wght].ttf",
+      "atlas": "atlases/PlaywriteCO[wght].png",
+      "reference": "references/PlaywriteCO[wght].png"
+    },
+    {
+      "name": "PlaywriteMXGuides-Regular",
+      "font_file": "PlaywriteMXGuides-Regular.ttf",
+      "atlas": "atlases/PlaywriteMXGuides-Regular.png",
+      "reference": "references/PlaywriteMXGuides-Regular.png"
+    },
+    {
+      "name": "PlaywriteUSTradGuides-Regular",
+      "font_file": "PlaywriteUSTradGuides-Regular.ttf",
+      "atlas": "atlases/PlaywriteUSTradGuides-Regular.png",
+      "reference": "references/PlaywriteUSTradGuides-Regular.png"
+    },
+    {
+      "name": "ProtestStrike-Regular",
+      "font_file": "ProtestStrike-Regular.ttf",
+      "atlas": "atlases/ProtestStrike-Regular.png",
+      "reference": "references/ProtestStrike-Regular.png"
+    },
+    {
+      "name": "ReemKufiFun[wght]",
+      "font_file": "ReemKufiFun[wght].ttf",
+      "atlas": "atlases/ReemKufiFun[wght].png",
+      "reference": "references/ReemKufiFun[wght].png"
+    },
+    {
+      "name": "ReemKufiInk-Regular",
+      "font_file": "ReemKufiInk-Regular.ttf",
+      "atlas": "atlases/ReemKufiInk-Regular.png",
+      "reference": "references/ReemKufiInk-Regular.png"
+    },
+    {
+      "name": "RubikDistressed-Regular",
+      "font_file": "RubikDistressed-Regular.ttf",
+      "atlas": "atlases/RubikDistressed-Regular.png",
+      "reference": "references/RubikDistressed-Regular.png"
+    },
+    {
+      "name": "SchibstedGrotesk[wght]",
+      "font_file": "SchibstedGrotesk[wght].ttf",
+      "atlas": "atlases/SchibstedGrotesk[wght].png",
+      "reference": "references/SchibstedGrotesk[wght].png"
+    },
+    {
+      "name": "ShipporiAntiqueB1-Regular",
+      "font_file": "ShipporiAntiqueB1-Regular.ttf",
+      "atlas": "atlases/ShipporiAntiqueB1-Regular.png",
+      "reference": "references/ShipporiAntiqueB1-Regular.png"
+    },
+    {
+      "name": "StackSansText[wght]",
+      "font_file": "StackSansText[wght].ttf",
+      "atlas": "atlases/StackSansText[wght].png",
+      "reference": "references/StackSansText[wght].png"
+    },
+    {
+      "name": "Suwannaphum-Regular",
+      "font_file": "Suwannaphum-Regular.ttf",
+      "atlas": "atlases/Suwannaphum-Regular.png",
+      "reference": "references/Suwannaphum-Regular.png"
+    },
+    {
+      "name": "Telex-Regular",
+      "font_file": "Telex-Regular.ttf",
+      "atlas": "atlases/Telex-Regular.png",
+      "reference": "references/Telex-Regular.png"
+    },
+    {
+      "name": "TiroGurmukhi-Regular",
+      "font_file": "TiroGurmukhi-Regular.ttf",
+      "atlas": "atlases/TiroGurmukhi-Regular.png",
+      "reference": "references/TiroGurmukhi-Regular.png"
+    },
+    {
+      "name": "TiroTamil-Regular",
+      "font_file": "TiroTamil-Regular.ttf",
+      "atlas": "atlases/TiroTamil-Regular.png",
+      "reference": "references/TiroTamil-Regular.png"
+    },
+    {
+      "name": "TiroTelugu-Regular",
+      "font_file": "TiroTelugu-Regular.ttf",
+      "atlas": "atlases/TiroTelugu-Regular.png",
+      "reference": "references/TiroTelugu-Regular.png"
+    },
+    {
+      "name": "Tirra-Regular",
+      "font_file": "Tirra-Regular.ttf",
+      "atlas": "atlases/Tirra-Regular.png",
+      "reference": "references/Tirra-Regular.png"
+    },
+    {
+      "name": "UoqMunThenKhung-Regular",
+      "font_file": "UoqMunThenKhung-Regular.ttf",
+      "atlas": "atlases/UoqMunThenKhung-Regular.png",
+      "reference": "references/UoqMunThenKhung-Regular.png"
+    },
+    {
+      "name": "Vazirmatn[wght]",
+      "font_file": "Vazirmatn[wght].ttf",
+      "atlas": "atlases/Vazirmatn[wght].png",
+      "reference": "references/Vazirmatn[wght].png"
+    },
+    {
+      "name": "Volkhov-Regular",
+      "font_file": "Volkhov-Regular.ttf",
+      "atlas": "atlases/Volkhov-Regular.png",
+      "reference": "references/Volkhov-Regular.png"
+    },
+    {
+      "name": "WDXLLubrifontTC-Regular",
+      "font_file": "WDXLLubrifontTC-Regular.ttf",
+      "atlas": "atlases/WDXLLubrifontTC-Regular.png",
+      "reference": "references/WDXLLubrifontTC-Regular.png"
+    },
+    {
+      "name": "Wonky[wdth,wght]",
+      "font_file": "Wonky[wdth,wght].ttf",
+      "atlas": "atlases/Wonky[wdth,wght].png",
+      "reference": "references/Wonky[wdth,wght].png"
+    },
+    {
+      "name": "ZCOOLQingKeHuangYou-Regular",
+      "font_file": "ZCOOLQingKeHuangYou-Regular.ttf",
+      "atlas": "atlases/ZCOOLQingKeHuangYou-Regular.png",
+      "reference": "references/ZCOOLQingKeHuangYou-Regular.png"
+    },
+    {
+      "name": "ZalandoSans[wdth,wght]",
+      "font_file": "ZalandoSans[wdth,wght].ttf",
+      "atlas": "atlases/ZalandoSans[wdth,wght].png",
+      "reference": "references/ZalandoSans[wdth,wght].png"
+    }
+  ],
+  "failed": []
+}

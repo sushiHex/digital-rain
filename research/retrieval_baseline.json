@@ -1,0 +1,369 @@
+{
+ "_comment": "Nearest-training-font retrieval, scored as if it were a generation. A measuring stick, NOT a shippable approach.",
+ "leak_guarded": true,
+ "n_leaked_holdout_fonts": 8,
+ "leaked_fonts": [
+  "AkayaTelivigala-Regular",
+  "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+  "JainiPurva-Regular",
+  "KaiseiOpti-Regular",
+  "MochiyPopPOne-Regular",
+  "ReemKufiFun[wght]",
+  "Tirra-Regular",
+  "WDXLLubrifontTC-Regular"
+ ],
+ "char_acc": 0.7768,
+ "dinov2": 0.9389,
+ "per_font": [
+  {
+   "font": "AkayaTelivigala-Regular",
+   "retrieved": "GochiHand-Regular",
+   "leaked_twin": true,
+   "char_acc": 0.4574,
+   "dinov2": 0.8677
+  },
+  {
+   "font": "AlikeAngular-Regular",
+   "retrieved": "Underdog-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.5426,
+   "dinov2": 0.8445
+  },
+  {
+   "font": "AveriaLibre-Regular",
+   "retrieved": "AveriaGruesaLibre-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.9787,
+   "dinov2": 0.9841
+  },
+  {
+   "font": "AveriaSansLibre-Regular",
+   "retrieved": "AveriaGruesaLibre-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.8617,
+   "dinov2": 0.947
+  },
+  {
+   "font": "AveriaSerifLibre-Regular",
+   "retrieved": "Sura-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.6064,
+   "dinov2": 0.8927
+  },
+  {
+   "font": "BitcountGridDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "retrieved": "Bitcount[CRSV,ELSH,ELXP,slnt,wght]",
+   "leaked_twin": false,
+   "char_acc": 0.9787,
+   "dinov2": 0.9993
+  },
+  {
+   "font": "BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght]",
+   "retrieved": "Bitcount[CRSV,ELSH,ELXP,slnt,wght]",
+   "leaked_twin": true,
+   "char_acc": 0.3617,
+   "dinov2": 0.9326
+  },
+  {
+   "font": "Dangrek-Regular",
+   "retrieved": "ConcertOne-Regular",
+   "leaked_twin": false,
+   "char_acc": 1.0,
+   "dinov2": 0.9987
+  },
+  {
+   "font": "EncodeSansSemiExpanded-Regular",
+   "retrieved": "EncodeSansExpanded-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.9894,
+   "dinov2": 0.9906
+  },
+  {
+   "font": "FascinateInline-Regular",
+   "retrieved": "Fascinate-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.9255,
+   "dinov2": 0.9569
+  },
+  {
+   "font": "IBMPlexSansArabic-Regular",
+   "retrieved": "Work_Sans",
+   "leaked_twin": false,
+   "char_acc": 0.8723,
+   "dinov2": 0.9601
+  },
+  {
+   "font": "IBMPlexSansThai-Regular",
+   "retrieved": "Work_Sans",
+   "leaked_twin": false,
+   "char_acc": 0.8723,
+   "dinov2": 0.9601
+  },
+  {
+   "font": "IBMPlexSansThaiLooped-Regular",
+   "retrieved": "Work_Sans",
+   "leaked_twin": false,
+   "char_acc": 0.8723,
+   "dinov2": 0.9601
+  },
+  {
+   "font": "IBMPlexSerif-Regular",
+   "retrieved": "Brygada1918[wght]",
+   "leaked_twin": false,
+   "char_acc": 0.7553,
+   "dinov2": 0.9372
+  },
+  {
+   "font": "InterTight[wght]",
+   "retrieved": "Inter-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.9894,
+   "dinov2": 0.9909
+  },
+  {
+   "font": "JainiPurva-Regular",
+   "retrieved": "GermaniaOne-Regular",
+   "leaked_twin": true,
+   "char_acc": 0.4043,
+   "dinov2": 0.8345
+  },
+  {
+   "font": "KaiseiOpti-Regular",
+   "retrieved": "pala",
+   "leaked_twin": true,
+   "char_acc": 0.9149,
+   "dinov2": 0.9426
+  },
+  {
+   "font": "Kavoon-Regular",
+   "retrieved": "ChelaOne-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.3298,
+   "dinov2": 0.8506
+  },
+  {
+   "font": "KohSantepheap-Regular",
+   "retrieved": "Poly-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.8936,
+   "dinov2": 0.9443
+  },
+  {
+   "font": "KosugiMaru-Regular",
+   "retrieved": "Cagliostro-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.4149,
+   "dinov2": 0.839
+  },
+  {
+   "font": "MirandaSans[wght]",
+   "retrieved": "Inter-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.9574,
+   "dinov2": 0.9753
+  },
+  {
+   "font": "MochiyPopPOne-Regular",
+   "retrieved": "BraahOne-Regular",
+   "leaked_twin": true,
+   "char_acc": 0.3723,
+   "dinov2": 0.8768
+  },
+  {
+   "font": "MomoTrustSans[wght]",
+   "retrieved": "Moderustic[wght]",
+   "leaked_twin": false,
+   "char_acc": 0.883,
+   "dinov2": 0.9462
+  },
+  {
+   "font": "MuktaMahee-Regular",
+   "retrieved": "MuktaMalar-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.9681,
+   "dinov2": 0.9921
+  },
+  {
+   "font": "NovaSquare",
+   "retrieved": "NovaFlat",
+   "leaked_twin": false,
+   "char_acc": 0.9468,
+   "dinov2": 0.9805
+  },
+  {
+   "font": "PlaywriteAUQLD[wght]",
+   "retrieved": "PlaywriteAUNSW[wght]",
+   "leaked_twin": false,
+   "char_acc": 0.9468,
+   "dinov2": 0.9882
+  },
+  {
+   "font": "PlaywriteAUSA[wght]",
+   "retrieved": "PlaywriteAUNSW[wght]",
+   "leaked_twin": false,
+   "char_acc": 0.9468,
+   "dinov2": 0.9904
+  },
+  {
+   "font": "PlaywriteCO[wght]",
+   "retrieved": "PlaywriteIN[wght]",
+   "leaked_twin": false,
+   "char_acc": 0.8298,
+   "dinov2": 0.9727
+  },
+  {
+   "font": "PlaywriteMXGuides-Regular",
+   "retrieved": "PlaywriteZAGuides-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.8191,
+   "dinov2": 0.9725
+  },
+  {
+   "font": "PlaywriteUSTradGuides-Regular",
+   "retrieved": "PlaywriteCOGuides-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.9362,
+   "dinov2": 0.9873
+  },
+  {
+   "font": "ProtestStrike-Regular",
+   "retrieved": "tahomabd",
+   "leaked_twin": false,
+   "char_acc": 0.5,
+   "dinov2": 0.9225
+  },
+  {
+   "font": "ReemKufiFun[wght]",
+   "retrieved": "Outfit",
+   "leaked_twin": true,
+   "char_acc": 0.7979,
+   "dinov2": 0.9562
+  },
+  {
+   "font": "ReemKufiInk-Regular",
+   "retrieved": "Outfit",
+   "leaked_twin": false,
+   "char_acc": 0.7979,
+   "dinov2": 0.9563
+  },
+  {
+   "font": "RubikDistressed-Regular",
+   "retrieved": "RubikMaps-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.3191,
+   "dinov2": 0.6916
+  },
+  {
+   "font": "SchibstedGrotesk[wght]",
+   "retrieved": "SpecialGothic[wdth,wght]",
+   "leaked_twin": false,
+   "char_acc": 0.8298,
+   "dinov2": 0.9523
+  },
+  {
+   "font": "ShipporiAntiqueB1-Regular",
+   "retrieved": "LatoWeb-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.8511,
+   "dinov2": 0.9312
+  },
+  {
+   "font": "StackSansText[wght]",
+   "retrieved": "General_Sans",
+   "leaked_twin": false,
+   "char_acc": 0.7766,
+   "dinov2": 0.9396
+  },
+  {
+   "font": "Suwannaphum-Regular",
+   "retrieved": "RobotoSerif[GRAD,opsz,wdth,wght]",
+   "leaked_twin": false,
+   "char_acc": 0.7553,
+   "dinov2": 0.935
+  },
+  {
+   "font": "Telex-Regular",
+   "retrieved": "AtkinsonHyperlegible-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.7553,
+   "dinov2": 0.9378
+  },
+  {
+   "font": "TiroGurmukhi-Regular",
+   "retrieved": "Castoro-Regular",
+   "leaked_twin": false,
+   "char_acc": 1.0,
+   "dinov2": 1.0
+  },
+  {
+   "font": "TiroTamil-Regular",
+   "retrieved": "Castoro-Regular",
+   "leaked_twin": false,
+   "char_acc": 1.0,
+   "dinov2": 1.0
+  },
+  {
+   "font": "TiroTelugu-Regular",
+   "retrieved": "Castoro-Regular",
+   "leaked_twin": false,
+   "char_acc": 1.0,
+   "dinov2": 1.0
+  },
+  {
+   "font": "Tirra-Regular",
+   "retrieved": "SpecialGothic[wdth,wght]",
+   "leaked_twin": true,
+   "char_acc": 0.7234,
+   "dinov2": 0.9376
+  },
+  {
+   "font": "UoqMunThenKhung-Regular",
+   "retrieved": "Jomolhari-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.883,
+   "dinov2": 0.9507
+  },
+  {
+   "font": "Vazirmatn[wght]",
+   "retrieved": "Heebo[wght]",
+   "leaked_twin": false,
+   "char_acc": 0.9894,
+   "dinov2": 0.993
+  },
+  {
+   "font": "Volkhov-Regular",
+   "retrieved": "Brawler-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.9255,
+   "dinov2": 0.9551
+  },
+  {
+   "font": "WDXLLubrifontTC-Regular",
+   "retrieved": "Gugi-Regular",
+   "leaked_twin": true,
+   "char_acc": 0.3085,
+   "dinov2": 0.8301
+  },
+  {
+   "font": "Wonky[wdth,wght]",
+   "retrieved": "Akatab-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.9149,
+   "dinov2": 0.9595
+  },
+  {
+   "font": "ZCOOLQingKeHuangYou-Regular",
+   "retrieved": "Gugi-Regular",
+   "leaked_twin": false,
+   "char_acc": 0.2979,
+   "dinov2": 0.8344
+  },
+  {
+   "font": "ZalandoSans[wdth,wght]",
+   "retrieved": "InstrumentSans[wdth,wght]",
+   "leaked_twin": false,
+   "char_acc": 0.7872,
+   "dinov2": 0.9443
+  }
+ ]
+}

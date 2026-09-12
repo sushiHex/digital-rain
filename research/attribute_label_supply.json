@@ -1,0 +1,94 @@
+{
+ "min_families": 40,
+ "files": 11383,
+ "families": 2223,
+ "unreadable": [],
+ "attributes": {
+  "weight": {
+   "source": "OS/2.usWeightClass",
+   "files": 7851,
+   "families": 679,
+   "negative_files": 3532,
+   "negative_families": 2010,
+   "trainable": true
+  },
+  "width": {
+   "source": "OS/2.usWidthClass",
+   "files": 4556,
+   "families": 59,
+   "negative_files": 6827,
+   "negative_families": 2187,
+   "trainable": true
+  },
+  "slant": {
+   "source": "post.italicAngle",
+   "files": 2051,
+   "families": 389,
+   "negative_files": 9332,
+   "negative_families": 2210,
+   "trainable": true
+  },
+  "serif vs sans": {
+   "source": "PANOSE.bSerifStyle (bFamilyType==2 only)",
+   "files": 1703,
+   "families": 121,
+   "negative_files": 4511,
+   "negative_families": 327,
+   "trainable": true
+  },
+  "stencil": {
+   "source": "family name",
+   "files": 12,
+   "families": 10,
+   "trainable": false
+  },
+  "inline": {
+   "source": "family name",
+   "files": 14,
+   "families": 10,
+   "trainable": false
+  },
+  "outline": {
+   "source": "family name",
+   "files": 3,
+   "families": 3,
+   "trainable": false
+  },
+  "shadow": {
+   "source": "family name",
+   "files": 6,
+   "families": 6,
+   "trainable": false
+  },
+  "slab": {
+   "source": "family name",
+   "files": 26,
+   "families": 14,
+   "trainable": false
+  },
+  "rounded": {
+   "source": "family name",
+   "files": 12,
+   "families": 6,
+   "trainable": false
+  },
+  "script/hand": {
+   "source": "family name",
+   "files": 45,
+   "families": 38,
+   "trainable": false
+  },
+  "display": {
+   "source": "family name",
+   "files": 664,
+   "families": 30,
+   "trainable": false
+  },
+  "mono": {
+   "source": "family name",
+   "files": 310,
+   "families": 52,
+   "trainable": true
+  }
+ }
+}
