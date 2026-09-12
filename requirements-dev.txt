@@ -1,0 +1,12 @@
+# Development dependencies: what CI installs on top of `requirements.txt`.
+#
+# pytest's floor is the one pyproject.toml's `dev` extra declares, gradio's the
+# one its `demo` extra declares; the exact versions CI resolves to are pinned in
+# `requirements.lock`. `ruff` is in that `dev` extra as well and is deliberately
+# absent here: no CI step runs it, and locking a linter would make its next
+# release a failing build rather than a lint finding.
+#
+#   pip install -c requirements.lock -r requirements.txt -r requirements-dev.txt
+
+pytest>=8.0.0              # the test suite
+gradio>=5.0.0              # app.py's demo UI; six tests import app, so the suite needs it

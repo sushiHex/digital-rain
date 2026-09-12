@@ -82,6 +82,22 @@ def test_the_bar_matches_the_registration_text():
     assert ci.TREATMENT_OF == {9: "stencil", 10: "inline"}
 
 
+def test_one_class_is_not_evaluable_rather_than_failed():
+    """2026-09-12: the owner judged all 48 usable. With one class the AUC is
+    undefined, a shuffle test would read p = 1/(n+1) from no information, and
+    the verdict must say the bar could not be evaluated -- not FAILED."""
+    scores = [-1.0, -2.0, -1.5]
+    labels = [1, 1, 1]
+    a = ci.auc(scores, labels)
+    assert np.isnan(a)
+    assert np.isnan(ci.permutation_p(scores, labels, a, n=50))
+    v = ci.bar_verdict(a, float("nan"), n_pos=3, n_neg=0, underpowered=False)
+    assert v.startswith("NOT EVALUABLE")
+    assert ci.bar_verdict(0.9, 0.001, 20, 20, False).startswith("PASSED")
+    assert ci.bar_verdict(0.6, 0.2, 20, 20, False).startswith("FAILED")
+    assert ci.bar_verdict(0.9, 0.001, 20, 20, True) == "not scored"
+
+
 def test_an_empty_template_scores_nothing_and_exits_clean(tmp_path, capsys):
     p = tmp_path / "labels.csv"
     _csv(p, [{"id": f"{i:02d}-s{s}", "description_index": i, "seed": s,

@@ -102,6 +102,39 @@ def collapse(d_by_font, groups):
     return collapsed
 
 
+def seed_blocked_bootstrap(A, B, d_c, seeds_a, seeds_b, n_boot=N_BOOT, seed=0):
+    """95% CI of the mean per-font difference, resampling fonts AND seeds.
+
+    `A`/`B` are {font: {seed: value}}, `d_c` the collapsed per-font
+    differences (a collapsed name carries " (+k identical)" and is resampled
+    as its recorded value). The seed main effect does not average out across
+    fonts (analysis/seed_variance.py), which is why seeds are a resampling
+    unit of their own. Extracted from `main` unchanged on 2026-09-12 so
+    `analysis/multiseed_rescore.py` applies the identical statistic; the
+    rng seed is fixed so a re-run reproduces the published intervals.
+    """
+    rng = np.random.default_rng(seed)
+    boot = []
+    fl = list(d_c)
+    for _ in range(n_boot):
+        fs = rng.choice(len(fl), len(fl), replace=True)
+        sa = rng.choice(seeds_a, len(seeds_a), replace=True)
+        sb = rng.choice(seeds_b, len(seeds_b), replace=True)
+        acc = []
+        for i in fs:
+            name = fl[i]
+            base = name.split(" (+")[0]
+            if base not in A:
+                acc.append(d_c[name])
+                continue
+            a = np.mean([A[base][s] for s in sa if s in A[base]])
+            b = np.mean([B[base][s] for s in sb if s in B[base]])
+            acc.append(b - a)
+        boot.append(np.mean(acc))
+    lo, hi = np.percentile(boot, [2.5, 97.5])
+    return float(lo), float(hi)
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -153,25 +186,7 @@ def main(argv=None):
         print(f"  paired Wilcoxon p={w.pvalue:.4g}")
 
     # seed-blocked bootstrap: resample fonts AND seeds
-    rng = np.random.default_rng(0)
-    boot = []
-    fl = list(d_c)
-    for _ in range(N_BOOT):
-        fs = rng.choice(len(fl), len(fl), replace=True)
-        sa = rng.choice(seeds_a, len(seeds_a), replace=True)
-        sb = rng.choice(seeds_b, len(seeds_b), replace=True)
-        acc = []
-        for i in fs:
-            name = fl[i]
-            base = name.split(" (+")[0]
-            if base not in A:
-                acc.append(d_c[name])
-                continue
-            a = np.mean([A[base][s] for s in sa if s in A[base]])
-            b = np.mean([B[base][s] for s in sb if s in B[base]])
-            acc.append(b - a)
-        boot.append(np.mean(acc))
-    lo, hi = np.percentile(boot, [2.5, 97.5])
+    lo, hi = seed_blocked_bootstrap(A, B, d_c, seeds_a, seeds_b)
     print(f"  bootstrap 95% CI (fonts + seeds resampled): [{lo:+.4f}, {hi:+.4f}]")
     print(f"  -> {'EXCLUDES' if lo > 0 or hi < 0 else 'INCLUDES'} zero")
 

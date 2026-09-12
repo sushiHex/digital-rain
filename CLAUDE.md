@@ -246,8 +246,15 @@ that were ever in question. Shipping it rests on the Apache-2.0 licence and the
 `scores.json` carries only `char/char_acc_match/dino_cos/lpips/score/topo_pen`,
 and that `score` is `score_candidates`' composite (`dino − λ·lpips − μ·topo`),
 **not** `eval_checkpoint.compute_composite(lpips, racc, dinov2)` — same word,
-different metric. Those three claims are still single-seed. Re-scoring both
-arms with `eval_checkpoint` is the outstanding work.
+different metric. **Re-scored at six seeds on 2026-09-12**
+(`runners/run_rescore_multiseed.sh`, `analysis/multiseed_rescore.py`, the
+registered statistic through the same function, record
+`research/multiseed_rescore.json`): IDENTITY 9B − 4B **+0.0056 [+0.0007,
++0.0107]** resolves by a hair; R-ACC +0.0084 [−0.0063, +0.0233] and the README
+composite +0.0099 [−0.0033, +0.0227] do **not**; DINOv2 and LPIPS reproduce the
+intervals above to the fourth decimal. The composite's font-paired Wilcoxon
+reads p = 0.0016 while its seed-blocked interval includes zero — the
+`compare_runs.py` trap below, live. Quote the interval.
 
 **The gap is concentrated in ORDINARY fonts, not distinctive ones** — the
 reverse of the long-running story. Against the frozen, model-independent
@@ -456,13 +463,19 @@ track):
 - A `watchdog_*.sh` polls for the marker and relaunches if the outer loop dies.
 - Watchdog thresholds must **match the runner's VRAM gate**. A mismatch made a
   legitimately-parked runner read as stalled — twice.
-- **The watchdogs detect a live runner with `wmic`, which this Windows build
-  no longer ships** (checked 2026-09-11: `where wmic` finds nothing). With
-  `wmic` absent the count reads 0, so a watchdog would relaunch a runner that
-  is still running, every poll. Not fixed — no watchdog has been needed since
-  the move — but before the next long run, replace the `wmic … | grep -c`
-  line with `Get-CimInstance Win32_Process` via `powershell -NoProfile`, and
-  test it against a running dummy first.
+- **The watchdogs count the live runner with `python misc/count_running.py
+  "<pattern>"`** (psutil), since 2026-09-12. They used `wmic`, which this
+  Windows build no longer ships (checked 2026-09-11: `where wmic` finds
+  nothing): the count read 0, so a watchdog would have relaunched a runner
+  that was still running, every poll. **The helper prints `-1`, never `0`,
+  when it cannot read the process table** — `[ "${outer:-0}" -eq 0 ]` treats
+  any non-zero count as "alive", and a count that fails must not relaunch.
+  It excludes the asking process and its whole **ancestor chain** by pid,
+  which fixes a second defect the same line hid, pointing the other way: five
+  of the eight watchdogs are named after the runner they watch, so
+  `watchdog_stage_a_eval.sh` matched its own `wmic` line and could never have
+  relaunched a dead one. Tested against a live dummy (issue #4); the residual
+  is that a `python` missing from PATH still leaves `outer` empty, hence 0.
 - Manifests and other inputs come from env vars (`PILOT_MANIFEST`,
   `SMOKE_MANIFEST`, `ORACLE_PROMPTS`), never a hardcoded path.
 
@@ -758,6 +771,23 @@ selection) does not expire this way.
   altered reference. **For rare treatments, SYNTHESISE the reference rather than
   generate it** — `synthesize_rare_attributes.py` already constructs them.
   `research/2026-08-28-hand-it-a-stencil-and-it-propagates-one.md`
+- **A RELATIONAL treatment propagates too — through each glyph's deviation,
+  not through the equality.** Equalising `Kg` (ink widths 231 / 214, ratio
+  1.08) left the atlas untouched (CV 0.402 → 0.403). Equalising `Mi` (301 / 57,
+  ratio 5.28) on the same checkpoint, seed and transform pulled the other 92
+  widths together, CV 0.382 → 0.272, PARTIAL against the real-monospace band,
+  stencil control intact. The registered controls then said what was read:
+  both glyphs scaled by one factor with the ratio kept reproduces 26% of the
+  fall; the `i` fattened alone reproduces **97%** (the face gets heavier and
+  the thin letters become slabs); the `M` narrowed alone 61% (the face
+  condenses). The model applies each glyph's departure from its normal width
+  to the letters of its kind — what a monospace designer draws, not the
+  metric that defines monospace. Do not quote "local yes, relational no", and
+  do not quote "the model reads equality" either. One seed, one source font,
+  literal slab copies in `I`; the correlation of change with width proves
+  nothing (`Cov(x, y−x)` is negative by construction). Records in
+  `research/relational_widths.json`;
+  `research/2026-09-12-a-relational-treatment-transfers-when-the-pair-can-carry-it.md`
 - **Do not reuse `synthesize_rare_attributes._inline` at reference scale.** It
   thresholds against a GLOBAL `dist.max()`, which is right in a 106x160 cell and
   wrong on a 1024px reference, where a `K`'s junction sets the peak and the

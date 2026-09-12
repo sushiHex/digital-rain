@@ -14,7 +14,7 @@ while true; do
     echo "watchdog: terminal state reached, exiting @ $(date '+%H:%M:%S')" >> "$LOG"
     break
   fi
-  outer=$(wmic process where "name='bash.exe'" get commandline 2>/dev/null | grep -c "run_glyph_4b_r32\.sh")
+  outer=$(python misc/count_running.py "run_glyph_4b_r32.sh" || echo -1)   # no output at all would read as 0, hence relaunch
   if [ "${outer:-0}" -eq 0 ]; then
     step=$(tr '\r' '\n' < glyph_4b.log 2>/dev/null | grep -aoE "step +[0-9]+/5000" | tail -1)
     echo "watchdog: runner gone (${step:-no step yet}), relaunching @ $(date '+%H:%M:%S')" >> "$LOG"

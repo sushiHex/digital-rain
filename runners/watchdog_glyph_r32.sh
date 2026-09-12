@@ -20,8 +20,12 @@ launches=0
 log() { echo "$(date '+%H:%M:%S') WATCHDOG: $*"; }
 
 training_running() {
-  wmic process where "name='python.exe'" get commandline 2>/dev/null \
-    | grep -q "train_lora_kg.py.*$OUT"
+  # Two patterns, both of which must appear -- the AND form that replaces the
+  # old `grep "train_lora_kg.py.*$OUT"`. Compared as a STRING against "0", not
+  # with -ne: only a definite "0" means "not training". A count this cannot
+  # take prints -1, and a python that cannot start prints nothing, which `-ne`
+  # would read as false and relaunch training on top of a live run.
+  [ "$(python misc/count_running.py "train_lora_kg.py" "$OUT")" != "0" ]
 }
 
 latest_ckpt() {

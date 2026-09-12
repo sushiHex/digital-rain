@@ -15,8 +15,14 @@ MAX_LAUNCHES=20
 launches=0
 
 log() { echo "$(date '+%H:%M:%S') EVAL-RUNNER: $*"; }
-training_running() { wmic process where "name='python.exe'" get commandline 2>/dev/null | grep -q "train_lora_kg.py.*training_glyph_r32_5000"; }
-eval_running()     { wmic process where "name='python.exe'" get commandline 2>/dev/null | grep -q "eval_checkpoint.py.*glyph_r32_5000"; }
+# Both patterns must appear -- the AND form replacing the old `grep "a.*b"`.
+# Compared as a STRING against "0", not with -ne: only a definite "0" means
+# "not running". A count that cannot be taken prints -1, and a python that
+# cannot even start prints nothing -- `-ne 0` would call the empty string
+# false and open the gate, which is the failure being fixed. Anything that is
+# not "0" keeps the gate shut and starts no second eval on the card.
+training_running() { [ "$(python misc/count_running.py "train_lora_kg.py" "training_glyph_r32_5000")" != "0" ]; }
+eval_running()     { [ "$(python misc/count_running.py "eval_checkpoint.py" "glyph_r32_5000")" != "0" ]; }
 
 log "eval-runner started (pid $$)"
 

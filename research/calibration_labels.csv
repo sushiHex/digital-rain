@@ -1,49 +1,49 @@
 id,description_index,seed,description,usable,note
-00-s0,0,0,"a heavy geometric sans serif, closed apertures, flat terminals",,
-00-s1,0,1,"a heavy geometric sans serif, closed apertures, flat terminals",,
-00-s2,0,2,"a heavy geometric sans serif, closed apertures, flat terminals",,
-00-s3,0,3,"a heavy geometric sans serif, closed apertures, flat terminals",,
-01-s0,1,0,a high-contrast didone with hairline serifs and vertical stress,,
-01-s1,1,1,a high-contrast didone with hairline serifs and vertical stress,,
-01-s2,1,2,a high-contrast didone with hairline serifs and vertical stress,,
-01-s3,1,3,a high-contrast didone with hairline serifs and vertical stress,,
-02-s0,2,0,a chunky slab serif with blunt rectangular serifs,,
-02-s1,2,1,a chunky slab serif with blunt rectangular serifs,,
-02-s2,2,2,a chunky slab serif with blunt rectangular serifs,,
-02-s3,2,3,a chunky slab serif with blunt rectangular serifs,,
-03-s0,3,0,a humanist sans with open apertures and a calligraphic axis,,
-03-s1,3,1,a humanist sans with open apertures and a calligraphic axis,,
-03-s2,3,2,a humanist sans with open apertures and a calligraphic axis,,
-03-s3,3,3,a humanist sans with open apertures and a calligraphic axis,,
-04-s0,4,0,"a condensed grotesque, tight spacing, large x-height",,
-04-s1,4,1,"a condensed grotesque, tight spacing, large x-height",,
-04-s2,4,2,"a condensed grotesque, tight spacing, large x-height",,
-04-s3,4,3,"a condensed grotesque, tight spacing, large x-height",,
-05-s0,5,0,a rounded soft sans with fully rounded stroke ends,,
-05-s1,5,1,a rounded soft sans with fully rounded stroke ends,,
-05-s2,5,2,a rounded soft sans with fully rounded stroke ends,,
-05-s3,5,3,a rounded soft sans with fully rounded stroke ends,,
-06-s0,6,0,a wide low-contrast monospace with prominent spurs,,
-06-s1,6,1,a wide low-contrast monospace with prominent spurs,,
-06-s2,6,2,a wide low-contrast monospace with prominent spurs,,
-06-s3,6,3,a wide low-contrast monospace with prominent spurs,,
-07-s0,7,0,"an ultra-light hairline sans, uniform thin strokes",,
-07-s1,7,1,"an ultra-light hairline sans, uniform thin strokes",,
-07-s2,7,2,"an ultra-light hairline sans, uniform thin strokes",,
-07-s3,7,3,"an ultra-light hairline sans, uniform thin strokes",,
-08-s0,8,0,"a wedge-serif face with flared, trumpet-shaped terminals",,
-08-s1,8,1,"a wedge-serif face with flared, trumpet-shaped terminals",,
-08-s2,8,2,"a wedge-serif face with flared, trumpet-shaped terminals",,
-08-s3,8,3,"a wedge-serif face with flared, trumpet-shaped terminals",,
-09-s0,9,0,a stencil sans with deliberate breaks in the strokes,,
-09-s1,9,1,a stencil sans with deliberate breaks in the strokes,,
-09-s2,9,2,a stencil sans with deliberate breaks in the strokes,,
-09-s3,9,3,a stencil sans with deliberate breaks in the strokes,,
-10-s0,10,0,an inline face with a white stripe inset within each stroke,,
-10-s1,10,1,an inline face with a white stripe inset within each stroke,,
-10-s2,10,2,an inline face with a white stripe inset within each stroke,,
-10-s3,10,3,an inline face with a white stripe inset within each stroke,,
-11-s0,11,0,a heavy angular blackletter-influenced sans with sharp cut terminals,,
-11-s1,11,1,a heavy angular blackletter-influenced sans with sharp cut terminals,,
-11-s2,11,2,a heavy angular blackletter-influenced sans with sharp cut terminals,,
-11-s3,11,3,a heavy angular blackletter-influenced sans with sharp cut terminals,,
+00-s0,0,0,"a heavy geometric sans serif, closed apertures, flat terminals",1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+00-s1,0,1,"a heavy geometric sans serif, closed apertures, flat terminals",1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+00-s2,0,2,"a heavy geometric sans serif, closed apertures, flat terminals",1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+00-s3,0,3,"a heavy geometric sans serif, closed apertures, flat terminals",1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+01-s0,1,0,a high-contrast didone with hairline serifs and vertical stress,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+01-s1,1,1,a high-contrast didone with hairline serifs and vertical stress,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+01-s2,1,2,a high-contrast didone with hairline serifs and vertical stress,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+01-s3,1,3,a high-contrast didone with hairline serifs and vertical stress,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+02-s0,2,0,a chunky slab serif with blunt rectangular serifs,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+02-s1,2,1,a chunky slab serif with blunt rectangular serifs,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+02-s2,2,2,a chunky slab serif with blunt rectangular serifs,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+02-s3,2,3,a chunky slab serif with blunt rectangular serifs,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+03-s0,3,0,a humanist sans with open apertures and a calligraphic axis,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+03-s1,3,1,a humanist sans with open apertures and a calligraphic axis,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+03-s2,3,2,a humanist sans with open apertures and a calligraphic axis,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+03-s3,3,3,a humanist sans with open apertures and a calligraphic axis,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+04-s0,4,0,"a condensed grotesque, tight spacing, large x-height",1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+04-s1,4,1,"a condensed grotesque, tight spacing, large x-height",1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+04-s2,4,2,"a condensed grotesque, tight spacing, large x-height",1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+04-s3,4,3,"a condensed grotesque, tight spacing, large x-height",1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+05-s0,5,0,a rounded soft sans with fully rounded stroke ends,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+05-s1,5,1,a rounded soft sans with fully rounded stroke ends,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+05-s2,5,2,a rounded soft sans with fully rounded stroke ends,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+05-s3,5,3,a rounded soft sans with fully rounded stroke ends,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+06-s0,6,0,a wide low-contrast monospace with prominent spurs,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+06-s1,6,1,a wide low-contrast monospace with prominent spurs,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+06-s2,6,2,a wide low-contrast monospace with prominent spurs,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+06-s3,6,3,a wide low-contrast monospace with prominent spurs,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+07-s0,7,0,"an ultra-light hairline sans, uniform thin strokes",1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+07-s1,7,1,"an ultra-light hairline sans, uniform thin strokes",1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+07-s2,7,2,"an ultra-light hairline sans, uniform thin strokes",1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+07-s3,7,3,"an ultra-light hairline sans, uniform thin strokes",1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+08-s0,8,0,"a wedge-serif face with flared, trumpet-shaped terminals",1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+08-s1,8,1,"a wedge-serif face with flared, trumpet-shaped terminals",1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+08-s2,8,2,"a wedge-serif face with flared, trumpet-shaped terminals",1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+08-s3,8,3,"a wedge-serif face with flared, trumpet-shaped terminals",1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+09-s0,9,0,a stencil sans with deliberate breaks in the strokes,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+09-s1,9,1,a stencil sans with deliberate breaks in the strokes,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+09-s2,9,2,a stencil sans with deliberate breaks in the strokes,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+09-s3,9,3,a stencil sans with deliberate breaks in the strokes,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+10-s0,10,0,an inline face with a white stripe inset within each stroke,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+10-s1,10,1,an inline face with a white stripe inset within each stroke,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+10-s2,10,2,an inline face with a white stripe inset within each stroke,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+10-s3,10,3,an inline face with a white stripe inset within each stroke,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+11-s0,11,0,a heavy angular blackletter-influenced sans with sharp cut terminals,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+11-s1,11,1,a heavy angular blackletter-influenced sans with sharp cut terminals,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+11-s2,11,2,a heavy angular blackletter-influenced sans with sharp cut terminals,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"
+11-s3,11,3,a heavy angular blackletter-influenced sans with sharp cut terminals,1,"owner, 2026-09-12: judged from the sheet; all 48 usable"

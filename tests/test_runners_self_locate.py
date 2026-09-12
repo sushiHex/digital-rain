@@ -65,6 +65,28 @@ def test_every_runner_is_executable_in_the_index():
                             f"{not_exec}")
 
 
+def test_no_runner_counts_processes_with_wmic():
+    """`wmic` is gone from this Windows build, and its absence was silent.
+
+    The pipeline produced no output, `grep -c` returned 0, and 0 is what a
+    watchdog reads as "the runner is gone" -- so a 24-hour run would have been
+    relaunched on top of itself every 180 s. `misc/count_running.py` replaced
+    every use; this stops one coming back by copy-paste from an old runner.
+    """
+    bad = [os.path.basename(p) for p in runners()
+           if "wmic" in open(p, encoding="utf-8").read()]
+    assert bad == [], f"counts processes with wmic, which is not installed: {bad}"
+
+
+def test_every_watchdog_counts_with_the_helper():
+    watchdogs = [p for p in runners()
+                 if os.path.basename(p).startswith("watchdog_")]
+    assert len(watchdogs) >= 8, "git did not list the watchdogs"
+    missing = [os.path.basename(p) for p in watchdogs
+               if "misc/count_running.py" not in open(p, encoding="utf-8").read()]
+    assert missing == [], f"no process count via misc/count_running.py in: {missing}"
+
+
 def test_the_index_lists_every_runner():
     index = open(os.path.join(RUNNERS, "README.md"), encoding="utf-8").read()
     unlisted = [os.path.basename(p) for p in runners()

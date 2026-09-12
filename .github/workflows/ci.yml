@@ -18,9 +18,15 @@
 # Anything that needs the 3090 is run and reported by hand, with the number's
 # own noise stated (CLAUDE.md).
 #
-# Dependencies are installed from `>=` floors against the live index (issue
-# #16 on the private repository). Third-party actions are pinned to full
-# commit SHAs, and the gitleaks binary to a checksum.
+# Dependencies are pinned by `requirements.lock`, a pip CONSTRAINTS file, so a
+# release on PyPI cannot change the result with nothing changed in the tree
+# (issue #16 on the private repository). Constraints rather than a replacement
+# requirements file, because a universal lock of torch lists the Linux
+# `nvidia-*` CUDA wheels: with `-c` they are inert unless something asks for
+# them, and the CPU torch installed first satisfies the `torch==` pin.
+# `tests/test_requirements_lock.py` pins the lock to the requirements.
+# Third-party actions are pinned to full commit SHAs, and the gitleaks binary
+# to a checksum.
 #
 # Required checks: public `tests (3.12)`, `tests (3.14)`, `public-audit`;
 # private `tests (3.12)`, `public-audit` (misc/configure_public_repo.py).
@@ -109,19 +115,35 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
           cache: pip
+      # PyPI is an EXTRA index here, not a fallback we can drop: the PyTorch
+      # index mirrors torch's own dependencies at its own pace and lags PyPI
+      # (filelock 3.32.3 there against the locked 3.32.6 when this was
+      # written), so `-c` against that index alone is ResolutionImpossible.
+      # The +cpu wheel wins while one exists: `2.14.0+cpu` sorts above the
+      # plain `2.14.0` PyPI carries, and a dry run confirms pip picks it even
+      # with both indexes offering that version. It is a preference, not a
+      # guarantee -- the pin is `torch==2.14.0`, and PEP 440 lets that match a
+      # CUDA build too, so if the CPU wheel is ever yanked or missing for a
+      # Python this runs, CI would quietly install 2 GB of CUDA instead.
       - name: Install CPU torch first (the CUDA wheels are 2 GB and useless here)
         if: steps.scope.outputs.code == 'true'
-        run: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-      - name: Install the pipeline, the demo's UI library, and pytest
+        run: >-
+          pip install -c requirements.lock torch torchvision
+          --index-url https://download.pytorch.org/whl/cpu
+          --extra-index-url https://pypi.org/simple
+      - name: Install the pipeline and the dev tools, pinned by the lock
         if: steps.scope.outputs.code == 'true'
-        run: pip install -r requirements.txt gradio pytest
+        run: pip install -c requirements.lock -r requirements.txt -r requirements-dev.txt
       - name: Run the suite (skips listed)
         if: steps.scope.outputs.code == 'true'
         run: python -m pytest -q -rs -p no:cacheprovider
+      # `pytest` alone, not `-r requirements-dev.txt`: gradio brings fastapi,
+      # pandas and uvicorn with it, and this path exists to stay at thirty
+      # seconds. The lock still pins what pytest pulls.
       - name: Docs-only change -- run the tests that read the docs
         if: steps.scope.outputs.code == 'false'
         run: |
-          pip install pytest
+          pip install -c requirements.lock pytest
           python -m pytest -q -p no:cacheprovider \
             tests/test_licence_files.py tests/test_package_readmes_current.py \
             tests/test_runners_self_locate.py tests/test_export_public.py \
@@ -132,7 +154,7 @@ jobs:
       - name: Verify the data backup
         if: steps.scope.outputs.backup == 'true'
         run: |
-          pip install pytest
+          pip install -c requirements.lock pytest
           python misc/backup_private.py verify
           python -m pytest tests/test_backup_private.py -q -p no:cacheprovider
 

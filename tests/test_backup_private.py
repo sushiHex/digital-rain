@@ -290,6 +290,31 @@ def test_exclude_stems_drops_every_file_of_that_stem(tmp_path, capsys):
     assert bp.verify(str(backup)) == 0
 
 
+def test_a_partial_refresh_keeps_the_whole_backup_s_exclusion_count(tmp_path, capsys):
+    """`make --only <other item>` once rewrote the README's "N corpus renders
+    are deliberately absent" as 0, because the count came from the items that
+    run refreshed. The README describes the whole backup; the count is planned
+    over every item."""
+    root = tmp_path / "root"
+    (root / "corpus").mkdir(parents=True)
+    (root / "corpus" / "a.png").write_bytes(b"a")
+    (root / "corpus" / "b.png").write_bytes(b"b")
+    (root / "other").mkdir()
+    (root / "other" / "x.txt").write_bytes(b"x")
+    items = (bp.Item("corpus", "corpus", ("*.png",), exclude_stems=frozenset({"b"})),
+             bp.Item("other", "other", ("*.txt",)))
+    backup = tmp_path / "backup"
+    assert bp.make(str(root), str(backup), items) == 0
+    readme = (backup / bp.README_NAME).read_text(encoding="utf-8")
+    assert "**1 corpus renders are deliberately absent.**" in readme
+    (root / "other" / "x.txt").write_bytes(b"xx")
+    assert bp.make(str(root), str(backup), items, only=["other"]) == 0
+    readme = (backup / bp.README_NAME).read_text(encoding="utf-8")
+    assert "**1 corpus renders are deliberately absent.**" in readme, \
+        "a partial refresh must not report the whole backup's count as 0"
+    capsys.readouterr()
+
+
 def test_the_corpus_exclusions_come_from_the_tracked_json():
     stems = bp._corpus_exclusions()
     assert isinstance(stems, frozenset)

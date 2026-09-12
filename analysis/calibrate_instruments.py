@@ -100,8 +100,36 @@ def auc(scores, labels):
     return float((gt + 0.5 * eq) / (len(pos) * len(neg)))
 
 
+def bar_verdict(gate_auc, gate_p, n_pos, n_neg, underpowered):
+    """The registered verdict, with the one case the registration did not name.
+
+    With a single class among the labels the AUC is undefined, so the bar is
+    neither passed nor failed: it cannot be evaluated. That happened on
+    2026-09-12 -- the owner judged all 48 candidates usable -- and until this
+    function existed the code printed FAILED, which the registration reserves
+    for a measured AUC below 0.70.
+    """
+    if underpowered:
+        return "not scored"
+    if n_pos == 0 or n_neg == 0:
+        return ("NOT EVALUABLE -- only one class among the labels, so the AUC is "
+                "undefined; the bar needs usable AND not-usable references")
+    if gate_auc >= BAR_AUC and gate_p < BAR_P:
+        return ("PASSED -- coherence predicts usability; a threshold may be cut on "
+                "a FRESH sample")
+    return ("FAILED -- the gate is a coherence check, not a usability signal; its "
+            "cut stays as it is")
+
+
 def permutation_p(scores, labels, observed, n=PERMUTATIONS, seed=0):
-    """One-sided: how often a label shuffle reaches the observed AUC."""
+    """One-sided: how often a label shuffle reaches the observed AUC.
+
+    Undefined (nan) when the observed AUC is: with one class every shuffle
+    is also one class, `nan >= nan` is False, and the count would read as
+    p = 1/(n+1) -- a "significant" result from no information at all.
+    """
+    if not np.isfinite(observed):
+        return float("nan")
     rng = np.random.default_rng(seed)
     labels = np.asarray(labels, int)
     hits = 0
@@ -203,13 +231,9 @@ def main(argv=None):
           f"{cut['precision']:.2f}  recall {cut['recall']:.2f}  "
           f"specificity {cut['specificity']:.2f}")
 
-    verdict = "not scored"
+    verdict = bar_verdict(gate_auc, gate_p, sum(labels), len(labels) - sum(labels),
+                          underpowered)
     if not underpowered:
-        passed = gate_auc >= BAR_AUC and gate_p < BAR_P
-        verdict = ("PASSED -- coherence predicts usability; a threshold may be "
-                   "cut on a FRESH sample" if passed else
-                   "FAILED -- the gate is a coherence check, not a usability "
-                   "signal; its cut stays as it is")
         print(f"\n  PRE-REGISTERED BAR AUC>={BAR_AUC} and p<{BAR_P}: {verdict}")
 
     # --- ADHERENCE (secondary, n = 8) ------------------------------------

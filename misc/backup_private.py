@@ -202,6 +202,10 @@ ITEMS = (
     Item("transfer_atlases", "eval_runs/_transfer_atlases", ("**/*",)),
     Item("attribute_atlases", "eval_runs/_attribute_atlases", ("**/*",)),
     Item("relational_refs", "eval_runs/_relational_refs", ("**/*",)),
+    # The Mi pair (second registration, 2026-09-12): the run that overturned
+    # the Kg failure's conditional reading.
+    Item("relational_refs_mi", "eval_runs/_relational_refs_Mi", ("**/*",)),
+    Item("relational_refs_mi_controls", "eval_runs/_relational_refs_Mi_controls", ("**/*",)),
     # viz/lr_horizon_bug.py parses glyph_4b.log and glyph_4b_lrfix.log as DATA:
     # the learning-rate trace of the horizon bug exists nowhere else.
     Item("logs", ".", ("*.log",)),
@@ -211,6 +215,10 @@ ITEMS = (
     Item("tools", "tools", ("potrace.exe",)),
     # The pool's 6,194 font files are never uploaded. Their hashes are, so a
     # re-fetch can be checked file by file against what was actually trained on.
+    # The six-seed candidate sets behind the 4B-vs-9B gap (README table, the
+    # multiseed note and the 2026-09-12 rescore): generated once, scored twice.
+    Item("candidates/multiseed_4b", "bestofn_4b", ("candidates/**/*.png", "scores.json")),
+    Item("candidates/multiseed_9b", "bestofn_9b", ("candidates/**/*.png", "scores.json")),
     Item("pool", "font_pool", ("source_manifest.json", "RESTORE_NOTE.txt"),
          hash_only=("*.ttf", "*.otf")),
 )
@@ -696,7 +704,17 @@ def make(root, backup_dir, items=ITEMS, only=None):
     # A chunk record for an item that is no longer selected stays; one for a
     # file this run stored whole has already been dropped above.
     write_chunks(backup_dir, chunks)
-    render_readme(backup_dir, items, chunks, sum(dropped.values()))
+    # The README describes the WHOLE backup, so its licence-exclusion count is
+    # planned over every item, not the ones this run refreshed: a `--only`
+    # refresh of an unrelated item once rewrote "177 corpus renders are
+    # deliberately absent" as 0 (review finding, 2026-09-12). Planning is glob
+    # expansion only; if some unselected item's live directory is missing
+    # right now, fall back to this run's count rather than refuse the refresh.
+    try:
+        _, _, dropped_all = plan(root, items) if only else (None, None, dropped)
+    except BackupError:
+        dropped_all = dropped
+    render_readme(backup_dir, items, chunks, sum(dropped_all.values()))
     n_manifest = write_manifest(backup_dir)
 
     stale = [rel for rel in physical_files(backup_dir)

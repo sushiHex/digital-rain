@@ -13,7 +13,7 @@ while true; do
     echo "watchdog: terminal state reached, exiting @ $(date '+%H:%M:%S')" >> "$LOG"
     break
   fi
-  outer=$(wmic process where "name='bash.exe'" get commandline 2>/dev/null | grep -c "run_derisk_4b\.sh")
+  outer=$(python misc/count_running.py "run_derisk_4b.sh" || echo -1)   # no output at all would read as 0, hence relaunch
   if [ "${outer:-0}" -eq 0 ]; then
     steps=$(tail -200 derisk_4b.log 2>/dev/null | grep -oE 'step [0-9]+' | tail -1)
     echo "watchdog: run_derisk_4b.sh outer loop gone (${steps:-no step yet}), relaunching @ $(date '+%H:%M:%S')" >> "$LOG"

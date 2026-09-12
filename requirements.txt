@@ -5,7 +5,15 @@
 # a GPU. Developed against cu128 on an RTX 3090 (24 GB):
 #   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
 #
-# Then: pip install -r requirements.txt
+# Then: pip install -c requirements.lock -r requirements.txt
+#
+# `requirements.lock` is a CONSTRAINTS file holding the exact versions CI
+# resolves to; it pins what gets installed and never adds a package. A CUDA
+# build satisfies the `torch==` pin at the same version number -- PEP 440
+# ignores the `+cu128` local label -- so install the version the lock names, or
+# drop the `-c` and accept that your tree is not CI's. Regenerate the lock
+# (never edit it) with the command in its own header; `requirements-dev.txt`
+# adds pytest and gradio.
 
 # --- diffusion / model stack ---
 torch>=2.6.0

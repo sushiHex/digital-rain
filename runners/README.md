@@ -18,7 +18,7 @@ loop if a harness task-kill takes it down. Parameters come from env vars set
 in the same PowerShell call (`$env:RANK='64'; Start-Process bash
 -ArgumentList '-lc','./runners/run_glyph_4b_r32.sh'`).
 
-## Model track — training and evaluation (23)
+## Model track — training and evaluation (24)
 
 - `run_glyph_4b_r32.sh` — the parameterised klein-base-4B training runner: `RANK OUT EVAL_OUT LOG DATASET STEPS MARKER EXTRA_TRAIN_ARGS NEED_MB`. Every 4B training run here is this script with different env vars.
 - `run_glyph_4b_clean_corpus.sh` — retrain on the licence-clean corpus (838 of 925 fonts); sets the env and `exec`s `run_glyph_4b_r32.sh`.
@@ -28,6 +28,7 @@ in the same PowerShell call (`$env:RANK='64'; Start-Process bash
 - `run_derisk_4b.sh` — the 400-step de-risk gate: does channel-concat conditioning transfer to the 4B at all?
 - `run_rescore_9b_derisk.sh` — re-score the 9B de-risk checkpoint with the prompt it was trained on, for a same-protocol baseline.
 - `run_multiseed_4b_vs_9b.sh` — matched six-inference-seed comparison on the 50-font holdout.
+- `run_rescore_multiseed.sh` — re-score those twelve candidate sets with `eval_checkpoint`, no generation, so R-ACC, IDENTITY and the README composite get six seeds too (issue #12).
 - `run_throughput_probe.sh` — levers 2 and 3: training throughput left on the table on the 4B.
 - `resume_glyph_r32.sh` — auto-resume wrapper for the 9B rank-32 run on a contended GPU.
 - `run_eval_glyph_r32.sh` — the gated, restartable 50-font eval of checkpoint-5000.
@@ -67,7 +68,9 @@ in the same PowerShell call (`$env:RANK='64'; Start-Process bash
 
 Each polls for its runner's terminal marker and relaunches the runner's outer loop if the process is gone. **A watchdog's VRAM threshold must match its runner's gate** — a mismatch twice made a legitimately parked runner read as stalled.
 
-**Known broken, 2026-09-11: they detect the runner with `wmic`, which this Windows build no longer ships.** With `wmic` absent the process count reads 0 and a watchdog would relaunch a runner that is still running, every poll. Replace the `wmic … | grep -c` line with `Get-CimInstance Win32_Process` through `powershell -NoProfile` before the next use, and test against a running dummy first.
+**Fixed 2026-09-12 (was broken 2026-09-11): they counted the runner with `wmic`, which this Windows build no longer ships**, so the count read 0 and a watchdog would have relaunched a runner that was still running, every poll. They now count with `python misc/count_running.py "<pattern>"` — psutil, cross-platform, tested against a live dummy. It prints `-1` rather than `0` when it cannot read the process table, because every watchdog's `[ "${outer:-0}" -eq 0 ]` treats any non-zero count as "alive": a count that fails must not relaunch.
+
+The same line hid a second defect pointing the other way. Five of these eight are named after the runner they watch, so `watchdog_stage_a_eval.sh` matched its own `wmic` line and its `outer` could never reach 0 — a genuinely dead runner would never have been relaunched. The replacement excludes the asking process and its whole ancestor chain by pid.
 
 - `watchdog_derisk_4b.sh` — for `run_derisk_4b.sh`.
 - `watchdog_glyph_4b.sh` — for `run_glyph_4b_r32.sh`.

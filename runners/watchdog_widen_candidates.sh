@@ -7,7 +7,7 @@ while true; do
     echo "watchdog: terminal state reached, exiting @ $(date '+%H:%M:%S')" >> watchdog_widen.log
     break
   fi
-  outer=$(wmic process where "name='bash.exe'" get commandline 2>/dev/null | grep -c "widen_candidates\.sh")
+  outer=$(python misc/count_running.py "widen_candidates.sh" || echo -1)   # no output at all would read as 0, hence relaunch
   if [ "${outer:-0}" -eq 0 ]; then
     n=$(ls dpo_pilot/candidates/*/*.png 2>/dev/null | wc -l)
     echo "watchdog: widen_candidates.sh outer loop gone, $n candidate PNGs, relaunching @ $(date '+%H:%M:%S')" >> watchdog_widen.log

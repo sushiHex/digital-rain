@@ -14,7 +14,7 @@ python -m analysis.<script> --help
 Scripts import repo-root modules (`atlas_constants`, `eval_checkpoint`, ...); a two-line
 `sys.path` bootstrap at the top of each makes direct-path invocation work too.
 
-## Contents (58)
+## Contents (59)
 
 - `advance_survives_atlas.py` — Does MONOSPACE survive the atlas, when the atlas throws advance width away?
 - `analyze_caption_probe.py` — Score caption A/B probe outputs and decide whether captions move the model's output in a style-aware way.
@@ -50,6 +50,7 @@ Scripts import repo-root modules (`atlas_constants`, `eval_checkpoint`, ...); a 
 - `inspect_v3_targets.py` — Categorize V3 LoRA target modules to scope Route B (which linears, fused-QKV?).
 - `measure_ink.py` — Mean ink coverage of a run's generated atlases against holdout ground truth.
 - `multiseed_compare.py` — Pre-registered cross-model analysis for the matched multi-seed run.
+- `multiseed_rescore.py` — The six-seed 4B-vs-9B comparison on the metrics the multiseed run never scored.
 - `per_cell_classifier_select.py` — Per-cell best-of-N selection by GLYPH-CLASSIFIER CONFIDENCE.
 - `per_cell_medoid.py` — Per-cell medoid selection in DINOv2 space -- the untried best-of-N selector.
 - `reference_gate.py` — Reject a reference whose two glyphs disagree, BEFORE spending a generation.
