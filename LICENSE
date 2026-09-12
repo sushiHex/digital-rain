@@ -8,6 +8,12 @@ permission is given to any person to use, copy, modify, merge, publish,
 distribute, sublicense, or sell this software or any part of it. All rights
 are retained by the copyright holder.
 
+THIRD-PARTY COMPONENTS keep their own licences and are NOT covered by the
+statement above: the Nunchaku-derived files under route_b/ are Apache-2.0
+(see route_b/NOTICE and route_b/LICENSE.nunchaku), and the FLUX.2-klein base
+models this code loads carry their own terms (the 9B is non-commercial, the
+4B is Apache-2.0; see the README's Licensing section).
+
 CONTRIBUTIONS. A pull request is an offer of code to an unlicensed project.
 Until a licence is chosen, contributors are asked to confirm in the pull
 request that they hold the rights to what they submit and that the copyright

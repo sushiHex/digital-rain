@@ -82,6 +82,12 @@ pull request means you hold the rights to what you submit and agree the
 copyright holder may distribute it under whatever licence this repository
 adopts. The pull request template asks you to confirm that.
 
+**Until a licence or a contributor agreement is in place, pull requests from
+outside the maintainer are reviewed but held, not merged.** A checkbox is not
+a rights assignment, and merging outside code into an unlicensed tree would
+cloud any later relicensing. Issues, findings and review comments are welcome
+now; code lands once the licence question is settled.
+
 ## Reporting
 
 Issues use the forms: bug, research finding, proposal or decision, work item.

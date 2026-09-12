@@ -88,8 +88,8 @@ Eleven notes carry the project's actual conclusion. Read them in this order.
 | [Identifying the undocumented 13%](2026-08-08-identifying-the-undocumented-13-percent.md) | How 121 fonts entered the corpus without provenance, and how they were traced back. |
 | [OFL derivative-work constraint](2026-07-27-ofl-derivative-work-constraint.md) | SIL's position: fonts from a model trained on OFL sources are derivatives and must themselves be OFL. |
 | [Klein licensing and the 4B port](2026-07-27-klein-licensing-and-4b-port.md) | The production base is non-commercial; the Apache-2.0 alternative is also the speed win. |
-| [The BFL commercial route](2026-08-01-bfl-commercial-licensing.md) | Available, but this architecture cannot use the cheap tier. |
-| [Legal font sources](2026-04-09-legal-font-sources.md) | Early survey of where a corpus can legitimately come from. |
+| `2026-08-01-bfl-commercial-licensing.md` | Available, but this architecture cannot use the cheap tier. **Held in the private archive** — it ranks commercial routes with price estimates. |
+| `2026-04-09-legal-font-sources.md` | Early survey of where a corpus can legitimately come from. **Held in the private archive** — an LLM-scout report asserting named vendors' licence terms with "high confidence", and carrying foundry contact addresses. |
 
 ## Base models and runtime
 

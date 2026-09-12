@@ -28,7 +28,11 @@ The pre-registration discipline this project relies on ("the bar was committed
 before the data") is therefore **provable only from the private archive** for
 anything before the cutover. The research notes state their registration
 commits by SHA; those SHAs resolve in `digital-rain-private`, not in the public
-repository. From the cutover on, registrations are committed in public first.
+repository, and several notes also cite `docs/superpowers/` plans that are
+withheld. Those citations stay as written — dated notes are never rewritten —
+and a public reader should take a pre-cutover SHA as a claim the archive can
+verify, not one the public repository can. From the cutover on, registrations
+are committed in public first, where anyone can check the timestamp.
 
 ## What is withheld, and why
 
@@ -42,14 +46,26 @@ mismatch that dropped a description from the transfer test without erroring.
 | `research/sessions/` (3) | session captures written by an editor hook — private working memory, not research |
 | `research/2026-03-2?-oracle-*.md` (21) | the March 2026 Oracle rounds: market sizing, pricing, competitors, go-to-market. Business research for a possible commercial direction |
 | `research/RESEARCH.md`, `research/BRAINSTORM.md` | the synthesis those rounds fed, and the original positioning memo |
+| `research/2026-08-01-bfl-commercial-licensing.md` | ranks the commercial routes with price estimates and names the critical path — business direction |
+| `research/2026-04-09-legal-font-sources.md` | an April Oracle report asserting named vendors' licence terms with "high confidence" and carrying foundry contact addresses — a legal and reputational exposure, not a finding |
 | `docs/archive/` (5) | stale 2026-03 planning whose links point at the files above |
 | `docs/superpowers/` (15) | agent-workflow plans and specs that cite the withheld research by section; the same directory is withheld from the owner's other public repositories for the same reason |
 | `docs/PUSH-PREP.md` | the private-push runbook; this document supersedes it |
 
-**Everything else is exported byte-for-byte**, including `CLAUDE.md`, the
-force-added eval artifacts behind the README results table, and every negative
-result. The research index (`research/README.md`) says where the March rounds
-went rather than linking to files that are not there.
+**Everything else is exported byte-for-byte** — the exporter compares every
+staged blob and mode with HEAD's and refuses on any difference — including
+`CLAUDE.md`, the force-added eval artifacts behind the README results table,
+and every negative result. The research index (`research/README.md`) says
+where the withheld notes went rather than linking to files that are not there.
+
+**Kept on purpose, and worth knowing about:** `research/corpus_provenance.json`
+and `research/unlicensed_corpus_fonts.json` name the 49 proprietary fonts the
+early corpus contained and where they came from. They are the evidence behind
+a claim the README already makes in plain words (*"the corpus contained 49
+fonts under vendor terms permitting rendering but not conversion"*), and
+withholding the evidence while publishing the claim would invert this
+project's whole posture. A reader who would rather not publish the itemised
+list adds one line to `EXCLUDE`.
 
 In the public repository every rule above matches nothing — that is what an
 export is — so `misc/export_public.py` refuses to run there, and the tests
@@ -76,14 +92,21 @@ new because the threat model changed.
    tracked records carry a home path while it reported clean.
    `tests/test_sanitize_for_publish.py` now pins every spelling.
 3. **The test suite is green in the exported tree**, not only in the private
-   one. The public tree lacks `font_pool/`, `dataset_*/`, model weights and the
-   untracked eval outputs; a test that quietly depended on any of them passes
-   privately and fails for every contributor. Run `python -m pytest` inside the
-   export before the first push, and CI runs it on every pull request after.
-4. **`git log` of the export has no author email but the GitHub noreply
-   address.** The private history is already clean on this (checked 2026-07-29
-   and again 2026-09-11); the export inherits the committing identity, so it
-   is checked once more on the fresh repository.
+   one. The public tree lacks `font_pool/`, `google-fonts/`, `dataset_*/`,
+   model weights and the untracked eval outputs; a test that quietly depended
+   on any of them passes privately and fails for every contributor. **`cd`
+   into the export first** — `pytest --rootdir` does not change directory, and
+   run from the private clone the tests read the private tree's files through
+   relative paths and pass for the wrong reason. Measured 2026-09-11: private
+   356 passed, 0 skipped; export 327 passed, **29 skipped** — the corpus-
+   dependent font-quality and variable-font pairing tests, potrace, and the
+   two model downloads. "Green publicly" is weaker than "green privately" by
+   exactly that list; CI prints it with `-rs` so it stays visible.
+4. **Every commit in the export is authored by the GitHub noreply address.**
+   The exporter refuses to commit under anything else, so a second export
+   from another machine cannot publish a personal email. Check the pushed
+   result too: `git -C ../digital-rain log --format=%ae | sort -u` must print
+   one `@users.noreply.github.com` line.
 
 Weights and a hosted demo remain blocked **regardless of repository
 visibility** — see the README's licensing section. Publishing the code does
@@ -105,9 +128,11 @@ it has two consequences the owner should decide on rather than inherit:
 - **A pull request to an unlicensed project is legally murky.** The PR
   template asks contributors to confirm they hold the rights to what they
   submit and that it may be relicensed under whatever this repository adopts.
-  That is the minimum; a real CLA or a chosen licence is the fix. AGPL-3.0
-  plus a commercial licence for paying customers is the usual open-core
-  arrangement and is the one `LICENSE` points at.
+  A checkbox is not a rights assignment. So **outside pull requests are held,
+  not merged, until a licence or a contributor agreement exists** —
+  `CONTRIBUTING.md` says so up front. AGPL-3.0 plus a commercial licence for
+  paying customers is the usual open-core arrangement and is the one `LICENSE`
+  points at; choosing it is the decision that unblocks contributions.
 
 ## Runbook
 
@@ -119,7 +144,10 @@ reversible.
 python -m pytest                                   # green privately
 python misc/export_public.py --list                # read the partition
 
-# 1. rename the private repository; GitHub redirects the old URL
+# 1. rename the private repository. GitHub redirects the old URL ONLY until
+#    step 3 creates a new repository under it -- after that, any clone or
+#    automation still pointing at sushiHex/digital-rain reaches the fresh
+#    public repository, not the archive. Update every remote you have first.
 gh repo rename digital-rain-private -R sushiHex/digital-rain --yes
 git remote set-url origin https://github.com/sushiHex/digital-rain-private.git
 
@@ -127,7 +155,8 @@ git remote set-url origin https://github.com/sushiHex/digital-rain-private.git
 python misc/export_public.py --dest ../digital-rain            # stages; sanitizer runs
 git -C ../digital-rain status                                  # read it
 python misc/export_public.py --dest ../digital-rain --commit
-python -m pytest --rootdir ../digital-rain ../digital-rain/tests   # green in the export
+(cd ../digital-rain && FONTGEN_NO_MODEL_DOWNLOADS=1 python -m pytest -rs)   # green IN the export
+git -C ../digital-rain log --format=%ae | sort -u                           # one noreply address
 
 # 3. create the public repository PRIVATE first, push, verify, then flip
 gh repo create sushiHex/digital-rain --private --source ../digital-rain --remote origin --push
@@ -161,10 +190,13 @@ Two rules follow, and both are easy to break by habit:
 
 - **Do not develop in the private clone and re-export.** The exporter is
   one-directional and overwrites; a re-export after pull requests have merged
-  in public would revert them. `misc/export_public.py` is kept in the public
-  tree because it documents what was withheld, and so that a *second* clean
-  export can be produced before cutover if the first is rejected — not as a
-  sync mechanism.
+  in public would revert them. So the exporter **enforces the cutover**: it
+  re-exports only into a tree whose every commit it wrote itself, and refuses
+  the moment the public history holds a commit it did not make. Before that
+  moment, re-exporting to fix the initial release is allowed and was done
+  (three export commits); after it, the private archive is read-only for
+  public purposes. `misc/export_public.py` stays in the public tree because it
+  documents what was withheld and refuses to run there.
 - **Anything that must stay private goes in the private repository by hand**,
   as a normal commit there. Session captures, business research, credentials.
   The public clone's hooks write session captures into `research/sessions/`
@@ -207,10 +239,56 @@ pieces, all in the tree:
 - Branch protection on `main`: pull request required (zero approvals
   mandated), the three CI checks required and up to date, linear history,
   conversation resolution, no force-push, no deletion. Squash merges only,
-  head branch deleted on merge.
+  head branch deleted on merge. **`enforce_admins` is off**, so the owner can
+  bypass all of it; the rules bind contributors, not the single maintainer,
+  who has no second reviewer to open a pull request against. Turn it on when
+  a second maintainer joins.
+- **A first-time contributor's workflow run waits for the owner's approval**
+  (GitHub's default for pull requests from new forks). Until it is approved
+  the required checks never report, so the PR looks blocked; the approval
+  button is on the PR's Checks tab.
 - `CLAUDE.md` stays: it is the project's conventions, it is what an agent
   working on a contributor's machine reads first, and everything in it is
   public-safe.
+
+## Cross-review, 2026-09-11 — what was adopted and what was not
+
+An independent model reviewed the export design, the sanitizer, the runner
+move, the CI and the licence posture against the source (22 findings). What
+changed because of it, and what was rejected with the reason, so it is not
+re-litigated:
+
+**Adopted.** The listing now prints the kept half, not only the withheld one
+(a newly tracked file lands in the kept half with no other signal). Two more
+research files withheld (the commercial-route note and the vendor-licence
+survey). The exporter refuses a destination that is, contains, or sits inside
+the private repository or is a symlink; refuses to re-export over a tree with
+commits it did not write; verifies every staged blob and mode against HEAD;
+sets the executable bit Windows cannot; refuses to commit under a non-noreply
+address. All 43 runners were tracked as `100644` and would have been
+"Permission denied" on Linux — now `100755`, pinned by a test. The sanitizer
+gained Linux, macOS and UNC home paths, fine-grained GitHub, AWS, Slack and
+bearer token shapes, and a hard block on tracked fonts, weights and archives.
+CI lists its skips and runs checksum-pinned gitleaks over the whole history,
+because GitHub's own secret scanning starts only after the flip. The
+configuration script propagates failures and enables private vulnerability
+reporting, the channel `SECURITY.md` promises. The runbook's gate-3 command
+did not `cd` into the export and would have read private files; fixed. The
+name-reuse consequence for the rename redirect is stated. Outside pull
+requests are held until a licence exists. `LICENSE` names the Apache-2.0
+components it does not cover.
+
+**Rejected, with reasons.** *Withhold `docs/strategy-2026-08.md`* — read in
+full, it is a technical scorecard of a research plan with one sentence
+mentioning a commercial model; not business material. *Withhold the corpus
+provenance records* — they are the evidence for a claim the README makes
+openly; see above. *`pip install -e .` is broken* — verified with a dry run
+on 2026-09-11: the editable build succeeds; the README keeps it and now also
+shows CI's dependency-only install. *Turn on `enforce_admins`* — deliberately
+off for a single maintainer with no second reviewer; documented above, to be
+flipped when that changes. *Pin dependencies with hashes* — accepted as a
+known weakness and stated in the workflow; a research repository with `>=`
+floors is not going to carry a lockfile yet.
 
 ## Record
 

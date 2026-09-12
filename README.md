@@ -242,7 +242,7 @@ Python 3.12+. Training and evaluation need a CUDA GPU; this was developed on a s
 ```bash
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
 pip install -r requirements.txt
-pip install -e ".[dev]"        # pytest + ruff
+pip install -e ".[dev]"        # pytest + ruff; or, as CI does: pip install pytest gradio
 ```
 
 Optional extras, by track: `demo` (the Gradio app), `sft`, `vecglypher`. Route B additionally needs [`nunchaku`](https://github.com/nunchaku-tech/nunchaku), which is not on PyPI.

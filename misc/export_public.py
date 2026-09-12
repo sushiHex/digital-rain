@@ -16,13 +16,27 @@ script refuses to run rather than export with a dead guard. The exclusions are
 documented for a reader of the PUBLIC repository too, because this file is
 exported with everything else: what was withheld is stated, not hidden.
 
+`--list` prints BOTH halves. The withheld half is what the rules caught; the
+kept half is what will be published, and a newly tracked file that no rule
+names lands there without any other signal. Read the kept half too.
+
 WHAT IT CHECKS BEFORE IT WRITES.
 
+  * the destination is not the private repository, not inside it, not a
+    symlink or junction, and does not contain it -- `--dest .` would otherwise
+    delete the private tree and record the deletion
   * the private tree is clean (uncommitted work is not exported, and a dirty
     tree usually means the export was run mid-task)
-  * the destination is empty, or a git repository with a clean tree
-  * after staging, `sanitize_for_publish.py --check` passes ON THE DESTINATION
-    -- the gate runs on what will be pushed, not on what was meant to be
+  * the destination is empty, or a git repository with a clean tree whose
+    EVERY commit was made by this script -- once a pull request has merged in
+    public, a re-export would revert it, so the script refuses
+  * after staging, every staged blob and mode is IDENTICAL to HEAD's (the
+    byte-for-byte claim is checked, not assumed; autocrlf cannot slip in)
+  * `sanitize_for_publish.py --check` passes ON THE DESTINATION -- the gate
+    runs on what will be pushed, not on what was meant to be
+  * `--commit` refuses unless the committing identity is a GitHub noreply
+    address, so a second export from another machine cannot publish a
+    personal email
 
 WHAT IT NEVER DOES. Push. Change visibility. Edit a file's content.
 
@@ -48,6 +62,12 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEFAULT_DEST = os.path.normpath(os.path.join(REPO, "..", "digital-rain"))
 SANITIZER = os.path.join("analysis", "sanitize_for_publish.py")
 
+# Commit subjects this script writes. A destination whose history holds any
+# OTHER subject has been worked in, and is not re-exported over.
+INITIAL_SUBJECT = "Initial public release"
+SYNC_SUBJECT = "sync: "
+NOREPLY = "@users.noreply.github.com"
+
 # (pattern, reason). A pattern ending in "/" is a directory prefix; anything
 # else is an fnmatch glob against the repo-relative path.
 EXCLUDE = (
@@ -62,6 +82,13 @@ EXCLUDE = (
      "the synthesised business research the March rounds fed"),
     ("research/BRAINSTORM.md",
      "the original concept and positioning memo"),
+    ("research/2026-04-09-legal-font-sources.md",
+     "an April Oracle report asserting named vendors' licence terms with "
+     "'high confidence' and carrying foundry contact addresses -- a legal "
+     "and reputational exposure, not a finding"),
+    ("research/2026-08-01-bfl-commercial-licensing.md",
+     "ranks the commercial routes with price estimates and names the "
+     "critical path -- business direction, not the technical record"),
     ("docs/archive/",
      "stale 2026-03 planning whose links point at the excluded research"),
     ("docs/superpowers/",
@@ -87,6 +114,32 @@ def run(args, cwd, check=True, **kw):
 def tracked_at_head(repo):
     out = run(["git", "ls-tree", "-r", "HEAD", "--name-only", "-z"], repo).stdout
     return sorted(p for p in out.split("\0") if p)
+
+
+def modes_at_head(repo):
+    """{path: (mode, blob sha)} for every file at HEAD."""
+    out = run(["git", "ls-tree", "-r", "HEAD", "-z"], repo).stdout
+    result = {}
+    for entry in out.split("\0"):
+        if not entry:
+            continue
+        meta, path = entry.split("\t", 1)
+        mode, _kind, sha = meta.split()
+        result[path] = (mode, sha)
+    return result
+
+
+def staged_modes(repo):
+    """{path: (mode, blob sha)} for every staged file."""
+    out = run(["git", "ls-files", "-s", "-z"], repo).stdout
+    result = {}
+    for entry in out.split("\0"):
+        if not entry:
+            continue
+        meta, path = entry.split("\t", 1)
+        mode, sha, _stage = meta.split()
+        result[path] = (mode, sha)
+    return result
 
 
 def matches(path, pattern):
@@ -126,9 +179,12 @@ def is_export(excluded):
 
 def print_listing(kept, excluded, rules=EXCLUDE):
     reasons = dict(rules)
-    print(f"kept: {len(kept)} files\n")
+    print(f"KEPT -- {len(kept)} files will be published:")
+    for p in kept:
+        print(f"    {p}")
+    print()
     for pat, paths in excluded.items():
-        print(f"excluded [{pat}] -- {reasons[pat]}")
+        print(f"WITHHELD [{pat}] -- {reasons[pat]}")
         for p in paths:
             print(f"    {p}")
         if not paths:
@@ -140,11 +196,52 @@ def is_clean(repo):
     return run(["git", "status", "--porcelain"], repo).stdout.strip() == ""
 
 
+def check_dest_is_safe(dest, repo=REPO):
+    """The destination must be a separate, ordinary directory.
+
+    `--dest .`, a symlink or junction, or any nesting either way would make
+    `prepare_dest` delete the private tree -- and `--commit` record it.
+    """
+    if os.path.lexists(dest) and os.path.islink(dest):
+        raise SystemExit(f"refusing: {dest} is a symlink or junction")
+    real_dest = os.path.realpath(dest)
+    real_repo = os.path.realpath(repo)
+    if os.path.normcase(real_dest) == os.path.normcase(real_repo):
+        raise SystemExit("refusing: the destination IS the private repository")
+    for inner, outer, what in ((real_dest, real_repo, "inside"),
+                               (real_repo, real_dest, "a parent of")):
+        try:
+            common = os.path.commonpath([os.path.normcase(inner),
+                                         os.path.normcase(outer)])
+        except ValueError:            # different drives: cannot be nested
+            continue
+        if common == os.path.normcase(outer):
+            raise SystemExit(f"refusing: the destination is {what} the private "
+                             "repository")
+
+
+def foreign_commits(dest):
+    """Commit subjects in dest that this script did not write."""
+    if run(["git", "rev-parse", "--verify", "-q", "HEAD"], dest, check=False).returncode != 0:
+        return []
+    subjects = run(["git", "log", "--format=%s"], dest).stdout.splitlines()
+    return [s for s in subjects
+            if not (s.startswith(INITIAL_SUBJECT) or s.startswith(SYNC_SUBJECT))]
+
+
 def prepare_dest(dest):
-    """Empty the destination of everything but .git; refuse a dirty tree."""
+    """Empty the destination of everything but .git; refuse a dirty or worked-in tree."""
+    check_dest_is_safe(dest)
     if os.path.isdir(os.path.join(dest, ".git")):
         if not is_clean(dest):
             raise SystemExit(f"refusing: {dest} has uncommitted changes")
+        foreign = foreign_commits(dest)
+        if foreign:
+            raise SystemExit(
+                f"refusing: {dest} has {len(foreign)} commit(s) this script did "
+                f"not make (first: {foreign[0]!r}). Work has landed there; a "
+                "re-export would revert it. The public repository is the "
+                "working one now.")
     elif os.path.isdir(dest) and os.listdir(dest):
         raise SystemExit(f"refusing: {dest} exists, is not empty and is not a "
                          "git repository")
@@ -178,12 +275,18 @@ def extract_head(repo, dest, keep):
             written += 1
     if written != len(wanted):
         raise SystemExit(f"wrote {written} files but expected {len(wanted)}: "
-                         "HEAD and the listing disagree")
+                         "HEAD and the listing disagree (an export-ignore "
+                         "attribute, or a symlink, would do this)")
     return written
 
 
-def stage(dest, keep):
-    """Stage exactly `keep`: deletions via -A, ignored-but-tracked via -f."""
+def stage(dest, keep, repo=REPO):
+    """Stage exactly `keep`, then prove every blob and mode matches HEAD.
+
+    Deletions via -A, ignored-but-tracked files via -f, the executable bit via
+    update-index (Windows has no such bit, so `git add` alone would drop it),
+    and then the staged (mode, sha) of every path is compared with HEAD's.
+    """
     if not os.path.isdir(os.path.join(dest, ".git")):
         run(["git", "init", "-q", "-b", "main"], dest)
     run(["git", "add", "-A"], dest)
@@ -192,12 +295,26 @@ def stage(dest, keep):
         fh.write("\n".join(keep) + "\n")
     run(["git", "add", "-f", "--pathspec-from-file=" + spec], dest)
     os.remove(spec)
-    staged = sorted(p for p in run(["git", "ls-files", "-z"], dest).stdout.split("\0") if p)
-    if staged != sorted(keep):
+    head = modes_at_head(repo)
+    executable = [p for p in keep if head[p][0] == "100755"]
+    # update-index takes paths as arguments, not a pathspec file; batches of
+    # 200 keep the command line short on every platform.
+    for i in range(0, len(executable), 200):
+        run(["git", "update-index", "--chmod=+x", "--", *executable[i:i + 200]], dest)
+
+    staged = staged_modes(dest)
+    if sorted(staged) != sorted(keep):
         extra = sorted(set(staged) - set(keep))
         missing = sorted(set(keep) - set(staged))
         raise SystemExit(f"staged set differs from the listing: extra={extra[:5]} "
                          f"missing={missing[:5]}")
+    differing = [p for p in keep if staged[p] != head[p]]
+    if differing:
+        p = differing[0]
+        raise SystemExit(f"{len(differing)} staged file(s) differ from HEAD in "
+                         f"blob or mode, first {p}: staged {staged[p]} vs HEAD "
+                         f"{head[p]}. Line-ending conversion or a mode drop -- "
+                         "nothing was committed")
 
 
 def gate(dest):
@@ -209,12 +326,23 @@ def gate(dest):
                          "was committed")
 
 
+def committer_email(dest):
+    proc = run(["git", "config", "user.email"], dest, check=False)
+    return proc.stdout.strip()
+
+
 def commit(dest, repo):
+    email = committer_email(dest)
+    if not email.endswith(NOREPLY):
+        raise SystemExit(f"refusing to commit as {email or '(no email set)'}: the "
+                         f"public history takes only a GitHub noreply address "
+                         f"({NOREPLY}). Set it with `git -C <dest> config "
+                         "user.email` and re-run.")
     sha = run(["git", "rev-parse", "--short=12", "HEAD"], repo).stdout.strip()
     if run(["git", "rev-parse", "--verify", "-q", "HEAD"], dest, check=False).returncode != 0:
-        subject = f"Initial public release (from digital-rain-private @ {sha})"
+        subject = f"{INITIAL_SUBJECT} (from digital-rain-private @ {sha})"
     else:
-        subject = f"sync: digital-rain-private @ {sha}"
+        subject = f"{SYNC_SUBJECT}digital-rain-private @ {sha}"
     body = ("Exported by misc/export_public.py -- every file tracked at that "
             "commit, minus the exclusions the script states.")
     if run(["git", "diff", "--cached", "--quiet"], dest, check=False).returncode == 0:
@@ -228,7 +356,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--dest", default=DEFAULT_DEST)
     ap.add_argument("--list", action="store_true",
-                    help="print the partition and exit")
+                    help="print both halves of the partition and exit")
     ap.add_argument("--commit", action="store_true",
                     help="commit the staged export in --dest (never pushes)")
     ap.add_argument("--allow-dirty", action="store_true",
@@ -257,8 +385,9 @@ def main(argv=None):
     n = extract_head(REPO, dest, keep)
     stage(dest, keep)
     n_ex = sum(len(v) for v in excluded.values())
-    print(f"exported {n} files to {dest}; excluded {n_ex} under "
-          f"{len(EXCLUDE)} rules (--list shows them)\n")
+    print(f"exported {n} files to {dest}; withheld {n_ex} under "
+          f"{len(EXCLUDE)} rules (--list shows both halves); every staged blob "
+          "and mode matches HEAD\n")
     gate(dest)
     if args.commit:
         commit(dest, REPO)
