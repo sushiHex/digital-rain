@@ -24,9 +24,16 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from analysis.generate_candidate_references import build_prompts
 from analysis.reference_stage_adherence import normalise_like_reference
 from analysis.synthesize_rare_attributes import vector_from_cells
+
+
+def build_prompts(*args, **kwargs):
+    """The reference generator is part of the product recipe and is held in
+    the private archive; in the public tree the four label tests skip."""
+    gcr = pytest.importorskip("analysis.generate_candidate_references",
+                              reason="reference generator held in the private archive")
+    return gcr.build_prompts(*args, **kwargs)
 
 REPO = Path(__file__).resolve().parent.parent
 

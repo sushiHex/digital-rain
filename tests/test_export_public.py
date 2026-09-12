@@ -66,6 +66,27 @@ def test_the_known_private_material_is_withheld():
         assert p not in kept, p
     for prefix in ("research/sessions/", "docs/archive/", "docs/superpowers/"):
         assert not any(p.startswith(prefix) for p in kept), prefix
+    # the product recipe -- results public, code and how-to private
+    for p in ("app.py", "analysis/generate_candidate_references.py",
+              "analysis/constructed_reference.py", "tests/test_picker_path.py",
+              "research/2026-08-25-the-picker-works-except-where-it-is-needed.md"):
+        assert p not in kept, p
+
+
+def test_nothing_kept_imports_a_withheld_module():
+    """A kept module importing withheld code would fail on the public tree."""
+    kept, _ = _partition()
+    withheld_mods = {p[:-3].replace("/", ".") for p in ex.RECIPE if p.endswith(".py")}
+    withheld_mods |= {m.rsplit(".", 1)[-1] for m in withheld_mods}   # bare names
+    offenders = []
+    for p in kept:
+        if not p.endswith(".py"):
+            continue
+        text = open(os.path.join(ex.REPO, p), encoding="utf-8", errors="replace").read()
+        for m in withheld_mods:
+            if f"from {m} import" in text or f"import {m}\n" in text or f"import {m} " in text:
+                offenders.append((p, m))
+    assert offenders == [], offenders
 
 
 def test_the_public_face_is_kept():
@@ -75,7 +96,13 @@ def test_the_public_face_is_kept():
               "docs/public-release.md", "docs/what-happened.md",
               "research/README.md", "misc/export_public.py",
               ".github/PULL_REQUEST_TEMPLATE.md", ".github/workflows/ci.yml",
-              "eval_runs/prompt_trained_short/per_cell.json"):
+              "eval_runs/prompt_trained_short/per_cell.json",
+              # the results of the product track stay public
+              "research/2026-08-23-the-loop-closes.md",
+              "research/2026-08-28-hand-it-a-stencil-and-it-propagates-one.md",
+              "viz/out/description_to_font.png", "viz/out/synthesised_reference.png",
+              "analysis/reference_gate.py", "analysis/style_coherence.py",
+              "analysis/synthesize_rare_attributes.py"):
         assert p in kept, p
 
 

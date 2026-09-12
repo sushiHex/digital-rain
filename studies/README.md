@@ -14,7 +14,7 @@ python -m studies.<script> --help
 Scripts import repo-root modules (`atlas_constants`, `eval_checkpoint`, ...); a two-line
 `sys.path` bootstrap at the top of each makes direct-path invocation work too.
 
-## Contents (16)
+## Contents (15)
 
 - `eval_build_holdout.py` — Build a held-out evaluation set for font LoRA quality measurement.
 - `eval_cleanup.py` — Measure cleanup's char-acc lift on the GT-bearing holdout, two ways:
@@ -25,7 +25,6 @@ Scripts import repo-root modules (`atlas_constants`, `eval_checkpoint`, ...); a 
 - `hybrid_v2_ocr.py` — Drop-in replacement candidates for cleanup/models.py:build_trocr_ocr_fn.
 - `hybrid_v2_replay.py` — hybrid_v2_replay.py -- COMBINED-OCR (TrOCR + GOT-OCR2) no-GT swap hybrid replay.
 - `measure_ocr_symbols.py` — Focused de-risk: does GOT-OCR2 read SYMBOLS/confusables on single glyph cells better than TrOCR? Decodes only...
-- `probe_glm_image.py` — Zero-shot probe: does GLM-Image capture ABSTRACT typeface style?
 - `repair_sdedit.py` — Style-preserving latent-inpaint repair for systematic-failure cells (Route B).
 - `score_self_consistency.py` — Can a NO-GT heuristic capture the +0.1483 same-model best-of-4 headroom found on the holdout? Tests self-consi...
 - `score_v3_seeds_ref.py` — Score the existing bf16+V3 reference atlases (experiments/v3_seeds/*_seed42.png) with the SAME metric as eval_...

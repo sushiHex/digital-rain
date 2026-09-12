@@ -27,7 +27,7 @@
 
 - [ ] No secrets, home-directory paths, machine names, session URLs, or private corpora in the diff (`python analysis/sanitize_for_publish.py --check` passes; CI runs it too)
 - [ ] No font files, model weights, or generated fonts are added -- both licensing blockers in the README are unresolved
-- [ ] Nothing from `research/sessions/`, `docs/archive/`, `docs/superpowers/` or the March 2026 research is brought over
+- [ ] Nothing from the private archive is brought over: `research/sessions/`, `docs/archive/`, `docs/superpowers/`, the March 2026 research, or the product recipe (`app.py`, the reference generator, the constructed-reference code, the picker probes and their notes)
 
 ## Rights
 

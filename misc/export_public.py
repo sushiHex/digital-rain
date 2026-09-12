@@ -101,9 +101,68 @@ EXCLUDE = (
      "editor configuration, never tracked -- listed so that it stays that way"),
 )
 
+# THE PRODUCT RECIPE -- held for a possible service (decision 2026-09-11,
+# docs/public-release.md "The SaaS lane"). The RESULTS of all of this are
+# public: the README narrative, the figures, the loop-closes and stencil notes,
+# every instrument and its validation. What is withheld is the code that turns
+# a description into a font and the notes that spell out which reference
+# generators were tried, at what speed and licence, and how the picker
+# behaves. Each path is its own rule, so a rename makes the script refuse.
+RECIPE_REASON = ("product recipe -- the code and the how-to of description -> "
+                 "reference -> font are held for a possible service; its results "
+                 "are public")
+RECIPE = (
+    "app.py",
+    "analysis/generate_candidate_references.py",
+    "analysis/constructed_reference.py",
+    "analysis/synthesise_transforms.py",
+    "analysis/synthesised_reference_probe.py",
+    "analysis/edit_path_probe.py",
+    "analysis/within_prompt_diversity.py",
+    "analysis/narrow_descriptions.py",
+    "analysis/reference_to_atlas_transfer.py",
+    "studies/probe_glm_image.py",
+    "tests/test_app_base_model.py",
+    "tests/test_app_reference_gate.py",
+    "tests/test_candidate_labels.py",
+    "tests/test_constructed_reference.py",
+    "tests/test_picker_advice.py",
+    "tests/test_picker_path.py",
+    "research/narrow_descriptions.json",
+    "research/within_prompt_diversity.json",
+    "research/reference_to_atlas_transfer.json",
+    "research/synthesised_reference_probe.json",
+    "research/edit_path_probe.json",
+    "research/2026-08-22-how-to-generate-the-reference.md",
+    "research/2026-08-22-two-letter-reference-generation-options.md",
+    "research/2026-08-23-ideogram-4-fully-explored.md",
+    "research/2026-08-23-oracle-raw-newer-options.md",
+    "research/2026-08-23-oracle-raw-round2.md",
+    "research/2026-08-23-oracle-raw-round3.md",
+    "research/2026-08-23-restyle-not-generate-the-reference.md",
+    "research/2026-08-23-the-permissive-local-field-opened-up.md",
+    "research/2026-08-23-round3-the-numbers-that-were-missing.md",
+    "research/2026-08-23-candidate-evaluation-round-1.md",
+    "research/2026-08-25-eight-of-twelve-offer-no-real-choice.md",
+    "research/2026-08-25-the-edit-path-does-not-break-a-stroke-either.md",
+    "research/2026-08-25-the-picker-works-except-where-it-is-needed.md",
+    "research/2026-08-25-the-second-arm-fails-the-same-way.md",
+    "research/2026-08-25-the-style-reaches-the-letters-nobody-chose.md",
+)
+EXCLUDE = EXCLUDE + tuple((p, RECIPE_REASON) for p in RECIPE)
+
 # Rules allowed to match nothing: they guard against a FUTURE mistake rather
 # than excluding something that exists today.
 MAY_BE_EMPTY = {".claude/"}
+
+# Package indexes are GENERATED from the directory (misc/sync_package_readmes.py)
+# and pinned by a test. With modules withheld, the exported index must list
+# what the export contains, so these are regenerated in the destination -- the
+# one documented exception to "the exporter never edits content", and the only
+# paths exempt from the blob-identity check.
+GENERATED_INDEXES = ("analysis/README.md", "studies/README.md",
+                     "pipeline/README.md", "probes/README.md",
+                     "benchmarks/README.md", "misc/README.md")
 
 
 def run(args, cwd, check=True, **kw):
@@ -280,12 +339,27 @@ def extract_head(repo, dest, keep):
     return written
 
 
-def stage(dest, keep, repo=REPO):
+def regenerate_indexes(dest):
+    """Rebuild the generated package indexes in dest; return the paths changed."""
+    tool = os.path.join(dest, "misc", "sync_package_readmes.py")
+    if not os.path.isfile(tool):
+        return set()
+    def digest(p):
+        full = os.path.join(dest, p)
+        return open(full, "rb").read() if os.path.isfile(full) else None
+    before = {p: digest(p) for p in GENERATED_INDEXES}
+    subprocess.run([sys.executable, tool, "--fix"], cwd=dest, check=True,
+                   capture_output=True, text=True)
+    return {p for p in GENERATED_INDEXES if digest(p) != before[p]}
+
+
+def stage(dest, keep, repo=REPO, regenerated=frozenset()):
     """Stage exactly `keep`, then prove every blob and mode matches HEAD.
 
     Deletions via -A, ignored-but-tracked files via -f, the executable bit via
     update-index (Windows has no such bit, so `git add` alone would drop it),
-    and then the staged (mode, sha) of every path is compared with HEAD's.
+    and then the staged (mode, sha) of every path is compared with HEAD's --
+    except the generated indexes `regenerate_indexes` rewrote.
     """
     if not os.path.isdir(os.path.join(dest, ".git")):
         run(["git", "init", "-q", "-b", "main"], dest)
@@ -308,7 +382,7 @@ def stage(dest, keep, repo=REPO):
         missing = sorted(set(keep) - set(staged))
         raise SystemExit(f"staged set differs from the listing: extra={extra[:5]} "
                          f"missing={missing[:5]}")
-    differing = [p for p in keep if staged[p] != head[p]]
+    differing = [p for p in keep if staged[p] != head[p] and p not in regenerated]
     if differing:
         p = differing[0]
         raise SystemExit(f"{len(differing)} staged file(s) differ from HEAD in "
@@ -383,11 +457,14 @@ def main(argv=None):
     dest = os.path.abspath(args.dest)
     prepare_dest(dest)
     n = extract_head(REPO, dest, keep)
-    stage(dest, keep)
+    regenerated = regenerate_indexes(dest)
+    stage(dest, keep, regenerated=regenerated)
     n_ex = sum(len(v) for v in excluded.values())
     print(f"exported {n} files to {dest}; withheld {n_ex} under "
           f"{len(EXCLUDE)} rules (--list shows both halves); every staged blob "
-          "and mode matches HEAD\n")
+          "and mode matches HEAD"
+          + (f" except the regenerated indexes {sorted(regenerated)}" if regenerated else "")
+          + "\n")
     gate(dest)
     if args.commit:
         commit(dest, REPO)

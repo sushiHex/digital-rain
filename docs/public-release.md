@@ -48,6 +48,7 @@ mismatch that dropped a description from the transfer test without erroring.
 | `research/RESEARCH.md`, `research/BRAINSTORM.md` | the synthesis those rounds fed, and the original positioning memo |
 | `research/2026-08-01-bfl-commercial-licensing.md` | ranks the commercial routes with price estimates and names the critical path — business direction |
 | `research/2026-04-09-legal-font-sources.md` | an April Oracle report asserting named vendors' licence terms with "high confidence" and carrying foundry contact addresses — a legal and reputational exposure, not a finding |
+| **the product recipe** (36 files, listed in `misc/export_public.py` as `RECIPE`) | `app.py`, the description-to-reference generator, the constructed-reference builder and its probes, the picker analyses and their tests, five result records, and the 15 late-August notes on which reference generators were tried and how the picker behaves. See *The SaaS lane* below |
 | `docs/archive/` (5) | stale 2026-03 planning whose links point at the files above |
 | `docs/superpowers/` (15) | agent-workflow plans and specs that cite the withheld research by section; the same directory is withheld from the owner's other public repositories for the same reason |
 | `docs/PUSH-PREP.md` | the private-push runbook; this document supersedes it |
@@ -55,8 +56,48 @@ mismatch that dropped a description from the transfer test without erroring.
 **Everything else is exported byte-for-byte** — the exporter compares every
 staged blob and mode with HEAD's and refuses on any difference — including
 `CLAUDE.md`, the force-added eval artifacts behind the README results table,
-and every negative result. The research index (`research/README.md`) says
-where the withheld notes went rather than linking to files that are not there.
+and every negative result. The one exception is the six generated package
+indexes (`analysis/README.md` and its siblings), which the exporter
+regenerates in the destination so they list what the export contains; they
+are the only paths exempt from the identity check, and the run names them.
+The research index (`research/README.md`) says where the withheld notes went
+rather than linking to files that are not there.
+
+## The SaaS lane — results public, recipe private
+
+Decided 2026-09-11, after the first export. The repository is a portfolio
+piece that may become a service, and those pull in opposite directions. The
+resolution: **publish the whole model track, every instrument and its
+validation, and the product loop's results; withhold the product loop's
+implementation and its how-to.**
+
+What that means concretely:
+
+- **Public.** Training, evaluation and analysis code; the coherence,
+  identity and adherence instruments with their validation notes; the README
+  narrative including *"a style described in words produces a font"* and *"the
+  stencil problem is solved"*; the figures; the loop-closes and stencil notes;
+  the eval artifacts behind every table. A reader can see exactly what was
+  built, how it was measured, and how often it was wrong.
+- **Withheld** (`RECIPE` in `misc/export_public.py`, one rule per path so a
+  rename makes the script refuse): `app.py` with the picker, the
+  description-to-reference generator and its prompts, the constructed-
+  reference builder and the probes that proved it, the picker analyses and
+  their tests, the five result records those probes wrote, and the fifteen
+  late-August notes that spell out which reference generators were tried, at
+  what speed and licence, and how the picker behaves.
+
+The line is *ideas and results out, working implementation in*. `CLAUDE.md`
+still describes the recipe in prose because it is the working brief for the
+archive too; a competitor gets a description, not a pipeline. What actually
+protects a service here is not the code in any case — it is the corpus and
+provenance work, the weights, and the licence — but the recipe is the part
+that would save a copier the most time, and it costs the portfolio nothing
+to hold it: the results it produced are all on display.
+
+A kept test that exercised the generator's label rules now skips when the
+module is absent; a kept module may not import a withheld one, and a test
+pins that.
 
 **Kept on purpose, and worth knowing about:** `research/corpus_provenance.json`
 and `research/unlicensed_corpus_fonts.json` name the 49 proprietary fonts the

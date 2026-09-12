@@ -767,8 +767,18 @@ and CI live. Contributors work there. Rules that are easy to break by habit:
   in public reverts them.
 - **What is withheld is stated, not hidden**: `misc/export_public.py --list`.
   Session captures, the March 2026 business research, `docs/archive/`,
-  `docs/PUSH-PREP.md`. A rule that matches nothing makes the script refuse —
-  a dead guard is a bug, the same shape as the glob mismatches above.
+  `docs/superpowers/`, `docs/PUSH-PREP.md` — and, since 2026-09-11, **the
+  product recipe**: `app.py`, `analysis/generate_candidate_references.py`,
+  the constructed-reference code and its probes, the picker analyses, and
+  the fifteen late-August notes that spell out which reference generators
+  were tried, at what speed and licence, and how the picker behaves. The
+  RESULTS of all of that stay public (README narrative, figures, the
+  loop-closes and stencil notes, every instrument); the code and the
+  how-to do not. A rule that matches nothing makes the script refuse — a
+  dead guard is a bug, the same shape as the glob mismatches above.
+- **This file still describes the recipe**, because it is the working brief
+  for the private archive too. A public reader gets the ideas in prose and
+  the instruments in code; the implementation is the part kept back.
 - **Four gates before any visibility change**, every time: the listing read,
   the sanitizer passing *on the export* (it has now missed a leak once —
   JSON-escaped paths — and caught one once), the test suite green *in the
