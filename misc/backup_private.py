@@ -206,6 +206,12 @@ ITEMS = (
     # the Kg failure's conditional reading.
     Item("relational_refs_mi", "eval_runs/_relational_refs_Mi", ("**/*",)),
     Item("relational_refs_mi_controls", "eval_runs/_relational_refs_Mi_controls", ("**/*",)),
+    # The follow-up (fourth registration, 2026-09-13, issue #30): the dose
+    # series, and the controls replicated under a second seed and a second
+    # source face.
+    Item("relational_refs_mi_dose", "eval_runs/_relational_refs_Mi_dose", ("**/*",)),
+    Item("relational_refs_mi_controls_s43", "eval_runs/_relational_refs_Mi_controls_s43", ("**/*",)),
+    Item("relational_refs_mi_controls_lato", "eval_runs/_relational_refs_Mi_controls_Lato-Regular", ("**/*",)),
     # viz/lr_horizon_bug.py parses glyph_4b.log and glyph_4b_lrfix.log as DATA:
     # the learning-rate trace of the horizon bug exists nowhere else.
     Item("logs", ".", ("*.log",)),

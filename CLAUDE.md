@@ -817,16 +817,29 @@ selection) does not expire this way.
   widths together, CV 0.382 → 0.272, PARTIAL against the real-monospace band,
   stencil control intact. The registered controls then said what was read:
   both glyphs scaled by one factor with the ratio kept reproduces 26% of the
-  fall; the `i` fattened alone reproduces **97%** (the face gets heavier and
-  the thin letters become slabs); the `M` narrowed alone 61% (the face
-  condenses). The model applies each glyph's departure from its normal width
+  fall; the `i` fattened alone reproduces **0.64–0.97** of it across three
+  runs (0.97 on the record run; the face gets heavier and the thin letters
+  become slabs); the `M` narrowed alone 61% (the face condenses). The model applies each glyph's departure from its normal width
   to the letters of its kind — what a monospace designer draws, not the
   metric that defines monospace. Do not quote "local yes, relational no", and
-  do not quote "the model reads equality" either. One seed, one source font,
-  literal slab copies in `I`; the correlation of change with width proves
-  nothing (`Cov(x, y−x)` is negative by construction). Records in
-  `research/relational_widths.json`;
-  `research/2026-09-12-a-relational-treatment-transfers-when-the-pair-can-carry-it.md`
+  do not quote "the model reads equality" either. Literal slab copies in
+  `I`; the correlation of change with width proves nothing (`Cov(x, y−x)` is
+  negative by construction). **Replicated 2026-09-13** (#30, registered
+  first): the dose is graded (`i` × 1.5 / 2 / 3.1 → CV −0.022 / −0.044 /
+  −0.105, monotone); under Lato the registered prediction held in full;
+  under seed 43 the sign, the rank order and the IDENTIFIED verdict
+  reproduce but the registered "widen_narrow ~ equalised" clause failed
+  (0.64), so **do not quote "97%"** as the number. The equalised face comes
+  back heavier every run (bbox fill 0.51 / 0.65 / 0.67 against plain 0.45 /
+  0.51 / 0.40 — quote the delivered fill, not the within-run "+20/+50/+91%
+  ink", whose range is mostly the differing plains), and by a different
+  route each time (seed 43 adds weight without condensing). The constant
+  across runs is the fall in width spread (−36 to −39%); the affine fit
+  with slope ~0.5 is the shape the viz docstring names as the unexcluded
+  alternative, not evidence for the reading.
+  Records in `research/relational_widths.json`;
+  `research/2026-09-12-a-relational-treatment-transfers-when-the-pair-can-carry-it.md`,
+  `research/2026-09-13-the-dose-is-graded-and-the-order-holds.md`
 - **Do not reuse `synthesize_rare_attributes._inline` at reference scale.** It
   thresholds against a GLOBAL `dist.max()`, which is right in a 106x160 cell and
   wrong on a 1024px reference, where a `K`'s junction sets the peak and the
@@ -868,6 +881,11 @@ EXTRA_TRAIN_ARGS NEED_MB`. Two traps, both hit for real:
   `'-lc','VAR=x ./runners/run.sh'` makes bash take only `VAR=x` as the command and
   exit 0 with no log. Always verify the log exists before reporting a run
   as started.
+- **Name Git's bash by full path in `Start-Process`.** From PowerShell 7
+  here, bare `bash` resolves to `C:\Windows\System32\bash.exe` (WSL), which
+  starts nothing and reports nothing (2026-09-13: no log, no process, no
+  error). Use `Start-Process "C:\Program Files\Git\bin\bash.exe"
+  -ArgumentList '-lc','<script>'`, then check the log and the process.
 
 ## Two repositories — the PRIVATE one is the working one
 
