@@ -29,13 +29,14 @@ The current state of every claim is [`../README.md`](../README.md) and
 
 ## Start here
 
-Eleven notes carry the project's actual conclusion. Read them in this order.
+Twelve notes carry the project's actual conclusion. Read them in this order.
 
 | note | what it establishes |
 |---|---|
 | [Training-run variance, measured](2026-08-13-training-run-variance-measured-at-last.md) | Three runs identical but for `--seed` land 0.1157 apart on char_acc. The comparison tool calls two of the three pairs a significant improvement. |
 | [A retrieval baseline beats every model](2026-08-13-a-retrieval-baseline-beats-every-model.md) | Handing back the nearest *training* font outscores every checkpoint on both style metrics. The metrics measure font-likeness, not generation. |
 | [The claim ledger, corrected](2026-08-13-the-claim-ledger-corrected.md) | Scored on every metric rather than one each, six effects clear 2×SE — and all six are regressions. |
+| [Five runs, and the noise floor moved](2026-09-13-five-runs-and-the-noise-floor-moved.md) | Two more identical runs take σ to 4 df and its interval from 12× to under 5× wide. The LPIPS σ more than doubles — seed 46 drew every glyph at three-quarters of the stroke weight, so stroke weight is itself a seed lottery — and **four** effects clear 2×SE, not six, still all regressions; the 4B→9B LPIPS row (−1.9) and the LR fix (−0.9) drop out. The median-composite rule ships seed 45. |
 | [Scoring the finished font](2026-08-18-scoring-the-finished-font.md) | The first metric on the artefact a user receives. Found every generated font had 2× word spacing; the model still does not beat retrieval; 74% of the letterfitting error is the pipeline, not the model. |
 | [The sidebearing prior that did not pay](2026-08-19-the-sidebearing-prior-that-did-not-pay.md) | A correct per-character letterfitting model, worth −14.6% in isolation and nothing in the pipeline: the constant it replaced was compensating for the tracer's ink bias. Shipped off by default. |
 | [The atlas format is the common cause](2026-08-20-the-atlas-format-is-the-common-cause.md) | The three finished-font defects are one: every constant the builder invents is a number the atlas discards. Cap height measured and already correct at 0.7000; the per-font spread is unrecoverable. |
@@ -174,6 +175,7 @@ The notes cite these; the tools regenerate them.
 |---|---|
 | `training_variance_{char_acc,dinov2,composite,racc,lpips}.json` | `analysis/training_variance.py` |
 | `claim_ledger.json` | `analysis/claim_ledger.py` |
+| `2026-08-13-training_variance_*.json`, `2026-08-13-claim_ledger.json` | the three-run versions of the two rows above, preserved when the five-run regeneration replaced them on 2026-09-13 — the 2026-08-13 notes tabulate these |
 | `retrieval_baseline.json` | `analysis/retrieval_baseline.py` |
 | `corpus_provenance.json`, `corpus_exclusions.json`, `unlicensed_corpus_fonts.json` | `analysis/audit_corpus_provenance.py` |
 | `font_distinctiveness.json`, `holdout_distinctiveness.json`, `pool_distinctiveness.json` | `analysis/score_holdout_distinctiveness.py` and the selectors |

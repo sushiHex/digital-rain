@@ -197,19 +197,20 @@ found, because no tier was hard enough.
 Every variance figure the project had measured *inference* seeds. The spread
 between two **training runs** had never been measured at all.
 
-Three runs, identical except `--seed`:
+Three runs, identical except `--seed` (five since 2026-09-13; the five-run
+column is the current σ):
 
 ```
-char_acc run means:  0.4914 / 0.6070 / 0.5869
+char_acc run means:  0.4914 / 0.6070 / 0.5869   (then 0.6031 / 0.6558)
 ```
 
-| metric | run-mean SD | gate fires on **identical** configs |
-|---|---|---|
-| char_acc | 0.0618 | 2 of 3 pairs |
-| dinov2 | 0.0228 | **3 of 3 pairs** |
-| racc | 0.0080 | 1 of 3 |
-| composite | 0.0035 | 0 of 3 |
-| lpips | 0.0027 | 1 of 3 |
+| metric | run-mean SD, 3 runs | 5 runs | gate fires on **identical** configs, 5 runs |
+|---|---|---|---|
+| char_acc | 0.0618 | 0.0603 | 7 of 10 pairs |
+| dinov2 | 0.0228 | 0.0368 | **8 of 10 pairs** |
+| racc | 0.0080 | 0.0058 | 1 of 10 |
+| composite | 0.0035 | 0.0031 | 1 of 10 |
+| lpips | 0.0027 | 0.0061 | 3 of 10 |
 
 Run `analysis/compare_runs.py` — the project's only comparison tool — on two
 runs differing **only in the random seed**:
@@ -256,20 +257,31 @@ other.
 ### Effects that clear the noise
 
 Scored on *every* metric against that metric's own training SD
-(`analysis/claim_ledger.py`), six effects clear 2×SE. **All six are regressions.**
+(`analysis/claim_ledger.py`), six effects cleared 2×SE on the three-run σ.
+**All six were regressions.**
 
-| effect | metric | ×SE |
-|---|---|---|
-| rank 64 + oversampling | lpips / composite / racc | **−13.5 / −7.8 / −2.0** |
-| 4B → 9B | lpips | **−4.3** (the 9B is *worse*) |
-| licence filter | composite | −2.2 |
-| LR-horizon fix | lpips | −2.0 |
+| effect | metric | ×SE, 3 runs | ×SE, 5 runs |
+|---|---|---|---|
+| rank 64 + oversampling | lpips / composite / racc | **−13.5 / −7.8 / −2.0** | **−6.0 / −8.9 / −2.8** |
+| 4B → 9B | lpips | **−4.3** (the 9B is *worse*) | −1.9 |
+| licence filter | composite | −2.2 | **−2.2** (clean arm now all five runs) |
+| LR-horizon fix | lpips | −2.0 | −0.9 |
+
+Two more identical runs (2026-09-13,
+[note](../research/2026-09-13-five-runs-and-the-noise-floor-moved.md)) took σ
+from 2 to 4 degrees of freedom and its interval from 12× wide to under 5×.
+The LPIPS σ more than doubled on the way — one seed drew the whole holdout at
+three-quarters of the stroke weight — and the two effects nearest the line
+went back under it. **Four clear it now, all still regressions**, and the
+largest is still the stacked levers, now led by the composite row rather
+than the LPIPS one. That is the difference between ranking and establishing,
+demonstrated on the ledger's own rows.
 
 ![Run-to-run noise against every claimed effect](../viz/out/variance_vs_effects.png)
 
-*Top: three runs whose configs differ only in `--seed`. Bottom: every claim ÷
+*Top: five runs whose configs differ only in `--seed`. Bottom: every claim ÷
 that metric's own run-to-run SD, columns ordered by that SD. The ringed cells
-are what clears 2×SE — all six are regressions, and all six sit in the two
+are what clears 2×SE — all four are regressions, and all four sit in the three
 left-hand columns. The two right-hand columns, char_acc and DINOv2, are the
 ones every headline in this project was quoted against, and nothing in them
 resolves. Regenerate with `python viz/variance_vs_effects.py`.*

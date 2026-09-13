@@ -112,7 +112,8 @@ char_acc run means **0.4914 / 0.6070 / 0.5869**.
 **Training noise is metric-dependent by ~20x, and char_acc/dinov2 — the two
 metrics chased hardest here — are the least stable.**
 
-Every headline claim, each against **its own** metric's noise:
+Every headline claim, each against **its own** metric's noise (the 3-run σ;
+the five-run re-score is below):
 
 | claim | metric | effect | ×SE | ×largest observed gap |
 |---|---|---|---|---|
@@ -137,6 +138,29 @@ Every resolvable effect lives on **LPIPS or composite** — the stable metrics.
 char_acc and dinov2 resolve nothing, and a retrieval baseline beats every model
 on both. Use composite and LPIPS as the headline metrics.
 
+**Re-measured on FIVE runs, 2026-09-13** (seeds 42–46, 4 df, issue #13;
+`research/2026-09-13-five-runs-and-the-noise-floor-moved.md`). The interval
+on σ narrowed from ~12× wide to ~5×, and two point estimates moved the wrong
+way for the record:
+
+| metric | run-mean SD, 3 runs | **5 runs** | 95% CI (4 df) | gate fires on identical pairs |
+|---|---|---|---|---|
+| char_acc | 0.0618 | **0.0603** | [0.036, 0.173] | 7/10 |
+| dinov2 | 0.0228 | **0.0368** | [0.022, 0.106] | 8/10 |
+| racc | 0.0080 | **0.0058** | [0.003, 0.017] | 1/10 |
+| composite | 0.0035 | **0.0031** | [0.002, 0.009] | 1/10 |
+| lpips | 0.0027 | **0.0061** | [0.004, 0.018] | 3/10 |
+
+Seed 46 is the outlier — best char_acc (0.6558) and DINOv2 (0.8792) of the
+five, worst LPIPS (0.1545) — which is what widened the DINOv2 and LPIPS σ.
+Re-scored against the five-run σ (`analysis/claim_ledger.py`, whose
+licence-filter arm now averages all five clean runs, not the first three),
+**four effects clear 2 xSE, not six**, still all regressions: rank64 +
+oversampling (composite −8.9, lpips −6.0, racc −2.8) and the licence filter
+(composite −2.2). **The 4B → 9B LPIPS regression (now −1.9) and the
+LR-horizon fix's (−0.9) no longer clear it.** Do not quote the "six effects"
+line above as current; the table there is the 3-run record.
+
 Rules that follow:
 
 - **Divide an effect by ITS OWN metric's SD.** Quoting a dinov2 effect against
@@ -146,8 +170,11 @@ Rules that follow:
   a 3-sample set; it grows with the number of runs and guarantees nothing.
 - Changing the corpus changes the dataset size, hence the shuffle sequence —
   so two runs with the same `--seed` are still different training runs.
-- σ rests on 2 df with a 12x-wide CI, and was measured on ONE config. Two more
-  runs (~24 GPU-h) would halve it.
+- σ rests on 4 df with a ~5x-wide CI (2 df and 12x until 2026-09-13), and was
+  measured on ONE config — 4B, rank 32, clean corpus. The 9B has no replicate
+  training runs. `analysis/claim_ledger.py` reads `n_runs` from the records
+  and prints the df and CI width it is actually using; quote those, not this
+  line.
 
 ## `compare_runs.py` passes on runs that differ by NOTHING
 
@@ -478,6 +505,18 @@ track):
   is that a `python` missing from PATH still leaves `outer` empty, hence 0.
 - Manifests and other inputs come from env vars (`PILOT_MANIFEST`,
   `SMOKE_MANIFEST`, `ORACLE_PROMPTS`), never a hardcoded path.
+- **The global site-packages is shared with other projects on this machine
+  and can change under a running job.** On 2026-09-12 another session
+  upgraded `transformers` 4 → 5 (pulled in by `sentence-transformers`) while
+  seed 45 was training; seed 45's eval had already run, seed 46's died on a
+  tokenizer the new version could no longer build. The TrOCR loader is now
+  `eval_checkpoint.load_trocr`, built from explicit classes that work on
+  both, and every TrOCR user goes through it (seed 45 re-scored under both
+  stacks: every per-font metric identical on all 50 fonts, 2026-09-13).
+  When an eval dies mid-run on
+  an import or tokenizer error, check the site-packages mtimes (`pip list`
+  and `ls -la --time-style=long-iso`) before anything else. Do not downgrade
+  the shared environment to fix a run: other projects pin against it.
 
 ## Layout and imports
 
@@ -854,6 +893,12 @@ on every change. Rules that are easy to break by habit:
   runs a thirty-second subset without installing torch; the audit runs on
   every event. A push to private `main` is NOT tested — run `python -m
   pytest` locally first. The public repository runs the full matrix.
+- **Refresh the backup when a result lands.** `backup/` in the private
+  repository holds the data that cannot be re-derived
+  (`misc/backup_private.py`, `backup/README.md`). A new run, probe output or
+  adapter worth keeping goes in with `python misc/backup_private.py make`
+  (add an item first if it is a new directory), then `verify`, then commit
+  `backup/`; CI re-verifies it whenever `backup/**` changes.
 - **What is withheld is stated, not hidden**: `misc/export_public.py --list`.
   Session captures, the March 2026 business research, `docs/archive/`,
   `docs/superpowers/`, `docs/PUSH-PREP.md` — and, since 2026-09-11, **the

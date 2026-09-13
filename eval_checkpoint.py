@@ -477,6 +477,33 @@ def _ocr_decode_cell(cell_np, processor, model, device):
 _GT_OCR_CACHE_VERSION = 1
 
 
+def load_trocr(device=None, model_id: str = TROCR_MODEL_ID):
+    """The TrOCR processor and model, built from explicit classes.
+
+    `TrOCRProcessor.from_pretrained` reaches the tokenizer through
+    AutoTokenizer, and under transformers 5 that cannot build this
+    checkpoint's tokenizer: the snapshot ships a sentencepiece model and no
+    `tokenizer.json`, the slow-tokenizer fallback 4.x used is gone, and the
+    failure surfaces as a generic "couldn't instantiate the backend
+    tokenizer". `XLMRobertaTokenizer.from_pretrained` builds it on both major
+    versions from the same sentencepiece model. Checked 2026-09-13, when a
+    transformers upgrade landed in the shared site-packages mid-run and the
+    seed-46 eval died on exactly this: every cached GT decoding round-trips
+    identically and every id matches sentencepiece's with XLM-R's offset.
+    Every TrOCR user in the repository goes through here.
+    """
+    from transformers import (AutoImageProcessor, TrOCRProcessor,
+                              VisionEncoderDecoderModel, XLMRobertaTokenizer)
+
+    processor = TrOCRProcessor(
+        image_processor=AutoImageProcessor.from_pretrained(model_id),
+        tokenizer=XLMRobertaTokenizer.from_pretrained(model_id))
+    model = VisionEncoderDecoderModel.from_pretrained(model_id)
+    if device is not None:
+        model = model.to(device)
+    return processor, model.eval()
+
+
 def _gt_ocr_cache_path(holdout_dir: Path) -> Path:
     return holdout_dir / "gt_ocr_cache.json"
 
@@ -536,10 +563,7 @@ def compute_racc(gt_cells, gen_cells, expected_chars, device, holdout_dir: Path 
 
     Returns (mean_score, per_cell_results).
     """
-    from transformers import TrOCRProcessor, VisionEncoderDecoderModel
-
-    processor = TrOCRProcessor.from_pretrained(TROCR_MODEL_ID)
-    model = VisionEncoderDecoderModel.from_pretrained(TROCR_MODEL_ID).to(device).eval()
+    processor, model = load_trocr(device)
 
     cached_gt = _load_gt_ocr_cache(holdout_dir, len(gt_cells)) if holdout_dir else None
 

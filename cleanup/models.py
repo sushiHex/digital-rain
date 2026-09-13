@@ -4,9 +4,8 @@ from PIL import Image
 from eval_checkpoint import TROCR_MODEL_ID, DINOV2_MODEL_ID, _ocr_decode_cell
 
 def build_trocr_ocr_fn(device="cuda"):
-    from transformers import TrOCRProcessor, VisionEncoderDecoderModel
-    processor = TrOCRProcessor.from_pretrained(TROCR_MODEL_ID)
-    model = VisionEncoderDecoderModel.from_pretrained(TROCR_MODEL_ID).to(device).eval()
+    from eval_checkpoint import load_trocr
+    processor, model = load_trocr(device)
     def ocr_fn(cell: np.ndarray) -> str:
         gray = np.array(Image.fromarray(cell).convert("L"))
         return _ocr_decode_cell(gray, processor, model, device)

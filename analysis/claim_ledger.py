@@ -12,9 +12,14 @@ HOW TO READ IT. Divide an effect by ITS OWN metric's training-run SD
 char_acc, so the same underlying change can be resolvable on one and invisible
 on the other. That is a fact about the instruments, not about the change.
 
-WHAT xSE DOES AND DOES NOT MEAN. sigma is estimated from 3 runs (2 df) and its
-own 95% CI is ~12x wide. xSE therefore RANKS effects and establishes none.
-Treating 2.0 as a significance threshold here would be false precision.
+WHAT xSE DOES AND DOES NOT MEAN. sigma is estimated from a handful of
+identical-config runs -- three until 2026-09-13, five since -- and the record
+carries `n_runs`, so the header below prints the degrees of freedom and the
+width of sigma's own 95% CI from what it read rather than from a constant that
+went stale once already. On 4 df that CI is still ~5x wide (12x on 2 df). xSE
+therefore RANKS effects and establishes none. Treating 2.0 as a significance
+threshold here would be false precision: two of the six verdicts on three runs
+flipped on five, from the precision improvement alone.
 
 Nearly every row is a comparison of two SINGLE TRAINING RUNS, so its true
 uncertainty is the training-run SD -- not the eval's bootstrap CI, and not the
@@ -39,7 +44,9 @@ LOWER_BETTER = {"lpips"}
 EXCLUDE = ("BitcountGridDoubleInk", "BitcountPropDoubleInk")
 
 # (label, arm_A, arm_B, note). Effect is B - A, in QUALITY space.
-# "3v1" marks the licence filter, whose clean arm has three replicate runs.
+# "5v1" marks the licence filter, whose clean arm is the mean of every
+# identical-config replicate run -- the same runs sigma is estimated from, so
+# the arm and the denominator move together (three until 2026-09-13).
 CLAIMS = [
     ("glyph vs baseline LoRA",  "structured_prompt_5000", "prompt_trained_short", "1v1"),
     ("4B -> 9B",                "glyph_4b_r32_5000",      "glyph_r32_5000",       "1v1"),
@@ -48,10 +55,11 @@ CLAIMS = [
     ("rank64 + oversampling",   "glyph_4b_r32_5000",      "glyph_4b_r64_distinct_5000", "1v1"),
     ("corpus expansion v3",     "glyph_4b_r32_5000",      "glyph_4b_v3_5000",     "1v1"),
     ("LR-horizon fix",          "glyph_4b_r32_5000",      "glyph_4b_r32_5000_lrfix", "1v1"),
-    ("licence filter (838)",    "lrfix_ckpt4500",         "CLEAN3",               "3v1"),
+    ("licence filter (838)",    "lrfix_ckpt4500",         "CLEAN",                "5v1"),
     ("non-oracle ref (photo)",  "glyph_4b_r32_5000_lrfix", "nonoracle_photo",     "same-ckpt"),
 ]
-CLEAN3 = ["glyph_4b_r32_clean", "glyph_4b_r32_clean_s43", "glyph_4b_r32_clean_s44"]
+CLEAN = ["glyph_4b_r32_clean", "glyph_4b_r32_clean_s43", "glyph_4b_r32_clean_s44",
+         "glyph_4b_r32_clean_s45", "glyph_4b_r32_clean_s46"]
 
 
 def per_font(run, metric):
@@ -61,10 +69,20 @@ def per_font(run, metric):
 
 
 def training_sd(metric):
+    """(run_mean_sd, n_runs) from the metric's variance record, or None."""
     p = f"research/training_variance_{metric}.json"
     if not os.path.isfile(p):
         return None
-    return json.load(open(p, encoding="utf-8"))["run_mean_sd"]
+    d = json.load(open(p, encoding="utf-8"))
+    return d["run_mean_sd"], d["n_runs"]
+
+
+def sigma_ci_width(df):
+    """Upper/lower ratio of the 95% chi-square CI on a SD with `df` degrees of
+    freedom: ~12.1 on 2 df, ~4.8 on 4 df. The number the docstring means by
+    "how wide"."""
+    from scipy.stats import chi2
+    return math.sqrt(chi2.ppf(0.975, df) / chi2.ppf(0.025, df))
 
 
 def main(argv=None):
@@ -73,8 +91,19 @@ def main(argv=None):
     ap.add_argument("--out", default="research/claim_ledger.json")
     args = ap.parse_args(argv)
 
-    SD = {m: training_sd(m) for m in METRICS}
-    print("training-run SD (3 runs, 2 df, ~12x-wide CI on each):")
+    records = {m: training_sd(m) for m in METRICS}
+    SD = {m: (r[0] if r else None) for m, r in records.items()}
+    n_runs = sorted({r[1] for r in records.values() if r})
+    if not n_runs:
+        raise SystemExit("no research/training_variance_<metric>.json found; "
+                         "run analysis/training_variance.py first")
+    if len(n_runs) != 1:
+        raise SystemExit(f"training-variance records disagree on n_runs {n_runs}; "
+                         "regenerate them together with analysis/training_variance.py")
+    n = n_runs[0]
+    df = n - 1
+    width = sigma_ci_width(df)
+    print(f"training-run SD ({n} runs, {df} df, ~{width:.0f}x-wide CI on each):")
     print("  " + "  ".join(f"{m} {SD[m]:.4f}" for m in METRICS if SD[m]))
     print()
 
@@ -84,7 +113,7 @@ def main(argv=None):
         for m in METRICS:
             try:
                 A = per_font(a, m)
-                B = ([per_font(r, m) for r in CLEAN3] if b == "CLEAN3"
+                B = ([per_font(r, m) for r in CLEAN] if b == "CLEAN"
                      else [per_font(b, m)])
             except (FileNotFoundError, KeyError):
                 continue
@@ -100,13 +129,10 @@ def main(argv=None):
             sd = SD.get(m)
             if not sd:
                 continue
-            # 1v1: two single runs. 3v1: mean of three vs one.
+            # 1v1: two single runs. 5v1: mean of the replicate runs vs one.
             # same-ckpt: ONE checkpoint re-evaluated, so training noise cancels
             # entirely and this SE does not apply -- flagged, not divided.
-            if kind == "3v1":
-                se = sd * math.sqrt(1 + 1 / 3)
-            else:
-                se = sd * math.sqrt(2)
+            se = sd * math.sqrt(1 + 1 / len(B))
             row["metrics"][m] = {"delta": round(delta, 4),
                                  "se": round(se, 4),
                                  "x_se": round(delta / se, 2),
@@ -137,9 +163,9 @@ def main(argv=None):
 
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump({"_comment": "Every claim on every metric, each against its OWN "
-                               "metric's training-run SD. sigma is 2 df with a "
-                               "~12x CI: xSE ranks, it does not establish.",
-                   "training_sd": SD, "claims": rows}, f, indent=1)
+                               f"metric's training-run SD. sigma is {df} df with a "
+                               f"~{width:.0f}x CI: xSE ranks, it does not establish.",
+                   "n_runs": n, "training_sd": SD, "claims": rows}, f, indent=1)
     print(f"\nwrote {args.out}")
     return 0
 

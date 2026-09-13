@@ -4,6 +4,12 @@
 `research/2026-08-13-training-run-variance-measured-at-last.md`, which was wrong
 in three ways. `analysis/claim_ledger.py`, `research/claim_ledger.json`.
 
+> **Records note, 2026-09-13.** `research/claim_ledger.json` was regenerated
+> against a five-run σ, on which four effects clear 2 xSE rather than six
+> ([`2026-09-13-five-runs-and-the-noise-floor-moved.md`](2026-09-13-five-runs-and-the-noise-floor-moved.md)).
+> The three-run ledger this note describes is preserved as
+> `research/2026-08-13-claim_ledger.json`.
+
 ---
 
 ## What the earlier note got wrong

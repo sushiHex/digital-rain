@@ -14,6 +14,12 @@ project has had an error bar on a checkpoint-vs-checkpoint comparison.
 
 `analysis/training_variance.py`, `research/training_variance_*.json`.
 
+> **Records note, 2026-09-13.** `research/training_variance_*.json` were
+> regenerated on five runs
+> ([`2026-09-13-five-runs-and-the-noise-floor-moved.md`](2026-09-13-five-runs-and-the-noise-floor-moved.md)).
+> The three-run versions this note tabulates are preserved as
+> `research/2026-08-13-training_variance_*.json`.
+
 ---
 
 ## The measurement

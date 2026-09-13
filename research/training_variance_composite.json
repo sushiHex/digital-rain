@@ -1,20 +1,24 @@
 {
  "_comment": "Training-run variance. Runs differ ONLY in --seed. largest_observed_gap is DESCRIPTIVE (the range of a small sample), not a threshold. Compare effects against run_mean_sd for THIS metric -- never against another metric's SD.",
  "metric": "composite",
- "n_runs": 3,
+ "n_runs": 5,
  "n_fonts": 48,
  "runs": [
   "glyph_4b_r32_clean",
   "glyph_4b_r32_clean_s43",
-  "glyph_4b_r32_clean_s44"
+  "glyph_4b_r32_clean_s44",
+  "glyph_4b_r32_clean_s45",
+  "glyph_4b_r32_clean_s46"
  ],
  "run_means": [
   0.803,
   0.81,
-  0.806
+  0.806,
+  0.8082,
+  0.8104
  ],
- "run_mean_sd": 0.0035,
- "largest_observed_gap": 0.007,
+ "run_mean_sd": 0.0031,
+ "largest_observed_gap": 0.0074,
  "pairs": [
   {
    "pair": "glyph_4b_r32_clean vs glyph_4b_r32_clean_s43",
@@ -33,12 +37,68 @@
    "main_effect_share": 0.033
   },
   {
+   "pair": "glyph_4b_r32_clean vs glyph_4b_r32_clean_s45",
+   "delta_mean": 0.0052,
+   "p": 0.09057884063363902,
+   "r": 0.244,
+   "passes_gate": false,
+   "main_effect_share": 0.039
+  },
+  {
+   "pair": "glyph_4b_r32_clean vs glyph_4b_r32_clean_s46",
+   "delta_mean": 0.0074,
+   "p": 0.010342287532770184,
+   "r": 0.37,
+   "passes_gate": true,
+   "main_effect_share": 0.098
+  },
+  {
    "pair": "glyph_4b_r32_clean_s43 vs glyph_4b_r32_clean_s44",
    "delta_mean": -0.004,
    "p": 0.13160791301406824,
    "r": 0.218,
    "passes_gate": false,
    "main_effect_share": 0.014
+  },
+  {
+   "pair": "glyph_4b_r32_clean_s43 vs glyph_4b_r32_clean_s45",
+   "delta_mean": -0.0018,
+   "p": 0.8214725518200904,
+   "r": 0.033,
+   "passes_gate": false,
+   "main_effect_share": 0.008
+  },
+  {
+   "pair": "glyph_4b_r32_clean_s43 vs glyph_4b_r32_clean_s46",
+   "delta_mean": 0.0004,
+   "p": 0.6816040144431381,
+   "r": 0.059,
+   "passes_gate": false,
+   "main_effect_share": 0.0
+  },
+  {
+   "pair": "glyph_4b_r32_clean_s44 vs glyph_4b_r32_clean_s45",
+   "delta_mean": 0.0022,
+   "p": 0.3401392979537903,
+   "r": 0.138,
+   "passes_gate": false,
+   "main_effect_share": 0.004
+  },
+  {
+   "pair": "glyph_4b_r32_clean_s44 vs glyph_4b_r32_clean_s46",
+   "delta_mean": 0.0044,
+   "p": 0.06485753715240047,
+   "r": 0.266,
+   "passes_gate": false,
+   "main_effect_share": 0.057
+  },
+  {
+   "pair": "glyph_4b_r32_clean_s45 vs glyph_4b_r32_clean_s46",
+   "delta_mean": 0.0022,
+   "p": 0.853524053111222,
+   "r": 0.027,
+   "passes_gate": false,
+   "main_effect_share": 0.004
   }
  ]
 }

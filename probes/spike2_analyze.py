@@ -58,11 +58,10 @@ def main():
         return
 
     import torch
-    from transformers import TrOCRProcessor, VisionEncoderDecoderModel
+    from eval_checkpoint import load_trocr
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Loading TrOCR ({TROCR_MODEL_ID}) on {device}...")
-    processor = TrOCRProcessor.from_pretrained(TROCR_MODEL_ID)
-    model = VisionEncoderDecoderModel.from_pretrained(TROCR_MODEL_ID).to(device).eval()
+    processor, model = load_trocr(device)
 
     expected = {idx: CHARSET[idx] for idx in DRAWN_INDICES}
 

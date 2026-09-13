@@ -1,20 +1,24 @@
 """Plot the run-to-run noise against every effect this project ever claimed.
 
-TOP    three training runs whose configs are identical except `--seed`.
-       char_acc lands at 0.4914 / 0.6070 / 0.5869. Nothing distinguishes them
-       but the shuffle order.
+TOP    the training runs whose configs are identical except `--seed` -- five
+       since 2026-09-13 (three before). char_acc lands at 0.4914 / 0.6070 /
+       0.5869 / 0.6031 / 0.6558. Nothing distinguishes them but the shuffle
+       order.
 
 BOTTOM every claim scored on every metric, each divided by THAT metric's own
        run-to-run SD. Columns are ordered by that SD, most stable first, so
        resolvability falls left to right -- and the saturated cells collect on
        the left, on the two metrics nobody was chasing.
 
-Read it honestly. This is NOT "nothing resolves". Six cells clear 2xSE, and
-five of them are regressions. What does not resolve is char_acc and dinov2 --
-the two metrics every headline in this repo was quoted against.
+Read it honestly. This is NOT "nothing resolves". Four cells clear 2xSE on the
+five-run sigma (six did on three runs), and every one is a regression. What
+does not resolve is char_acc and dinov2 -- the two metrics every headline in
+this repo was quoted against.
 
-sigma rests on 2 df with a ~12x-wide CI. xSE ranks claims; it does not
-establish them.
+sigma rests on 4 df with a ~5x-wide CI. xSE ranks claims; it does not
+establish them. The run count, the SDs and the cells all come from the JSON
+records, so regenerating after `analysis/training_variance.py` and
+`analysis/claim_ledger.py` is the whole update.
 
   python viz/variance_vs_effects.py
 """
@@ -70,13 +74,21 @@ def draw_runs(ax, var):
     means = var["run_means"]
     lo, hi = min(means), max(means)
     ax.set_xlim(lo - 0.055, hi + 0.055)
-    ax.set_ylim(-1.0, 1.25)
+    ax.set_ylim(-1.7, 1.25)
 
     ax.plot(means, [0] * len(means), "o", ms=13, color=BLUE,
             markeredgecolor=SURFACE, markeredgewidth=2, zorder=3)
-    for m in means:
+    # Five runs put three means within 0.02 of each other, closer than a
+    # label is wide; stagger the labels of near neighbours onto three rows so
+    # every value stays legible.
+    rows = []
+    for i, m in enumerate(sorted(means)):
+        rows.append(0 if i == 0 or m - sorted(means)[i - 1] >= 0.025
+                    else (rows[-1] + 1) % 3)
+    for m, row in zip(sorted(means), rows):
         ax.annotate(f"{m:.4f}", (m, 0), textcoords="offset points",
-                    xytext=(0, -22), ha="center", color=INK, fontsize=11)
+                    xytext=(0, -20 - 13 * row), ha="center", color=INK,
+                    fontsize=11)
 
     ax.annotate("", xy=(lo, 0.72), xytext=(hi, 0.72),
                 arrowprops=dict(arrowstyle="|-|,widthA=0.4,widthB=0.4",
@@ -87,7 +99,8 @@ def draw_runs(ax, var):
             f"{var['largest_observed_gap']:.4f} apart  —  SD {var['run_mean_sd']:.4f}",
             ha="center", color=INK_2, fontsize=11)
 
-    ax.set_title("Three training runs. Identical config. Only --seed differs.",
+    count = {3: "Three", 4: "Four", 5: "Five", 6: "Six"}.get(len(means), str(len(means)))
+    ax.set_title(f"{count} training runs. Identical config. Only --seed differs.",
                  color=INK, fontsize=14, fontweight="bold", loc="left", pad=12)
     ax.text(0, 1.30, "holdout char_acc, 48 fonts", transform=ax.transAxes,
             color=MUTED, fontsize=10.5, va="bottom")
