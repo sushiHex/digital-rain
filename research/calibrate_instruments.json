@@ -1,29 +1,29 @@
 {
  "preregistered": true,
  "labels_csv": "research/calibration_labels.csv",
- "n_labelled": 48,
- "n_blank": 48,
- "n_scored": 48,
+ "n_labelled": 96,
+ "n_blank": 0,
+ "n_scored": 96,
  "underpowered": false,
  "gate": {
-  "auc": NaN,
-  "permutation_p": NaN,
+  "auc": 0.8385944014294223,
+  "permutation_p": 9.999000099990002e-05,
   "cut": {
    "threshold": 1.875,
-   "tp": 46,
-   "fp": 0,
-   "fn": 2,
-   "tn": 0,
-   "precision": 1.0,
-   "recall": 0.9583333333333334,
-   "specificity": NaN
+   "tp": 62,
+   "fp": 7,
+   "fn": 11,
+   "tn": 16,
+   "precision": 0.8985507246376812,
+   "recall": 0.8493150684931506,
+   "specificity": 0.6956521739130435
   }
  },
  "adherence": {
-  "n": 8,
-  "auc": null
+  "n": 16,
+  "auc": 0.34545454545454546
  },
- "verdict": "NOT EVALUABLE -- only one class among the labels, so the AUC is undefined; the bar needs usable AND not-usable references",
+ "verdict": "PASSED -- coherence predicts usability; a threshold may be cut on a FRESH sample",
  "rows": [
   {
    "id": "00-s0",
@@ -464,6 +464,446 @@
    "usable": 1,
    "description": "a heavy angular blackletter-influenced sans with sharp cut terminals",
    "distance": 0.9089885468995694
+  },
+  {
+   "id": "00-s0",
+   "set": "zimage-n4",
+   "index": 0,
+   "seed": 0,
+   "usable": 1,
+   "description": "a heavy geometric sans serif, closed apertures, flat terminals",
+   "distance": 2.967536367114577
+  },
+  {
+   "id": "00-s1",
+   "set": "zimage-n4",
+   "index": 0,
+   "seed": 1,
+   "usable": 0,
+   "description": "a heavy geometric sans serif, closed apertures, flat terminals",
+   "distance": 1.8583528347827634
+  },
+  {
+   "id": "00-s2",
+   "set": "zimage-n4",
+   "index": 0,
+   "seed": 2,
+   "usable": 1,
+   "description": "a heavy geometric sans serif, closed apertures, flat terminals",
+   "distance": 0.3196038486214309
+  },
+  {
+   "id": "00-s3",
+   "set": "zimage-n4",
+   "index": 0,
+   "seed": 3,
+   "usable": 1,
+   "description": "a heavy geometric sans serif, closed apertures, flat terminals",
+   "distance": 1.2823732444760758
+  },
+  {
+   "id": "01-s0",
+   "set": "zimage-n4",
+   "index": 1,
+   "seed": 0,
+   "usable": 0,
+   "description": "a high-contrast didone with hairline serifs and vertical stress",
+   "distance": 2.9876761252660176
+  },
+  {
+   "id": "01-s1",
+   "set": "zimage-n4",
+   "index": 1,
+   "seed": 1,
+   "usable": 0,
+   "description": "a high-contrast didone with hairline serifs and vertical stress",
+   "distance": 3.1086214977702182
+  },
+  {
+   "id": "01-s2",
+   "set": "zimage-n4",
+   "index": 1,
+   "seed": 2,
+   "usable": 1,
+   "description": "a high-contrast didone with hairline serifs and vertical stress",
+   "distance": 0.6714395041227494
+  },
+  {
+   "id": "01-s3",
+   "set": "zimage-n4",
+   "index": 1,
+   "seed": 3,
+   "usable": 1,
+   "description": "a high-contrast didone with hairline serifs and vertical stress",
+   "distance": 2.656777553114291
+  },
+  {
+   "id": "02-s0",
+   "set": "zimage-n4",
+   "index": 2,
+   "seed": 0,
+   "usable": 0,
+   "description": "a chunky slab serif with blunt rectangular serifs",
+   "distance": 3.127995325775714
+  },
+  {
+   "id": "02-s1",
+   "set": "zimage-n4",
+   "index": 2,
+   "seed": 1,
+   "usable": 0,
+   "description": "a chunky slab serif with blunt rectangular serifs",
+   "distance": 3.6014879105309583
+  },
+  {
+   "id": "02-s2",
+   "set": "zimage-n4",
+   "index": 2,
+   "seed": 2,
+   "usable": 0,
+   "description": "a chunky slab serif with blunt rectangular serifs",
+   "distance": 0.4093265466452673
+  },
+  {
+   "id": "02-s3",
+   "set": "zimage-n4",
+   "index": 2,
+   "seed": 3,
+   "usable": 1,
+   "description": "a chunky slab serif with blunt rectangular serifs",
+   "distance": 2.5564527837227997
+  },
+  {
+   "id": "03-s0",
+   "set": "zimage-n4",
+   "index": 3,
+   "seed": 0,
+   "usable": 1,
+   "description": "a humanist sans with open apertures and a calligraphic axis",
+   "distance": 3.0846888765188294
+  },
+  {
+   "id": "03-s1",
+   "set": "zimage-n4",
+   "index": 3,
+   "seed": 1,
+   "usable": 0,
+   "description": "a humanist sans with open apertures and a calligraphic axis",
+   "distance": 2.0657797565372285
+  },
+  {
+   "id": "03-s2",
+   "set": "zimage-n4",
+   "index": 3,
+   "seed": 2,
+   "usable": 1,
+   "description": "a humanist sans with open apertures and a calligraphic axis",
+   "distance": 0.6434367206925696
+  },
+  {
+   "id": "03-s3",
+   "set": "zimage-n4",
+   "index": 3,
+   "seed": 3,
+   "usable": 1,
+   "description": "a humanist sans with open apertures and a calligraphic axis",
+   "distance": 2.5796068232956246
+  },
+  {
+   "id": "04-s0",
+   "set": "zimage-n4",
+   "index": 4,
+   "seed": 0,
+   "usable": 0,
+   "description": "a condensed grotesque, tight spacing, large x-height",
+   "distance": 2.9608911163863967
+  },
+  {
+   "id": "04-s1",
+   "set": "zimage-n4",
+   "index": 4,
+   "seed": 1,
+   "usable": 0,
+   "description": "a condensed grotesque, tight spacing, large x-height",
+   "distance": 3.350730206561264
+  },
+  {
+   "id": "04-s2",
+   "set": "zimage-n4",
+   "index": 4,
+   "seed": 2,
+   "usable": 0,
+   "description": "a condensed grotesque, tight spacing, large x-height",
+   "distance": 0.11159384401351867
+  },
+  {
+   "id": "04-s3",
+   "set": "zimage-n4",
+   "index": 4,
+   "seed": 3,
+   "usable": 1,
+   "description": "a condensed grotesque, tight spacing, large x-height",
+   "distance": 2.7676823342303325
+  },
+  {
+   "id": "05-s0",
+   "set": "zimage-n4",
+   "index": 5,
+   "seed": 0,
+   "usable": 1,
+   "description": "a rounded soft sans with fully rounded stroke ends",
+   "distance": 0.38711891728466635
+  },
+  {
+   "id": "05-s1",
+   "set": "zimage-n4",
+   "index": 5,
+   "seed": 1,
+   "usable": 0,
+   "description": "a rounded soft sans with fully rounded stroke ends",
+   "distance": 1.8668493254234075
+  },
+  {
+   "id": "05-s2",
+   "set": "zimage-n4",
+   "index": 5,
+   "seed": 2,
+   "usable": 1,
+   "description": "a rounded soft sans with fully rounded stroke ends",
+   "distance": 0.45026271042544924
+  },
+  {
+   "id": "05-s3",
+   "set": "zimage-n4",
+   "index": 5,
+   "seed": 3,
+   "usable": 1,
+   "description": "a rounded soft sans with fully rounded stroke ends",
+   "distance": 1.3028944548199264
+  },
+  {
+   "id": "06-s0",
+   "set": "zimage-n4",
+   "index": 6,
+   "seed": 0,
+   "usable": 0,
+   "description": "a wide low-contrast monospace with prominent spurs",
+   "distance": 2.6365159356526617
+  },
+  {
+   "id": "06-s1",
+   "set": "zimage-n4",
+   "index": 6,
+   "seed": 1,
+   "usable": 0,
+   "description": "a wide low-contrast monospace with prominent spurs",
+   "distance": 1.7299214596264605
+  },
+  {
+   "id": "06-s2",
+   "set": "zimage-n4",
+   "index": 6,
+   "seed": 2,
+   "usable": 1,
+   "description": "a wide low-contrast monospace with prominent spurs",
+   "distance": 0.32979574515541094
+  },
+  {
+   "id": "06-s3",
+   "set": "zimage-n4",
+   "index": 6,
+   "seed": 3,
+   "usable": 1,
+   "description": "a wide low-contrast monospace with prominent spurs",
+   "distance": 1.5175490057771661
+  },
+  {
+   "id": "07-s0",
+   "set": "zimage-n4",
+   "index": 7,
+   "seed": 0,
+   "usable": 1,
+   "description": "an ultra-light hairline sans, uniform thin strokes",
+   "distance": 1.806959241191781
+  },
+  {
+   "id": "07-s1",
+   "set": "zimage-n4",
+   "index": 7,
+   "seed": 1,
+   "usable": 0,
+   "description": "an ultra-light hairline sans, uniform thin strokes",
+   "distance": 2.835332448960372
+  },
+  {
+   "id": "07-s2",
+   "set": "zimage-n4",
+   "index": 7,
+   "seed": 2,
+   "usable": 1,
+   "description": "an ultra-light hairline sans, uniform thin strokes",
+   "distance": 0.20145636985893486
+  },
+  {
+   "id": "07-s3",
+   "set": "zimage-n4",
+   "index": 7,
+   "seed": 3,
+   "usable": 1,
+   "description": "an ultra-light hairline sans, uniform thin strokes",
+   "distance": 1.5103475117071996
+  },
+  {
+   "id": "08-s0",
+   "set": "zimage-n4",
+   "index": 8,
+   "seed": 0,
+   "usable": 1,
+   "description": "a wedge-serif face with flared, trumpet-shaped terminals",
+   "distance": 3.0756083007347326
+  },
+  {
+   "id": "08-s1",
+   "set": "zimage-n4",
+   "index": 8,
+   "seed": 1,
+   "usable": 0,
+   "description": "a wedge-serif face with flared, trumpet-shaped terminals",
+   "distance": 2.1620899832486775
+  },
+  {
+   "id": "08-s2",
+   "set": "zimage-n4",
+   "index": 8,
+   "seed": 2,
+   "usable": 1,
+   "description": "a wedge-serif face with flared, trumpet-shaped terminals",
+   "distance": 0.9065910255228034
+  },
+  {
+   "id": "08-s3",
+   "set": "zimage-n4",
+   "index": 8,
+   "seed": 3,
+   "usable": 0,
+   "description": "a wedge-serif face with flared, trumpet-shaped terminals",
+   "distance": 2.568101045538078
+  },
+  {
+   "id": "09-s0",
+   "set": "zimage-n4",
+   "index": 9,
+   "seed": 0,
+   "usable": 0,
+   "description": "a stencil sans with deliberate breaks in the strokes",
+   "distance": 2.7834636342908117,
+   "p_requested": 0.17137855230808854
+  },
+  {
+   "id": "09-s1",
+   "set": "zimage-n4",
+   "index": 9,
+   "seed": 1,
+   "usable": 0,
+   "description": "a stencil sans with deliberate breaks in the strokes",
+   "distance": 1.8233999782051074,
+   "p_requested": 0.04831857328014827
+  },
+  {
+   "id": "09-s2",
+   "set": "zimage-n4",
+   "index": 9,
+   "seed": 2,
+   "usable": 1,
+   "description": "a stencil sans with deliberate breaks in the strokes",
+   "distance": 0.43490054920699145,
+   "p_requested": 0.0026442846101364325
+  },
+  {
+   "id": "09-s3",
+   "set": "zimage-n4",
+   "index": 9,
+   "seed": 3,
+   "usable": 0,
+   "description": "a stencil sans with deliberate breaks in the strokes",
+   "distance": 1.2705061965448787,
+   "p_requested": 0.030063220654371763
+  },
+  {
+   "id": "10-s0",
+   "set": "zimage-n4",
+   "index": 10,
+   "seed": 0,
+   "usable": 0,
+   "description": "an inline face with a white stripe inset within each stroke",
+   "distance": 2.597089514810703,
+   "p_requested": 0.005730147569090414
+  },
+  {
+   "id": "10-s1",
+   "set": "zimage-n4",
+   "index": 10,
+   "seed": 1,
+   "usable": 0,
+   "description": "an inline face with a white stripe inset within each stroke",
+   "distance": 2.7861850282444953,
+   "p_requested": 0.005314634164908145
+  },
+  {
+   "id": "10-s2",
+   "set": "zimage-n4",
+   "index": 10,
+   "seed": 2,
+   "usable": 1,
+   "description": "an inline face with a white stripe inset within each stroke",
+   "distance": 1.2582392543623069,
+   "p_requested": 0.7126654911923699
+  },
+  {
+   "id": "10-s3",
+   "set": "zimage-n4",
+   "index": 10,
+   "seed": 3,
+   "usable": 1,
+   "description": "an inline face with a white stripe inset within each stroke",
+   "distance": 2.5570186219230004,
+   "p_requested": 0.008589600880428807
+  },
+  {
+   "id": "11-s0",
+   "set": "zimage-n4",
+   "index": 11,
+   "seed": 0,
+   "usable": 0,
+   "description": "a heavy angular blackletter-influenced sans with sharp cut terminals",
+   "distance": 2.8761450050559167
+  },
+  {
+   "id": "11-s1",
+   "set": "zimage-n4",
+   "index": 11,
+   "seed": 1,
+   "usable": 0,
+   "description": "a heavy angular blackletter-influenced sans with sharp cut terminals",
+   "distance": 3.2340960462578767
+  },
+  {
+   "id": "11-s2",
+   "set": "zimage-n4",
+   "index": 11,
+   "seed": 2,
+   "usable": 1,
+   "description": "a heavy angular blackletter-influenced sans with sharp cut terminals",
+   "distance": 1.5832350524102028
+  },
+  {
+   "id": "11-s3",
+   "set": "zimage-n4",
+   "index": 11,
+   "seed": 3,
+   "usable": 1,
+   "description": "a heavy angular blackletter-influenced sans with sharp cut terminals",
+   "distance": 2.789740195798392
   }
  ]
 }

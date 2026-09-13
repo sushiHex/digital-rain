@@ -1,0 +1,469 @@
+{
+ "preregistered": true,
+ "labels_csv": "research/calibration_labels.csv",
+ "n_labelled": 48,
+ "n_blank": 48,
+ "n_scored": 48,
+ "underpowered": false,
+ "gate": {
+  "auc": NaN,
+  "permutation_p": NaN,
+  "cut": {
+   "threshold": 1.875,
+   "tp": 46,
+   "fp": 0,
+   "fn": 2,
+   "tn": 0,
+   "precision": 1.0,
+   "recall": 0.9583333333333334,
+   "specificity": NaN
+  }
+ },
+ "adherence": {
+  "n": 8,
+  "auc": null
+ },
+ "verdict": "NOT EVALUABLE -- only one class among the labels, so the AUC is undefined; the bar needs usable AND not-usable references",
+ "rows": [
+  {
+   "id": "00-s0",
+   "set": "klein-base-n4",
+   "index": 0,
+   "seed": 0,
+   "usable": 1,
+   "description": "a heavy geometric sans serif, closed apertures, flat terminals",
+   "distance": 0.7942283638833688
+  },
+  {
+   "id": "00-s1",
+   "set": "klein-base-n4",
+   "index": 0,
+   "seed": 1,
+   "usable": 1,
+   "description": "a heavy geometric sans serif, closed apertures, flat terminals",
+   "distance": 1.1470464572338512
+  },
+  {
+   "id": "00-s2",
+   "set": "klein-base-n4",
+   "index": 0,
+   "seed": 2,
+   "usable": 1,
+   "description": "a heavy geometric sans serif, closed apertures, flat terminals",
+   "distance": 1.3576738647263886
+  },
+  {
+   "id": "00-s3",
+   "set": "klein-base-n4",
+   "index": 0,
+   "seed": 3,
+   "usable": 1,
+   "description": "a heavy geometric sans serif, closed apertures, flat terminals",
+   "distance": 0.843047773702309
+  },
+  {
+   "id": "01-s0",
+   "set": "klein-base-n4",
+   "index": 1,
+   "seed": 0,
+   "usable": 1,
+   "description": "a high-contrast didone with hairline serifs and vertical stress",
+   "distance": 1.192471589451918
+  },
+  {
+   "id": "01-s1",
+   "set": "klein-base-n4",
+   "index": 1,
+   "seed": 1,
+   "usable": 1,
+   "description": "a high-contrast didone with hairline serifs and vertical stress",
+   "distance": 1.6330416792893656
+  },
+  {
+   "id": "01-s2",
+   "set": "klein-base-n4",
+   "index": 1,
+   "seed": 2,
+   "usable": 1,
+   "description": "a high-contrast didone with hairline serifs and vertical stress",
+   "distance": 1.2434402513712057
+  },
+  {
+   "id": "01-s3",
+   "set": "klein-base-n4",
+   "index": 1,
+   "seed": 3,
+   "usable": 1,
+   "description": "a high-contrast didone with hairline serifs and vertical stress",
+   "distance": 0.5358792044951164
+  },
+  {
+   "id": "02-s0",
+   "set": "klein-base-n4",
+   "index": 2,
+   "seed": 0,
+   "usable": 1,
+   "description": "a chunky slab serif with blunt rectangular serifs",
+   "distance": 0.5704068928974827
+  },
+  {
+   "id": "02-s1",
+   "set": "klein-base-n4",
+   "index": 2,
+   "seed": 1,
+   "usable": 1,
+   "description": "a chunky slab serif with blunt rectangular serifs",
+   "distance": 2.3945411866684685
+  },
+  {
+   "id": "02-s2",
+   "set": "klein-base-n4",
+   "index": 2,
+   "seed": 2,
+   "usable": 1,
+   "description": "a chunky slab serif with blunt rectangular serifs",
+   "distance": 1.2987081826153994
+  },
+  {
+   "id": "02-s3",
+   "set": "klein-base-n4",
+   "index": 2,
+   "seed": 3,
+   "usable": 1,
+   "description": "a chunky slab serif with blunt rectangular serifs",
+   "distance": 1.186451875771726
+  },
+  {
+   "id": "03-s0",
+   "set": "klein-base-n4",
+   "index": 3,
+   "seed": 0,
+   "usable": 1,
+   "description": "a humanist sans with open apertures and a calligraphic axis",
+   "distance": 1.330520731638517
+  },
+  {
+   "id": "03-s1",
+   "set": "klein-base-n4",
+   "index": 3,
+   "seed": 1,
+   "usable": 1,
+   "description": "a humanist sans with open apertures and a calligraphic axis",
+   "distance": 0.6664376815192696
+  },
+  {
+   "id": "03-s2",
+   "set": "klein-base-n4",
+   "index": 3,
+   "seed": 2,
+   "usable": 1,
+   "description": "a humanist sans with open apertures and a calligraphic axis",
+   "distance": 1.482405772507142
+  },
+  {
+   "id": "03-s3",
+   "set": "klein-base-n4",
+   "index": 3,
+   "seed": 3,
+   "usable": 1,
+   "description": "a humanist sans with open apertures and a calligraphic axis",
+   "distance": 0.5099288624524322
+  },
+  {
+   "id": "04-s0",
+   "set": "klein-base-n4",
+   "index": 4,
+   "seed": 0,
+   "usable": 1,
+   "description": "a condensed grotesque, tight spacing, large x-height",
+   "distance": 1.1374632996465532
+  },
+  {
+   "id": "04-s1",
+   "set": "klein-base-n4",
+   "index": 4,
+   "seed": 1,
+   "usable": 1,
+   "description": "a condensed grotesque, tight spacing, large x-height",
+   "distance": 2.0549840556372954
+  },
+  {
+   "id": "04-s2",
+   "set": "klein-base-n4",
+   "index": 4,
+   "seed": 2,
+   "usable": 1,
+   "description": "a condensed grotesque, tight spacing, large x-height",
+   "distance": 0.718007776282392
+  },
+  {
+   "id": "04-s3",
+   "set": "klein-base-n4",
+   "index": 4,
+   "seed": 3,
+   "usable": 1,
+   "description": "a condensed grotesque, tight spacing, large x-height",
+   "distance": 1.569124378134021
+  },
+  {
+   "id": "05-s0",
+   "set": "klein-base-n4",
+   "index": 5,
+   "seed": 0,
+   "usable": 1,
+   "description": "a rounded soft sans with fully rounded stroke ends",
+   "distance": 0.8112053482056174
+  },
+  {
+   "id": "05-s1",
+   "set": "klein-base-n4",
+   "index": 5,
+   "seed": 1,
+   "usable": 1,
+   "description": "a rounded soft sans with fully rounded stroke ends",
+   "distance": 0.9998478946228379
+  },
+  {
+   "id": "05-s2",
+   "set": "klein-base-n4",
+   "index": 5,
+   "seed": 2,
+   "usable": 1,
+   "description": "a rounded soft sans with fully rounded stroke ends",
+   "distance": 0.333023751371464
+  },
+  {
+   "id": "05-s3",
+   "set": "klein-base-n4",
+   "index": 5,
+   "seed": 3,
+   "usable": 1,
+   "description": "a rounded soft sans with fully rounded stroke ends",
+   "distance": 0.7682086553406912
+  },
+  {
+   "id": "06-s0",
+   "set": "klein-base-n4",
+   "index": 6,
+   "seed": 0,
+   "usable": 1,
+   "description": "a wide low-contrast monospace with prominent spurs",
+   "distance": 0.6848707567725596
+  },
+  {
+   "id": "06-s1",
+   "set": "klein-base-n4",
+   "index": 6,
+   "seed": 1,
+   "usable": 1,
+   "description": "a wide low-contrast monospace with prominent spurs",
+   "distance": 1.1218021203542448
+  },
+  {
+   "id": "06-s2",
+   "set": "klein-base-n4",
+   "index": 6,
+   "seed": 2,
+   "usable": 1,
+   "description": "a wide low-contrast monospace with prominent spurs",
+   "distance": 1.3312737022407597
+  },
+  {
+   "id": "06-s3",
+   "set": "klein-base-n4",
+   "index": 6,
+   "seed": 3,
+   "usable": 1,
+   "description": "a wide low-contrast monospace with prominent spurs",
+   "distance": 0.5356418164960236
+  },
+  {
+   "id": "07-s0",
+   "set": "klein-base-n4",
+   "index": 7,
+   "seed": 0,
+   "usable": 1,
+   "description": "an ultra-light hairline sans, uniform thin strokes",
+   "distance": 1.2710485279768817
+  },
+  {
+   "id": "07-s1",
+   "set": "klein-base-n4",
+   "index": 7,
+   "seed": 1,
+   "usable": 1,
+   "description": "an ultra-light hairline sans, uniform thin strokes",
+   "distance": 1.0652792114291074
+  },
+  {
+   "id": "07-s2",
+   "set": "klein-base-n4",
+   "index": 7,
+   "seed": 2,
+   "usable": 1,
+   "description": "an ultra-light hairline sans, uniform thin strokes",
+   "distance": 1.085949932789717
+  },
+  {
+   "id": "07-s3",
+   "set": "klein-base-n4",
+   "index": 7,
+   "seed": 3,
+   "usable": 1,
+   "description": "an ultra-light hairline sans, uniform thin strokes",
+   "distance": 1.0606934722484045
+  },
+  {
+   "id": "08-s0",
+   "set": "klein-base-n4",
+   "index": 8,
+   "seed": 0,
+   "usable": 1,
+   "description": "a wedge-serif face with flared, trumpet-shaped terminals",
+   "distance": 1.0068590061070164
+  },
+  {
+   "id": "08-s1",
+   "set": "klein-base-n4",
+   "index": 8,
+   "seed": 1,
+   "usable": 1,
+   "description": "a wedge-serif face with flared, trumpet-shaped terminals",
+   "distance": 0.4707973591896712
+  },
+  {
+   "id": "08-s2",
+   "set": "klein-base-n4",
+   "index": 8,
+   "seed": 2,
+   "usable": 1,
+   "description": "a wedge-serif face with flared, trumpet-shaped terminals",
+   "distance": 1.5395108522809944
+  },
+  {
+   "id": "08-s3",
+   "set": "klein-base-n4",
+   "index": 8,
+   "seed": 3,
+   "usable": 1,
+   "description": "a wedge-serif face with flared, trumpet-shaped terminals",
+   "distance": 0.3123237482123885
+  },
+  {
+   "id": "09-s0",
+   "set": "klein-base-n4",
+   "index": 9,
+   "seed": 0,
+   "usable": 1,
+   "description": "a stencil sans with deliberate breaks in the strokes",
+   "distance": 0.6271767576561101,
+   "p_requested": 0.002429719828965344
+  },
+  {
+   "id": "09-s1",
+   "set": "klein-base-n4",
+   "index": 9,
+   "seed": 1,
+   "usable": 1,
+   "description": "a stencil sans with deliberate breaks in the strokes",
+   "distance": 0.6811354622410275,
+   "p_requested": 0.003127117318406242
+  },
+  {
+   "id": "09-s2",
+   "set": "klein-base-n4",
+   "index": 9,
+   "seed": 2,
+   "usable": 1,
+   "description": "a stencil sans with deliberate breaks in the strokes",
+   "distance": 0.5578080275364212,
+   "p_requested": 0.002059117134774812
+  },
+  {
+   "id": "09-s3",
+   "set": "klein-base-n4",
+   "index": 9,
+   "seed": 3,
+   "usable": 1,
+   "description": "a stencil sans with deliberate breaks in the strokes",
+   "distance": 0.7880031615895472,
+   "p_requested": 0.0026293364917684132
+  },
+  {
+   "id": "10-s0",
+   "set": "klein-base-n4",
+   "index": 10,
+   "seed": 0,
+   "usable": 1,
+   "description": "an inline face with a white stripe inset within each stroke",
+   "distance": 1.1326862691446429,
+   "p_requested": 0.6591179500853662
+  },
+  {
+   "id": "10-s1",
+   "set": "klein-base-n4",
+   "index": 10,
+   "seed": 1,
+   "usable": 1,
+   "description": "an inline face with a white stripe inset within each stroke",
+   "distance": 0.9791690694361291,
+   "p_requested": 7.022589865031689e-08
+  },
+  {
+   "id": "10-s2",
+   "set": "klein-base-n4",
+   "index": 10,
+   "seed": 2,
+   "usable": 1,
+   "description": "an inline face with a white stripe inset within each stroke",
+   "distance": 0.5973532394221822,
+   "p_requested": 0.5121908526743683
+  },
+  {
+   "id": "10-s3",
+   "set": "klein-base-n4",
+   "index": 10,
+   "seed": 3,
+   "usable": 1,
+   "description": "an inline face with a white stripe inset within each stroke",
+   "distance": 0.7527005751438066,
+   "p_requested": 0.011329710272407251
+  },
+  {
+   "id": "11-s0",
+   "set": "klein-base-n4",
+   "index": 11,
+   "seed": 0,
+   "usable": 1,
+   "description": "a heavy angular blackletter-influenced sans with sharp cut terminals",
+   "distance": 0.9342541555017083
+  },
+  {
+   "id": "11-s1",
+   "set": "klein-base-n4",
+   "index": 11,
+   "seed": 1,
+   "usable": 1,
+   "description": "a heavy angular blackletter-influenced sans with sharp cut terminals",
+   "distance": 1.7527504022133618
+  },
+  {
+   "id": "11-s2",
+   "set": "klein-base-n4",
+   "index": 11,
+   "seed": 2,
+   "usable": 1,
+   "description": "a heavy angular blackletter-influenced sans with sharp cut terminals",
+   "distance": 0.6405840037367353
+  },
+  {
+   "id": "11-s3",
+   "set": "klein-base-n4",
+   "index": 11,
+   "seed": 3,
+   "usable": 1,
+   "description": "a heavy angular blackletter-influenced sans with sharp cut terminals",
+   "distance": 0.9089885468995694
+  }
+ ]
+}

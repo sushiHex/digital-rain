@@ -627,7 +627,19 @@ track, or the reverse.**
   open**: anything unscoreable is generated normally. A test pins the ordering,
   because the first version was correct and useless. Its threshold (1.875) is
   cut from the coherent references' own spread, not from human judgement, so it
-  is provisional and its recall is a floor.
+  is provisional and its recall is a floor. **Calibrated against 96 owner
+  labels on 2026-09-13** (`analysis/calibrate_instruments.py`, registered
+  first): the bar PASSED on the union (AUC 0.839, p = 0.0001; at the cut
+  precision 0.90 / recall 0.85 / specificity 0.70), but every negative is
+  Z-Image and each seed index is ONE noise draw shared across all twelve
+  descriptions; with the seed held fixed the gate has no signal (AUC 0.36
+  over within-seed pairs, within-seed permutation p 0.89), and two of the
+  seven false passes rank first and eighth of 96 on coherence (coherent
+  wrong styles). The cut stays 1.875 until a fresh sample with one seed per
+  reference and the generator hidden; do not quote the union AUC as the
+  gate's accuracy, and do not generate calibration sets with a seed shared
+  across descriptions again.
+  `research/2026-09-13-the-gate-clears-its-bar-and-the-seed-clears-it-higher.md`
 - **Adherence is eyeballed.** ~9 or 10 of 12 prompts hit their style. *"Stencil
   sans with deliberate breaks"* produced a solid face at both stages — and
   **identity scored it 0.9787, among the highest of the twelve.** The instrument
@@ -853,8 +865,9 @@ selection) does not expire this way.
   model:** a general text-to-image model asked for two isolated glyphs in a rare
   typographic treatment. A third arm is unlikely to change it; the untried idea
   is the EDIT path (restyle a neutral `Kg`), which is a different request.
-  Z-Image works (48/48 usable, 28.5 s at 8 steps) but is **worse on every picker
-  axis** — between-description spread 1.172 against klein's 2.514, so it
+  Z-Image works (48/48 pass the malformed-candidate check, 28.5 s at 8 steps —
+  but the owner rejects **23 of the same 48** as starting points, 2026-09-13,
+  with one seed rejected 12/12) and is **worse on every picker axis** — between-description spread 1.172 against klein's 2.514, so it
   separates the twelve styles less than half as well, and 11/12 of its
   descriptions are narrow against klein's 8/12.
   `research/2026-08-25-the-second-arm-fails-the-same-way.md`
