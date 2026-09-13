@@ -164,3 +164,32 @@ the script's `auc`, `permutation_p` and `cut_report`; the seed-stratified
 AUC pools the within-seed pairs and shuffles labels within each seed row,
 10,000 times). The round-1 record it replaced is preserved as
 `research/2026-09-12-calibrate_instruments.json`.
+
+---
+
+## Addendum, 2026-09-13 — the owner's criterion, after reading this note
+
+> *"Starting point is the right word. I would prefer to have a more
+> accurate representation of the prompt as the starting point."*
+
+So the question the labels answer was the right one, and the acceptances
+were lenient on exactly the axis the product cares about: whether the
+reference *represents the description*. Read the 96 labels accordingly.
+The 23 rejections are mostly failures of the reference *as a reference* —
+draws the owner would not hand anyone for any style — which is the class a
+coherence check can see, and is why the gate's distance tracks them across
+the seed rows. Under the owner's stated criterion the negatives would also
+include the coherent wrong styles (`04-s2`, `02-s2` and their kind), the
+class the gate cannot see, and every gate figure above would fall.
+
+Consequences:
+
+- The round-2 labels calibrate coherence, not adherence. They stay as they
+  are; their meaning is now stated.
+- The fresh sample asks **two questions** per reference, in one sitting:
+  *usable as a starting point?* and *does it represent the description?*
+  The second is the label #9 has been waiting for, and the one the picker
+  should be selecting on.
+- "More accurate representation of the prompt" is the product's target,
+  stated by its owner. The adherence measure ranks toward it; nothing yet
+  gates on it.

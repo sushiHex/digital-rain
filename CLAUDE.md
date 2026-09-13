@@ -646,6 +646,15 @@ track, or the reverse.**
   did not merely miss the clearest failure in the set; it rewarded it. Do not
   write "validated" next to this axis, and do not read a high identity score as
   evidence a style was delivered.
+- **The owner's criterion for a starting point (2026-09-13): it should
+  represent the prompt accurately.** The 96 usability labels in
+  `research/calibration_labels.csv` were judged as "starting point" and were
+  lenient on adherence, so they calibrate coherence, not adherence — a
+  coherent wrong style counts as usable there and as a miss here. Any
+  further labelling asks both questions per reference (usable as a starting
+  point; represents the description), in one sitting, one seed per
+  reference. The second answer is what #9 needs and what the picker should
+  select on.
 - **The 12-vs-50 comparison is confounded.** Atlases from invented references
   beat the 50-font oracle arm on every GT-free metric — but the oracle arm holds
   the hard cases (dot-grid Bitcount, heavy distress, cursive Playwrite) and all
