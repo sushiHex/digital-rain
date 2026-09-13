@@ -2,7 +2,7 @@
  "preregistered": true,
  "labels_csv": "research/calibration_labels.csv",
  "n_labelled": 48,
- "n_blank": 0,
+ "n_blank": 48,
  "n_scored": 48,
  "underpowered": false,
  "gate": {
@@ -27,6 +27,7 @@
  "rows": [
   {
    "id": "00-s0",
+   "set": "klein-base-n4",
    "index": 0,
    "seed": 0,
    "usable": 1,
@@ -35,6 +36,7 @@
   },
   {
    "id": "00-s1",
+   "set": "klein-base-n4",
    "index": 0,
    "seed": 1,
    "usable": 1,
@@ -43,6 +45,7 @@
   },
   {
    "id": "00-s2",
+   "set": "klein-base-n4",
    "index": 0,
    "seed": 2,
    "usable": 1,
@@ -51,6 +54,7 @@
   },
   {
    "id": "00-s3",
+   "set": "klein-base-n4",
    "index": 0,
    "seed": 3,
    "usable": 1,
@@ -59,6 +63,7 @@
   },
   {
    "id": "01-s0",
+   "set": "klein-base-n4",
    "index": 1,
    "seed": 0,
    "usable": 1,
@@ -67,6 +72,7 @@
   },
   {
    "id": "01-s1",
+   "set": "klein-base-n4",
    "index": 1,
    "seed": 1,
    "usable": 1,
@@ -75,6 +81,7 @@
   },
   {
    "id": "01-s2",
+   "set": "klein-base-n4",
    "index": 1,
    "seed": 2,
    "usable": 1,
@@ -83,6 +90,7 @@
   },
   {
    "id": "01-s3",
+   "set": "klein-base-n4",
    "index": 1,
    "seed": 3,
    "usable": 1,
@@ -91,6 +99,7 @@
   },
   {
    "id": "02-s0",
+   "set": "klein-base-n4",
    "index": 2,
    "seed": 0,
    "usable": 1,
@@ -99,6 +108,7 @@
   },
   {
    "id": "02-s1",
+   "set": "klein-base-n4",
    "index": 2,
    "seed": 1,
    "usable": 1,
@@ -107,6 +117,7 @@
   },
   {
    "id": "02-s2",
+   "set": "klein-base-n4",
    "index": 2,
    "seed": 2,
    "usable": 1,
@@ -115,6 +126,7 @@
   },
   {
    "id": "02-s3",
+   "set": "klein-base-n4",
    "index": 2,
    "seed": 3,
    "usable": 1,
@@ -123,6 +135,7 @@
   },
   {
    "id": "03-s0",
+   "set": "klein-base-n4",
    "index": 3,
    "seed": 0,
    "usable": 1,
@@ -131,6 +144,7 @@
   },
   {
    "id": "03-s1",
+   "set": "klein-base-n4",
    "index": 3,
    "seed": 1,
    "usable": 1,
@@ -139,6 +153,7 @@
   },
   {
    "id": "03-s2",
+   "set": "klein-base-n4",
    "index": 3,
    "seed": 2,
    "usable": 1,
@@ -147,6 +162,7 @@
   },
   {
    "id": "03-s3",
+   "set": "klein-base-n4",
    "index": 3,
    "seed": 3,
    "usable": 1,
@@ -155,6 +171,7 @@
   },
   {
    "id": "04-s0",
+   "set": "klein-base-n4",
    "index": 4,
    "seed": 0,
    "usable": 1,
@@ -163,6 +180,7 @@
   },
   {
    "id": "04-s1",
+   "set": "klein-base-n4",
    "index": 4,
    "seed": 1,
    "usable": 1,
@@ -171,6 +189,7 @@
   },
   {
    "id": "04-s2",
+   "set": "klein-base-n4",
    "index": 4,
    "seed": 2,
    "usable": 1,
@@ -179,6 +198,7 @@
   },
   {
    "id": "04-s3",
+   "set": "klein-base-n4",
    "index": 4,
    "seed": 3,
    "usable": 1,
@@ -187,6 +207,7 @@
   },
   {
    "id": "05-s0",
+   "set": "klein-base-n4",
    "index": 5,
    "seed": 0,
    "usable": 1,
@@ -195,6 +216,7 @@
   },
   {
    "id": "05-s1",
+   "set": "klein-base-n4",
    "index": 5,
    "seed": 1,
    "usable": 1,
@@ -203,6 +225,7 @@
   },
   {
    "id": "05-s2",
+   "set": "klein-base-n4",
    "index": 5,
    "seed": 2,
    "usable": 1,
@@ -211,6 +234,7 @@
   },
   {
    "id": "05-s3",
+   "set": "klein-base-n4",
    "index": 5,
    "seed": 3,
    "usable": 1,
@@ -219,6 +243,7 @@
   },
   {
    "id": "06-s0",
+   "set": "klein-base-n4",
    "index": 6,
    "seed": 0,
    "usable": 1,
@@ -227,6 +252,7 @@
   },
   {
    "id": "06-s1",
+   "set": "klein-base-n4",
    "index": 6,
    "seed": 1,
    "usable": 1,
@@ -235,6 +261,7 @@
   },
   {
    "id": "06-s2",
+   "set": "klein-base-n4",
    "index": 6,
    "seed": 2,
    "usable": 1,
@@ -243,6 +270,7 @@
   },
   {
    "id": "06-s3",
+   "set": "klein-base-n4",
    "index": 6,
    "seed": 3,
    "usable": 1,
@@ -251,6 +279,7 @@
   },
   {
    "id": "07-s0",
+   "set": "klein-base-n4",
    "index": 7,
    "seed": 0,
    "usable": 1,
@@ -259,6 +288,7 @@
   },
   {
    "id": "07-s1",
+   "set": "klein-base-n4",
    "index": 7,
    "seed": 1,
    "usable": 1,
@@ -267,6 +297,7 @@
   },
   {
    "id": "07-s2",
+   "set": "klein-base-n4",
    "index": 7,
    "seed": 2,
    "usable": 1,
@@ -275,6 +306,7 @@
   },
   {
    "id": "07-s3",
+   "set": "klein-base-n4",
    "index": 7,
    "seed": 3,
    "usable": 1,
@@ -283,6 +315,7 @@
   },
   {
    "id": "08-s0",
+   "set": "klein-base-n4",
    "index": 8,
    "seed": 0,
    "usable": 1,
@@ -291,6 +324,7 @@
   },
   {
    "id": "08-s1",
+   "set": "klein-base-n4",
    "index": 8,
    "seed": 1,
    "usable": 1,
@@ -299,6 +333,7 @@
   },
   {
    "id": "08-s2",
+   "set": "klein-base-n4",
    "index": 8,
    "seed": 2,
    "usable": 1,
@@ -307,6 +342,7 @@
   },
   {
    "id": "08-s3",
+   "set": "klein-base-n4",
    "index": 8,
    "seed": 3,
    "usable": 1,
@@ -315,6 +351,7 @@
   },
   {
    "id": "09-s0",
+   "set": "klein-base-n4",
    "index": 9,
    "seed": 0,
    "usable": 1,
@@ -324,6 +361,7 @@
   },
   {
    "id": "09-s1",
+   "set": "klein-base-n4",
    "index": 9,
    "seed": 1,
    "usable": 1,
@@ -333,6 +371,7 @@
   },
   {
    "id": "09-s2",
+   "set": "klein-base-n4",
    "index": 9,
    "seed": 2,
    "usable": 1,
@@ -342,6 +381,7 @@
   },
   {
    "id": "09-s3",
+   "set": "klein-base-n4",
    "index": 9,
    "seed": 3,
    "usable": 1,
@@ -351,6 +391,7 @@
   },
   {
    "id": "10-s0",
+   "set": "klein-base-n4",
    "index": 10,
    "seed": 0,
    "usable": 1,
@@ -360,6 +401,7 @@
   },
   {
    "id": "10-s1",
+   "set": "klein-base-n4",
    "index": 10,
    "seed": 1,
    "usable": 1,
@@ -369,6 +411,7 @@
   },
   {
    "id": "10-s2",
+   "set": "klein-base-n4",
    "index": 10,
    "seed": 2,
    "usable": 1,
@@ -378,6 +421,7 @@
   },
   {
    "id": "10-s3",
+   "set": "klein-base-n4",
    "index": 10,
    "seed": 3,
    "usable": 1,
@@ -387,6 +431,7 @@
   },
   {
    "id": "11-s0",
+   "set": "klein-base-n4",
    "index": 11,
    "seed": 0,
    "usable": 1,
@@ -395,6 +440,7 @@
   },
   {
    "id": "11-s1",
+   "set": "klein-base-n4",
    "index": 11,
    "seed": 1,
    "usable": 1,
@@ -403,6 +449,7 @@
   },
   {
    "id": "11-s2",
+   "set": "klein-base-n4",
    "index": 11,
    "seed": 2,
    "usable": 1,
@@ -411,6 +458,7 @@
   },
   {
    "id": "11-s3",
+   "set": "klein-base-n4",
    "index": 11,
    "seed": 3,
    "usable": 1,

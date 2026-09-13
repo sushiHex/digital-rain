@@ -74,6 +74,28 @@ def _make_candidate_set(root, n_descriptions=N_DESCRIPTIONS, n_seeds=N_SEEDS,
             Image.new("L", (size, size), 0).save(root / f"{slug}__s{s}.png")
 
 
+def test_append_keeps_every_existing_label_and_adds_only_new_set_rows(tmp_path):
+    """Round 2 (issue #29): the second set goes into the SAME file as the
+    owner's first labels, which must survive byte for byte in meaning."""
+    from analysis.calibration_sheet import DEFAULT_SET, append_csv_rows
+    p = tmp_path / "labels.csv"
+    with open(p, "w", encoding="utf-8", newline="") as fh:   # the original template shape
+        w = csv.DictWriter(fh, fieldnames=["id", "description_index", "seed",
+                                           "description", "usable", "note"])
+        w.writeheader()
+        w.writerow({"id": "00-s0", "description_index": 0, "seed": 0,
+                    "description": "d", "usable": "1", "note": "owner: yes"})
+    new = build_csv_rows({0: {0: "x", 1: "y"}}, {0: "d"}, set_name="zimage-n4")
+    assert append_csv_rows(new, p) == 2
+    assert append_csv_rows(new, p) == 0, "a second append adds nothing"
+    with open(p, encoding="utf-8", newline="") as fh:
+        rows = list(csv.DictReader(fh))
+    assert [r["set"] for r in rows] == [DEFAULT_SET, "zimage-n4", "zimage-n4"]
+    assert rows[0]["usable"] == "1" and rows[0]["note"] == "owner: yes"
+    assert rows[1]["usable"] == "" and rows[1]["id"] == "00-s0"
+    assert list(rows[0].keys()) == CSV_FIELDS
+
+
 def test_discover_candidates_happy_path(tmp_path):
     _make_candidate_set(tmp_path / "refs")
     by_index = discover_candidates(tmp_path / "refs")

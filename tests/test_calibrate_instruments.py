@@ -82,6 +82,35 @@ def test_the_bar_matches_the_registration_text():
     assert ci.TREATMENT_OF == {9: "stencil", 10: "inline"}
 
 
+def test_rows_carry_their_set_and_the_original_template_defaults_to_the_registered_one(tmp_path):
+    """Round 2 (issue #29) labels more candidate sets into the same CSV. A row
+    without the `set` column is the original template's and belongs to the
+    registered set; an unknown set is refused rather than guessed."""
+    p = tmp_path / "labels.csv"
+    with open(p, "w", encoding="utf-8", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=["id", "set", "description_index", "seed",
+                                           "description", "usable", "note"])
+        w.writeheader()
+        w.writerow({"id": "00-s0", "set": "", "description_index": 0, "seed": 0,
+                    "description": "d", "usable": "1", "note": ""})
+        w.writerow({"id": "00-s0", "set": "zimage-n4", "description_index": 0, "seed": 0,
+                    "description": "d", "usable": "0", "note": ""})
+    rows, blank = ci.read_labels(p)
+    assert [(r["set"], r["usable"]) for r in rows] == [("klein-base-n4", 1), ("zimage-n4", 0)]
+    with open(p, "a", encoding="utf-8", newline="") as fh:
+        fh.write("01-s0,nowhere,1,0,d,1,\n")
+    with pytest.raises(SystemExit, match="unknown set"):
+        ci.read_labels(p)
+
+
+def test_a_reference_is_found_in_its_own_set_directory(tmp_path):
+    for s in ("klein-base-n4", "zimage-n4"):
+        (tmp_path / s).mkdir()
+        (tmp_path / s / "00-a_style__s0.png").write_bytes(b"png")
+    found = Path(ci.find_reference(str(tmp_path / "zimage-n4"), 0, 0))
+    assert found == tmp_path / "zimage-n4" / "00-a_style__s0.png"
+
+
 def test_one_class_is_not_evaluable_rather_than_failed():
     """2026-09-12: the owner judged all 48 usable. With one class the AUC is
     undefined, a shuffle test would read p = 1/(n+1) from no information, and

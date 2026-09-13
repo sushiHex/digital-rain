@@ -72,7 +72,6 @@ import re
 import numpy as np
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DEFAULT_REFS = os.path.join(REPO, "eval_runs", "_candidate_refs", "klein-base-n4")
 DEFAULT_LABELS = os.path.join(REPO, "research", "calibration_labels.csv")
 DEFAULT_JSON = os.path.join(REPO, "research", "calibrate_instruments.json")
 
@@ -87,6 +86,16 @@ BAR_AUC, BAR_P = 0.70, 0.05
 
 ID_RX = re.compile(r"^(\d\d)-s(\d+)$")
 SEED_SUFFIX = re.compile(r"__s(\d+)$")
+
+# AMENDMENT 2026-09-13 (issue #29), after the first set came back all usable:
+# rows may carry a `set` column naming the candidate directory they were
+# drawn from, and the union is scored as ONE sample with the statistic, bar
+# and cut above unchanged. A row without the column belongs to the set the
+# registration named. Per-set counts are reported so the mix is visible.
+DEFAULT_SET = "klein-base-n4"
+SETS = {"klein-base-n4": "12 descriptions x 4 seeds, FLUX.2-klein-base-4B (the registered set)",
+        "zimage-n4": "the same 12 descriptions x 4 seeds, Z-Image-Turbo (round 2)"}
+DEFAULT_REFS_ROOT = os.path.join(REPO, "eval_runs", "_candidate_refs")
 
 
 def auc(scores, labels):
@@ -167,7 +176,11 @@ def read_labels(path):
             if val not in ("0", "1"):
                 raise SystemExit(f"row {rec['id']}: usable must be 0, 1 or blank, "
                                  f"got {val!r}")
-            rows.append({"id": rec["id"], "index": int(m.group(1)),
+            set_name = (rec.get("set") or "").strip() or DEFAULT_SET
+            if set_name not in SETS:
+                raise SystemExit(f"row {rec['id']}: unknown set {set_name!r}; "
+                                 f"known: {sorted(SETS)}")
+            rows.append({"id": rec["id"], "set": set_name, "index": int(m.group(1)),
                          "seed": int(m.group(2)), "usable": int(val),
                          "description": rec.get("description", "")})
     return rows, blank
@@ -187,7 +200,8 @@ def find_reference(refs_dir, index, seed):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--labels", default=DEFAULT_LABELS)
-    ap.add_argument("--refs", default=DEFAULT_REFS)
+    ap.add_argument("--refs-root", default=DEFAULT_REFS_ROOT,
+                    help="parent of the per-set candidate directories")
     ap.add_argument("--pool", default=os.path.join(REPO, "font_pool"))
     ap.add_argument("--json", default=DEFAULT_JSON)
     ap.add_argument("--skip-adherence", action="store_true",
@@ -211,8 +225,11 @@ def main(argv=None):
     from analysis.style_coherence import load_stats
 
     stats = load_stats()
+    by_set = {s: sum(1 for r in rows if r["set"] == s) for s in sorted({r["set"] for r in rows})}
+    print("  sets: " + ", ".join(f"{s} {n}" for s, n in by_set.items()))
     for r in rows:
-        r["path"] = find_reference(args.refs, r["index"], r["seed"])
+        r["path"] = find_reference(os.path.join(args.refs_root, r["set"]),
+                                   r["index"], r["seed"])
         rc = reference_consistency(r["path"], stats)
         r["distance"] = None if rc is None else rc["distance"]
     scored = [r for r in rows if r["distance"] is not None]

@@ -61,7 +61,9 @@ EXPECTED_TOTAL = N_DESCRIPTIONS * N_SEEDS
 TILE_W = 340                    # legible tile width, per spec
 SEED_RE = re.compile(r"__s(\d+)$")
 
-CSV_FIELDS = ["id", "description_index", "seed", "description", "usable", "note"]
+CSV_FIELDS = ["id", "set", "description_index", "seed", "description", "usable", "note"]
+DEFAULT_SET = "klein-base-n4"   # the set the registration named; rows without a
+                                # `set` cell (the original template) belong to it
 
 # Quiet, restrained palette -- no colour except the greyscale glyphs themselves,
 # and nothing that ranks or highlights a candidate over another.
@@ -280,14 +282,39 @@ def render_overview(by_index, styles, out_path, tile_w=140):
     page.save(out_path)
 
 
-def build_csv_rows(by_index, styles):
+def build_csv_rows(by_index, styles, set_name=DEFAULT_SET):
     rows = []
     for index in sorted(by_index):
         for seed in sorted(by_index[index]):
-            rows.append({"id": f"{index:02d}-s{seed}",
+            rows.append({"id": f"{index:02d}-s{seed}", "set": set_name,
                         "description_index": index, "seed": seed,
                         "description": styles[index], "usable": "", "note": ""})
     return rows
+
+
+def append_csv_rows(rows, csv_path):
+    """Add a second set's rows to a CSV that already carries labels.
+
+    Round 2 of the calibration (2026-09-13, issue #29): the first set came
+    back all usable, so more sets are labelled into the SAME file and scored
+    as one sample. Existing rows keep every cell as written; a row that
+    predates the `set` column is assigned DEFAULT_SET; a row already present
+    for (set, id) is left alone. Returns the number of rows added.
+    """
+    existing = []
+    if os.path.isfile(csv_path):
+        with open(csv_path, encoding="utf-8", newline="") as fh:
+            for rec in csv.DictReader(fh):
+                rec = {k: rec.get(k, "") for k in CSV_FIELDS}
+                rec["set"] = rec["set"] or DEFAULT_SET
+                existing.append(rec)
+    have = {(r["set"], r["id"]) for r in existing}
+    added = [r for r in rows if (r["set"], r["id"]) not in have]
+    with open(csv_path, "w", encoding="utf-8", newline="") as fh:
+        writer = csv.DictWriter(fh, fieldnames=CSV_FIELDS, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(existing + added)
+    return len(added)
 
 
 def csv_has_labels(csv_path):
@@ -330,7 +357,14 @@ def main(argv=None):
     ap.add_argument("--tile-width", type=int, default=TILE_W)
     ap.add_argument("--skip-csv", action="store_true",
                     help="render sheets only; do not touch the CSV template")
+    ap.add_argument("--set", default=DEFAULT_SET,
+                    help="name recorded in the CSV's `set` column for these rows")
+    ap.add_argument("--append", action="store_true",
+                    help="add this set's rows to a CSV that already carries labels, "
+                         "keeping every existing row (round 2 and later)")
     args = ap.parse_args(argv)
+    if args.set != DEFAULT_SET and args.out_dir == OUT_DIR:
+        args.out_dir = os.path.join(OUT_DIR, args.set)
 
     try:
         by_index = discover_candidates(args.dir)
@@ -351,13 +385,17 @@ def main(argv=None):
     print(f"  wrote {overview_path}")
 
     if not args.skip_csv:
-        rows = build_csv_rows(by_index, styles)
-        try:
-            write_csv_template(rows, args.csv)
-        except RuntimeError as exc:
-            print(f"calibration_sheet: {exc}", file=_sys.stderr)
-            return 1
-        print(f"  wrote {args.csv} ({len(rows)} rows)")
+        rows = build_csv_rows(by_index, styles, args.set)
+        if args.append:
+            added = append_csv_rows(rows, args.csv)
+            print(f"  appended {added} row(s) for set {args.set!r} to {args.csv}")
+        else:
+            try:
+                write_csv_template(rows, args.csv)
+            except RuntimeError as exc:
+                print(f"calibration_sheet: {exc}", file=_sys.stderr)
+                return 1
+            print(f"  wrote {args.csv} ({len(rows)} rows)")
 
     return 0
 

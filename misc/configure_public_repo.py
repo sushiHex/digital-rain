@@ -42,6 +42,10 @@ LABELS = (
     ("ready", "1d76db", "Scoped, unblocked, and open to a contributor"),
     ("finding", "fbca04", "A number or comparison entering the record; needs its noise and its registration"),
     ("licensing", "b60205", "Touches the corpus, weights, outputs or a hosted demo -- both blockers are unresolved"),
+    # Two kinds of waiting, kept apart from `ready` so the board says who or
+    # what an issue is waiting on. Muted colours: they mark state, not action.
+    ("blocked-on-owner", "f9d0c4", "Waits on a judgement or action only the owner can take; not open to a contributor"),
+    ("deferred-external", "d4c5f9", "Waits on an event outside the repository -- a second maintainer, a company, contributor volume"),
 )
 
 # Must match the job names in .github/workflows/ci.yml exactly. The private
